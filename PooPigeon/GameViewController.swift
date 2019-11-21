@@ -11,17 +11,57 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    //MARK: - Properties
+    //
+    private var currentLevelNumber: Int!
+    private var currentLevel: Level!
+    private var currentGameScene: BaseSKScene!
+    private var isLeftHandedUI: Bool!
+    
+    //MARK: - Outlets
+    //
+    @IBOutlet weak var viewUI: UIView!
+    @IBOutlet weak var adView: UIView!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var rightBottomButton: UIButton!
+    @IBOutlet weak var rightTopButton: UIButton!
+    @IBOutlet weak var leftBottomButton: UIButton!
+    @IBOutlet weak var leftTopButton: UIButton!
+    @IBOutlet weak var logoImageView: UIImageView!
+    // constraints
+    @IBOutlet weak var topLeftButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topRightButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomLeftButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomRightButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var playButtonConstraint: NSLayoutConstraint!
+    
+    //MARK: - Overriden Properties
+    //
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
+    
+    //MARK: - lifecylce methods
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
+                currentGameScene = scene as? BaseSKScene
+                currentGameScene.viewController = self
                 
-                // Present the scene
+                scene.scaleMode = .aspectFill
                 view.presentScene(scene)
             }
             
@@ -30,22 +70,113 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsPhysics = true
             view.showsNodeCount = true
+            view.showsFields = true
+        }
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupDefaultConstraints()
+        setupButtons()
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        unhideUI {}
+    }
+    
+    //MARK: - Setup methods
+    //
+    func setupDefaultConstraints(){
+        self.topLeftButtonConstraint.constant = -self.leftTopButton.frame.width - 8
+        self.topRightButtonConstraint.constant = -self.rightTopButton.frame.width - 8
+        self.bottomLeftButtonConstraint.constant = -self.leftBottomButton.frame.width - 8
+        self.bottomRightButtonConstraint.constant = -self.rightBottomButton.frame.width - 8
+        self.playButtonConstraint.constant = -self.playButton.frame.height - 66
+        self.logoImageView.alpha = 0.0
+    }
+    func setupButtons(){
+        rightTopButton.setImage(UIImage(named: "settingsButtonPressed"), for: .highlighted)
+        leftTopButton.setImage(UIImage(named: "settingsButtonPressed"), for: .highlighted)
+        playButton.setImage(UIImage(named: "playButtonPressed"), for: .highlighted)
+
+        
+        self.isLeftHandedUI = Settings.shared.isLeftHandedUI
+        (isLeftHandedUI ? rightTopButton : leftTopButton)?.isHidden = true
+        
+        rightBottomButton.setImage(UIImage(named: isLeftHandedUI ? "achievementsButtonPressed" : "pigeonButtonPressed" ), for: .highlighted)
+        leftBottomButton.setImage(UIImage(named: isLeftHandedUI ? "pigeonButtonPressed" : "achievementsButtonPressed" ), for: .highlighted)
+        rightBottomButton.setImage(UIImage(named: isLeftHandedUI ? "achievementsButtonNormal" : "pigeonButtonNormal" ), for: .normal)
+        leftBottomButton.setImage(UIImage(named: isLeftHandedUI ? "pigeonButtonNormal" : "achievementsButtonNormal" ), for: .normal)
+    }
+    
+    //MARK: - Animation methods
+    //
+    func hideUI(completion: @escaping () -> () ){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.topLeftButtonConstraint.constant = -self.leftTopButton.frame.width - 8
+            self.topRightButtonConstraint.constant = -self.rightTopButton.frame.width - 8
+            self.bottomLeftButtonConstraint.constant = -self.leftBottomButton.frame.width - 8
+            self.bottomRightButtonConstraint.constant = -self.rightBottomButton.frame.width - 8
+            self.playButtonConstraint.constant = -self.playButton.frame.height - 66
+            self.logoImageView.alpha = 0.0
+            
+            self.viewUI.layoutIfNeeded()
+        }) { (animationsFinishedBeforeCompletion) in
+            completion()
+        }
+    }
+    
+    func unhideUI(completion: @escaping () -> () ){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.topLeftButtonConstraint.constant = 8
+            self.topRightButtonConstraint.constant = 8
+            self.bottomLeftButtonConstraint.constant = 8
+            self.bottomRightButtonConstraint.constant = 8
+            self.playButtonConstraint.constant = 66
+            self.logoImageView.alpha = 1.0
+            
+            self.viewUI.layoutIfNeeded()
+        }) { (animationsFinishedBeforeCompletion) in
+            completion()
         }
     }
 
-    override var shouldAutorotate: Bool {
-        return true
-    }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
+    //MARK: - Actions
+    //
+    @IBAction func playAction(_ sender: Any) {
+        hideUI {
+            //TODO: enable touch events on scene & start enemy spawning e.t.c, some kind of startLevel() method. Scene should not be paused in the BG.
+            self.currentGameScene.levelIsInGameState = true
         }
     }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
+    @IBAction func rightBottomAction(_ sender: UIButton) {
+        hideUI {
+            if self.isLeftHandedUI{
+                //TODO: show achievements screen show
+            }else{
+                //TODO: show pigeons screen show
+            }
+        }
     }
+    @IBAction func leftBottomAction(_ sender: UIButton) {
+        hideUI {
+            if self.isLeftHandedUI{
+                //TODO: show pigeons screen show
+            }else{
+                //TODO: show achievements screen show
+            }
+        }
+    }
+    @IBAction func settingsAction(_ sender: UIButton) {
+        hideUI {
+            //TODO: show settings screen
+        }
+    }
+    
+
 }

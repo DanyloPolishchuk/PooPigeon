@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,146 @@
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vz4-Kb-Q0T" userLabel="ViewUI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dX-oB-9SF" userLabel="AdView">
+                                        <rect key="frame" x="27.5" y="597" width="320" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут будет ваша реклама" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkx-5H-8b6">
+                                                <rect key="frame" x="63" y="15" width="194.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="R51-9r-O79"/>
+                                            <constraint firstAttribute="width" constant="320" id="mRE-6f-l5Q"/>
+                                            <constraint firstItem="vkx-5H-8b6" firstAttribute="centerX" secondItem="4dX-oB-9SF" secondAttribute="centerX" id="oSQ-pq-HgR"/>
+                                            <constraint firstItem="vkx-5H-8b6" firstAttribute="centerY" secondItem="4dX-oB-9SF" secondAttribute="centerY" id="yCv-by-Xrc"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9N-bq-Hkm">
+                                        <rect key="frame" x="94" y="518.5" width="187.5" height="62.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="B9N-bq-Hkm" secondAttribute="height" multiplier="3:1" id="PaG-MZ-Uiy"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="playButtonNormal"/>
+                                        <connections>
+                                            <action selector="playAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="ygg-bd-q9q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfd-Od-Jv6">
+                                        <rect key="frame" x="304.5" y="518.5" width="62.5" height="62.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="zfd-Od-Jv6" secondAttribute="height" multiplier="1:1" id="IOi-bj-Klt"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="pigeonButtonNormal"/>
+                                        <connections>
+                                            <action selector="rightBottomAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="tFw-GQ-3au"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfd-GX-ClK">
+                                        <rect key="frame" x="8" y="518.5" width="62.5" height="62.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qfd-GX-ClK" secondAttribute="height" multiplier="1:1" id="VOn-tD-7ts"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="achievementsButtonNormal"/>
+                                        <connections>
+                                            <action selector="leftBottomAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="L4R-4e-elO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9t-HV-So8">
+                                        <rect key="frame" x="8" y="8" width="56.5" height="56.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="b9t-HV-So8" secondAttribute="height" multiplier="1:1" id="UyR-dl-YQc"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="settingsButtonNormal"/>
+                                        <connections>
+                                            <action selector="settingsAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="MRZ-av-hnN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3M-bq-PpH">
+                                        <rect key="frame" x="311" y="8" width="56" height="56.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="S3M-bq-PpH" secondAttribute="height" multiplier="1:1" id="tZg-aI-2ub"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="settingsButtonNormal"/>
+                                        <connections>
+                                            <action selector="settingsAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Ei2-Ly-71D"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameLogo" translatesAutoresizingMaskIntoConstraints="NO" id="IyB-pS-0OK">
+                                        <rect key="frame" x="0.0" y="195.5" width="375" height="256"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="IyB-pS-0OK" firstAttribute="width" secondItem="vz4-Kb-Q0T" secondAttribute="width" id="3KM-ke-9aC"/>
+                                    <constraint firstItem="qfd-GX-ClK" firstAttribute="centerY" secondItem="B9N-bq-Hkm" secondAttribute="centerY" id="5x3-kN-lhF"/>
+                                    <constraint firstItem="4dX-oB-9SF" firstAttribute="centerX" secondItem="vz4-Kb-Q0T" secondAttribute="centerX" id="AZW-Hl-eQc"/>
+                                    <constraint firstItem="b9t-HV-So8" firstAttribute="width" secondItem="vz4-Kb-Q0T" secondAttribute="width" multiplier="0.15" id="COr-lw-lwT"/>
+                                    <constraint firstAttribute="trailing" secondItem="S3M-bq-PpH" secondAttribute="trailing" constant="8" id="DJS-aJ-G66"/>
+                                    <constraint firstItem="B9N-bq-Hkm" firstAttribute="centerX" secondItem="vz4-Kb-Q0T" secondAttribute="centerX" id="KsM-DW-97I"/>
+                                    <constraint firstItem="qfd-GX-ClK" firstAttribute="height" secondItem="B9N-bq-Hkm" secondAttribute="height" id="QW9-kq-DLH"/>
+                                    <constraint firstItem="qfd-GX-ClK" firstAttribute="leading" secondItem="vz4-Kb-Q0T" secondAttribute="leading" constant="8" id="RmU-t8-cAI"/>
+                                    <constraint firstItem="zfd-Od-Jv6" firstAttribute="centerY" secondItem="B9N-bq-Hkm" secondAttribute="centerY" id="Y5v-5X-hMO"/>
+                                    <constraint firstAttribute="bottom" secondItem="4dX-oB-9SF" secondAttribute="bottom" id="ZFv-aW-2Ou"/>
+                                    <constraint firstItem="B9N-bq-Hkm" firstAttribute="width" secondItem="vz4-Kb-Q0T" secondAttribute="width" multiplier="0.5" id="clR-t4-b9O"/>
+                                    <constraint firstItem="IyB-pS-0OK" firstAttribute="centerX" secondItem="vz4-Kb-Q0T" secondAttribute="centerX" id="dbV-B6-Ens"/>
+                                    <constraint firstItem="zfd-Od-Jv6" firstAttribute="height" secondItem="B9N-bq-Hkm" secondAttribute="height" id="jX5-2D-l4f"/>
+                                    <constraint firstAttribute="bottom" secondItem="B9N-bq-Hkm" secondAttribute="bottom" constant="66" id="kbC-XX-Qzp"/>
+                                    <constraint firstItem="S3M-bq-PpH" firstAttribute="top" secondItem="vz4-Kb-Q0T" secondAttribute="top" constant="8" id="kdQ-PF-psC"/>
+                                    <constraint firstItem="b9t-HV-So8" firstAttribute="top" secondItem="vz4-Kb-Q0T" secondAttribute="top" constant="8" id="ncN-y6-DqL"/>
+                                    <constraint firstItem="IyB-pS-0OK" firstAttribute="centerY" secondItem="vz4-Kb-Q0T" secondAttribute="centerY" id="qQ1-h3-yyI"/>
+                                    <constraint firstItem="S3M-bq-PpH" firstAttribute="width" secondItem="vz4-Kb-Q0T" secondAttribute="width" multiplier="0.15" id="rFv-db-6uH"/>
+                                    <constraint firstAttribute="trailing" secondItem="zfd-Od-Jv6" secondAttribute="trailing" constant="8" id="svQ-54-B2y"/>
+                                    <constraint firstItem="b9t-HV-So8" firstAttribute="leading" secondItem="vz4-Kb-Q0T" secondAttribute="leading" constant="8" id="zQP-o6-8Fg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="vz4-Kb-Q0T" secondAttribute="trailing" id="4rn-zd-QcW"/>
+                            <constraint firstItem="vz4-Kb-Q0T" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="J3e-bc-IH9"/>
+                            <constraint firstItem="vz4-Kb-Q0T" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" id="paE-Zn-ddA"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="vz4-Kb-Q0T" secondAttribute="bottom" id="t3D-hb-rq9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
+                    <connections>
+                        <outlet property="adView" destination="4dX-oB-9SF" id="tjO-63-O5H"/>
+                        <outlet property="bottomLeftButtonConstraint" destination="RmU-t8-cAI" id="bc9-n2-CUE"/>
+                        <outlet property="bottomRightButtonConstraint" destination="svQ-54-B2y" id="FgZ-YE-Lb4"/>
+                        <outlet property="leftBottomButton" destination="qfd-GX-ClK" id="NW7-ir-tJ2"/>
+                        <outlet property="leftTopButton" destination="b9t-HV-So8" id="jgs-eu-h5J"/>
+                        <outlet property="logoImageView" destination="IyB-pS-0OK" id="cRC-ge-9GI"/>
+                        <outlet property="playButton" destination="B9N-bq-Hkm" id="H2n-um-8fE"/>
+                        <outlet property="playButtonConstraint" destination="kbC-XX-Qzp" id="hFA-pK-uO5"/>
+                        <outlet property="rightBottomButton" destination="zfd-Od-Jv6" id="cbv-75-Dks"/>
+                        <outlet property="rightTopButton" destination="S3M-bq-PpH" id="EUn-sQ-gnd"/>
+                        <outlet property="topLeftButtonConstraint" destination="zQP-o6-8Fg" id="lHl-c0-rxV"/>
+                        <outlet property="topRightButtonConstraint" destination="DJS-aJ-G66" id="pFj-hd-bfb"/>
+                        <outlet property="viewUI" destination="vz4-Kb-Q0T" id="0IK-E0-FXg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="61.600000000000001" y="26.53673163418291"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="achievementsButtonNormal" width="256" height="256"/>
+        <image name="gameLogo" width="512" height="256"/>
+        <image name="pigeonButtonNormal" width="256" height="256"/>
+        <image name="playButtonNormal" width="512" height="256"/>
+        <image name="settingsButtonNormal" width="256" height="256"/>
+    </resources>
 </document>
