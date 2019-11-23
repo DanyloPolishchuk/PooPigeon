@@ -20,6 +20,13 @@ class Settings: Codable {
     
     //MARK: - Properties
     //
+    
+    //TODO: separate important properties that must be encrypted from usual ones (like music, sound effects, leftHandUI ... ) for keychainUsage     OR
+    //TODO: rewrite using SecureDefaults https://github.com/vpeschenkov/SecureDefaults
+    
+    // - sensitive
+    // - insensitive
+    
     private var levels: [Level]
     private var birds: [Bird]
     private var language: Language

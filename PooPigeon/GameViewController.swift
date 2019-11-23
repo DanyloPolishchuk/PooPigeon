@@ -56,6 +56,8 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        //TODO: replace with some kind of "loadInitialLevel" / "loadCurrentLevel" method
         if let view = self.view as! SKView? {
             if let scene = SKScene(fileNamed: "GameScene") {
                 currentGameScene = scene as? BaseSKScene
@@ -72,7 +74,7 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
             view.showsFields = true
         }
-        
+        //
         
     }
     
@@ -144,6 +146,18 @@ class GameViewController: UIViewController {
         }) { (animationsFinishedBeforeCompletion) in
             completion()
         }
+    }
+    
+    //MARK: - Show another screens methods
+    //
+    func showSettings(){
+        // should have a scene reference to be able to turn off music (or music should be played globally ? IDN) & stuff
+    }
+    func showPigeons(){
+        
+    }
+    func showAchievements(){
+        
     }
 
     //MARK: - Actions

@@ -38,6 +38,8 @@ class GameScene: BaseSKScene {
         self.human = fg.childNode(withName: "humanNode") as? SKSpriteNode
         self.scoreLabel = fg.childNode(withName: "scoreLabelNode") as? SKLabelNode
         
+        let bodyTexture = SKTexture(imageNamed: "level1ManWalkingBodyTexture")
+        human.physicsBody = SKPhysicsBody(texture: bodyTexture, size: bodyTexture.size())
         human.physicsBody?.categoryBitMask = PhysicsCategory.Human.rawValue
         human.physicsBody?.collisionBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Bullet.rawValue
         human.physicsBody?.contactTestBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Bullet.rawValue
@@ -57,9 +59,9 @@ class GameScene: BaseSKScene {
         
         //TODO: increase playable area width by 2x of target width (human node(s) )
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: -self.frame.width / 2,
-                                                              y: -self.frame.height / 2,
+                                                              y: -self.frame.height / 2 + 256,
                                                               width: self.frame.width,
-                                                              height: self.frame.height))
+                                                              height: self.frame.height - 256))
         physicsBody?.categoryBitMask = PhysicsCategory.Edge.rawValue
         
         
@@ -131,39 +133,15 @@ extension GameScene: SKPhysicsContactDelegate {
         }
         
         if collisionBitMask == PhysicsCategory.Bullet.rawValue | PhysicsCategory.Human.rawValue{
-            increaseScore()
+            pooNode?.physicsBody?.categoryBitMask = PhysicsCategory.None.rawValue
             pooNode?.removeFromParent()
+            increaseScore()
             self.birdIsShooting = false
         }else if collisionBitMask == PhysicsCategory.Bullet.rawValue | PhysicsCategory.Edge.rawValue{
-            resetScore()
             pooNode?.removeFromParent()
+            resetScore()
             self.birdIsShooting = false
         }
     }
-    
-    
-//    func didBegin(_ contact: SKPhysicsContact) {
-//
-//        if contact.bodyA.categoryBitMask == PhysicsCategory.Label || contact.bodyB.categoryBitMask == PhysicsCategory.Label{
-//            let labelNode = (contact.bodyA.contactTestBitMask == PhysicsCategory.Label) ? contact.bodyA.node : contact.bodyB.node
-//            (labelNode as? MessageNode)?.didBounce()
-//        }
-//
-//        if !playable{
-//            return
-//        }
-//        let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-//        if collision == PhysicsCategory.Cat | PhysicsCategory.Bed {
-//            print("SUCCESS")
-//            win()
-//        }else if collision == PhysicsCategory.Cat | PhysicsCategory.Edge{
-//            print("FAIL")
-//            lose()
-//        }
-//        if collision == PhysicsCategory.Cat | PhysicsCategory.Hook && hookNode?.isHooked == false {
-//            hookNode?.hookNode(catNode)
-//        }
-//    }
-    
     
 }
