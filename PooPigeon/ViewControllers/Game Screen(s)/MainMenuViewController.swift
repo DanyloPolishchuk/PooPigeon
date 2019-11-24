@@ -1,8 +1,8 @@
 //
-//  GameViewController.swift
+//  MainMenuViewController.swift
 //  PooPigeon
 //
-//  Created by Danylo Polishchuk on 11/12/19.
+//  Created by Danylo Polishchuk on 11/23/19.
 //  Copyright © 2019 Polishchuk company. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
+class MainMenuViewController: UIViewController {
     
     //MARK: - Properties
     //
@@ -49,7 +49,7 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
+    
     
     //MARK: - lifecylce methods
     //
@@ -83,7 +83,7 @@ class GameViewController: UIViewController {
         
         setupDefaultConstraints()
         setupButtons()
-
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -105,7 +105,7 @@ class GameViewController: UIViewController {
         rightTopButton.setImage(UIImage(named: "settingsButtonPressed"), for: .highlighted)
         leftTopButton.setImage(UIImage(named: "settingsButtonPressed"), for: .highlighted)
         playButton.setImage(UIImage(named: "playButtonPressed"), for: .highlighted)
-
+        
         
         self.isLeftHandedUI = Settings.shared.isLeftHandedUI
         (isLeftHandedUI ? rightTopButton : leftTopButton)?.isHidden = true
@@ -119,7 +119,7 @@ class GameViewController: UIViewController {
     //MARK: - Animation methods
     //
     func hideUI(completion: @escaping () -> () ){
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             self.topLeftButtonConstraint.constant = -self.leftTopButton.frame.width - 8
             self.topRightButtonConstraint.constant = -self.rightTopButton.frame.width - 8
             self.bottomLeftButtonConstraint.constant = -self.leftBottomButton.frame.width - 8
@@ -134,7 +134,7 @@ class GameViewController: UIViewController {
     }
     
     func unhideUI(completion: @escaping () -> () ){
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             self.topLeftButtonConstraint.constant = 8
             self.topRightButtonConstraint.constant = 8
             self.bottomLeftButtonConstraint.constant = 8
@@ -151,15 +151,18 @@ class GameViewController: UIViewController {
     //MARK: - Show another screens methods
     //
     func showSettings(){
-        // should have a scene reference to be able to turn off music (or music should be played globally ? IDN) & stuff
-    }
-    func showPigeons(){
         
+    }
+    func showBirds(){
+        if let birdsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "birdsScreenIdentifier") as? BirdsViewController {
+            birdsVC.gameVC = self
+            self.present(birdsVC, animated: true)
+        }
     }
     func showAchievements(){
         
     }
-
+    
     //MARK: - Actions
     //
     @IBAction func playAction(_ sender: Any) {
@@ -171,26 +174,26 @@ class GameViewController: UIViewController {
     @IBAction func rightBottomAction(_ sender: UIButton) {
         hideUI {
             if self.isLeftHandedUI{
-                //TODO: show achievements screen show
+                self.showAchievements()
             }else{
-                //TODO: show pigeons screen show
+                self.showBirds()
             }
         }
     }
     @IBAction func leftBottomAction(_ sender: UIButton) {
         hideUI {
             if self.isLeftHandedUI{
-                //TODO: show pigeons screen show
+                self.showBirds()
             }else{
-                //TODO: show achievements screen show
+                self.showAchievements()
             }
         }
     }
     @IBAction func settingsAction(_ sender: UIButton) {
         hideUI {
-            //TODO: show settings screen
+            self.showSettings()
         }
     }
     
-
+    
 }
