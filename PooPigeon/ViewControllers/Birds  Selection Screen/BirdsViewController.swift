@@ -13,7 +13,7 @@ class BirdsViewController: UIViewController {
     
     //MARK: - Properties
     //
-    weak var gameVC: MainMenuViewController!
+    weak var mainMenuViewController: MainMenuViewController!
     // add reference to the mainVC / directly to the scene ?
     
     //MARK: - Outlets
@@ -21,7 +21,6 @@ class BirdsViewController: UIViewController {
     @IBOutlet weak var leftBackButton: UIButton!
     @IBOutlet weak var rightBackButton: UIButton!
     @IBOutlet weak var birdInfoContainerView: UIView!
-    @IBOutlet weak var leftGetAllButton: UIButton!
     @IBOutlet weak var rightGetAllButton: UIButton!
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var previousButton: UIButton!
@@ -30,8 +29,6 @@ class BirdsViewController: UIViewController {
     // constraints
     @IBOutlet weak var leftBackButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightBackButtonConstaint: NSLayoutConstraint!
-    @IBOutlet weak var leftGetAllButtonConstraint: NSLayoutConstraint!
-    @IBOutlet weak var rightGetAllButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var previousButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var nextButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var checkButtonConstraint: NSLayoutConstraint!
@@ -56,8 +53,6 @@ class BirdsViewController: UIViewController {
         birdInfoContainerView.alpha = 0
         leftBackButtonConstraint.constant = -leftBackButton.frame.width - 8
         rightBackButtonConstaint.constant = -rightBackButton.frame.width - 8
-        leftGetAllButtonConstraint.constant = -leftGetAllButton.frame.width - 8
-        rightGetAllButtonConstraint.constant = -rightGetAllButton.frame.width - 8
         previousButtonConstraint.constant = -previousButton.frame.width - 8
         nextButtonConstraint.constant = -nextButton.frame.width - 8
         checkButtonConstraint.constant = -checkButton.frame.width - 66
@@ -66,9 +61,7 @@ class BirdsViewController: UIViewController {
         let isLeftHandedUI = Settings.shared.isLeftHandedUI
         
         (isLeftHandedUI ? rightBackButton : leftBackButton)?.isHidden = true
-        (isLeftHandedUI ? rightGetAllButton : leftGetAllButton)?.isHidden = true
 
-        leftGetAllButton.setImage(UIImage(named: "getAllButtonPressed"), for: .highlighted)
         rightGetAllButton.setImage(UIImage(named: "getAllButtonPressed"), for: .highlighted)
         leftBackButton.setImage(UIImage(named: "backButtonPressed"), for: .highlighted)
         rightBackButton.setImage(UIImage(named: "backButtonPressed"), for: .highlighted)
@@ -84,8 +77,6 @@ class BirdsViewController: UIViewController {
             self.birdInfoContainerView.alpha = 0
             self.leftBackButtonConstraint.constant = -self.leftBackButton.frame.width - 8
             self.rightBackButtonConstaint.constant = -self.rightBackButton.frame.width - 8
-            self.leftGetAllButtonConstraint.constant = -self.leftGetAllButton.frame.width - 8
-            self.rightGetAllButtonConstraint.constant = -self.rightGetAllButton.frame.width - 8
             self.previousButtonConstraint.constant = -self.previousButton.frame.width - 8
             self.nextButtonConstraint.constant = -self.nextButton.frame.width - 8
             self.checkButtonConstraint.constant = -self.checkButton.frame.width - 66
@@ -101,8 +92,6 @@ class BirdsViewController: UIViewController {
             self.birdInfoContainerView.alpha = 1.0
             self.leftBackButtonConstraint.constant = 8
             self.rightBackButtonConstaint.constant = 8
-            self.leftGetAllButtonConstraint.constant = 8
-            self.rightGetAllButtonConstraint.constant = 8
             self.previousButtonConstraint.constant = 8
             self.nextButtonConstraint.constant = 8
             self.checkButtonConstraint.constant = 16
@@ -119,7 +108,7 @@ class BirdsViewController: UIViewController {
         hideUI {
 //            self.dismiss(animated: true, completion: nil)
             self.dismiss(animated: true, completion: {
-                self.gameVC.viewDidAppear(true)
+                self.mainMenuViewController.viewDidAppear(true)
             })
         }
     }

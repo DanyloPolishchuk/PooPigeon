@@ -33,6 +33,7 @@
 		9E38218F2386E79F00244205 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		9E3821942387134300244205 /* BaseSKScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSKScene.swift; sourceTree = "<group>"; };
 		9E382197238714EA00244205 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		9E43707D238C43D000B7D42D /* VCR_OSD_MONO_1.001.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VCR_OSD_MONO_1.001.ttf; sourceTree = "<group>"; };
 		9E938B952383495600B87876 /* Level1WalkingMan.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1WalkingMan.sks; sourceTree = "<group>"; };
 		9E9860BA237DE6AA00589DB7 /* PigeonDefault.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PigeonDefault.sks; sourceTree = "<group>"; };
 		9E9862AE23898E3700809E2B /* BirdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdsViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +102,22 @@
 				9E382197238714EA00244205 /* Protocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9E43707B238C436900B7D42D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9E43707C238C439100B7D42D /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9E43707C238C439100B7D42D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9E43707D238C43D000B7D42D /* VCR_OSD_MONO_1.001.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		9E938B92238346C800B87876 /* Scene Files */ = {
@@ -180,6 +197,7 @@
 				9EDDE3E1237B38EB00A06863 /* Enumerations */,
 				9E938B92238346C800B87876 /* Scene Files */,
 				9E9862AD23898DFE00809E2B /* ViewControllers */,
+				9E43707B238C436900B7D42D /* Resources */,
 				9EDDE3CD237A1C2C00A06863 /* Actions.sks */,
 				9EDDE3CF237A1C2C00A06863 /* GameScene.swift */,
 				9EDDE3D3237A1C2C00A06863 /* Main.storyboard */,

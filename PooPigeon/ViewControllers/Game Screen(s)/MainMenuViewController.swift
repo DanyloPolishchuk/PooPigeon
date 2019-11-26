@@ -155,12 +155,19 @@ class MainMenuViewController: UIViewController {
     }
     func showBirds(){
         if let birdsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "birdsScreenIdentifier") as? BirdsViewController {
-            birdsVC.gameVC = self
+            birdsVC.mainMenuViewController = self
             self.present(birdsVC, animated: true)
         }
     }
     func showAchievements(){
         
+    }
+    func showGameScreen(){
+        // gameScreenIdentifier
+        if let gameVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier") as? GameViewController {
+            gameVC.mainMenuViewController = self
+            self.present(gameVC, animated: true)
+        }
     }
     
     //MARK: - Actions
@@ -169,6 +176,7 @@ class MainMenuViewController: UIViewController {
         hideUI {
             //TODO: enable touch events on scene & start enemy spawning e.t.c, some kind of startLevel() method. Scene should not be paused in the BG.
             self.currentGameScene.levelIsInGameState = true
+            self.showGameScreen()
         }
     }
     @IBAction func rightBottomAction(_ sender: UIButton) {

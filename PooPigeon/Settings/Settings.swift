@@ -36,6 +36,7 @@ class Settings: Codable {
     var isApplicationLiked: Bool
     private var isApplicaitonShared: Bool
     //TODO: add restore purchase variables
+    //TODO: add progress variables ( best, total, e.t.c. )
     
     private init(){
         
