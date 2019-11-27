@@ -29,14 +29,25 @@ class Settings: Codable {
     
     private var levels: [Level]
     private var birds: [Bird]
+    
     private var language: Language
     var isLeftHandedUI: Bool
     var isSoundEffectsEnabled: Bool
     var isMusicEnabled: Bool
+    
     var isApplicationLiked: Bool
-    private var isApplicaitonShared: Bool
+    var isApplicaitonShared: Bool
+    var isApplicationReviewed: Bool
+    
+    //TODO: add new progress variables ( best, total, e.t.c. )
+    var bestScore: UInt
+    var totalScore: UInt
+    var timeInSecsSpentInGame: UInt
+    var timesGameWasLaunched: UInt
+    var amountOfDaysGameWasLaunched: UInt
+    var amountOfLoses: UInt
+    
     //TODO: add restore purchase variables
-    //TODO: add progress variables ( best, total, e.t.c. )
     
     private init(){
         
@@ -55,8 +66,17 @@ class Settings: Codable {
             self.isLeftHandedUI = settings.isLeftHandedUI
             self.isSoundEffectsEnabled = settings.isSoundEffectsEnabled
             self.isMusicEnabled = settings.isMusicEnabled
+            
             self.isApplicationLiked = settings.isApplicationLiked
             self.isApplicaitonShared = settings.isApplicaitonShared
+            self.isApplicationReviewed = settings.isApplicationReviewed
+            
+            self.bestScore = settings.bestScore
+            self.totalScore = settings.totalScore
+            self.timeInSecsSpentInGame = settings.timeInSecsSpentInGame
+            self.timesGameWasLaunched = settings.timesGameWasLaunched
+            self.amountOfDaysGameWasLaunched = settings.amountOfDaysGameWasLaunched
+            self.amountOfLoses = settings.amountOfLoses
             
         }else{
             
@@ -80,8 +100,17 @@ class Settings: Codable {
             isLeftHandedUI = false
             isSoundEffectsEnabled = true
             isMusicEnabled = true
+            
             isApplicationLiked = false
             isApplicaitonShared = false
+            isApplicationReviewed = false
+            
+            bestScore = 0
+            totalScore = 0
+            timeInSecsSpentInGame = 0
+            timesGameWasLaunched = 0
+            amountOfDaysGameWasLaunched = 0
+            amountOfLoses = 0
             
             save()
         }

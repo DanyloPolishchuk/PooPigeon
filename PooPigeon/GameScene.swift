@@ -12,13 +12,11 @@ import GameplayKit
 class GameScene: BaseSKScene {
     
     // default game project stuff
-    private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     //
     
     private var fg: SKNode!
     
-    private var scoreLabel: SKLabelNode!
     private var currentScore = 0
     private var pooSpawnPosition: CGPoint!
     private var birdNode: SKSpriteNode!
@@ -36,7 +34,6 @@ class GameScene: BaseSKScene {
         self.birdNode = fg.childNode(withName: "bird") as? SKSpriteNode
         self.pooSpawnPosition = birdNode.position
         self.human = fg.childNode(withName: "humanNode") as? SKSpriteNode
-        self.scoreLabel = fg.childNode(withName: "scoreLabelNode") as? SKLabelNode
         
         let bodyTexture = SKTexture(imageNamed: "level1ManWalkingBodyTexture")
         human.physicsBody = SKPhysicsBody(texture: bodyTexture, size: bodyTexture.size())
@@ -72,15 +69,19 @@ class GameScene: BaseSKScene {
     func resetScore(){
         print("resetScore called")
         self.currentScore = 0
-        setScoreLabelTextTo(text: String(self.currentScore))
     }
     func increaseScore(){
         print("increaseScore called")
         self.currentScore += 1
-        setScoreLabelTextTo(text: String(self.currentScore))
-    }
-    func setScoreLabelTextTo(text: String){
-        self.scoreLabel.text = text
+        
+        Settings.shared.totalScore += 1
+        if currentScore > Settings.shared.bestScore{
+            Settings.shared.bestScore = UInt(currentScore)
+        }
+        Settings.shared.save()
+        
+        (viewController as? GameViewController)?.setupScoreLabelWithValue(UInt(currentScore))
+
     }
     
     //MARK: - Shoot methods
@@ -106,6 +107,9 @@ class GameScene: BaseSKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
+        
+        print("touchesBegan called from game")
+        
         if !levelIsInGameState{
             return
         }
@@ -141,6 +145,7 @@ extension GameScene: SKPhysicsContactDelegate {
             pooNode?.removeFromParent()
             resetScore()
             self.birdIsShooting = false
+            (viewController as? GameViewController)?.showGameOverView()
         }
     }
     

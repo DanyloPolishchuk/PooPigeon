@@ -16,7 +16,7 @@ class MainMenuViewController: UIViewController {
     //
     private var currentLevelNumber: Int!
     private var currentLevel: Level!
-    private var currentGameScene: BaseSKScene!
+    var currentGameScene: BaseSKScene!
     private var isLeftHandedUI: Bool!
     
     //MARK: - Outlets
@@ -88,6 +88,7 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        currentGameScene.viewController = self
         unhideUI {}
     }
     
@@ -166,6 +167,7 @@ class MainMenuViewController: UIViewController {
         // gameScreenIdentifier
         if let gameVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier") as? GameViewController {
             gameVC.mainMenuViewController = self
+            self.currentGameScene.viewController = gameVC
             self.present(gameVC, animated: true)
         }
     }

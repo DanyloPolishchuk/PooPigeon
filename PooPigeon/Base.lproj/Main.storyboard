@@ -334,7 +334,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCx-4y-NoU">
-                                                <rect key="frame" x="176" y="8" width="23.5" height="35.5"/>
+                                                <rect key="frame" x="176" y="8" width="23" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -348,7 +348,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKY-d6-zZH">
                                                         <rect key="frame" x="37.5" y="45" width="225" height="210"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtX-f6-1ln">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtX-f6-1ln">
                                                                 <rect key="frame" x="60" y="105" width="105" height="52.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="XtX-f6-1ln" secondAttribute="height" multiplier="2:1" id="I8n-pw-mfQ"/>
@@ -463,7 +463,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Qxg-Mq-DSE" secondAttribute="height" multiplier="1:1" id="au0-fD-LgY"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
+                                                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
                                                                 <state key="normal" title="Home">
                                                                     <color key="titleColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
@@ -591,11 +591,13 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="UBP-0M-cJa" id="TYj-4I-mZV"/>
-                        <outlet property="finalScoreLabel" destination="Qb3-N6-D17" id="ybC-hl-s6l"/>
+                        <outlet property="bestScoreLabel" destination="Qb3-N6-D17" id="ybC-hl-s6l"/>
                         <outlet property="gameOverView" destination="Wwt-SU-Z2F" id="fQS-fU-FPt"/>
                         <outlet property="leftPauseButton" destination="dNA-O1-VKU" id="44J-fQ-64a"/>
                         <outlet property="leftPauseButtonConstraint" destination="bqe-af-4Ex" id="ZrS-2S-NY1"/>
                         <outlet property="pauseView" destination="elL-36-NgC" id="TYP-Ze-0PM"/>
+                        <outlet property="playButtonGameOver" destination="XtX-f6-1ln" id="9H0-Ee-Nl5"/>
+                        <outlet property="playButtonPause" destination="KKi-Gc-gjg" id="JNi-MY-LSy"/>
                         <outlet property="rightPauseButton" destination="jzA-0d-wYd" id="sWB-XK-ovd"/>
                         <outlet property="rightPauseButtonConstraint" destination="lxU-1A-7LT" id="hJu-iW-ynO"/>
                         <outlet property="scoreLabel" destination="JCx-4y-NoU" id="dgx-Jl-ssG"/>

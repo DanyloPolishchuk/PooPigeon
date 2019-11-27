@@ -24,10 +24,12 @@ class GameViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var pauseView: UIView!
     @IBOutlet weak var gameOverView: UIView!
-    @IBOutlet weak var backgroundView: UIView! // alpha 0.33 - 0.0
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var viewUI: UIView!
-    @IBOutlet weak var finalScoreLabel: UILabel!
+    @IBOutlet weak var bestScoreLabel: UILabel!
     @IBOutlet weak var totalScoreLabel: UILabel!
+    @IBOutlet weak var playButtonGameOver: UIButton!
+    @IBOutlet weak var playButtonPause: UIButton!
     //constraints
     @IBOutlet weak var leftPauseButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightPauseButtonConstraint: NSLayoutConstraint!
@@ -40,6 +42,17 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         setupDefaultConstraints()
+        setupPauseView()
+        (Settings.shared.isLeftHandedUI ? rightPauseButton : leftPauseButton)?.isHidden = true
+        
+        self.pauseView.alpha = 0.0
+        self.gameOverView.alpha = 0.0
+        self.backgroundView.alpha = 0.0
+        
+        setupPlayButtons()
+        setupGameOverView()
+        setupPauseButton()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,28 +63,38 @@ class GameViewController: UIViewController {
     
     //MARK: - setup methods
     //
+    func setupScoreLabelWithValue(_ value: UInt){
+        scoreLabel.text = String(value)
+    }
     func setupDefaultConstraints(){
         self.leftPauseButtonConstraint.constant = -self.leftPauseButton.frame.width - 8
         self.rightPauseButtonConstraint.constant = -self.rightPauseButton.frame.width - 8
         self.scoreLabelConstraint.constant = -100
     }
+    func setupPlayButtons(){
+        playButtonGameOver.setImage(UIImage(named: "playButtonPressed"), for: .highlighted)
+        playButtonPause.setImage(UIImage(named: "playButtonPressed"), for: .highlighted)
+    }
     func setupPauseButton(){
+        isTopButtonAPauseButton = true
         leftPauseButton.setImage(UIImage(named: "pauseButtonNormal"), for: .normal)
         leftPauseButton.setImage(UIImage(named: "pauseButtonPressed"), for: .highlighted)
         rightPauseButton.setImage(UIImage(named: "pauseButtonNormal"), for: .normal)
         rightPauseButton.setImage(UIImage(named: "pauseButtonPressed"), for: .highlighted)
     }
     func setupBackButton(){
+        isTopButtonAPauseButton = false
         leftPauseButton.setImage(UIImage(named: "backButtonNormal"), for: .normal)
         leftPauseButton.setImage(UIImage(named: "backButtonPressed"), for: .highlighted)
         rightPauseButton.setImage(UIImage(named: "backButtonNormal"), for: .normal)
         rightPauseButton.setImage(UIImage(named: "backButtonPressed"), for: .highlighted)
     }
     func setupPauseView(){
-        // music & sound button states
+        //TODO: add music & sound button states init from Settings
     }
     func setupGameOverView(){
-        // score & total
+        bestScoreLabel.text = String(Settings.shared.bestScore)
+        totalScoreLabel.text = String(Settings.shared.totalScore)
     }
     
     //MARK: - Animation methods
@@ -98,49 +121,120 @@ class GameViewController: UIViewController {
             completion()
         }
     }
-    func showPauseView(){
-        UIView.animate(withDuration: 0.25) {
-            self.pauseView.alpha = 1.0
+    func hideAllUI(completion: @escaping () -> () ){
+        UIView.animate(withDuration: 0.25, animations: {
+            self.leftPauseButtonConstraint.constant = -self.leftPauseButton.frame.width - 8
+            self.rightPauseButtonConstraint.constant = -self.rightPauseButton.frame.width - 8
+            self.scoreLabelConstraint.constant = -100
+            
+            self.pauseView.alpha = 0.0
+            self.gameOverView.alpha = 0.0
+            self.backgroundView.alpha = 0.0
+            
             self.viewUI.layoutIfNeeded()
+        }) { (animationsFinishedBeforeCompletion) in
+            completion()
+        }
+    }
+    func hideTopButton(completion: @escaping () -> () ){
+        UIView.animate(withDuration: 0.125, animations: {
+            self.leftPauseButtonConstraint.constant = -self.leftPauseButton.frame.width - 8
+            self.rightPauseButtonConstraint.constant = -self.rightPauseButton.frame.width - 8
+            
+            self.viewUI.layoutIfNeeded()
+        }) { (animationsFinishedBeforeCompletion) in
+            completion()
+        }
+    }
+    func unhideTopButton(completion: @escaping () -> () ){
+        UIView.animate(withDuration: 0.125, animations: {
+            self.leftPauseButtonConstraint.constant = 8
+            self.rightPauseButtonConstraint.constant = 8
+            
+            self.viewUI.layoutIfNeeded()
+        }) { (animationsFinishedBeforeCompletion) in
+            completion()
+        }
+    }
+    
+    func showPauseView(){
+        setupPauseView()
+        UIView.animate(withDuration: 0.25, animations: {
+            self.pauseView.alpha = 1.0
+            self.backgroundView.alpha = 0.33
+            self.viewUI.layoutIfNeeded()
+        }) { (animationsFinishedBeforeCompletion) in
+            self.leftPauseButton.isEnabled = false
+            self.rightPauseButton.isEnabled = false
         }
     }
     func hidePauseView(){
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.25, animations: {
             self.pauseView.alpha = 0.0
+            self.backgroundView.alpha = 0.0
             self.viewUI.layoutIfNeeded()
+        }) { (animationsFinishedBeforeCompletion) in
+            self.leftPauseButton.isEnabled = true
+            self.rightPauseButton.isEnabled = true
         }
     }
     func showGameOverView(){
-        //TODO: rewrite so it setups topButton, run animation & presents gameOverView
-        UIView.animate(withDuration: 0.25) {
-            self.gameOverView.alpha = 1.0
-            self.viewUI.layoutIfNeeded()
+        self.setupGameOverView()
+        hideTopButton {
+            self.setupBackButton()
+            UIView.animate(withDuration: 0.25) {
+                self.gameOverView.alpha = 1.0
+                self.backgroundView.alpha = 0.33
+                self.viewUI.layoutIfNeeded()
+            }
+            self.unhideTopButton {}
         }
     }
     func hideGameOverView(){
-        //TODO: rewrite so it is as the method above but reversed
-        UIView.animate(withDuration: 0.25) {
-            self.gameOverView.alpha = 0.0
-            self.viewUI.layoutIfNeeded()
+        hideTopButton {
+            self.setupPauseButton()
+            UIView.animate(withDuration: 0.25) {
+                self.gameOverView.alpha = 0.0
+                self.backgroundView.alpha = 0.0
+                self.viewUI.layoutIfNeeded()
+            }
+            self.unhideTopButton {}
         }
     }
     
     //MARK: - Actions
     //
     @IBAction func pauseOrBackAction(_ sender: UIButton) {
-        
         if isTopButtonAPauseButton{
+            showPauseView()
             // pause  scene
-            // show pause view
         }else{
-            // dismiss VC func
+            mainMenuViewController.currentGameScene.levelIsInGameState = false
+            hideAllUI {
+                self.dismiss(animated: true, completion: {
+                    self.mainMenuViewController.viewDidAppear(true)
+                })
+            }
         }
     }
     @IBAction func playAction(_ sender: UIButton) {
-        // unpause whole scene
+        if sender.tag == 0 { // pause view
+            hidePauseView()
+            //TODO: unpause whole scene call
+        }else if sender.tag == 1 { // gameOver
+            setupScoreLabelWithValue(0)
+            hideGameOverView()
+            //TODO: restart level call
+
+        }
     }
     @IBAction func homeAction(_ sender: Any) {
-        // dismiss VC func
+        mainMenuViewController.currentGameScene.levelIsInGameState = false
+        hideAllUI {
+            self.dismiss(animated: true, completion: {
+                self.mainMenuViewController.viewDidAppear(true)
+            })
+        }
     }
     @IBAction func soundAction(_ sender: Any) {
         // sound call to the scene
@@ -149,5 +243,9 @@ class GameViewController: UIViewController {
         // music call to the scenes
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        mainMenuViewController.currentGameScene.touchesBegan(touches, with: event)
+    }
     
 }
