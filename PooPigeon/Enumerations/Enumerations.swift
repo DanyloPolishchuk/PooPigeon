@@ -24,17 +24,17 @@ enum Language: String, Codable {
 }
 
 enum ChallengeType: String, Codable {
-    case None
-    case BestScore // int 
-    case TotalScore // int
-    case TotalTimeSpentInGame // int
-    case TotalTimesGameWasLaunched // int
-    case TotalDaysGameWasLaunched // int
-    case UniqueLaunchDay // Date
-    case TotalLoseTimes // int
-    case LikeUs // (App Store) // bool
-    case ShareUs // bool
-    case ReviewUs // (App Store) // bool
+    case None = "No Challenge"
+    case BestScore = "Best Score" // int
+    case TotalScore = "Total Score"// int
+    case TotalTimeSpentInGame = "Time Spent In Game" // int
+    case TotalTimesGameWasLaunched = "Launch Game"// int
+    case TotalDaysGameWasLaunched = "Launch Days" // int
+    case UniqueLaunchDay = "Launch At Day" // Date
+    case TotalLoseTimes = "Lose Score"// int
+    case LikeUs = "Like Us"// (App Store) // bool
+    case ShareUs = "Share Us" // bool
+    case ReviewUs = "Review Us"// (App Store) // bool
     // maybe add more like advanced collision checks AKA headshots, bodyshots...
 }
 

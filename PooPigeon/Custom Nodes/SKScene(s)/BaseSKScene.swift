@@ -12,7 +12,15 @@ class BaseSKScene: SKScene {
     
     //MARK: - Properties
     //
-    var bird: Bird!
+    var currentBird: Bird! {
+        didSet{
+            presentCurrentBird()
+        }
+    }
+    var currentLevel: Level!
+    var isNextBirdAvaliable: Bool!
+    var isPreviousBirdAvaliable: Bool!
+    
     var levelIsInGameState = false
     
     /// viewController that holds this scene view
@@ -47,7 +55,6 @@ class BaseSKScene: SKScene {
         
     }
     
-    
     //TODO: make kinda same method (or just add two additional calculated properties here) that'd count edges for top & bottom edges (for scenes where hero'll move by Y).
     func setupEdgeProperties() {
         
@@ -73,67 +80,17 @@ class BaseSKScene: SKScene {
         print("MinMaxCoordinates:\nmin = \(minHeroXCoordinate)\nmax = \(maxHeroXCoordinate)")
     }
     
-//    func showTouchLocation( touchLocation: CGPoint) {
-//        print("show called, touch position in scene: \(touchLocation)")
-//        let circle = SKShapeNode(circleOfRadius: 75.0)
-//        circle.position = touchLocation
-//        circle.lineWidth = 7.0
-//        circle.strokeColor = UIColor.white
-//        circle.zPosition = 40
-//
-//        self.run(
-//            SKAction.sequence([
-//                SKAction.run {
-//                    self.addChild(circle)
-//                },
-//                SKAction.wait(forDuration: 0.8),
-//                SKAction.run {
-//                    circle.removeFromParent()
-//                }
-//                ])
-//        )
-//    }
-    
-    //MARK: - random generation methods
+    //MARK: - next / prev level bird methods
     //
-//    func runCloudGeneration(cloudSpawnFrequency: CloudSpawnFrequency){
-//
-//        let cloudGeneratorAction = SKAction.repeatForever(
-//            SKAction.sequence([
-//
-//                SKAction.run {
-//                    let cloudIndex = random(min: 0, max: 5)
-//                    let cloud = SKSpriteNode(imageNamed: self.clouds[cloudIndex])
-//
-//                    let movementActionSequence = SKAction.sequence([
-//                        SKAction.moveBy(x: self.sceneWidth + cloud.frame.width, y: 0, duration: 7),
-//                        SKAction.run {
-//                            cloud.removeFromParent()
-//                        }
-//                        ])
-//
-//                    cloud.position = CGPoint(x: -(self.sceneWidth / 2 + cloud.frame.width) ,
-//                                             y: CGFloat(random(min: 0, max: 1280) - 640 ))
-//                    cloud.zPosition = 1
-//                    self.bg.addChild(cloud)
-//                    cloud.run(movementActionSequence)
-//                },
-//                SKAction.wait(forDuration: cloudSpawnFrequency.rawValue)
-//
-//                ])
-//        )
-//
-//        self.run(cloudGeneratorAction)
-//    }
-    
-    //MARK: - touch methods
-    //
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-////        guard let touchLocation = touches.first?.location(in: self) else {print("could not get touch location");return}
-////        if shouldShowTouchLocation{
-////            showTouchLocation(touchLocation: touchLocation)
-////        }
-//    }
+    func presentCurrentBird(){
+        for bird in currentLevel.birds{
+            if bird.birdName != currentBird.birdName {
+                self.childNode(withName: "//\(bird.birdSceneFileName)")?.run(SKAction.hide())
+            }else{
+                self.childNode(withName: "//\(bird.birdSceneFileName)")?.run(SKAction.unhide())
+            }
+        }
+    }
     
 }
 

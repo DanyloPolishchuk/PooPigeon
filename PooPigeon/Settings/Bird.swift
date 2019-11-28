@@ -14,12 +14,13 @@ struct Bird: Codable {
     let birdNumber: Int
     let birdLevelNumber: Int
     let birdName: String
-    var birdIsOpened: Bool
+    var birdIsUnlocked: Bool
     let birdSceneFileName: String
-    let birdChallengType: ChallengeType
+    let birdChallengeType: ChallengeType
     let birdChallengeScoreType: ChallengeScoreType
+    let neededChallengeNumberValue: UInt?
+    let neededChallengeBoolValue: Bool?
+    let neededChallengeDateValue: String?
+    //TODO: find out an implementation way to track current challenge progress of each bird & unlock bird once challenge passed, & set isNewUnlockedBird/Level flag to true
     
-    //TODO: manage "Any" type saving in UD or replace "birdChallengeNeedeScore" with "ChallengeScoreType".count amount of properties each unique type
-    
-//    let birdChallengeNeedeScore: Any
 }

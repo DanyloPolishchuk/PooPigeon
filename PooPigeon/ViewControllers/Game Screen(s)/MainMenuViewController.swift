@@ -56,12 +56,60 @@ class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupCurrentLevelAndBird()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        //TODO: replace with some kind of "loadInitialLevel" / "loadCurrentLevel" method
+        setupDefaultConstraints()
+        setupButtons()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        currentGameScene.viewController = self
+        setupCurrentLevelAndBird()
+        unhideUI {}
+    }
+    
+    //MARK: - Setup methods
+    //
+    func setupCurrentLevelAndBird(){
+        
+        let currentLevel = Settings.shared.currentLevel
+        let currentBird = Settings.shared.currentBird
+        
         if let view = self.view as! SKView? {
-            if let scene = SKScene(fileNamed: "GameScene") {
+            if let scene = SKScene(fileNamed: currentLevel.levelSceneFileName) {
                 currentGameScene = scene as? BaseSKScene
                 currentGameScene.viewController = self
+                currentGameScene.currentLevel = currentLevel
+                currentGameScene.currentBird = currentBird
+
+                scene.scaleMode = .aspectFill
+                view.presentScene(scene)
+            }
+
+            view.ignoresSiblingOrder = true
+
+            view.showsFPS = true
+            view.showsPhysics = true
+            view.showsNodeCount = true
+            view.showsFields = true
+        }
+    }
+    func setupLevelAndBird(_ level: Level, _ bird: Bird){
+        
+        let currentLevel = level
+        let currentBird = bird
+        
+        if let view = self.view as! SKView? {
+            if let scene = SKScene(fileNamed: currentLevel.levelSceneFileName) {
+                currentGameScene = scene as? BaseSKScene
+                currentGameScene.viewController = self
+                currentGameScene.currentLevel = currentLevel
+                currentGameScene.currentBird = currentBird
                 
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
@@ -74,26 +122,8 @@ class MainMenuViewController: UIViewController {
             view.showsNodeCount = true
             view.showsFields = true
         }
-        //
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        setupDefaultConstraints()
-        setupButtons()
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        currentGameScene.viewController = self
-        unhideUI {}
-    }
-    
-    //MARK: - Setup methods
-    //
     func setupDefaultConstraints(){
         self.topLeftButtonConstraint.constant = -self.leftTopButton.frame.width - 8
         self.topRightButtonConstraint.constant = -self.rightTopButton.frame.width - 8

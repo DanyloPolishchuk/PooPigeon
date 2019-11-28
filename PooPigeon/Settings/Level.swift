@@ -13,5 +13,6 @@ struct Level: Codable {
     
     let levelNumber: Int
     let levelSceneFileName: String
+    var birds: [Bird]
 
 }

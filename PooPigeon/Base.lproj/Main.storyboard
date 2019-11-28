@@ -877,7 +877,11 @@
                         <viewLayoutGuide key="safeArea" id="g8r-hD-vWh"/>
                     </view>
                     <connections>
+                        <outlet property="bestScoreLabel" destination="IMy-fS-0JS" id="1Cp-ng-nvs"/>
                         <outlet property="birdInfoContainerView" destination="NmU-3W-HLm" id="oZR-jQ-ygY"/>
+                        <outlet property="birdNameLabel" destination="r6m-BD-X9O" id="cmV-sE-mfT"/>
+                        <outlet property="challengeProgressLabel" destination="3qQ-Hl-dHx" id="QzX-C6-6WW"/>
+                        <outlet property="challengeTypeLabel" destination="KJM-MO-mQr" id="8qb-ma-Y8L"/>
                         <outlet property="checkButton" destination="2Aa-jl-dXI" id="Gzw-Ee-FG5"/>
                         <outlet property="checkButtonConstraint" destination="XPA-r1-coD" id="OGz-Aj-do7"/>
                         <outlet property="leftBackButton" destination="Egu-lM-9pd" id="dOk-Kf-BAu"/>
@@ -889,6 +893,8 @@
                         <outlet property="rightBackButton" destination="D73-MF-TcQ" id="l3c-7b-Icq"/>
                         <outlet property="rightBackButtonConstaint" destination="oXG-A3-oXl" id="197-xX-GAs"/>
                         <outlet property="rightGetAllButton" destination="M27-Px-8eX" id="axd-kk-3ca"/>
+                        <outlet property="totalScoreLabel" destination="bDu-3J-3VG" id="DUl-IV-Wt8"/>
+                        <outlet property="unlockStatusLabel" destination="a6R-V5-K7u" id="ST2-ju-cu0"/>
                         <outlet property="viewUI" destination="d0Q-lM-UGR" id="VWX-L3-37L"/>
                     </connections>
                 </viewController>

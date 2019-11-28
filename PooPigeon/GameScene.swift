@@ -31,7 +31,7 @@ class GameScene: BaseSKScene {
         self.bg = self.childNode(withName: "bg")
         self.fg = self.childNode(withName: "fg")
         
-        self.birdNode = fg.childNode(withName: "bird") as? SKSpriteNode
+        self.birdNode = fg.childNode(withName: "\(currentBird.birdSceneFileName)") as? SKSpriteNode
         self.pooSpawnPosition = birdNode.position
         self.human = fg.childNode(withName: "humanNode") as? SKSpriteNode
         
@@ -63,12 +63,28 @@ class GameScene: BaseSKScene {
         
         
     }
-    
+    //TODO: move sound, music & score methods to BaseSKScene
+    //MARK: - Sound & Music methods
+    //
+    func turnMusicOn(){
+        
+    }
+    func turnMusicOff(){
+        
+    }
+    func turnSFXOn(){
+        
+    }
+    func turnSFXOff(){
+        
+    }
     //MARK: - Score methods
     //
     func resetScore(){
         print("resetScore called")
         self.currentScore = 0
+        Settings.shared.amountOfLoses += 1
+        Settings.shared.save()
     }
     func increaseScore(){
         print("increaseScore called")
