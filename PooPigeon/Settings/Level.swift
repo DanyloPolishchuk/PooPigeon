@@ -13,6 +13,15 @@ struct Level: Codable {
     
     let levelNumber: Int
     let levelSceneFileName: String
-    var birds: [Bird]
-
+    let enemies: [Enemy]
+    
+    var levelIsUnlocked: Bool
+    let levelChallengeType: ChallengeType
+    let levelChallengeScoreType: ChallengeScoreType
+    var currentChallengeNumberValueProgress: UInt?
+    var currentChallengeBoolValueProgress: Bool?
+    var currentChallengeDateValueProgress: String?
+    let neededChallengeNumberValue: UInt?
+    let neededChallengeBoolValue: Bool?
+    let neededChallengeDateValue: String?
 }

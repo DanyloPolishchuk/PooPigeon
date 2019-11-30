@@ -31,6 +31,7 @@ class Settings: Codable {
     var currentBird: Bird
     
     private var levels: [Level]
+    private var birds: [Bird]
     
     private var language: Language
     var isLeftHandedUI: Bool
@@ -45,7 +46,7 @@ class Settings: Codable {
     var bestScore: UInt
     var totalScore: UInt
     var amountOfLoses: UInt
-    //TODO: add time counting timers to AppDelegate ?
+
     var timeInSecsSpentInGame: UInt
     var timesGameWasLaunched: UInt
     var amountOfDaysGameWasLaunched: UInt
@@ -66,6 +67,7 @@ class Settings: Codable {
             self.currentBird = settings.currentBird
             
             self.levels = settings.levels
+            self.birds = settings.birds
             self.language = settings.language
             
             self.isLeftHandedUI = settings.isLeftHandedUI
@@ -87,17 +89,56 @@ class Settings: Codable {
             
             print("\n\nSettings instance initialization from code\n\n")
             
+            //TODO: replace default level & bird values to separate .swift file / JSON
             levels = [
-                Level(levelNumber: 1, levelSceneFileName: "GameScene", birds:
-                    [
-                        Bird(birdNumber: 1, birdLevelNumber: 1, birdName: "Pigeon", birdIsUnlocked: true, birdSceneFileName: "bird", birdChallengeType: .None, birdChallengeScoreType: .None, neededChallengeNumberValue: nil, neededChallengeBoolValue: nil, neededChallengeDateValue: nil),
-                        Bird(birdNumber: 2, birdLevelNumber: 1, birdName: "Test Bird #2", birdIsUnlocked: false, birdSceneFileName: "testBird#2", birdChallengeType: .TotalScore, birdChallengeScoreType: .NumberValue, neededChallengeNumberValue: 100, neededChallengeBoolValue: nil, neededChallengeDateValue: nil)
-                    ]
+                
+                Level(levelNumber: 1,
+                      levelSceneFileName: "GameScene",
+                      enemies: [
+                        Enemy(texture: "level1ManWalkingFrame1",
+                              physicsBodyTexture: "level1ManWalkingBodyTexture",
+                              animationTextureNames: [
+                                "level1ManWalkingFrame1",
+                                "level1ManWalkingFrame2",
+                                "level1ManWalkingFrame3"
+                            ])
+                    ],
+                      levelIsUnlocked: true,
+                      levelChallengeType: .None,
+                      levelChallengeScoreType: .None,
+                      currentChallengeNumberValueProgress: nil,
+                      currentChallengeBoolValueProgress: nil,
+                      currentChallengeDateValueProgress: nil,
+                      neededChallengeNumberValue: nil,
+                      neededChallengeBoolValue: nil,
+                      neededChallengeDateValue: nil
                 )
             ]
             
+            birds = [
+                Bird(birdNumber: 1,
+                     birdName: "Pigeon",
+                     birdSpawnPosition: CGPoint(x: 0, y: 680),
+                     birdTexture: "pigeonDefault",
+                     birdAnimationTextureNames: [
+                        "pigeonDefault",
+                        "pigeonDefaultFrame2"
+                    ],
+                     birdShootTextureName: "pigeonDefaultShootFrame",
+                     birdSoundFileName: "ENTER_SOUND_FILE_NAME_HERE_ONCE_DONE",
+                     birdIsUnlocked: true,
+                     birdChallengeType: .None,
+                     birdChallengeScoreType: .None,
+                     currentChallengeNumberValueProgress: nil,
+                     currentChallengeBoolValueProgress: nil,
+                     currentChallengeDateValueProgress: nil,
+                     neededChallengeNumberValue: nil,
+                     neededChallengeBoolValue: nil,
+                     neededChallengeDateValue: nil)
+            ]
+            
             currentLevel = levels[0]
-            currentBird = levels[0].birds[0]
+            currentBird = birds[0]
             
             language = Language.English
             
@@ -128,84 +169,6 @@ class Settings: Codable {
     
     //MARK: - level & bird methods
     //
-    func getNext(forLevelAtIndex levelIndex: Int?, forBirdAtIndex birdIndex: Int?) -> IndexPath? {
-        
-        var nextLevelIndex: Int?
-        var nextBirdIndex: Int?
-        
-        var currentLevelIndex: Int
-        var currentBirdIndex: Int
-        
-        if let levelIndex = levelIndex, let birdIndex = birdIndex {
-            // check for currently presented in scene bird and level
-            currentLevelIndex = levelIndex
-            currentBirdIndex = birdIndex
-        }else{
-            // check for current from settings
-            currentLevelIndex = currentLevel.levelNumber - 1
-            currentBirdIndex = currentBird.birdNumber - 1
-        }
-        
-        let currentLevelBirdsCount = getLevelAtIndex(index: currentLevelIndex)?.birds.count
-        
-        if let currentLevelBirdsCount = currentLevelBirdsCount, currentBirdIndex < currentLevelBirdsCount - 1 {
-            nextBirdIndex = currentBirdIndex + 1
-            nextLevelIndex = currentLevelIndex
-            if let nextLevelIndex = nextLevelIndex, let nextBirdIndex = nextBirdIndex {
-                return IndexPath(row: nextLevelIndex, section: nextBirdIndex)
-            }
-        }else{
-            if currentLevelIndex < levels.count - 1 {
-                nextLevelIndex = currentLevelIndex + 1
-                nextBirdIndex = 0
-                if let nextLevelIndex = nextLevelIndex, let nextBirdIndex = nextBirdIndex {
-                    return IndexPath(row: nextLevelIndex, section: nextBirdIndex)
-                }
-            }else{
-                return nil
-            }
-        }
-        
-    }
-    
-    func getPrevious(forLevelAtIndex levelIndex: Int?, forBirdAtIndex birdIndex: Int?) -> IndexPath? {
-        
-        var previousLevelIndex: Int?
-        var previousBirdIndex: Int?
-        
-        var currentLevelIndex: Int
-        var currentBirdIndex: Int
-        
-        if let levelIndex = levelIndex, let birdIndex = birdIndex {
-            // check for currently presented in scene bird and level
-            currentLevelIndex = levelIndex
-            currentBirdIndex = birdIndex
-        }else{
-            // check for current from settings
-            currentLevelIndex = currentLevel.levelNumber - 1
-            currentBirdIndex = currentBird.birdNumber - 1
-        }
-        
-        if currentBirdIndex > 0 {
-            previousBirdIndex = currentBirdIndex - 1
-            previousLevelIndex = currentLevelIndex
-            if let nextLevelIndex = previousLevelIndex, let nextBirdIndex = previousBirdIndex {
-                return IndexPath(row: nextLevelIndex, section: nextBirdIndex)
-            }
-        }else{
-            if currentLevelIndex > 0 {
-                previousLevelIndex = currentLevelIndex - 1
-                previousBirdIndex = levels[previousLevelIndex!].birds.count - 1
-                if let nextLevelIndex = previousLevelIndex, let nextBirdIndex = previousBirdIndex {
-                    return IndexPath(row: nextLevelIndex, section: nextBirdIndex)
-                }
-            }else{
-                return nil
-            }
-        }
-        
-    }
-    
     func getLevelsCount() -> Int{
         return self.levels.count
     }

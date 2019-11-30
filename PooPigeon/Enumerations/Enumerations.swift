@@ -41,6 +41,7 @@ enum ChallengeType: String, Codable {
 enum ChallengeScoreType: String, Codable {
     case None
     case NumberValue
+    // may be replace Date scoreType with ususal bool ( it is whether user started on certain date or not like date has some progress / countdown to it.
     case DateValue
     case BoolValue
 }

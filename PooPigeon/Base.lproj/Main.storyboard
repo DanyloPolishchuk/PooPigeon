@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mzD-wb-yGs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -156,23 +156,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wH2-cY-vg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61.600000000000001" y="-646.32683658170924"/>
+            <point key="canvasLocation" x="1319" y="-286"/>
         </scene>
-        <!--Main Menu View Controller-->
-        <scene sceneID="tXr-a1-R10">
+        <!--Game View Controller-->
+        <scene sceneID="Cfo-qb-lMJ">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="MainMenuViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                <viewController id="mzD-wb-yGs" customClass="GameViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9pL-kS-Vzn" userLabel="SKView" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vz4-Kb-Q0T" userLabel="ViewUI">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3R-BA-U1U">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dX-oB-9SF" userLabel="AdView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o71-f1-2NC" userLabel="AdView">
                                         <rect key="frame" x="27.5" y="597" width="320" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут будет ваша реклама" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkx-5H-8b6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут будет ваша реклама" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKw-Om-bxx">
                                                 <rect key="frame" x="63" y="15" width="194.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -181,12 +181,48 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="R51-9r-O79"/>
-                                            <constraint firstAttribute="width" constant="320" id="mRE-6f-l5Q"/>
-                                            <constraint firstItem="vkx-5H-8b6" firstAttribute="centerX" secondItem="4dX-oB-9SF" secondAttribute="centerX" id="oSQ-pq-HgR"/>
-                                            <constraint firstItem="vkx-5H-8b6" firstAttribute="centerY" secondItem="4dX-oB-9SF" secondAttribute="centerY" id="yCv-by-Xrc"/>
+                                            <constraint firstAttribute="width" constant="320" id="ANy-vk-qge"/>
+                                            <constraint firstAttribute="height" constant="50" id="C7g-C7-usP"/>
+                                            <constraint firstItem="iKw-Om-bxx" firstAttribute="centerY" secondItem="o71-f1-2NC" secondAttribute="centerY" id="Knt-lA-ynr"/>
+                                            <constraint firstItem="iKw-Om-bxx" firstAttribute="centerX" secondItem="o71-f1-2NC" secondAttribute="centerX" id="wMQ-2L-nf4"/>
                                         </constraints>
                                     </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="o71-f1-2NC" firstAttribute="centerX" secondItem="W3R-BA-U1U" secondAttribute="centerX" id="d7h-MV-3ex"/>
+                                    <constraint firstAttribute="bottom" secondItem="o71-f1-2NC" secondAttribute="bottom" id="fjI-WS-ZMI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Y4e-9u-qtm" firstAttribute="trailing" secondItem="W3R-BA-U1U" secondAttribute="trailing" id="47D-fR-ULS"/>
+                            <constraint firstItem="W3R-BA-U1U" firstAttribute="leading" secondItem="Y4e-9u-qtm" secondAttribute="leading" id="DWW-A5-6w5"/>
+                            <constraint firstItem="Y4e-9u-qtm" firstAttribute="bottom" secondItem="W3R-BA-U1U" secondAttribute="bottom" id="DbI-zn-glX"/>
+                            <constraint firstItem="W3R-BA-U1U" firstAttribute="top" secondItem="Y4e-9u-qtm" secondAttribute="top" id="dOq-0w-v2b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y4e-9u-qtm"/>
+                    </view>
+                    <connections>
+                        <outlet property="skView" destination="9pL-kS-Vzn" id="aHV-32-sT9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3wI-tr-AlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-742" y="27"/>
+        </scene>
+        <!--Main Menu View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController storyboardIdentifier="mainMenuScreenIdentifier" id="BV1-FR-VrT" customClass="MainMenuViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vz4-Kb-Q0T" userLabel="ViewUI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9N-bq-Hkm">
                                         <rect key="frame" x="94" y="518.5" width="187.5" height="62.5"/>
                                         <constraints>
@@ -244,14 +280,12 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="IyB-pS-0OK" firstAttribute="width" secondItem="vz4-Kb-Q0T" secondAttribute="width" id="3KM-ke-9aC"/>
-                                    <constraint firstItem="4dX-oB-9SF" firstAttribute="centerX" secondItem="vz4-Kb-Q0T" secondAttribute="centerX" id="AZW-Hl-eQc"/>
                                     <constraint firstItem="b9t-HV-So8" firstAttribute="width" secondItem="vz4-Kb-Q0T" secondAttribute="width" multiplier="0.15" id="COr-lw-lwT"/>
                                     <constraint firstAttribute="trailing" secondItem="S3M-bq-PpH" secondAttribute="trailing" constant="8" id="DJS-aJ-G66"/>
                                     <constraint firstItem="B9N-bq-Hkm" firstAttribute="centerX" secondItem="vz4-Kb-Q0T" secondAttribute="centerX" id="KsM-DW-97I"/>
                                     <constraint firstAttribute="bottom" secondItem="zfd-Od-Jv6" secondAttribute="bottom" constant="66" id="MQM-2L-w76"/>
                                     <constraint firstItem="qfd-GX-ClK" firstAttribute="height" secondItem="B9N-bq-Hkm" secondAttribute="height" id="QW9-kq-DLH"/>
                                     <constraint firstItem="qfd-GX-ClK" firstAttribute="leading" secondItem="vz4-Kb-Q0T" secondAttribute="leading" constant="8" id="RmU-t8-cAI"/>
-                                    <constraint firstAttribute="bottom" secondItem="4dX-oB-9SF" secondAttribute="bottom" id="ZFv-aW-2Ou"/>
                                     <constraint firstItem="B9N-bq-Hkm" firstAttribute="width" secondItem="vz4-Kb-Q0T" secondAttribute="width" multiplier="0.5" id="clR-t4-b9O"/>
                                     <constraint firstItem="IyB-pS-0OK" firstAttribute="centerX" secondItem="vz4-Kb-Q0T" secondAttribute="centerX" id="dbV-B6-Ens"/>
                                     <constraint firstItem="zfd-Od-Jv6" firstAttribute="height" secondItem="B9N-bq-Hkm" secondAttribute="height" id="jX5-2D-l4f"/>
@@ -276,7 +310,6 @@
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
-                        <outlet property="adView" destination="4dX-oB-9SF" id="tjO-63-O5H"/>
                         <outlet property="bottomLeftButtonConstraint" destination="RmU-t8-cAI" id="bc9-n2-CUE"/>
                         <outlet property="bottomRightButtonConstraint" destination="svQ-54-B2y" id="FgZ-YE-Lb4"/>
                         <outlet property="leftBottomButton" destination="qfd-GX-ClK" id="NW7-ir-tJ2"/>
@@ -293,12 +326,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61.600000000000001" y="26.53673163418291"/>
+            <point key="canvasLocation" x="-15" y="-285"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Pause View Controller-->
         <scene sceneID="JTl-ez-B3P">
             <objects>
-                <viewController storyboardIdentifier="gameScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="yt7-KV-xTh" customClass="GameViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pauseScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="yt7-KV-xTh" customClass="PauseViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Euz-vO-mzc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -608,7 +641,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0i-J7-TuX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="715"/>
+            <point key="canvasLocation" x="-15" y="374"/>
         </scene>
         <!--Birds View Controller-->
         <scene sceneID="3Co-ra-fmP">
@@ -900,7 +933,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7g-vd-SMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789.60000000000002" y="26.53673163418291"/>
+            <point key="canvasLocation" x="2009" y="-286"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="VRN-hR-g73">
@@ -1082,7 +1115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3E-ww-aJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789.60000000000002" y="-646.32683658170924"/>
+            <point key="canvasLocation" x="641" y="-286"/>
         </scene>
     </scenes>
     <resources>

@@ -14,15 +14,13 @@ class MainMenuViewController: UIViewController {
     
     //MARK: - Properties
     //
-    private var currentLevelNumber: Int!
-    private var currentLevel: Level!
-    var currentGameScene: BaseSKScene!
+    weak var gameViewController: GameViewController!
     private var isLeftHandedUI: Bool!
     
     //MARK: - Outlets
     //
     @IBOutlet weak var viewUI: UIView!
-    @IBOutlet weak var adView: UIView!
+//    @IBOutlet weak var adView: UIView!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var rightBottomButton: UIButton!
     @IBOutlet weak var rightTopButton: UIButton!
@@ -55,75 +53,22 @@ class MainMenuViewController: UIViewController {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupCurrentLevelAndBird()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        print("MainMenuViewController viewWillAppear called")
         setupDefaultConstraints()
         setupButtons()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        currentGameScene.viewController = self
-        setupCurrentLevelAndBird()
         unhideUI {}
     }
     
     //MARK: - Setup methods
     //
-    func setupCurrentLevelAndBird(){
-        
-        let currentLevel = Settings.shared.currentLevel
-        let currentBird = Settings.shared.currentBird
-        
-        if let view = self.view as! SKView? {
-            if let scene = SKScene(fileNamed: currentLevel.levelSceneFileName) {
-                currentGameScene = scene as? BaseSKScene
-                currentGameScene.viewController = self
-                currentGameScene.currentLevel = currentLevel
-                currentGameScene.currentBird = currentBird
-
-                scene.scaleMode = .aspectFill
-                view.presentScene(scene)
-            }
-
-            view.ignoresSiblingOrder = true
-
-            view.showsFPS = true
-            view.showsPhysics = true
-            view.showsNodeCount = true
-            view.showsFields = true
-        }
-    }
-    func setupLevelAndBird(_ level: Level, _ bird: Bird){
-        
-        let currentLevel = level
-        let currentBird = bird
-        
-        if let view = self.view as! SKView? {
-            if let scene = SKScene(fileNamed: currentLevel.levelSceneFileName) {
-                currentGameScene = scene as? BaseSKScene
-                currentGameScene.viewController = self
-                currentGameScene.currentLevel = currentLevel
-                currentGameScene.currentBird = currentBird
-                
-                scene.scaleMode = .aspectFill
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsPhysics = true
-            view.showsNodeCount = true
-            view.showsFields = true
-        }
-    }
-    
     func setupDefaultConstraints(){
         self.topLeftButtonConstraint.constant = -self.leftTopButton.frame.width - 8
         self.topRightButtonConstraint.constant = -self.rightTopButton.frame.width - 8
@@ -193,22 +138,14 @@ class MainMenuViewController: UIViewController {
     func showAchievements(){
         
     }
-    func showGameScreen(){
-        // gameScreenIdentifier
-        if let gameVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameScreenIdentifier") as? GameViewController {
-            gameVC.mainMenuViewController = self
-            self.currentGameScene.viewController = gameVC
-            self.present(gameVC, animated: true)
-        }
-    }
     
     //MARK: - Actions
     //
     @IBAction func playAction(_ sender: Any) {
         hideUI {
-            //TODO: enable touch events on scene & start enemy spawning e.t.c, some kind of startLevel() method. Scene should not be paused in the BG.
-            self.currentGameScene.levelIsInGameState = true
-            self.showGameScreen()
+            self.dismiss(animated: true, completion: {
+                self.gameViewController.startGame()
+            })
         }
     }
     @IBAction func rightBottomAction(_ sender: UIButton) {
