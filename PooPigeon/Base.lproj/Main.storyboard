@@ -99,7 +99,7 @@
                                                         </cells>
                                                     </collectionView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4v-HW-hYF">
-                                                        <rect key="frame" x="59.5" y="10" width="240" height="58.5"/>
+                                                        <rect key="frame" x="62.5" y="10" width="234.5" height="44"/>
                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="50"/>
                                                         <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -215,7 +215,7 @@
         <!--Main Menu View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController storyboardIdentifier="mainMenuScreenIdentifier" id="BV1-FR-VrT" customClass="MainMenuViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainMenuScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="BV1-FR-VrT" customClass="MainMenuViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -643,10 +643,10 @@
             </objects>
             <point key="canvasLocation" x="-15" y="374"/>
         </scene>
-        <!--Birds View Controller-->
+        <!--View Controller-->
         <scene sceneID="3Co-ra-fmP">
             <objects>
-                <viewController storyboardIdentifier="birdsScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="CH4-Sd-rak" customClass="BirdsViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="birdsScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="CH4-Sd-rak" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cbl-dY-Vev">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

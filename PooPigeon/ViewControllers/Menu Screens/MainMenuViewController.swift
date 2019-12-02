@@ -130,10 +130,10 @@ class MainMenuViewController: UIViewController {
         
     }
     func showBirds(){
-        if let birdsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "birdsScreenIdentifier") as? BirdsViewController {
-            birdsVC.mainMenuViewController = self
-            self.present(birdsVC, animated: true)
-        }
+//        if let birdsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "birdsScreenIdentifier") as? BirdsViewController {
+//            birdsVC.mainMenuViewController = self
+//            self.present(birdsVC, animated: true)
+//        }
     }
     func showAchievements(){
         
@@ -144,7 +144,7 @@ class MainMenuViewController: UIViewController {
     @IBAction func playAction(_ sender: Any) {
         hideUI {
             self.dismiss(animated: true, completion: {
-                self.gameViewController.startGame()
+                self.gameViewController.startGame(false)
             })
         }
     }

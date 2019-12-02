@@ -22,19 +22,19 @@ class BaseSKScene: SKScene {
     var levelIsInGameState = false
     
     // enemy spawn proerties
-    //TODO: may be change properties so spawn rate decreases with time (less enemies are spawned) so it is harder to hit crowd of enemies and player has to aim for the only spawned enemy
-    let defaultSpawnDuration: TimeInterval = 2.0
-    var spawnDuration: TimeInterval = 2.0
-    var spawnMinimumDuration: TimeInterval = 0.2
-    var spawnDurationChangeStep: TimeInterval = 0.1
-    var spawnDifficultyChangeTimeStep: TimeInterval = 20.0
+    let difficultyIncreaseTimeStep: TimeInterval = 5.0
+    let enemySpawnDelayDefault: TimeInterval = 0.5
+    var enemySpawnDelay: TimeInterval = 0.5
+    let enemySpawnDelayIncreaseStep: TimeInterval = 0.25
+    let enemySpawnDelayMaxValue: TimeInterval = 2.0
+    
     var spawnKey = "SpawnKey"
     var difficultyTimerKey = "DifficultyTimerKey"
     
     // width & height are fixed throughout this project cause pixelArt levels are all the same size (320x320 px) multiplied by 8
-    /// Width of scene. Must be ovverriden in child
+    /// Width of scene
     var sceneWidth: CGFloat     = 2560
-    /// Height of scene. Must be ovverriden in child
+    /// Height of scene
     var sceneHeight: CGFloat    = 2560
     
     var minHeroXCoordinate: CGFloat = 0
@@ -46,11 +46,7 @@ class BaseSKScene: SKScene {
     var rightDestinationX: CGFloat = 0
     var enemySpawnY: CGFloat = 0
     //TODO: delete below
-    var currentBird: Bird! {
-        didSet{
-            presentCurrentBird()
-        }
-    }
+    var currentBird: Bird!
     var birdNode: BirdSKSpriteNode!
     var currentLevel: Level!
     var isNextBirdAvaliable: Bool!
@@ -86,7 +82,7 @@ class BaseSKScene: SKScene {
                                                               height: self.frame.height - 256))
         physicsBody?.categoryBitMask = PhysicsCategory.Edge.rawValue
         
-        enemySpawnY = -self.frame.height / 2 + 256 + 1
+        enemySpawnY = -self.frame.height / 2 + 256 + 5 // 1
         
         setupDestinationProperties()
     }
@@ -160,30 +156,31 @@ class BaseSKScene: SKScene {
     //MARK: - Spawn methods
     //
     func startSpawning(){
-        self.spawnDuration = self.defaultSpawnDuration
+        self.enemySpawnDelay = self.enemySpawnDelayDefault
         startDifficultyTimer()
     }
     func stopSpawning(){
         removeAction(forKey: difficultyTimerKey)
         removeAction(forKey: spawnKey)
     }
+    
+    //TODO: add some randomization from Level.enemies array ( spawn different enemies, each level should have at least 2 M & F.
+    //TODO: experiment with spawn & destination positions ( left -> right / left <- right )
+    
     private func createSequentialEnemies(){
-        // removes previous action if running. This way you can adjust the spawn duration property and call this method again and it will cancel previous action.
+        print("createSequentialEnemies called")
         removeAction(forKey: spawnKey)
         
         let spawnAction = SKAction.run {
             
-            //TODO: add some randomization from Level.enemies array ( spawn different enemies, each level should have at least 2 M & F.
-            //TODO: experiment with spawn & destination positions ( left -> right / left <- right )
-            
             let enemyNode = EnemySKSpriteNode(self.currentLevel.enemies[0], self.rightDestinationX)
-            enemyNode.position = CGPoint(x: self.leftDestinationX, y: self.enemySpawnY)
+            enemyNode.position = CGPoint(x: self.leftDestinationX, y: self.enemySpawnY + enemyNode.frame.height / 2)
             enemyNode.zPosition = 1
             self.fg.addChild(enemyNode)
             enemyNode.walk()
             
         }
-        let spawnDelayAction = SKAction.wait(forDuration: spawnDuration)
+        let spawnDelayAction = SKAction.wait(forDuration: enemySpawnDelay)
         let spawnSequence = SKAction.sequence([
             spawnAction,
             spawnDelayAction
@@ -191,14 +188,15 @@ class BaseSKScene: SKScene {
         self.run(SKAction.repeatForever(spawnSequence), withKey: spawnKey)
     }
     private func startDifficultyTimer(){
+        print("startDifficultyTimer called")
         
-        let waitAction = SKAction.wait(forDuration: spawnDifficultyChangeTimeStep)
-        let increaseDifficultyAction = SKAction.run {
-            guard self.spawnDuration > 0.2 else {
+        let waitAction = SKAction.wait(forDuration: difficultyIncreaseTimeStep)
+        let increaseDifficultyAction = SKAction.run { [unowned self] in
+            guard self.enemySpawnDelay < self.enemySpawnDelayMaxValue else {
                 self.removeAction(forKey: self.difficultyTimerKey)
                 return
             }
-            self.spawnDuration -= self.spawnDifficultyChangeTimeStep
+            self.enemySpawnDelay += self.enemySpawnDelayIncreaseStep
             self.createSequentialEnemies()
         }
         let increaseDifficultySequnce = SKAction.sequence([
@@ -270,7 +268,9 @@ class BaseSKScene: SKScene {
         }
         let currentBird = BirdSKSpriteNode(self.currentBird)
         currentBird.position = self.currentBird.birdSpawnPosition
+        self.pooSpawnPosition = self.currentBird.birdSpawnPosition
         currentBird.zPosition = 1
+        currentBird.startIdleAnimation()
         birdNode = currentBird
         self.fg.addChild(currentBird)
         

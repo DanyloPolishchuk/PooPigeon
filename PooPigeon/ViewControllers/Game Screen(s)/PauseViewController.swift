@@ -245,7 +245,7 @@ class PauseViewController: UIViewController {
         }else if sender.tag == 1 { // game over view
             setupScoreLabelWithValue(0)
             hideGameOverView()
-            gameViewController.startGame()
+            gameViewController.startGame(true)
         
         }
     }

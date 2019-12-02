@@ -18,29 +18,6 @@ class EnemySKSpriteNode: SKSpriteNode {
     let walkAnimationSpeed: TimeInterval = 1/3
     let runAnimationSpped: TimeInterval = 1/6
     let animationTextures: [SKTexture]
-        
-        //        let bodyTexture = SKTexture(imageNamed: "level1ManWalkingBodyTexture")
-    
-        //        human.physicsBody = SKPhysicsBody(texture: bodyTexture, size: bodyTexture.size())
-    
-
-        //
-        //        let walkAction = SKAction.moveBy(x: 1598, y: 0, duration: 2.0)
-        //        let humanWalkAction = SKAction.repeatForever(SKAction.sequence([
-        //            walkAction,
-        //            SKAction.run {
-        //                self.human.xScale = -1
-        //            },
-        //            walkAction.reversed(),
-        //            SKAction.run {
-        //                self.human.xScale = 1
-        //            }
-        //            ]))
-        //        human.run(humanWalkAction)
-        //        //
-        
-        
-//    }
     
     init(_ enemy: Enemy,_ destinationX: CGFloat) {
         
@@ -58,6 +35,7 @@ class EnemySKSpriteNode: SKSpriteNode {
         self.physicsBody?.categoryBitMask = PhysicsCategory.Human.rawValue
         self.physicsBody?.collisionBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Bullet.rawValue
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Bullet.rawValue
+        self.physicsBody?.allowsRotation = false
         
     }
     
@@ -69,9 +47,16 @@ class EnemySKSpriteNode: SKSpriteNode {
     func walk(){
         let walkAnimationAction = SKAction.animate(with: animationTextures, timePerFrame: walkAnimationSpeed)
         let walkInfiniteAnimationAction = SKAction.repeatForever(walkAnimationAction)
-        let walkMoveAction = SKAction.moveTo(x: destinationX, duration: 2.0)
+        let walkMoveAction = SKAction.moveTo(x: destinationX, duration: 4.0)
+        let walkMoveSequnce = SKAction.sequence([
+            walkMoveAction,
+            SKAction.removeFromParent(),
+            SKAction.run {
+                print("enemyNode is removed after walk")
+            }
+            ])
         self.run(walkInfiniteAnimationAction, withKey: walkAnimationActionKey)
-        self.run(walkMoveAction, withKey: walkActionKey)
+        self.run(walkMoveSequnce, withKey: walkActionKey)
     }
     /// cancels previous action, starts run texture animation & moveToX action & removes node
     func run(){
@@ -81,10 +66,13 @@ class EnemySKSpriteNode: SKSpriteNode {
         let runAnimationAction = SKAction.animate(with: animationTextures, timePerFrame: runAnimationSpped)
         let runInfiniteAnimationAction = SKAction.repeatForever(runAnimationAction)
         
-        let runMoveAction = SKAction.moveTo(x: destinationX, duration: 1.0)
+        let runMoveAction = SKAction.moveTo(x: destinationX, duration: 2.0)
         let runMoveSequence = SKAction.sequence([
             runMoveAction,
-            SKAction.removeFromParent()
+            SKAction.removeFromParent(),
+            SKAction.run {
+                print("enemyNode is removed after run")
+            }
             ])
         self.run(runInfiniteAnimationAction, withKey: runActionKey)
         self.run(runMoveSequence)

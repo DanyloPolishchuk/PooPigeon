@@ -28,6 +28,7 @@ class GameViewController: UIViewController {
         setupCurrentLevelAndBird()
     }
     override func viewDidAppear(_ animated: Bool) {
+        print("GameViewController viewDidAppear called")
         super.viewDidAppear(animated)
         
         showMenuScreen()
@@ -57,6 +58,7 @@ class GameViewController: UIViewController {
             
             scene.scaleMode = .aspectFill
             skView.presentScene(scene)
+            (scene as? BaseSKScene)?.presentCurrentBird()
         }
     }
     func setupLevelAndBird(_ level: Level, _ bird: Bird){
@@ -71,6 +73,7 @@ class GameViewController: UIViewController {
             
             scene.scaleMode = .aspectFill
             skView.presentScene(scene)
+            (scene as? BaseSKScene)?.presentCurrentBird()
         }
     }
     //TODO: add AdMob setup here
@@ -92,9 +95,11 @@ class GameViewController: UIViewController {
     
     //MARK: - Game methods
     //
-    func startGame(){
+    func startGame(_ isCalledFromPauseVC: Bool){
         currentGameScene.startGame()
-        showPauseScreen()
+        if !isCalledFromPauseVC{
+            showPauseScreen()
+        }
     }
     func pauseGame(){
         currentGameScene.pauseGame()
