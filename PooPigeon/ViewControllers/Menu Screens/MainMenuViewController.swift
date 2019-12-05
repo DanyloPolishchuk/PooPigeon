@@ -142,6 +142,8 @@ class MainMenuViewController: UIViewController {
     //MARK: - Actions
     //
     @IBAction func playAction(_ sender: Any) {
+        NotificationCenter.default.post(name: .buttonPressed, object: nil)
+
         hideUI {
             self.dismiss(animated: true, completion: {
                 self.gameViewController.startGame(false)
@@ -149,6 +151,8 @@ class MainMenuViewController: UIViewController {
         }
     }
     @IBAction func rightBottomAction(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .buttonPressed, object: nil)
+
         hideUI {
             if self.isLeftHandedUI{
                 self.showAchievements()
@@ -158,6 +162,8 @@ class MainMenuViewController: UIViewController {
         }
     }
     @IBAction func leftBottomAction(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .buttonPressed, object: nil)
+
         hideUI {
             if self.isLeftHandedUI{
                 self.showBirds()
@@ -167,6 +173,8 @@ class MainMenuViewController: UIViewController {
         }
     }
     @IBAction func settingsAction(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .buttonPressed, object: nil)
+
         hideUI {
             self.showSettings()
         }

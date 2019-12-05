@@ -226,6 +226,8 @@ class PauseViewController: UIViewController {
     //MARK: - Actions
     //
     @IBAction func pauseOrBackAction(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .buttonPressed, object: nil)
+        
         if isTopButtonAPauseButton{
             gameViewController.pauseGame()
             showPauseView()
@@ -239,6 +241,8 @@ class PauseViewController: UIViewController {
         }
     }
     @IBAction func playAction(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .buttonPressed, object: nil)
+
         if sender.tag == 0 { // pause view
             hidePauseView()
             gameViewController.continueGame()
@@ -250,6 +254,8 @@ class PauseViewController: UIViewController {
         }
     }
     @IBAction func homeAction(_ sender: Any) {
+        NotificationCenter.default.post(name: .buttonPressed, object: nil)
+
         gameViewController.stopGame()
         hideAllUI {
             self.dismiss(animated: true, completion: {
@@ -258,6 +264,8 @@ class PauseViewController: UIViewController {
         }
     }
     @IBAction func soundAction(_ sender: Any) {
+        NotificationCenter.default.post(name: .buttonPressed, object: nil)
+
         // sound call to the scene
         if Settings.shared.isSoundEffectsEnabled {
             gameViewController.turnSFXOff()
@@ -268,6 +276,8 @@ class PauseViewController: UIViewController {
         }
     }
     @IBAction func musicAction(_ sender: Any) {
+        NotificationCenter.default.post(name: .buttonPressed, object: nil)
+
         // music call to the scenes
         if Settings.shared.isMusicEnabled {
             gameViewController.turnMusicOff()

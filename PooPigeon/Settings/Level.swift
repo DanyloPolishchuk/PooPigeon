@@ -13,6 +13,7 @@ struct Level: Codable {
     
     let levelNumber: Int
     let levelSceneFileName: String
+    let levelMusicSoundFileName: String
     let enemies: [Enemy]
     
     var levelIsUnlocked: Bool

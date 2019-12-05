@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController {
+class GameViewController: BaseViewController {
 
     //MARK: - Properties
     //
@@ -51,6 +51,8 @@ class GameViewController: UIViewController {
         let currentLevel = Settings.shared.currentLevel
         let currentBird = Settings.shared.currentBird
         
+        setupAudioPlayers(sfxSoundFileName: currentBird.birdSoundFileName, musicSoundFileName: currentLevel.levelMusicSoundFileName)
+        
         if let scene = SKScene(fileNamed: currentLevel.levelSceneFileName) {
             currentGameScene = scene as? BaseSKScene
             currentGameScene.currentLevel = currentLevel
@@ -65,6 +67,8 @@ class GameViewController: UIViewController {
         
         let currentLevel = level
         let currentBird = bird
+        
+        setupAudioPlayers(sfxSoundFileName: currentBird.birdSoundFileName, musicSoundFileName: currentLevel.levelMusicSoundFileName)
         
         if let scene = SKScene(fileNamed: currentLevel.levelSceneFileName) {
             currentGameScene = scene as? BaseSKScene
@@ -109,18 +113,6 @@ class GameViewController: UIViewController {
     }
     func stopGame(){
         currentGameScene.stopGame()
-    }
-    func turnMusicOn(){
-        currentGameScene.turnMusicOn()
-    }
-    func turnMusicOff(){
-        currentGameScene.turnMusicOff()
-    }
-    func turnSFXOn(){
-        currentGameScene.turnSFXOn()
-    }
-    func turnSFXOff(){
-        currentGameScene.turnSFXOff()
     }
 
 }

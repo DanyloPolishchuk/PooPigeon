@@ -94,6 +94,8 @@ class Settings: Codable {
                 
                 Level(levelNumber: 1,
                       levelSceneFileName: "GameScene",
+                      // REPLACE_WITH_ACTUAL_SOUND_FILE
+                      levelMusicSoundFileName: "signalRocketSound",
                       enemies: [
                         Enemy(texture: "level1ManWalkingFrame1",
                               physicsBodyTexture: "level1ManWalkingBodyTexture",
@@ -125,7 +127,8 @@ class Settings: Codable {
                         "pigeonDefaultFrame2"
                     ],
                      birdShootTextureName: "pigeonDefaultShootFrame",
-                     birdSoundFileName: "ENTER_SOUND_FILE_NAME_HERE_ONCE_DONE",
+                     // REPLACE_WITH_ACTUAL_SOUND_FILE
+                     birdSoundFileName: "signalRocketSound",
                      birdIsUnlocked: true,
                      birdChallengeType: .None,
                      birdChallengeScoreType: .None,

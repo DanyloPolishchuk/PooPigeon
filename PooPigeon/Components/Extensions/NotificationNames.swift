@@ -9,6 +9,18 @@
 import Foundation
 
 extension Notification.Name {
+    
+    // NotificationKey
+    
     static let setupScoreKey = Notification.Name(rawValue: "setupScoreNotificationKey")
     static let showGameOverKey = Notification.Name(rawValue: "showGameOverNotificationKey")
+    
+    static let turnSFXOn = Notification.Name("turnSFXOnNotificationKey")
+    static let turnSFXOff = Notification.Name("turnSFXOffNotificationKey")
+    static let turnMusicOn = Notification.Name("turnMusicOnNotificationKey")
+    static let turnMusicOff = Notification.Name("turnMusicOffNotificationKey")
+    
+    static let buttonPressed = Notification.Name("buttonPressedNotificationKey")
+    static let sfxSoundPlay = Notification.Name("sfxSoundPlayNotificationKey")
+    
 }

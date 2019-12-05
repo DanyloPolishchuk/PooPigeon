@@ -39,16 +39,19 @@ class BirdSKSpriteNode: SKSpriteNode {
         let infiniteIdleAnimationAction = SKAction.repeatForever(idleAnimationAction)
         self.run(infiniteIdleAnimationAction, withKey: idleAnimationKey)
     }
+    
     func shoot(){
-        let playSoundAction = SKAction.playSoundFileNamed(birdSoundFileName, waitForCompletion: true)
-        let shootActionGroup = SKAction.group([
-            playSoundAction,
-            SKAction.run {
-                self.texture = self.shootTexture
-            }
+        
+        let shootAction = SKAction.run {
+            self.texture = self.shootTexture
+            NotificationCenter.default.post(name: .sfxSoundPlay, object: nil)
+        }
+        let shootActionSequence = SKAction.sequence([
+            shootAction,
+            SKAction.wait(forDuration: 0.5)
             ])
         removeAction(forKey: idleAnimationKey)
-        self.run(shootActionGroup) {
+        self.run(shootActionSequence){
             self.startIdleAnimation()
         }
     }

@@ -13,6 +13,10 @@ class BaseSKScene: SKScene {
     
     //MARK: - Properties
     //
+    var currentBird: Bird!
+    var birdNode: BirdSKSpriteNode!
+    var currentLevel: Level!
+    
     var bg: SKNode!
     var fg: SKNode!
     
@@ -45,13 +49,7 @@ class BaseSKScene: SKScene {
     var leftDestinationX: CGFloat = 0
     var rightDestinationX: CGFloat = 0
     var enemySpawnY: CGFloat = 0
-    //TODO: delete below
-    var currentBird: Bird!
-    var birdNode: BirdSKSpriteNode!
-    var currentLevel: Level!
-    var isNextBirdAvaliable: Bool!
-    var isPreviousBirdAvaliable: Bool!
-    //
+
 
     
     override func didMove(to view: SKView) {
@@ -72,9 +70,6 @@ class BaseSKScene: SKScene {
             }
         }
         
-        //TODO: add bird setup
-        //        self.birdNode = fg.childNode(withName: "\(currentBird.birdSceneFileName)") as? SKSpriteNode
-        //        self.pooSpawnPosition = birdNode.position
         
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: -self.frame.width,
                                                               y: -self.frame.height / 2 + 256,
@@ -82,7 +77,7 @@ class BaseSKScene: SKScene {
                                                               height: self.frame.height - 256))
         physicsBody?.categoryBitMask = PhysicsCategory.Edge.rawValue
         
-        enemySpawnY = -self.frame.height / 2 + 256 + 5 // 1
+        enemySpawnY = -self.frame.height / 2 + 256 + 5
         
         setupDestinationProperties()
     }
@@ -136,21 +131,6 @@ class BaseSKScene: SKScene {
         self.levelIsInGameState = false
         self.isPaused = false
         stopSpawning()
-    }
-    //TODO: implement music & sfx switch methods
-    // music node should be added to every scene ( level ) / be just a sound node in BaseSKScene
-    func turnMusicOn(){
-        
-    }
-    func turnMusicOff(){
-        
-    }
-    // sfx are button taps, sound of bg level, pigeon, hit , shoot, walk
-    func turnSFXOn(){
-        
-    }
-    func turnSFXOff(){
-        
     }
     
     //MARK: - Spawn methods
@@ -243,6 +223,7 @@ class BaseSKScene: SKScene {
             pooNode.physicsBody?.fieldBitMask = PhysicsCategory.Field.rawValue
             pooNode.name = "pooNode"
             
+            birdNode.shoot()
             self.fg.addChild(pooNode)
         }
     }
