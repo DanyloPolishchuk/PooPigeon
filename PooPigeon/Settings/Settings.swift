@@ -34,13 +34,14 @@ class Settings: Codable {
     private var birds: [Bird]
     
     private var language: Language
+    
     var isLeftHandedUI: Bool
     var isSoundEffectsEnabled: Bool
     var isMusicEnabled: Bool
-    
     var isApplicationLiked: Bool
     var isApplicaitonShared: Bool
     var isApplicationReviewed: Bool
+    var isAddsRemovalPurchased: Bool
     
     //TODO: add new progress variables ( best, total, e.t.c. )
     var bestScore: UInt
@@ -77,6 +78,7 @@ class Settings: Codable {
             self.isApplicationLiked = settings.isApplicationLiked
             self.isApplicaitonShared = settings.isApplicaitonShared
             self.isApplicationReviewed = settings.isApplicationReviewed
+            self.isAddsRemovalPurchased = settings.isAddsRemovalPurchased
             
             self.bestScore = settings.bestScore
             self.totalScore = settings.totalScore
@@ -152,6 +154,7 @@ class Settings: Codable {
             isApplicationLiked = false
             isApplicaitonShared = false
             isApplicationReviewed = false
+            isAddsRemovalPurchased = false
             
             bestScore = 0
             totalScore = 0
@@ -170,8 +173,17 @@ class Settings: Codable {
         UserDefaults.standard.synchronize()
     }
     
-    //MARK: - level & bird methods
+    //MARK: - Get & Set methods
     //
+    func getTemporarySettings() -> [Bool] {
+        return [
+            isApplicationLiked,
+            isApplicaitonShared,
+            isApplicationReviewed,
+            isAddsRemovalPurchased
+        ]
+    }
+    
     func getLevelsCount() -> Int{
         return self.levels.count
     }

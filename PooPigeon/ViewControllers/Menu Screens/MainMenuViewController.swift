@@ -64,6 +64,7 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        setupButtons()
         unhideUI {}
     }
     
@@ -82,9 +83,11 @@ class MainMenuViewController: UIViewController {
         leftTopButton.setImage(UIImage(named: "settingsButtonPressed"), for: .highlighted)
         playButton.setImage(UIImage(named: "playButtonPressed"), for: .highlighted)
         
-        
         self.isLeftHandedUI = Settings.shared.isLeftHandedUI
+        
         (isLeftHandedUI ? rightTopButton : leftTopButton)?.isHidden = true
+        (isLeftHandedUI ? leftTopButton : rightTopButton)?.isHidden = false
+        
         
         rightBottomButton.setImage(UIImage(named: isLeftHandedUI ? "achievementsButtonPressed" : "pigeonButtonPressed" ), for: .highlighted)
         leftBottomButton.setImage(UIImage(named: isLeftHandedUI ? "pigeonButtonPressed" : "achievementsButtonPressed" ), for: .highlighted)
@@ -127,7 +130,10 @@ class MainMenuViewController: UIViewController {
     //MARK: - Show another screens methods
     //
     func showSettings(){
-        
+        if let settingsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settingsScreenIdentifier") as? SettingsViewController{
+            settingsVC.mainMenuViewConroller = self
+            self.present(settingsVC, animated: true)
+        }
     }
     func showBirds(){
 //        if let birdsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "birdsScreenIdentifier") as? BirdsViewController {

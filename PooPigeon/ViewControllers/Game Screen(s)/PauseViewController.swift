@@ -17,17 +17,24 @@ class PauseViewController: UIViewController {
     
     //MARK: - Outlets
     //
+    @IBOutlet weak var viewUI: UIView!
+
     @IBOutlet weak var leftPauseButton: UIButton!
     @IBOutlet weak var rightPauseButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
+    
     @IBOutlet weak var pauseView: UIView!
+    @IBOutlet weak var sfxButton: UIButton!
+    @IBOutlet weak var musicButton: UIButton!
+    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var playButtonPause: UIButton!
+    
     @IBOutlet weak var gameOverView: UIView!
     @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var viewUI: UIView!
     @IBOutlet weak var bestScoreLabel: UILabel!
     @IBOutlet weak var totalScoreLabel: UILabel!
     @IBOutlet weak var playButtonGameOver: UIButton!
-    @IBOutlet weak var playButtonPause: UIButton!
+    
     //constraints
     @IBOutlet weak var leftPauseButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightPauseButtonConstraint: NSLayoutConstraint!
@@ -42,7 +49,10 @@ class PauseViewController: UIViewController {
         setupNotifications()
         setupDefaultConstraints()
         setupPauseView()
-        (Settings.shared.isLeftHandedUI ? rightPauseButton : leftPauseButton)?.isHidden = true
+        
+        let isLeftHandedUI = Settings.shared.isLeftHandedUI
+        (isLeftHandedUI ? rightPauseButton : leftPauseButton)?.isHidden = true
+        (isLeftHandedUI ? leftPauseButton : rightPauseButton)?.isHidden = false
         
         self.pauseView.alpha = 0.0
         self.gameOverView.alpha = 0.0
@@ -92,15 +102,24 @@ class PauseViewController: UIViewController {
         rightPauseButton.setImage(UIImage(named: "backButtonPressed"), for: .highlighted)
     }
     func setupPauseView(){
-        setupMusicButton()
         setupSFXButton()
-        //TODO: add home button setup
-    }
-    func setupMusicButton(){
-        //TODO: implement music button images setup
+        setupMusicButton()
+        setupHomeButton()
     }
     func setupSFXButton(){
-        //TODO: implement SFX button images setup
+        let isSoundEffectsEnabled = Settings.shared.isSoundEffectsEnabled
+        sfxButton.setImage(UIImage(named: isSoundEffectsEnabled ? "sfxOnButtonNormal" : "sfxOffButtonNormal"), for: .normal)
+        sfxButton.setImage(UIImage(named: isSoundEffectsEnabled ? "sfxOnButtonPressed" : "sfxOffButtonPressed"), for: .highlighted)
+    }
+    func setupMusicButton(){
+        let isMusicEnabled = Settings.shared.isMusicEnabled
+        musicButton.setImage(UIImage(named: isMusicEnabled ? "musicOnButtonNormal" : "musicOffButtonNormal" ), for: .normal)
+        musicButton.setImage(UIImage(named: isMusicEnabled ? "musicOnButtonPressed" : "musicOffButtonPressed"), for: .highlighted)
+    }
+    func setupHomeButton(){
+        homeButton.setImage(UIImage(named: "homeButtonNormal"), for: .normal)
+        homeButton.setImage(UIImage(named: "homeButtonPressed"), for: .highlighted)
+
     }
     func setupGameOverView(){
         bestScoreLabel.text = String(Settings.shared.bestScore)
@@ -266,27 +285,20 @@ class PauseViewController: UIViewController {
     @IBAction func soundAction(_ sender: Any) {
         NotificationCenter.default.post(name: .buttonPressed, object: nil)
 
-        // sound call to the scene
-        if Settings.shared.isSoundEffectsEnabled {
-            gameViewController.turnSFXOff()
-            //TODO: update button images
-        }else{
-            gameViewController.turnSFXOn()
-            //TODO: update button images
-        }
+        let isSFXEnabled = Settings.shared.isSoundEffectsEnabled
+        Settings.shared.isSoundEffectsEnabled = !isSFXEnabled
+        Settings.shared.save()
+        setupSFXButton()
+        NotificationCenter.default.post(name: isSFXEnabled ? .turnSFXOff : .turnSFXOn , object: nil)
     }
     @IBAction func musicAction(_ sender: Any) {
         NotificationCenter.default.post(name: .buttonPressed, object: nil)
 
-        // music call to the scenes
-        if Settings.shared.isMusicEnabled {
-            gameViewController.turnMusicOff()
-            //TODO: update button images
-        }else{
-            gameViewController.turnMusicOn()
-            //TODO: update button images
-        }
-
+        let isMusicEnabled = Settings.shared.isMusicEnabled
+        Settings.shared.isMusicEnabled = !isMusicEnabled
+        Settings.shared.save()
+        setupMusicButton()
+        NotificationCenter.default.post(name: isMusicEnabled ? .turnMusicOff : .turnMusicOn, object: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

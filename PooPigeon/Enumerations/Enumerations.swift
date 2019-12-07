@@ -46,3 +46,16 @@ enum ChallengeScoreType: String, Codable {
     case BoolValue
 }
 
+enum SettingButtonType {
+    case Sound
+    case Music
+    case Language
+    case Like
+    case Share
+    case Review
+    case Credits
+    case ContantInfo
+    case RestorePurchases
+    case RemoveAdds
+    case UIhand
+}

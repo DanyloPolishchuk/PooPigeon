@@ -23,4 +23,6 @@ extension Notification.Name {
     static let buttonPressed = Notification.Name("buttonPressedNotificationKey")
     static let sfxSoundPlay = Notification.Name("sfxSoundPlayNotificationKey")
     
+    static let changeTopButton = Notification.Name("changeTopButtonNotificationKey")
+    static let updateLanguage = Notification.Name("updateLanguageNotificationKey")
 }
