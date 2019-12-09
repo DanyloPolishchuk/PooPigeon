@@ -11,6 +11,10 @@ import SpriteKit
 
 class GameViewController: BaseViewController {
 
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
+    
     //MARK: - Properties
     //
     var currentGameScene: BaseSKScene!

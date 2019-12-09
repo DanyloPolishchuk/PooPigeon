@@ -10,6 +10,10 @@ import UIKit
 
 class PauseViewController: UIViewController {
     
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
+    
     //MARK: - Properties
     //
     weak var gameViewController: GameViewController!

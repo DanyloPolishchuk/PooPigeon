@@ -12,6 +12,12 @@
 		9E3821902386E79F00244205 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38218F2386E79F00244205 /* Bird.swift */; };
 		9E3821952387134300244205 /* BaseSKScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3821942387134300244205 /* BaseSKScene.swift */; };
 		9E382198238714EA00244205 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E382197238714EA00244205 /* Protocols.swift */; };
+		9E5468FB239D43A600857D44 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5468FA239D43A600857D44 /* AchievementsViewController.swift */; };
+		9E5468FD239D54E400857D44 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5468FC239D54E400857D44 /* ProgressTableViewCell.swift */; };
+		9E5468FF239D552400857D44 /* WallpaperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5468FE239D552400857D44 /* WallpaperTableViewCell.swift */; };
+		9E581B52239EE7FA000F7B04 /* VCR_OSD_MONO_1.001.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E43707D238C43D000B7D42D /* VCR_OSD_MONO_1.001.ttf */; };
+		9E643F78239D9C3200BB5FC0 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E643F77239D9C3200BB5FC0 /* Wallpaper.swift */; };
+		9E643F7A239ECD3600BB5FC0 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E643F79239ECD3600BB5FC0 /* HeaderTableViewCell.swift */; };
 		9E6C9A1123916C6300B7AC37 /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C9A1023916C6300B7AC37 /* PauseViewController.swift */; };
 		9E6C9A1423916D7A00B7AC37 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C9A1323916D7A00B7AC37 /* GameViewController.swift */; };
 		9E6C9A162391BBF900B7AC37 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C9A152391BBF900B7AC37 /* Enemy.swift */; };
@@ -41,6 +47,11 @@
 		9E3821942387134300244205 /* BaseSKScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSKScene.swift; sourceTree = "<group>"; };
 		9E382197238714EA00244205 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		9E43707D238C43D000B7D42D /* VCR_OSD_MONO_1.001.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VCR_OSD_MONO_1.001.ttf; sourceTree = "<group>"; };
+		9E5468FA239D43A600857D44 /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
+		9E5468FC239D54E400857D44 /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
+		9E5468FE239D552400857D44 /* WallpaperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperTableViewCell.swift; sourceTree = "<group>"; };
+		9E643F77239D9C3200BB5FC0 /* Wallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
+		9E643F79239ECD3600BB5FC0 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		9E6C9A1023916C6300B7AC37 /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
 		9E6C9A1323916D7A00B7AC37 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		9E6C9A152391BBF900B7AC37 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
@@ -83,6 +94,7 @@
 				9E38218D2386E1D300244205 /* Level.swift */,
 				9E38218F2386E79F00244205 /* Bird.swift */,
 				9E6C9A152391BBF900B7AC37 /* Enemy.swift */,
+				9E643F77239D9C3200BB5FC0 /* Wallpaper.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -138,11 +150,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		9E5468F9239D425C00857D44 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				9E5468FA239D43A600857D44 /* AchievementsViewController.swift */,
+				9E5468FC239D54E400857D44 /* ProgressTableViewCell.swift */,
+				9E5468FE239D552400857D44 /* WallpaperTableViewCell.swift */,
+				9E643F79239ECD3600BB5FC0 /* HeaderTableViewCell.swift */,
+			);
+			path = Achievements;
+			sourceTree = "<group>";
+		};
 		9E6C9A1223916D4600B7AC37 /* Menu Screens */ = {
 			isa = PBXGroup;
 			children = (
 				9E9862B32389CF7A00809E2B /* MainMenuViewController.swift */,
 				9E8FC8562399814400A576C0 /* Settings */,
+				9E5468F9239D425C00857D44 /* Achievements */,
 			);
 			path = "Menu Screens";
 			sourceTree = "<group>";
@@ -328,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E581B52239EE7FA000F7B04 /* VCR_OSD_MONO_1.001.ttf in Resources */,
 				9EDDE3D5237A1C2C00A06863 /* Main.storyboard in Resources */,
 				9EDDE3CC237A1C2C00A06863 /* GameScene.sks in Resources */,
 				9E8FC85123971BDB00A576C0 /* signalRocketSound.mp3 in Resources */,
@@ -345,13 +370,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E5468FB239D43A600857D44 /* AchievementsViewController.swift in Sources */,
 				9E6C9A1123916C6300B7AC37 /* PauseViewController.swift in Sources */,
+				9E5468FD239D54E400857D44 /* ProgressTableViewCell.swift in Sources */,
 				9E38218E2386E1D300244205 /* Level.swift in Sources */,
 				9E6C9A162391BBF900B7AC37 /* Enemy.swift in Sources */,
 				9E3821902386E79F00244205 /* Bird.swift in Sources */,
+				9E643F78239D9C3200BB5FC0 /* Wallpaper.swift in Sources */,
 				9EDDE3D0237A1C2C00A06863 /* GameScene.swift in Sources */,
 				9E6C9A1423916D7A00B7AC37 /* GameViewController.swift in Sources */,
 				9E8FC8582399817500A576C0 /* SettingsCollectionViewCell.swift in Sources */,
+				9E5468FF239D552400857D44 /* WallpaperTableViewCell.swift in Sources */,
 				9E382198238714EA00244205 /* Protocols.swift in Sources */,
 				9E6C9A182391EAEB00B7AC37 /* EnemySKSpriteNode.swift in Sources */,
 				9E3821952387134300244205 /* BaseSKScene.swift in Sources */,
@@ -362,6 +391,7 @@
 				9E8FC84E2392522000A576C0 /* NotificationNames.swift in Sources */,
 				9E8FC85323971D5700A576C0 /* BaseViewController.swift in Sources */,
 				9EDDE3E3237B390300A06863 /* Enumerations.swift in Sources */,
+				9E643F7A239ECD3600BB5FC0 /* HeaderTableViewCell.swift in Sources */,
 				9E38218C2386E07900244205 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

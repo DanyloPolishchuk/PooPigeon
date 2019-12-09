@@ -32,6 +32,7 @@ class Settings: Codable {
     
     private var levels: [Level]
     private var birds: [Bird]
+    private var wallpapers: [Wallpaper]
     
     private var language: Language
     
@@ -56,8 +57,6 @@ class Settings: Codable {
     
     private init(){
         
-        //TODO: delete print log once clear that settings singleton works as supposed to
-        
         print("\n\nSettings singleton init\n\n")
         
         if let data = UserDefaults.standard.value(forKey: "settingsUDKey") as? Data, let settings = try? PropertyListDecoder().decode(Settings.self, from: data) {
@@ -69,6 +68,8 @@ class Settings: Codable {
             
             self.levels = settings.levels
             self.birds = settings.birds
+            self.wallpapers = settings.wallpapers
+            
             self.language = settings.language
             
             self.isLeftHandedUI = settings.isLeftHandedUI
@@ -142,6 +143,10 @@ class Settings: Codable {
                      neededChallengeDateValue: nil)
             ]
             
+            wallpapers = [
+                Wallpaper(wallpaperImageName: "level1NewYorkBackground", isWallpaperUnlocked: false)
+            ]
+            
             currentLevel = levels[0]
             currentBird = birds[0]
             
@@ -183,6 +188,14 @@ class Settings: Codable {
             isAddsRemovalPurchased
         ]
     }
+    func getWallpapers() -> [Wallpaper] {
+        return self.wallpapers
+    }
+    func unlockWallpaperAtIndex(_ index: Int){
+        if index < self.wallpapers.count {
+            wallpapers[index].isWallpaperUnlocked = true
+        }
+    }
     
     func getLevelsCount() -> Int{
         return self.levels.count
@@ -202,13 +215,6 @@ class Settings: Codable {
 //    func getBirdFromLevelAtIndex(_ levelIndex: Int, withBirdIndex birdIndex: Int) -> Bird {
 //        return levels[levelIndex].birds[birdIndex]
 //    }
-
-    
-    //MARK: - bird methods
-    //
-//    func getBirdsCound() -> Int{
-//        return self.birds.count
-//    }
     
     //MARK: - language methods
     //
@@ -221,16 +227,5 @@ class Settings: Codable {
             self.save()
         }
     }
-    
-    
-    //TODO: change this method for birds arr
-//    func updateLevelAt(index: Int, level: Level){
-//        if index < levels.count {
-//            levels[index].levelState = level.levelState
-//            levels[index].mainHeroCurrentPosition = level.mainHeroCurrentPosition
-//            levels[index].mainHeroInventory = level.mainHeroInventory
-//            self.save()
-//        }
-//    }
     
 }

@@ -12,6 +12,10 @@ import GameplayKit
 
 class MainMenuViewController: UIViewController {
     
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
+    
     //MARK: - Properties
     //
     weak var gameViewController: GameViewController!
@@ -34,19 +38,19 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var bottomRightButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var playButtonConstraint: NSLayoutConstraint!
     
-    //MARK: - Overriden Properties
-    //
-    override var shouldAutorotate: Bool {
-        return false
-    }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+//    //MARK: - Overriden Properties
+//    //
+//    override var shouldAutorotate: Bool {
+//        return false
+//    }
+//
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//        return .portrait
+//    }
+//    
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
     
     
     //MARK: - lifecylce methods
@@ -142,7 +146,10 @@ class MainMenuViewController: UIViewController {
 //        }
     }
     func showAchievements(){
-        
+        if let achievementsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "achievementsScreenIdentifier") as? AchievementsViewController {
+            achievementsVC.mainMenuViewConroller = self
+            self.present(achievementsVC, animated: true)
+        }
     }
     
     //MARK: - Actions

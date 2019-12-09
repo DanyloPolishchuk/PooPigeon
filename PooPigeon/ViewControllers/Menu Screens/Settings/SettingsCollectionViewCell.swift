@@ -14,7 +14,6 @@ class SettingsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var settingsDescriptionLabel: UILabel!
     
-    //TODO: separate cell button & label setup implementation
     func displayContent(buttonType: SettingButtonType){
         self.buttonType = buttonType
         
