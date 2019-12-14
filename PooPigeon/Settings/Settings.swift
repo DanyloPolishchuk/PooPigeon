@@ -95,11 +95,13 @@ class Settings: Codable {
             //TODO: replace default level & bird values to separate .swift file / JSON
             levels = [
                 
-                Level(levelNumber: 1,
+                Level(levelName: "City",
+                      levelNumber: 1,
                       levelSceneFileName: "GameScene",
                       // REPLACE_WITH_ACTUAL_SOUND_FILE
-                      levelMusicSoundFileName: "signalRocketSound",
-                      enemies: [
+                    levelMusicSoundFileName: "signalRocketSound",
+                    levelPreviewImageName: "level1NewYorkBackground" ,
+                    enemies: [
                         Enemy(texture: "level1ManWalkingFrame1",
                               physicsBodyTexture: "level1ManWalkingBodyTexture",
                               animationTextureNames: [
@@ -108,15 +110,15 @@ class Settings: Codable {
                                 "level1ManWalkingFrame3"
                             ])
                     ],
-                      levelIsUnlocked: true,
-                      levelChallengeType: .None,
-                      levelChallengeScoreType: .None,
-                      currentChallengeNumberValueProgress: nil,
-                      currentChallengeBoolValueProgress: nil,
-                      currentChallengeDateValueProgress: nil,
-                      neededChallengeNumberValue: nil,
-                      neededChallengeBoolValue: nil,
-                      neededChallengeDateValue: nil
+                    levelIsUnlocked: true,
+                    levelChallengeType: .None,
+                    levelChallengeScoreType: .None,
+                    currentChallengeNumberValueProgress: nil,
+                    currentChallengeBoolValueProgress: nil,
+                    currentChallengeDateValueProgress: nil,
+                    neededChallengeNumberValue: nil,
+                    neededChallengeBoolValue: nil,
+                    neededChallengeDateValue: nil
                 )
             ]
             
@@ -139,6 +141,26 @@ class Settings: Codable {
                      currentChallengeBoolValueProgress: nil,
                      currentChallengeDateValueProgress: nil,
                      neededChallengeNumberValue: nil,
+                     neededChallengeBoolValue: nil,
+                     neededChallengeDateValue: nil),
+                Bird(birdNumber: 2,
+                     birdName: "Bat",
+                     birdSpawnPosition: CGPoint(x: 0, y: 744),
+                     birdTexture: "batFrame1",
+                     birdAnimationTextureNames: [
+                        "batFrame1",
+                        "batFrame2"
+                    ],
+                     birdShootTextureName: "batShootFrame",
+                     // REPLACE_WITH_ACTUAL_SOUND_FILE
+                     birdSoundFileName: "signalRocketSound",
+                     birdIsUnlocked: false,
+                     birdChallengeType: .TotalScore,
+                     birdChallengeScoreType: .NumberValue,
+                     currentChallengeNumberValueProgress: 0,
+                     currentChallengeBoolValueProgress: nil,
+                     currentChallengeDateValueProgress: nil,
+                     neededChallengeNumberValue: 50,
                      neededChallengeBoolValue: nil,
                      neededChallengeDateValue: nil)
             ]
@@ -187,6 +209,12 @@ class Settings: Codable {
             isApplicationReviewed,
             isAddsRemovalPurchased
         ]
+    }
+    func getBirds() -> [Bird] {
+        return self.birds
+    }
+    func getLevels() -> [Level] {
+        return self.levels
     }
     func getWallpapers() -> [Wallpaper] {
         return self.wallpapers

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E16740823A2F24D00322AFF /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E16740723A2F24D00322AFF /* ShopViewController.swift */; };
+		9E16740A23A3C34E00322AFF /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E16740923A3C34E00322AFF /* ShopCollectionViewCell.swift */; };
 		9E38218C2386E07900244205 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38218B2386E07900244205 /* Settings.swift */; };
 		9E38218E2386E1D300244205 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38218D2386E1D300244205 /* Level.swift */; };
 		9E3821902386E79F00244205 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38218F2386E79F00244205 /* Bird.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E16740723A2F24D00322AFF /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		9E16740923A3C34E00322AFF /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E38218B2386E07900244205 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		9E38218D2386E1D300244205 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		9E38218F2386E79F00244205 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
@@ -87,6 +91,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E16740623A2F0EB00322AFF /* Shop (Birds & Levels) */ = {
+			isa = PBXGroup;
+			children = (
+				9E16740723A2F24D00322AFF /* ShopViewController.swift */,
+				9E16740923A3C34E00322AFF /* ShopCollectionViewCell.swift */,
+			);
+			path = "Shop (Birds & Levels)";
+			sourceTree = "<group>";
+		};
+		9E16740B23A418DF00322AFF /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		9E16740C23A418E600322AFF /* Music */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		9E38218A2386DCCD00244205 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +194,7 @@
 				9E9862B32389CF7A00809E2B /* MainMenuViewController.swift */,
 				9E8FC8562399814400A576C0 /* Settings */,
 				9E5468F9239D425C00857D44 /* Achievements */,
+				9E16740623A2F0EB00322AFF /* Shop (Birds & Levels) */,
 			);
 			path = "Menu Screens";
 			sourceTree = "<group>";
@@ -190,6 +218,8 @@
 		9E8FC84F23971A7A00A576C0 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				9E16740C23A418E600322AFF /* Music */,
+				9E16740B23A418DF00322AFF /* Sounds */,
 				9E8FC85023971BDA00A576C0 /* signalRocketSound.mp3 */,
 			);
 			path = Audio;
@@ -372,6 +402,7 @@
 			files = (
 				9E5468FB239D43A600857D44 /* AchievementsViewController.swift in Sources */,
 				9E6C9A1123916C6300B7AC37 /* PauseViewController.swift in Sources */,
+				9E16740A23A3C34E00322AFF /* ShopCollectionViewCell.swift in Sources */,
 				9E5468FD239D54E400857D44 /* ProgressTableViewCell.swift in Sources */,
 				9E38218E2386E1D300244205 /* Level.swift in Sources */,
 				9E6C9A162391BBF900B7AC37 /* Enemy.swift in Sources */,
@@ -390,6 +421,7 @@
 				9E8FC85523997A8200A576C0 /* SettingsViewController.swift in Sources */,
 				9E8FC84E2392522000A576C0 /* NotificationNames.swift in Sources */,
 				9E8FC85323971D5700A576C0 /* BaseViewController.swift in Sources */,
+				9E16740823A2F24D00322AFF /* ShopViewController.swift in Sources */,
 				9EDDE3E3237B390300A06863 /* Enumerations.swift in Sources */,
 				9E643F7A239ECD3600BB5FC0 /* HeaderTableViewCell.swift in Sources */,
 				9E38218C2386E07900244205 /* Settings.swift in Sources */,

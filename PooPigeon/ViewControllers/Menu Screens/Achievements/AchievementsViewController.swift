@@ -16,7 +16,7 @@ class AchievementsViewController: UIViewController {
     
     //MARK: - Properties
     //
-    weak var mainMenuViewConroller: MainMenuViewController!
+    weak var mainMenuViewCotnroller: MainMenuViewController!
     let headerViewCellReuseIdentifier = "headerViewCellReuseIdentifier"
     let progressCellReuseIdentifier = "progressCellReuseIdentifier"
     let wallpaperCellReuseIdentifier = "wallpaperCellReuseIdentifier"
@@ -116,7 +116,7 @@ class AchievementsViewController: UIViewController {
         
         hideUI {
             self.dismiss(animated: true, completion: {
-                self.mainMenuViewConroller.viewDidAppear(true)
+                self.mainMenuViewCotnroller.viewDidAppear(true)
             })
         }
     }

@@ -33,5 +33,6 @@ struct Bird: Codable {
     let neededChallengeDateValue: String?
     //TODO: find out an implementation way to track current challenge progress of each bird & unlock bird once challenge passed, & set isNewUnlockedBird/Level flag to true
     //TODO: add reference scene file name property & spawn position ?
+    //TODO: add current Progress string computed property / func with all date & number formatting and etc.
     
 }

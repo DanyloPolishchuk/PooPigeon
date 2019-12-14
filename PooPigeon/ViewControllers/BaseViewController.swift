@@ -44,7 +44,7 @@ class BaseViewController: UIViewController {
         setupSFXAudioPlayerWith(currentBirdSoundFileName: sfxSoundFileName)
         setupMusicAudioPlayerWith(currentLevelMusicSoundFileName: musicSoundFileName)
     }
-    private func setupSFXAudioPlayerWith(currentBirdSoundFileName name: String){
+    func setupSFXAudioPlayerWith(currentBirdSoundFileName name: String){
         if let birdFileURL = Bundle.main.url(forResource: name, withExtension: "mp3") {
             do{
                 sfxAudioPlayer = try AVAudioPlayer(contentsOf: birdFileURL)

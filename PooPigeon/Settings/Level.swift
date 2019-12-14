@@ -11,9 +11,11 @@ import UIKit
 
 struct Level: Codable {
     
+    let levelName: String
     let levelNumber: Int
     let levelSceneFileName: String
     let levelMusicSoundFileName: String
+    let levelPreviewImageName: String
     let enemies: [Enemy]
     
     var levelIsUnlocked: Bool

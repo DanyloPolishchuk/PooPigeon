@@ -25,4 +25,10 @@ extension Notification.Name {
     
     static let changeTopButton = Notification.Name("changeTopButtonNotificationKey")
     static let updateLanguage = Notification.Name("updateLanguageNotificationKey")
+    
+    static let setupCurrentLevelAndBird = Notification.Name("setupCurrentLevelAndBirdNotificationKey")
+    static let setupLevelAndBird = Notification.Name("setupLevelAndBirdNotificationKey")
+    static let setupCurrentBird = Notification.Name("setupCurrentBirdNotificationKey")
+    static let setupBird = Notification.Name("setupBirdNotificationKey")
+
 }

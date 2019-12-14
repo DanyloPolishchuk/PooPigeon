@@ -139,15 +139,15 @@ class MainMenuViewController: UIViewController {
             self.present(settingsVC, animated: true)
         }
     }
-    func showBirds(){
-//        if let birdsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "birdsScreenIdentifier") as? BirdsViewController {
-//            birdsVC.mainMenuViewController = self
-//            self.present(birdsVC, animated: true)
-//        }
+    func showShop(){
+        if let shopVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "birdsScreenIdentifier") as? ShopViewController {
+            shopVC.mainMenuViewController = self
+            self.present(shopVC, animated: true)
+        }
     }
     func showAchievements(){
         if let achievementsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "achievementsScreenIdentifier") as? AchievementsViewController {
-            achievementsVC.mainMenuViewConroller = self
+            achievementsVC.mainMenuViewCotnroller = self
             self.present(achievementsVC, animated: true)
         }
     }
@@ -170,7 +170,7 @@ class MainMenuViewController: UIViewController {
             if self.isLeftHandedUI{
                 self.showAchievements()
             }else{
-                self.showBirds()
+                self.showShop()
             }
         }
     }
@@ -179,7 +179,7 @@ class MainMenuViewController: UIViewController {
 
         hideUI {
             if self.isLeftHandedUI{
-                self.showBirds()
+                self.showShop()
             }else{
                 self.showAchievements()
             }

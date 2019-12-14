@@ -28,6 +28,7 @@ class GameViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNotifications()
         setupSKView()
         setupCurrentLevelAndBird()
     }
@@ -50,7 +51,23 @@ class GameViewController: BaseViewController {
         skView.showsNodeCount = true
         skView.showsFields = true
     }
-    func setupCurrentLevelAndBird(){
+    func setupNotifications(){
+        NotificationCenter.default.addObserver(self, selector: #selector(setupCurrentLevelAndBird), name: .setupCurrentLevelAndBird, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setupLevelAndBird(notification:)), name: .setupLevelAndBird, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setupCurrentBird), name: .setupCurrentBird, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setupBird(notification:)), name: .setupBird, object: nil)
+    }
+    @objc func setupBird(notification: NSNotification){
+        if let bird = notification.object as? Bird{
+            setupBird(bird)
+        }
+    }
+    @objc func setupLevelAndBird(notification: NSNotification){
+        if let dict = notification.object as? NSDictionary, let level = dict["level"] as? Level, let bird = dict["bird"] as? Bird{
+            setupLevelAndBird(level, bird)
+        }
+    }
+    @objc func setupCurrentLevelAndBird(){
         
         let currentLevel = Settings.shared.currentLevel
         let currentBird = Settings.shared.currentBird
@@ -84,6 +101,18 @@ class GameViewController: BaseViewController {
             (scene as? BaseSKScene)?.presentCurrentBird()
         }
     }
+    @objc func setupCurrentBird(){
+        let currentBird = Settings.shared.currentBird
+        setupSFXAudioPlayerWith(currentBirdSoundFileName: currentBird.birdSoundFileName)
+        currentGameScene.currentBird = currentBird
+        currentGameScene.presentCurrentBird()
+    }
+    func setupBird(_ bird: Bird){
+        setupSFXAudioPlayerWith(currentBirdSoundFileName: bird.birdSoundFileName)
+        currentGameScene.currentBird = bird
+        currentGameScene.presentCurrentBird()
+    }
+    
     //TODO: add AdMob setup here
     
     //MARK: - Transition methods

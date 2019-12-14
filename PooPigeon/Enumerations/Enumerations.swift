@@ -24,7 +24,7 @@ enum Language: String, Codable {
 }
 
 enum ChallengeType: String, Codable {
-    case None = "No Challenge"
+    case None = "Default" // "No Challenge"
     case BestScore = "Best Score" // int
     case TotalScore = "Total Score"// int
     case TotalTimeSpentInGame = "Time Spent In Game" // int
