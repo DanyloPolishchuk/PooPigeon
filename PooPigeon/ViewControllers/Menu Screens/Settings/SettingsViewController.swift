@@ -151,6 +151,7 @@ extension SettingsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! SettingsCollectionViewCell
         if let finalCellsArr = finalCellsArr {
+            cell.settingsScreenPresentationDelegate = self
             cell.displayContent(buttonType: finalCellsArr[indexPath.row])
         }
         return cell
@@ -171,6 +172,65 @@ extension SettingsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1.0
+    }
+    
+}
+
+extension SettingsViewController: SettingsScreensPresentationProtocol{
+    
+    //TODO: add Like implementation here
+    func likeApplication() {
+        
+//        import StoreKit
+//
+//        func rateApp() {
+//            if #available(iOS 10.3, *) {
+//                SKStoreReviewController.requestReview()
+//
+//            } else if let url = URL(string: "itms-apps://itunes.apple.com/app/" + "appId") {
+//                if #available(iOS 10, *) {
+//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//
+//                } else {
+//                    UIApplication.shared.openURL(url)
+//                }
+//            }
+//        }
+        
+    }
+    
+    //TODO: add share implementation here. Copy wallpaper image share func but insead share link of an app
+    func shareApplication() {
+        
+//        if let name = URL(string: "https://itunes.apple.com/us/app/myapp/idxxxxxxxx?ls=1&mt=8"), !name.absoluteString.isEmpty {
+//            let objectsToShare = [name]
+//            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+//
+//            self.present(activityVC, animated: true, completion: nil)
+//        }else  {
+//            // show alert for not available
+//        }
+        
+    }
+    
+    //TODO: implement credits screen presentation
+    func showCredits() {
+        
+    }
+    
+    //TODO: implement contantInfoScreen presentation
+    func showContactInfo() {
+        
+    }
+    
+    //TODO: implement Restore purchases
+    func restorePurchases() {
+        
+    }
+    
+    //TODO: add IAP (In-App-Purchases)
+    func removeAdds() {
+        
     }
     
 }

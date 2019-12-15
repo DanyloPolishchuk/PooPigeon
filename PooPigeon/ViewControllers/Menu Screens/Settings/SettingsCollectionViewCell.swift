@@ -11,6 +11,8 @@ import UIKit
 class SettingsCollectionViewCell: UICollectionViewCell {
     
     var buttonType: SettingButtonType?
+    weak var settingsScreenPresentationDelegate: SettingsScreensPresentationProtocol?
+    
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var settingsDescriptionLabel: UILabel!
     
@@ -128,18 +130,6 @@ class SettingsCollectionViewCell: UICollectionViewCell {
     
     @IBAction func performAction(_ sender: Any) {
         NotificationCenter.default.post(name: .buttonPressed, object: nil)
-
-        // update settings
-        // OR
-        // update settings & post notification
-        // OR
-        // show nextScreen on Top ( like, share, review, credits, contact,
-        
-        // prefrorm some action -> cell button should be updated
-        // prefrorm some action -> cell should be removed -> recalculate cells array -> reloadData()
-        // prefrorm some action -> cell needs no change
-        
-        // single cell setup should be enough for handling changes
         
         guard let buttonType = self.buttonType else {return}
         switch buttonType {
@@ -170,27 +160,29 @@ class SettingsCollectionViewCell: UICollectionViewCell {
             }
             updateCellButtonImage()
             NotificationCenter.default.post(name: .updateLanguage, object: nil)
+            
         case .Like:
-            //TODO: add Like implementation here
-            break
+            settingsScreenPresentationDelegate?.likeApplication()
+            
         case .Share:
-            //TODO: add share implementation here
-            break
+            settingsScreenPresentationDelegate?.shareApplication()
+            
         case .Review:
             // probably'll be deleted
             break
+            
         case .Credits:
-            //TODO: implement credits screen presentation
-            break
+            settingsScreenPresentationDelegate?.showCredits()
+            
         case .ContantInfo:
-            //TODO: implement contantInfoScreen presentation
-            break
+            settingsScreenPresentationDelegate?.showContactInfo()
+            
         case .RestorePurchases:
-            //TODO: implement Restore purchases
-            break
+            settingsScreenPresentationDelegate?.restorePurchases()
+            
         case .RemoveAdds:
-            //TODO: add IAP (In-App-Purchases)
-            break
+            settingsScreenPresentationDelegate?.removeAdds()
+            
         case .UIhand:
             let isLeftHandedUI = Settings.shared.isLeftHandedUI
             Settings.shared.isLeftHandedUI = !isLeftHandedUI

@@ -11,6 +11,7 @@ import UIKit
 class WallpaperTableViewCell: UITableViewCell {
     
     var wallpaper: Wallpaper?
+    weak var shareDelegate: UIActivityShareProtocol?
     
     @IBOutlet weak var wallpaperImageView: UIImageView!
     @IBOutlet weak var shareButton: UIButton!
@@ -33,10 +34,15 @@ class WallpaperTableViewCell: UITableViewCell {
     }
     
     @IBAction func shareAction(_ sender: Any) {
-        //TODO: add share implementation
+        // ask for library acces before presenting
+        if let image = wallpaperImageView.image{
+            shareDelegate?.shareImage(image: image)
+        }
     }
     @IBAction func unlockAction(_ sender: Any) {
-        //TODO: add AdMob video advertisement implementation
+        //TODO: add AdMob video advertisement implementation & remove test implementation
+        self.unlockButton.isHidden = true
+        self.shareButton.isHidden = false
     }
     
 }

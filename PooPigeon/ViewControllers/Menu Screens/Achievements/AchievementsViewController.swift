@@ -186,11 +186,22 @@ extension AchievementsViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: wallpaperCellReuseIdentifier, for: indexPath) as! WallpaperTableViewCell
             
             if let finalArr = self.finalArr, let wallpaper = finalArr[indexPath.section][indexPath.row] as? Wallpaper {
+                cell.shareDelegate = self
                 cell.displayContent(wallpaper: wallpaper)
             }
             
             return cell
         }
+    }
+    
+}
+
+extension AchievementsViewController: UIActivityShareProtocol {
+    
+    func shareImage(image: UIImage) {
+        let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC, animated: true)
     }
     
 }
