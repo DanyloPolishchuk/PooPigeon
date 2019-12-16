@@ -1,5 +1,5 @@
 //
-//  GameScene.swift
+//  Level1Scene.swift
 //  PooPigeon
 //
 //  Created by Danylo Polishchuk on 11/12/19.
@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: BaseSKScene {
+class Level1Scene: BaseSKScene {
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)

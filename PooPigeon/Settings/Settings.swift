@@ -97,7 +97,7 @@ class Settings: Codable {
                 
                 Level(levelName: "City",
                       levelNumber: 1,
-                      levelSceneFileName: "GameScene",
+                      levelSceneFileName: "Level1Scene",
                       // REPLACE_WITH_ACTUAL_SOUND_FILE
                     levelMusicSoundFileName: "signalRocketSound",
                     levelPreviewImageName: "level1NewYorkBackground" ,

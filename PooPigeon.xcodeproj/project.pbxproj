@@ -32,8 +32,8 @@
 		9E8FC8582399817500A576C0 /* SettingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8FC8572399817500A576C0 /* SettingsCollectionViewCell.swift */; };
 		9E9862B42389CF7A00809E2B /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9862B32389CF7A00809E2B /* MainMenuViewController.swift */; };
 		9EDDE3CA237A1C2C00A06863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDDE3C9237A1C2C00A06863 /* AppDelegate.swift */; };
-		9EDDE3CC237A1C2C00A06863 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9EDDE3CB237A1C2C00A06863 /* GameScene.sks */; };
-		9EDDE3D0237A1C2C00A06863 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDDE3CF237A1C2C00A06863 /* GameScene.swift */; };
+		9EDDE3CC237A1C2C00A06863 /* Level1Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9EDDE3CB237A1C2C00A06863 /* Level1Scene.sks */; };
+		9EDDE3D0237A1C2C00A06863 /* Level1Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDDE3CF237A1C2C00A06863 /* Level1Scene.swift */; };
 		9EDDE3D5237A1C2C00A06863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EDDE3D3237A1C2C00A06863 /* Main.storyboard */; };
 		9EDDE3D7237A1C2E00A06863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EDDE3D6237A1C2E00A06863 /* Assets.xcassets */; };
 		9EDDE3DA237A1C2E00A06863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EDDE3D8237A1C2E00A06863 /* LaunchScreen.storyboard */; };
@@ -67,8 +67,8 @@
 		9E9862B32389CF7A00809E2B /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		9EDDE3C6237A1C2C00A06863 /* PooPigeon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PooPigeon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDDE3C9237A1C2C00A06863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9EDDE3CB237A1C2C00A06863 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		9EDDE3CF237A1C2C00A06863 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		9EDDE3CB237A1C2C00A06863 /* Level1Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1Scene.sks; sourceTree = "<group>"; };
+		9EDDE3CF237A1C2C00A06863 /* Level1Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1Scene.swift; sourceTree = "<group>"; };
 		9EDDE3D4237A1C2C00A06863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EDDE3D6237A1C2E00A06863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EDDE3D9237A1C2E00A06863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -122,19 +122,26 @@
 		9E186F3A23A6A7540004E1B1 /* Level Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				9EDDE3CF237A1C2C00A06863 /* GameScene.swift */,
+				9EDDE3CF237A1C2C00A06863 /* Level1Scene.swift */,
 			);
 			path = "Level Scenes";
+			sourceTree = "<group>";
+		};
+		9E186F3B23A7B8400004E1B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9E38218D2386E1D300244205 /* Level.swift */,
+				9E38218F2386E79F00244205 /* Bird.swift */,
+				9E6C9A152391BBF900B7AC37 /* Enemy.swift */,
+				9E643F77239D9C3200BB5FC0 /* Wallpaper.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9E38218A2386DCCD00244205 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				9E38218B2386E07900244205 /* Settings.swift */,
-				9E38218D2386E1D300244205 /* Level.swift */,
-				9E38218F2386E79F00244205 /* Bird.swift */,
-				9E6C9A152391BBF900B7AC37 /* Enemy.swift */,
-				9E643F77239D9C3200BB5FC0 /* Wallpaper.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -260,7 +267,7 @@
 		9E938B932383479400B87876 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				9EDDE3CB237A1C2C00A06863 /* GameScene.sks */,
+				9EDDE3CB237A1C2C00A06863 /* Level1Scene.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -315,6 +322,7 @@
 				9E382196238714AE00244205 /* Protocols */,
 				9E382191238712A200244205 /* Custom Nodes */,
 				9E38218A2386DCCD00244205 /* Settings */,
+				9E186F3B23A7B8400004E1B1 /* Models */,
 				9EDDE3E1237B38EB00A06863 /* Enumerations */,
 				9E938B92238346C800B87876 /* Scene Files */,
 				9E9862AD23898DFE00809E2B /* ViewControllers */,
@@ -394,7 +402,7 @@
 			files = (
 				9E581B52239EE7FA000F7B04 /* VCR_OSD_MONO_1.001.ttf in Resources */,
 				9EDDE3D5237A1C2C00A06863 /* Main.storyboard in Resources */,
-				9EDDE3CC237A1C2C00A06863 /* GameScene.sks in Resources */,
+				9EDDE3CC237A1C2C00A06863 /* Level1Scene.sks in Resources */,
 				9E8FC85123971BDB00A576C0 /* signalRocketSound.mp3 in Resources */,
 				9EDDE3D7237A1C2E00A06863 /* Assets.xcassets in Resources */,
 				9EDDE3DA237A1C2E00A06863 /* LaunchScreen.storyboard in Resources */,
@@ -416,7 +424,7 @@
 				9E6C9A162391BBF900B7AC37 /* Enemy.swift in Sources */,
 				9E3821902386E79F00244205 /* Bird.swift in Sources */,
 				9E643F78239D9C3200BB5FC0 /* Wallpaper.swift in Sources */,
-				9EDDE3D0237A1C2C00A06863 /* GameScene.swift in Sources */,
+				9EDDE3D0237A1C2C00A06863 /* Level1Scene.swift in Sources */,
 				9E6C9A1423916D7A00B7AC37 /* GameViewController.swift in Sources */,
 				9E8FC8582399817500A576C0 /* SettingsCollectionViewCell.swift in Sources */,
 				9E5468FF239D552400857D44 /* WallpaperTableViewCell.swift in Sources */,
@@ -586,7 +594,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.PooPigeon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DanyloPolishchuk.PooPigeon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -605,7 +613,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.PooPigeon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DanyloPolishchuk.PooPigeon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
