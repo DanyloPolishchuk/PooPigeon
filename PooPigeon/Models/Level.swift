@@ -21,7 +21,15 @@ struct Level: Codable {
     var levelIsUnlocked: Bool
     let levelChallengeType: ChallengeType
     let levelChallengeScoreType: ChallengeScoreType
-    var currentChallengeNumberValueProgress: UInt?
+    var currentChallengeNumberValueProgress: UInt? {
+        didSet{
+            if self.currentChallengeNumberValueProgress != nil,
+                self.neededChallengeNumberValue != nil,
+                self.currentChallengeNumberValueProgress! >= self.neededChallengeNumberValue! {
+                self.levelIsUnlocked = true
+            }
+        }
+    }
     var currentChallengeBoolValueProgress: Bool?
     var currentChallengeDateValueProgress: String?
     let neededChallengeNumberValue: UInt?

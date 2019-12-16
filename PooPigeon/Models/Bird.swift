@@ -25,7 +25,15 @@ struct Bird: Codable {
     var birdIsUnlocked: Bool
     let birdChallengeType: ChallengeType
     let birdChallengeScoreType: ChallengeScoreType
-    var currentChallengeNumberValueProgress: UInt?
+    var currentChallengeNumberValueProgress: UInt? {
+        didSet{
+            if self.currentChallengeNumberValueProgress != nil,
+                self.neededChallengeNumberValue != nil,
+                self.currentChallengeNumberValueProgress! >= self.neededChallengeNumberValue! {
+                birdIsUnlocked = true
+            }
+        }
+    }
     var currentChallengeBoolValueProgress: Bool?
     var currentChallengeDateValueProgress: String?
     let neededChallengeNumberValue: UInt?

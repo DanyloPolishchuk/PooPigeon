@@ -38,6 +38,7 @@
 		9EDDE3D7237A1C2E00A06863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EDDE3D6237A1C2E00A06863 /* Assets.xcassets */; };
 		9EDDE3DA237A1C2E00A06863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EDDE3D8237A1C2E00A06863 /* LaunchScreen.storyboard */; };
 		9EDDE3E3237B390300A06863 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDDE3E2237B390300A06863 /* Enumerations.swift */; };
+		9EEE96A823A84A0100C1954F /* UInt+secondsToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEE96A723A84A0100C1954F /* UInt+secondsToString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		9EDDE3D9237A1C2E00A06863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EDDE3DB237A1C2E00A06863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EDDE3E2237B390300A06863 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
+		9EEE96A723A84A0100C1954F /* UInt+secondsToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt+secondsToString.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				9E8FC84D2392522000A576C0 /* NotificationNames.swift */,
+				9EEE96A723A84A0100C1954F /* UInt+secondsToString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E5468FB239D43A600857D44 /* AchievementsViewController.swift in Sources */,
+				9EEE96A823A84A0100C1954F /* UInt+secondsToString.swift in Sources */,
 				9E6C9A1123916C6300B7AC37 /* PauseViewController.swift in Sources */,
 				9E16740A23A3C34E00322AFF /* ShopCollectionViewCell.swift in Sources */,
 				9E5468FD239D54E400857D44 /* ProgressTableViewCell.swift in Sources */,

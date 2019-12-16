@@ -39,21 +39,24 @@ class Settings: Codable {
     var isLeftHandedUI: Bool
     var isSoundEffectsEnabled: Bool
     var isMusicEnabled: Bool
+    
     var isApplicationLiked: Bool
     var isApplicaitonShared: Bool
     var isApplicationReviewed: Bool
-    var isAddsRemovalPurchased: Bool
     
-    //TODO: add new progress variables ( best, total, e.t.c. )
+    var isAddsRemovalPurchased: Bool
+    //TODO: add restore purchase variables
+
     var bestScore: UInt
     var totalScore: UInt
     var amountOfLoses: UInt
 
     var timeInSecsSpentInGame: UInt
     var timesGameWasLaunched: UInt
+    
+    var lastLaunchTimeInSecs: UInt
     var amountOfDaysGameWasLaunched: UInt
     
-    //TODO: add restore purchase variables
     
     private init(){
         
@@ -83,6 +86,7 @@ class Settings: Codable {
             
             self.bestScore = settings.bestScore
             self.totalScore = settings.totalScore
+            self.lastLaunchTimeInSecs = settings.lastLaunchTimeInSecs
             self.timeInSecsSpentInGame = settings.timeInSecsSpentInGame
             self.timesGameWasLaunched = settings.timesGameWasLaunched
             self.amountOfDaysGameWasLaunched = settings.amountOfDaysGameWasLaunched
@@ -166,7 +170,9 @@ class Settings: Codable {
             ]
             
             wallpapers = [
-                Wallpaper(wallpaperImageName: "level1NewYorkBackground", isWallpaperUnlocked: false)
+                Wallpaper(wallpaperNumber: 1,
+                          wallpaperImageName: "level1NewYorkBackground",
+                          isWallpaperUnlocked: false)
             ]
             
             currentLevel = levels[0]
@@ -185,6 +191,7 @@ class Settings: Codable {
             
             bestScore = 0
             totalScore = 0
+            lastLaunchTimeInSecs = 0
             timeInSecsSpentInGame = 0
             timesGameWasLaunched = 0
             amountOfDaysGameWasLaunched = 0
@@ -198,6 +205,56 @@ class Settings: Codable {
     func save(){
         UserDefaults.standard.set(try? PropertyListEncoder().encode(self), forKey: "settingsUDKey")
         UserDefaults.standard.synchronize()
+    }
+    
+    //MARK: - Progressable properties update methods
+    //
+    func updateCurrentProgressProperties(){
+        self.birds = self.birds.map({ (bird: Bird) -> Bird in
+            var newBird = bird
+            if !newBird.birdIsUnlocked {
+                switch newBird.birdChallengeType{
+                case .BestScore:
+                    newBird.currentChallengeNumberValueProgress = self.bestScore
+                case .TotalScore:
+                    newBird.currentChallengeNumberValueProgress = self.totalScore
+                case .TotalLoseTimes:
+                    newBird.currentChallengeNumberValueProgress = self.amountOfLoses
+                case .TotalTimeSpentInGame:
+                    newBird.currentChallengeNumberValueProgress = self.timeInSecsSpentInGame
+                case .TotalTimesGameWasLaunched:
+                    newBird.currentChallengeNumberValueProgress = self.timesGameWasLaunched
+                case .TotalDaysGameWasLaunched:
+                    newBird.currentChallengeNumberValueProgress = self.amountOfDaysGameWasLaunched
+                default:
+                    break
+                }
+            }
+            return newBird
+        })
+        self.levels = self.levels.map({ (level: Level) -> Level in
+            var newLevel = level
+            if !newLevel.levelIsUnlocked {
+                switch newLevel.levelChallengeType{
+                case .BestScore:
+                    newLevel.currentChallengeNumberValueProgress = self.bestScore
+                case .TotalScore:
+                    newLevel.currentChallengeNumberValueProgress = self.totalScore
+                case .TotalLoseTimes:
+                    newLevel.currentChallengeNumberValueProgress = self.amountOfLoses
+                case .TotalTimeSpentInGame:
+                    newLevel.currentChallengeNumberValueProgress = self.timeInSecsSpentInGame
+                case .TotalTimesGameWasLaunched:
+                    newLevel.currentChallengeNumberValueProgress = self.timesGameWasLaunched
+                case .TotalDaysGameWasLaunched:
+                    newLevel.currentChallengeNumberValueProgress = self.amountOfDaysGameWasLaunched
+                default:
+                    break
+                }
+            }
+            return newLevel
+        })
+        save()
     }
     
     //MARK: - Get & Set methods

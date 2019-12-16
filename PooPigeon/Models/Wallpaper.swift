@@ -9,6 +9,7 @@
 import Foundation
 
 struct Wallpaper: Codable {
+    let wallpaperNumber: Int
     var wallpaperImageName: String
     var isWallpaperUnlocked: Bool
 }

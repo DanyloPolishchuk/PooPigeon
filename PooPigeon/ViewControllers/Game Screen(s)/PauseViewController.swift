@@ -81,6 +81,7 @@ class PauseViewController: UIViewController {
     func setupNotifications(){
         NotificationCenter.default.addObserver(self, selector: #selector(setupScoreLabel(notification:)), name: .setupScoreKey, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showGameOverView(notification:)), name: .showGameOverKey, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseOnResignActive), name: .pauseOnResignActive, object: nil)
     }
     func setupDefaultConstraints(){
         self.leftPauseButtonConstraint.constant = -self.leftPauseButton.frame.width - 8
@@ -139,6 +140,10 @@ class PauseViewController: UIViewController {
     }
     @objc func showGameOverView(notification: NSNotification){
         showGameOverView()
+    }
+    @objc func pauseOnResignActive(){
+        gameViewController.pauseGame()
+        showPauseView()
     }
     
     //MARK: - Animation methods

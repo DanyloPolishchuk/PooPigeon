@@ -27,8 +27,7 @@ class ProgressTableViewCell: UITableViewCell {
         case .TotalLoseTimes:
             progressValueLabel.text = String(Settings.shared.amountOfLoses)
         case .TotalTimeSpentInGame:
-            //TODO: add string Date formatting here 
-            progressValueLabel.text = String(Settings.shared.timeInSecsSpentInGame)
+            progressValueLabel.text = UInt.secondsToString(seconds: Settings.shared.timeInSecsSpentInGame)
         case .TotalTimesGameWasLaunched:
             progressValueLabel.text = String(Settings.shared.timesGameWasLaunched)
         case .TotalDaysGameWasLaunched:

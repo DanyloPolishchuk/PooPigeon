@@ -30,5 +30,7 @@ extension Notification.Name {
     static let setupLevelAndBird = Notification.Name("setupLevelAndBirdNotificationKey")
     static let setupCurrentBird = Notification.Name("setupCurrentBirdNotificationKey")
     static let setupBird = Notification.Name("setupBirdNotificationKey")
+    
+    static let pauseOnResignActive = Notification.Name("pauseOnResignActiveNotificationKey")
 
 }

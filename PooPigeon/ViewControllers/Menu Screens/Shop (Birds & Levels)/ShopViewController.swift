@@ -47,6 +47,7 @@ class ShopViewController: UIViewController {
         
         setupTopButtons()
         setupDefaultConstraints()
+        updateDataSources()
         setupDataSources()
         setupCollectionViews()
     }
@@ -67,6 +68,9 @@ class ShopViewController: UIViewController {
         self.backButtonConstraint.constant = -self.backButton.frame.width - 8
         self.previewButtonConstraint.constant = -self.previewButton.frame.width - 8
         self.collectionViewsContainerView.alpha = 0.0
+    }
+    func updateDataSources(){
+        Settings.shared.updateCurrentProgressProperties()
     }
     func setupDataSources(){
         self.birds = Settings.shared.getBirds()
