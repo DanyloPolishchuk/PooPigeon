@@ -244,7 +244,6 @@ class BaseSKScene: SKScene {
     func presentCurrentBird(){
         
         if let previousBird = self.childNode(withName: "//birdNode"){
-            print("previousBird.removeFromParent() successfully")
             previousBird.removeFromParent()
         }
         let currentBird = BirdSKSpriteNode(self.currentBird)

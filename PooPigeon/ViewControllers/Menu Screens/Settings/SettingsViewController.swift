@@ -42,6 +42,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTopButtonsImages()
         setupTopButtons()
         setupNotifications()
         setupDefaultConstraints()
@@ -59,6 +60,10 @@ class SettingsViewController: UIViewController {
     func setupNotifications(){
         NotificationCenter.default.addObserver(self, selector: #selector(setupTopButtons), name: .changeTopButton, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateLanguage), name: .updateLanguage, object: nil)
+    }
+    func setupTopButtonsImages(){
+        rightTopButton.setImage(UIImage(named: "backButtonPressed"), for: .highlighted)
+        leftTopButton.setImage(UIImage(named: "backButtonPressed"), for: .highlighted)
     }
     @objc func setupTopButtons(){
         (Settings.shared.isLeftHandedUI ? rightTopButton : leftTopButton)?.isHidden = true
@@ -218,9 +223,9 @@ extension SettingsViewController: SettingsScreensPresentationProtocol{
         
     }
     
-    //TODO: implement contantInfoScreen presentation
     func showContactInfo() {
-        
+        let contactUsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "contactUsScreenStoryboardIdentifier")
+        self.present(contactUsVC, animated: true)
     }
     
     //TODO: implement Restore purchases

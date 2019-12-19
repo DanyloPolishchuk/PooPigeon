@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // time challenge properties
     let nanoSecsToSecsMultiplier = 0.000000001 // 1 second == 1 billion nanoseconds
-    let twentyFourHoursInSecs = 86400
     var startTime: DispatchTime?
     var endTime: DispatchTime?
     
@@ -25,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Lifecycle methods
     //
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         increaseGameLaunchesCount()
         updateGameLaunchDaysCount()
@@ -83,32 +81,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Settings.shared.save()
     }
     
-    func setupLastLaunchTime(){
-        let lastLaunchTime = DispatchTime.now()
-        let lastLaunchTimeDouble = Double(lastLaunchTime.uptimeNanoseconds)
-        let lastLaunchTimeInSeconds = UInt(lastLaunchTimeDouble * nanoSecsToSecsMultiplier)
-        Settings.shared.lastLaunchTimeInSecs = lastLaunchTimeInSeconds
+    func setupLastLaunchTime(){        
+        Settings.shared.lastLaunchTimeDate = Date()
         Settings.shared.save()
     }
     
     func updateGameLaunchDaysCount() {
         
-        let lastLaunchTimeInSecs = Settings.shared.lastLaunchTimeInSecs
-        
-        if lastLaunchTimeInSecs == 0 {
+        if Settings.shared.isFirstLaunch {
             Settings.shared.amountOfDaysGameWasLaunched += 1
+            Settings.shared.isFirstLaunch = false
             Settings.shared.save()
             return
         }
         
-        let currentLaunchTime = DispatchTime.now()
-        let currentLaunchTimeDouble = Double(currentLaunchTime.uptimeNanoseconds)
-        let currentLaunchTimeInSeconds = UInt(currentLaunchTimeDouble * nanoSecsToSecsMultiplier)
+        let lastLaunchDate = Settings.shared.lastLaunchTimeDate
+        let currentLaunchDate = Date()
         
+        let dateDifferenceComponents = Calendar.current.dateComponents([.day], from: lastLaunchDate, to: currentLaunchDate)
+        let daysBetweenLaunches = dateDifferenceComponents.day
         
-        let differenceBetweenLaunchesInSecs = currentLaunchTimeInSeconds - lastLaunchTimeInSecs
-        
-        if differenceBetweenLaunchesInSecs > twentyFourHoursInSecs {
+        if let days = daysBetweenLaunches, days >= 1 {
             Settings.shared.amountOfDaysGameWasLaunched += 1
             Settings.shared.save()
         }

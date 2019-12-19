@@ -36,6 +36,8 @@ class Settings: Codable {
     
     private var language: Language
     
+    var isFirstLaunch: Bool
+    
     var isLeftHandedUI: Bool
     var isSoundEffectsEnabled: Bool
     var isMusicEnabled: Bool
@@ -54,7 +56,7 @@ class Settings: Codable {
     var timeInSecsSpentInGame: UInt
     var timesGameWasLaunched: UInt
     
-    var lastLaunchTimeInSecs: UInt
+    var lastLaunchTimeDate: Date
     var amountOfDaysGameWasLaunched: UInt
     
     
@@ -75,6 +77,8 @@ class Settings: Codable {
             
             self.language = settings.language
             
+            self.isFirstLaunch = settings.isFirstLaunch
+            
             self.isLeftHandedUI = settings.isLeftHandedUI
             self.isSoundEffectsEnabled = settings.isSoundEffectsEnabled
             self.isMusicEnabled = settings.isMusicEnabled
@@ -86,7 +90,7 @@ class Settings: Codable {
             
             self.bestScore = settings.bestScore
             self.totalScore = settings.totalScore
-            self.lastLaunchTimeInSecs = settings.lastLaunchTimeInSecs
+            self.lastLaunchTimeDate = settings.lastLaunchTimeDate
             self.timeInSecsSpentInGame = settings.timeInSecsSpentInGame
             self.timesGameWasLaunched = settings.timesGameWasLaunched
             self.amountOfDaysGameWasLaunched = settings.amountOfDaysGameWasLaunched
@@ -180,6 +184,8 @@ class Settings: Codable {
             
             language = Language.English
             
+            isFirstLaunch = true
+            
             isLeftHandedUI = false
             isSoundEffectsEnabled = true
             isMusicEnabled = true
@@ -191,7 +197,7 @@ class Settings: Codable {
             
             bestScore = 0
             totalScore = 0
-            lastLaunchTimeInSecs = 0
+            lastLaunchTimeDate = Date()
             timeInSecsSpentInGame = 0
             timesGameWasLaunched = 0
             amountOfDaysGameWasLaunched = 0
