@@ -6,7 +6,7 @@
 //  Copyright © 2019 Polishchuk company. All rights reserved.
 //
 
-//TODO: add last cell as "Get All Birds / Levels" cell
+//TODO: add last cell as "Get All Birds / Levels" cell / just as buttons on top of each CV
 
 import UIKit
 
@@ -197,9 +197,9 @@ extension ShopViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
         if collectionView == birdsCollectionView, self.birds != nil{
-            return self.birds!.count
+            return self.birds!.count // + (Settings.shared.isEveryBirdUnlocked ? 0 : 1 )
         }else if collectionView == levelsCollectionView, self.levels != nil{
-            return self.levels!.count
+            return self.levels!.count // + (Settings.shared.isEveryLevelUnlocked ? 0 : 1 )
         }else{
             return 0
         }
@@ -207,7 +207,6 @@ extension ShopViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if collectionView == birdsCollectionView, let birdCell = collectionView.dequeueReusableCell(withReuseIdentifier: birdCellReuseIdentifier, for: indexPath) as? ShopCollectionViewCell, birds != nil {
             birdCell.displayContent(bird: birds![indexPath.row])
             return birdCell

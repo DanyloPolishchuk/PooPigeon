@@ -59,6 +59,19 @@ class Settings: Codable {
     var lastLaunchTimeDate: Date
     var amountOfDaysGameWasLaunched: UInt
     
+    //MARK: - Computed properties
+    //
+    var isEveryBirdUnlocked: Bool {
+        get{
+            return self.birds.allSatisfy({ $0.birdIsUnlocked })
+        }
+    }
+    
+    var isEveryLevelUnlocked: Bool {
+        get{
+            return self.levels.allSatisfy({ $0.levelIsUnlocked })
+        }
+    }
     
     private init(){
         
@@ -299,13 +312,6 @@ class Settings: Codable {
             return nil
         }
     }
-    
-//    func getBirdsCountOfLevelAtIndex(_ index: Int) -> Int{
-//        return self.levels[index].birds.count
-//    }
-//    func getBirdFromLevelAtIndex(_ levelIndex: Int, withBirdIndex birdIndex: Int) -> Bird {
-//        return levels[levelIndex].birds[birdIndex]
-//    }
     
     //MARK: - language methods
     //
