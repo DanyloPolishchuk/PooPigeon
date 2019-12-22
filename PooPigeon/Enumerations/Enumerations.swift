@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 
 enum PhysicsCategory: UInt32 {
-    case None   = 0
-    case Edge   = 1     //0b1
-    case Human  = 2     //0b10
-    case Bullet = 4     //0b100
-    case Field  = 8     //0b1000
+    case None           = 0
+    case Edge           = 1     //0b1
+    case Human          = 2     //0b10
+    case Bullet         = 4     //0b100
+    case Field          = 8     //0b1000
+    case VisibleBorder  = 16    //0b10000
 }
 
 enum Language: String, Codable {

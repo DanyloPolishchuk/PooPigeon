@@ -33,8 +33,8 @@ class EnemySKSpriteNode: SKSpriteNode {
         
         self.physicsBody = SKPhysicsBody(texture: enemyPhysicsBodyTexture, size: enemyPhysicsBodyTexture.size())
         self.physicsBody?.categoryBitMask = PhysicsCategory.Human.rawValue
-        self.physicsBody?.collisionBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Bullet.rawValue
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Bullet.rawValue
+        self.physicsBody?.collisionBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Bullet.rawValue | PhysicsCategory.VisibleBorder.rawValue
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Bullet.rawValue | PhysicsCategory.VisibleBorder.rawValue
         self.physicsBody?.allowsRotation = false
         
     }
@@ -58,6 +58,21 @@ class EnemySKSpriteNode: SKSpriteNode {
         self.run(walkInfiniteAnimationAction, withKey: walkAnimationActionKey)
         self.run(walkMoveSequnce, withKey: walkActionKey)
     }
+    func walk(duration: Double){
+        // replace "walkAnimationSpeed" with calculated value
+        let walkAnimationAction = SKAction.animate(with: animationTextures, timePerFrame: walkAnimationSpeed)
+        let walkInfiniteAnimationAction = SKAction.repeatForever(walkAnimationAction)
+        let walkMoveAction = SKAction.moveTo(x: destinationX, duration: duration)
+        let walkMoveSequnce = SKAction.sequence([
+            walkMoveAction,
+            SKAction.removeFromParent(),
+            SKAction.run {
+                print("enemyNode is removed after walk")
+            }
+            ])
+        self.run(walkInfiniteAnimationAction, withKey: walkAnimationActionKey)
+        self.run(walkMoveSequnce, withKey: walkActionKey)
+    }
     /// cancels previous action, starts run texture animation & moveToX action & removes node
     func run(){
         self.removeAction(forKey: walkActionKey)
@@ -66,7 +81,8 @@ class EnemySKSpriteNode: SKSpriteNode {
         let runAnimationAction = SKAction.animate(with: animationTextures, timePerFrame: runAnimationSpped)
         let runInfiniteAnimationAction = SKAction.repeatForever(runAnimationAction)
         
-        let runMoveAction = SKAction.moveTo(x: destinationX, duration: 2.0)
+        // maybe change the destinationPoint to leftDestinationPoint so player can see clearly right side of the screen.
+        let runMoveAction = SKAction.moveTo(x: destinationX, duration: 1.25)
         let runMoveSequence = SKAction.sequence([
             runMoveAction,
             SKAction.removeFromParent(),
