@@ -10,7 +10,7 @@
 
 import UIKit
 
-class ShopViewController: UIViewController {
+class ShopViewController: BaseBannerAdViewController {
     
     //MARK: - Properties
     //

@@ -1,5 +1,5 @@
 //
-//  BaseViewController.swift
+//  BaseAudioViewController.swift
 //  PooPigeon
 //
 //  Created by Danylo Polishchuk on 12/4/19.
@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class BaseViewController: UIViewController {
+class BaseAudioViewController: UIViewController {
 
     //TODO: replace test sound name (& extension) with the actual one
     private var sfxAudioPlayer = AVAudioPlayer()

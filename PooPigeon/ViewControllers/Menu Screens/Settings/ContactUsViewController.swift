@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ContactUsViewController: UIViewController {
+class ContactUsViewController: BaseBannerAdViewController {
+    
+    weak var settingsViewController: SettingsViewController!
     
     @IBOutlet weak var contactUsLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -30,6 +32,7 @@ class ContactUsViewController: UIViewController {
     }
 
     @IBAction func backAction(_ sender: UIButton) {
+        settingsViewController.unhideBannerView()
         self.dismiss(animated: true)
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: BaseViewController {
+class GameViewController: BaseAudioViewController {
 
     override var prefersStatusBarHidden: Bool{
         return true
@@ -45,11 +45,13 @@ class GameViewController: BaseViewController {
     func setupSKView(){
         skView.ignoresSiblingOrder = true
         
-        //TODO: add target(version check) & set below to false on release version
+        #if DEBUG
         skView.showsFPS = true
         skView.showsPhysics = true
         skView.showsNodeCount = true
         skView.showsFields = true
+        #endif
+        
     }
     func setupNotifications(){
         NotificationCenter.default.addObserver(self, selector: #selector(setupCurrentLevelAndBird), name: .setupCurrentLevelAndBird, object: nil)
@@ -112,8 +114,6 @@ class GameViewController: BaseViewController {
         currentGameScene.currentBird = bird
         currentGameScene.presentCurrentBird()
     }
-    
-    //TODO: add AdMob setup here
     
     //MARK: - Transition methods
     //

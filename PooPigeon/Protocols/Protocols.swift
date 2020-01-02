@@ -16,8 +16,9 @@ protocol InteractiveNode {
     func interact()
 }
 
-protocol UIActivityShareProtocol: class {
+protocol WallpaperActionsProtocol: class {
     func shareImage(image: UIImage)
+    func showRewardedAdToUnlockWallpaper(wallpaper: Wallpaper)
 }
 
 protocol SettingsScreensPresentationProtocol: class {

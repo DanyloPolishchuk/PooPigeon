@@ -298,6 +298,7 @@ class Settings: Codable {
     func unlockWallpaperAtIndex(_ index: Int){
         if index < self.wallpapers.count {
             wallpapers[index].isWallpaperUnlocked = true
+            save()
         }
     }
     

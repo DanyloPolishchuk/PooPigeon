@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PauseViewController: UIViewController {
+class PauseViewController: BaseBannerAdViewController {
     
     override var prefersStatusBarHidden: Bool{
         return true

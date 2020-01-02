@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class AchievementsViewController: UIViewController {
+class AchievementsViewController: BaseBannerAdViewController {
 
     override var prefersStatusBarHidden: Bool{
         return true
@@ -16,6 +17,9 @@ class AchievementsViewController: UIViewController {
     
     //MARK: - Properties
     //
+    var rewardedAd: GADRewardedAd?
+    var wallpaperToUnlock: Wallpaper?
+    
     weak var mainMenuViewCotnroller: MainMenuViewController!
     let headerViewCellReuseIdentifier = "headerViewCellReuseIdentifier"
     let progressCellReuseIdentifier = "progressCellReuseIdentifier"
@@ -30,7 +34,7 @@ class AchievementsViewController: UIViewController {
         .TotalDaysGameWasLaunched
         // other challenge types are just one action (lik "Like", "Share" etc. or not progressable (specific date)
     ]
-    let wallpapers = Settings.shared.getWallpapers()
+    var wallpapers = Settings.shared.getWallpapers()
     var finalArr: [[Any]]?
     
     //MARK: - Outlets
@@ -54,6 +58,7 @@ class AchievementsViewController: UIViewController {
         setupDefaultConstraints()
         setupDataSource()
         setupDelegates()
+        setupRewardedAd()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -82,6 +87,9 @@ class AchievementsViewController: UIViewController {
         ]
         
     }
+    func setupRewardedAd(){
+        self.rewardedAd = createAndLoadRewardedAd()
+    }
     
     //MARK: - Animation methods
     //
@@ -108,6 +116,37 @@ class AchievementsViewController: UIViewController {
             completion()
         }
     }
+    
+    //MARK: - Google Ads methods
+    //
+    func createAndLoadRewardedAd() -> GADRewardedAd {
+        let rewardedAdAdUnitID = Bundle.main.object(forInfoDictionaryKey: "GADRewardedAdUnitID") as? String
+        let rewardedAd = GADRewardedAd(adUnitID: rewardedAdAdUnitID == nil ? "ca-app-pub-3940256099942544/1712485313" : rewardedAdAdUnitID! )
+        rewardedAd.load(GADRequest()) { (error) in
+            if let error = error {
+                print("RewardedAd Loading failed: \(error)")
+            } else {
+                print("RewardedAd Loading Succeeded")
+            }
+        }
+        return rewardedAd
+    }
+    func showRewardedAd(){
+        if self.rewardedAd?.isReady == true {
+            rewardedAd?.present(fromRootViewController: self, delegate: self)
+        }else{
+            //TODO: add some kind of "ad is being loaded" alert
+            print("rewardedAd.is NOT Ready")
+        }
+    }
+    func userDidUnlock(wallpaper: Wallpaper) {
+        Settings.shared.unlockWallpaperAtIndex(wallpaper.wallpaperNumber - 1)
+        self.wallpapers[wallpaper.wallpaperNumber - 1].isWallpaperUnlocked = true
+        setupDataSource()
+        self.tableView.reloadSections(IndexSet(integer: 1), with: .automatic)
+        //TODO: may be add cell selection if reloadDoesn't handle it
+    }
+    
     
     //MARK: - Actions
     //
@@ -186,7 +225,7 @@ extension AchievementsViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: wallpaperCellReuseIdentifier, for: indexPath) as! WallpaperTableViewCell
             
             if let finalArr = self.finalArr, let wallpaper = finalArr[indexPath.section][indexPath.row] as? Wallpaper {
-                cell.shareDelegate = self
+                cell.wallpaperActionsDelegate = self
                 cell.displayContent(wallpaper: wallpaper)
             }
             
@@ -196,12 +235,39 @@ extension AchievementsViewController: UITableViewDataSource {
     
 }
 
-extension AchievementsViewController: UIActivityShareProtocol {
+extension AchievementsViewController: WallpaperActionsProtocol {
     
+    //TODO: add "Go to app settings to turn on image library access" alert if images lib is inaccesible
     func shareImage(image: UIImage) {
         let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view
         self.present(activityVC, animated: true)
+    }
+    
+    func showRewardedAdToUnlockWallpaper(wallpaper: Wallpaper) {
+        self.wallpaperToUnlock = wallpaper
+        showRewardedAd()
+    }
+    
+}
+// GADRewardedAdDelegate
+extension AchievementsViewController: GADRewardedAdDelegate {
+    
+    func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
+        print("Reward received with currency: \(reward.type), amount \(reward.amount).")
+        if let wallpaperToUnlock = self.wallpaperToUnlock{
+            self.userDidUnlock(wallpaper: wallpaperToUnlock)
+        }
+    }
+    func rewardedAdDidPresent(_ rewardedAd: GADRewardedAd) {
+        print("Rewarded ad presented.")
+    }
+    func rewardedAdDidDismiss(_ rewardedAd: GADRewardedAd) {
+        print("Rewarded ad dismissed.")
+        self.rewardedAd = createAndLoadRewardedAd()
+    }
+    func rewardedAd(_ rewardedAd: GADRewardedAd, didFailToPresentWithError error: Error) {
+        print("Rewarded ad failed to present due to error: \(error)")
     }
     
 }

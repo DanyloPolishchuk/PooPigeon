@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: BaseBannerAdViewController {
     
     //MARK: - Properties
     //
@@ -224,8 +224,11 @@ extension SettingsViewController: SettingsScreensPresentationProtocol{
     }
     
     func showContactInfo() {
-        let contactUsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "contactUsScreenStoryboardIdentifier")
-        self.present(contactUsVC, animated: true)
+        if let contactUsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "contactUsScreenStoryboardIdentifier") as? ContactUsViewController {
+            contactUsVC.settingsViewController = self
+            hideBannerView()
+            self.present(contactUsVC, animated: true)
+        }
     }
     
     //TODO: implement Restore purchases

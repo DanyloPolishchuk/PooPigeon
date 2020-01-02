@@ -9,8 +9,9 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import GoogleMobileAds
 
-class MainMenuViewController: UIViewController {
+class MainMenuViewController: BaseBannerAdViewController {
     
     override var prefersStatusBarHidden: Bool{
         return true
@@ -24,7 +25,6 @@ class MainMenuViewController: UIViewController {
     //MARK: - Outlets
     //
     @IBOutlet weak var viewUI: UIView!
-//    @IBOutlet weak var adView: UIView!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var rightBottomButton: UIButton!
     @IBOutlet weak var rightTopButton: UIButton!
@@ -37,21 +37,6 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var bottomLeftButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomRightButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var playButtonConstraint: NSLayoutConstraint!
-    
-//    //MARK: - Overriden Properties
-//    //
-//    override var shouldAutorotate: Bool {
-//        return false
-//    }
-//
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//        return .portrait
-//    }
-//    
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
-    
     
     //MARK: - lifecylce methods
     //
@@ -69,6 +54,7 @@ class MainMenuViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupButtons()
+        unhideBannerView()
         unhideUI {}
     }
     
@@ -156,7 +142,7 @@ class MainMenuViewController: UIViewController {
     //
     @IBAction func playAction(_ sender: Any) {
         NotificationCenter.default.post(name: .buttonPressed, object: nil)
-
+        hideBannerView()
         hideUI {
             self.dismiss(animated: true, completion: {
                 self.gameViewController.startGame(false)
@@ -165,7 +151,7 @@ class MainMenuViewController: UIViewController {
     }
     @IBAction func rightBottomAction(_ sender: UIButton) {
         NotificationCenter.default.post(name: .buttonPressed, object: nil)
-
+        hideBannerView()
         hideUI {
             if self.isLeftHandedUI{
                 self.showAchievements()
@@ -176,7 +162,7 @@ class MainMenuViewController: UIViewController {
     }
     @IBAction func leftBottomAction(_ sender: UIButton) {
         NotificationCenter.default.post(name: .buttonPressed, object: nil)
-
+        hideBannerView()
         hideUI {
             if self.isLeftHandedUI{
                 self.showShop()
@@ -187,7 +173,7 @@ class MainMenuViewController: UIViewController {
     }
     @IBAction func settingsAction(_ sender: UIButton) {
         NotificationCenter.default.post(name: .buttonPressed, object: nil)
-
+        hideBannerView()
         hideUI {
             self.showSettings()
         }

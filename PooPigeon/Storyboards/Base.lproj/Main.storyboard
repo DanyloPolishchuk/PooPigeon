@@ -19,7 +19,7 @@
         <!--Settings View Controller-->
         <scene sceneID="RB8-EG-OAh">
             <objects>
-                <viewController storyboardIdentifier="settingsScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="0fo-W1-fQC" customClass="SettingsViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="settingsScreen" storyboardIdentifier="settingsScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="0fo-W1-fQC" customClass="SettingsViewController" customModule="PooPigeon___Debug" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ptS-PV-KdF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,7 +66,7 @@
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="settingCellReuseIdentifier" id="9bR-RF-0pP" customClass="SettingsCollectionViewCell" customModule="PooPigeon" customModuleProvider="target">
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="settingCellReuseIdentifier" id="9bR-RF-0pP" customClass="SettingsCollectionViewCell" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="165"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -148,6 +148,14 @@
                                             <constraint firstItem="ddG-Yz-XX6" firstAttribute="width" secondItem="573-pP-9O8" secondAttribute="width" multiplier="0.15" id="zMK-uS-lkp"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ul-zf-Ueb" customClass="GADBannerView">
+                                        <rect key="frame" x="27.5" y="597" width="320" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Isn-HQ-D3Q"/>
+                                            <constraint firstAttribute="width" constant="320" id="mJU-oV-ual"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -155,6 +163,8 @@
                                     <constraint firstAttribute="bottom" secondItem="573-pP-9O8" secondAttribute="bottom" constant="50" id="U78-dY-pPB"/>
                                     <constraint firstItem="573-pP-9O8" firstAttribute="leading" secondItem="VMz-zm-mnI" secondAttribute="leading" id="rRh-oZ-Peg"/>
                                     <constraint firstItem="573-pP-9O8" firstAttribute="top" secondItem="VMz-zm-mnI" secondAttribute="top" id="rda-Y8-Eje"/>
+                                    <constraint firstAttribute="bottom" secondItem="0ul-zf-Ueb" secondAttribute="bottom" id="tVi-px-gnb"/>
+                                    <constraint firstItem="0ul-zf-Ueb" firstAttribute="centerX" secondItem="VMz-zm-mnI" secondAttribute="centerX" id="vS4-2c-pRg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -168,6 +178,7 @@
                         <viewLayoutGuide key="safeArea" id="sFL-AT-Arr"/>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="0ul-zf-Ueb" id="Wv6-AF-KT0"/>
                         <outlet property="collectionView" destination="tsu-Sx-2xC" id="LdA-JK-mRq"/>
                         <outlet property="collectionViewContainerView" destination="eDQ-ps-CHZ" id="3L7-1v-MDI"/>
                         <outlet property="leftTopButton" destination="ddG-Yz-XX6" id="cuc-As-Qz2"/>
@@ -184,7 +195,7 @@
         <!--Contact Us View Controller-->
         <scene sceneID="uo7-5g-S7Y">
             <objects>
-                <viewController storyboardIdentifier="contactUsScreenStoryboardIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="Au1-pU-Kye" customClass="ContactUsViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="contactUsScreen" storyboardIdentifier="contactUsScreenStoryboardIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="Au1-pU-Kye" customClass="ContactUsViewController" customModule="PooPigeon___Debug" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g6n-8A-Ky2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,13 +274,23 @@
                                             <constraint firstItem="NxV-Fh-KlL" firstAttribute="centerX" secondItem="JA9-0x-mqg" secondAttribute="centerX" id="poh-3F-KwV"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-Z9-9lP" customClass="GADBannerView">
+                                        <rect key="frame" x="27.5" y="597" width="320" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="GSq-Y3-gty"/>
+                                            <constraint firstAttribute="height" constant="50" id="ZcS-4d-PbY"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="JA9-0x-mqg" secondAttribute="bottom" constant="50" id="KNv-d9-b2f"/>
+                                    <constraint firstAttribute="bottom" secondItem="ezR-Z9-9lP" secondAttribute="bottom" id="MyR-Yl-X5O"/>
                                     <constraint firstItem="JA9-0x-mqg" firstAttribute="leading" secondItem="Rv2-Ze-AM2" secondAttribute="leading" id="aZi-g8-jgC"/>
                                     <constraint firstItem="JA9-0x-mqg" firstAttribute="top" secondItem="Rv2-Ze-AM2" secondAttribute="top" id="jS0-ld-7J7"/>
                                     <constraint firstAttribute="trailing" secondItem="JA9-0x-mqg" secondAttribute="trailing" id="rLW-i5-veb"/>
+                                    <constraint firstItem="ezR-Z9-9lP" firstAttribute="centerX" secondItem="Rv2-Ze-AM2" secondAttribute="centerX" id="sIu-pB-MaV"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -283,6 +304,7 @@
                         <viewLayoutGuide key="safeArea" id="vTO-k1-ihj"/>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="ezR-Z9-9lP" id="GWh-pB-1fT"/>
                         <outlet property="contactUsLabel" destination="gDP-Sw-IQE" id="b4i-Nk-7Z0"/>
                         <outlet property="emailLabel" destination="oQb-d6-OeL" id="Fqs-Vy-DZE"/>
                     </connections>
@@ -294,38 +316,14 @@
         <!--Game View Controller-->
         <scene sceneID="Cfo-qb-lMJ">
             <objects>
-                <viewController id="mzD-wb-yGs" customClass="GameViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mzD-wb-yGs" customClass="GameViewController" customModule="PooPigeon___Debug" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9pL-kS-Vzn" userLabel="SKView" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3R-BA-U1U">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o71-f1-2NC" userLabel="AdView">
-                                        <rect key="frame" x="27.5" y="597" width="320" height="50"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут будет ваша реклама" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKw-Om-bxx">
-                                                <rect key="frame" x="63" y="15" width="194.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="320" id="ANy-vk-qge"/>
-                                            <constraint firstAttribute="height" constant="50" id="C7g-C7-usP"/>
-                                            <constraint firstItem="iKw-Om-bxx" firstAttribute="centerY" secondItem="o71-f1-2NC" secondAttribute="centerY" id="Knt-lA-ynr"/>
-                                            <constraint firstItem="iKw-Om-bxx" firstAttribute="centerX" secondItem="o71-f1-2NC" secondAttribute="centerX" id="wMQ-2L-nf4"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="o71-f1-2NC" firstAttribute="centerX" secondItem="W3R-BA-U1U" secondAttribute="centerX" id="d7h-MV-3ex"/>
-                                    <constraint firstAttribute="bottom" secondItem="o71-f1-2NC" secondAttribute="bottom" id="fjI-WS-ZMI"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -348,7 +346,7 @@
         <!--Main Menu View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController storyboardIdentifier="mainMenuScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="BV1-FR-VrT" customClass="MainMenuViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="mainMenu" storyboardIdentifier="mainMenuScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="BV1-FR-VrT" customClass="MainMenuViewController" customModule="PooPigeon___Debug" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -409,6 +407,14 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameLogo" translatesAutoresizingMaskIntoConstraints="NO" id="IyB-pS-0OK">
                                         <rect key="frame" x="0.0" y="195.5" width="375" height="256"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9b-Mt-ZQz" customClass="GADBannerView">
+                                        <rect key="frame" x="27.5" y="597" width="320" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="Hte-1O-WZq"/>
+                                            <constraint firstAttribute="height" constant="50" id="vRS-m1-G2Q"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -419,8 +425,10 @@
                                     <constraint firstAttribute="bottom" secondItem="zfd-Od-Jv6" secondAttribute="bottom" constant="66" id="MQM-2L-w76"/>
                                     <constraint firstItem="qfd-GX-ClK" firstAttribute="height" secondItem="B9N-bq-Hkm" secondAttribute="height" id="QW9-kq-DLH"/>
                                     <constraint firstItem="qfd-GX-ClK" firstAttribute="leading" secondItem="vz4-Kb-Q0T" secondAttribute="leading" constant="8" id="RmU-t8-cAI"/>
+                                    <constraint firstItem="w9b-Mt-ZQz" firstAttribute="centerX" secondItem="vz4-Kb-Q0T" secondAttribute="centerX" id="bdP-yT-6ty"/>
                                     <constraint firstItem="B9N-bq-Hkm" firstAttribute="width" secondItem="vz4-Kb-Q0T" secondAttribute="width" multiplier="0.5" id="clR-t4-b9O"/>
                                     <constraint firstItem="IyB-pS-0OK" firstAttribute="centerX" secondItem="vz4-Kb-Q0T" secondAttribute="centerX" id="dbV-B6-Ens"/>
+                                    <constraint firstAttribute="bottom" secondItem="w9b-Mt-ZQz" secondAttribute="bottom" id="hF1-xj-1jF"/>
                                     <constraint firstItem="zfd-Od-Jv6" firstAttribute="height" secondItem="B9N-bq-Hkm" secondAttribute="height" id="jX5-2D-l4f"/>
                                     <constraint firstAttribute="bottom" secondItem="B9N-bq-Hkm" secondAttribute="bottom" constant="66" id="kbC-XX-Qzp"/>
                                     <constraint firstItem="S3M-bq-PpH" firstAttribute="top" secondItem="vz4-Kb-Q0T" secondAttribute="top" constant="8" id="kdQ-PF-psC"/>
@@ -443,6 +451,7 @@
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="w9b-Mt-ZQz" id="ZL3-a1-BFX"/>
                         <outlet property="bottomLeftButtonConstraint" destination="RmU-t8-cAI" id="bc9-n2-CUE"/>
                         <outlet property="bottomRightButtonConstraint" destination="svQ-54-B2y" id="FgZ-YE-Lb4"/>
                         <outlet property="leftBottomButton" destination="qfd-GX-ClK" id="NW7-ir-tJ2"/>
@@ -459,12 +468,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15" y="-285"/>
+            <point key="canvasLocation" x="-15.199999999999999" y="-285.60719640179911"/>
         </scene>
         <!--Pause View Controller-->
         <scene sceneID="JTl-ez-B3P">
             <objects>
-                <viewController storyboardIdentifier="pauseScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="yt7-KV-xTh" customClass="PauseViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="pauseScreen" storyboardIdentifier="pauseScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="yt7-KV-xTh" customClass="PauseViewController" customModule="PooPigeon___Debug" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Euz-vO-mzc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -729,12 +738,22 @@
                                             <constraint firstItem="jzA-0d-wYd" firstAttribute="width" secondItem="PYP-Yr-foV" secondAttribute="width" multiplier="0.125" id="ujf-jb-bLA"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWX-Zf-Rnr" customClass="GADBannerView">
+                                        <rect key="frame" x="27.5" y="597" width="320" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="6yb-ky-lF6"/>
+                                            <constraint firstAttribute="width" constant="320" id="xRY-cm-ltm"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="rWX-Zf-Rnr" firstAttribute="centerX" secondItem="FPv-94-VpH" secondAttribute="centerX" id="H0C-Cg-WpB"/>
                                     <constraint firstItem="PYP-Yr-foV" firstAttribute="top" secondItem="FPv-94-VpH" secondAttribute="top" id="H5v-zE-S1H"/>
                                     <constraint firstAttribute="trailing" secondItem="PYP-Yr-foV" secondAttribute="trailing" id="JQ1-cB-Omr"/>
                                     <constraint firstAttribute="bottom" secondItem="PYP-Yr-foV" secondAttribute="bottom" constant="50" id="Jpe-86-xOm"/>
+                                    <constraint firstAttribute="bottom" secondItem="rWX-Zf-Rnr" secondAttribute="bottom" id="NUU-k6-fpE"/>
                                     <constraint firstItem="PYP-Yr-foV" firstAttribute="leading" secondItem="FPv-94-VpH" secondAttribute="leading" id="zFU-Oo-SGB"/>
                                 </constraints>
                             </view>
@@ -754,6 +773,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="UBP-0M-cJa" id="TYj-4I-mZV"/>
+                        <outlet property="bannerView" destination="rWX-Zf-Rnr" id="eYN-9x-vks"/>
                         <outlet property="bestScoreLabel" destination="Qb3-N6-D17" id="ybC-hl-s6l"/>
                         <outlet property="gameOverView" destination="Wwt-SU-Z2F" id="fQS-fU-FPt"/>
                         <outlet property="homeButton" destination="Qxg-Mq-DSE" id="1We-pU-xsh"/>
@@ -779,7 +799,7 @@
         <!--Achievements View Controller-->
         <scene sceneID="VRN-hR-g73">
             <objects>
-                <viewController storyboardIdentifier="achievementsScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="jX6-Eh-SyI" customClass="AchievementsViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="achievementsScreen" storyboardIdentifier="achievementsScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="jX6-Eh-SyI" customClass="AchievementsViewController" customModule="PooPigeon___Debug" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MJG-vp-ysA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -832,7 +852,7 @@
                                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="progressCellReuseIdentifier" id="690-we-AyQ" customClass="ProgressTableViewCell" customModule="PooPigeon" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="progressCellReuseIdentifier" id="690-we-AyQ" customClass="ProgressTableViewCell" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="269" height="44"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="690-we-AyQ" id="p0x-NI-Nab">
@@ -870,7 +890,7 @@
                                                                     <outlet property="progressValueLabel" destination="fNf-Tu-fOx" id="6gZ-2i-yNY"/>
                                                                 </connections>
                                                             </tableViewCell>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="wallpaperCellReuseIdentifier" rowHeight="120" id="1ZD-Vq-hzR" customClass="WallpaperTableViewCell" customModule="PooPigeon" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="wallpaperCellReuseIdentifier" rowHeight="120" id="1ZD-Vq-hzR" customClass="WallpaperTableViewCell" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="72" width="269" height="120"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1ZD-Vq-hzR" id="x88-cN-jCl">
@@ -937,7 +957,7 @@
                                                                     <outlet property="wallpaperImageView" destination="0MC-rD-Zyw" id="8uk-ca-XiH"/>
                                                                 </connections>
                                                             </tableViewCell>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="headerViewCellReuseIdentifier" rowHeight="96" id="B39-ea-SyY" customClass="HeaderTableViewCell" customModule="PooPigeon" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="headerViewCellReuseIdentifier" rowHeight="96" id="B39-ea-SyY" customClass="HeaderTableViewCell" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="192" width="269" height="96"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B39-ea-SyY" id="DbE-2S-6BZ">
@@ -995,12 +1015,22 @@
                                             <constraint firstAttribute="trailing" secondItem="W1k-85-Y1t" secondAttribute="trailing" constant="8" id="uou-Ea-XtS"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Orx-bK-kA4" customClass="GADBannerView">
+                                        <rect key="frame" x="27.5" y="597" width="320" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="5gM-rx-PPc"/>
+                                            <constraint firstAttribute="width" constant="320" id="IUP-vw-ysM"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="i3U-P9-OfZ" firstAttribute="leading" secondItem="YlV-TI-yg9" secondAttribute="leading" id="2PP-Tb-8u2"/>
                                     <constraint firstAttribute="trailing" secondItem="i3U-P9-OfZ" secondAttribute="trailing" id="6p3-2J-bZo"/>
                                     <constraint firstItem="i3U-P9-OfZ" firstAttribute="top" secondItem="YlV-TI-yg9" secondAttribute="top" id="N85-QP-h89"/>
+                                    <constraint firstItem="Orx-bK-kA4" firstAttribute="centerX" secondItem="YlV-TI-yg9" secondAttribute="centerX" id="bkS-5b-023"/>
+                                    <constraint firstAttribute="bottom" secondItem="Orx-bK-kA4" secondAttribute="bottom" id="oEN-Ct-smY"/>
                                     <constraint firstAttribute="bottom" secondItem="i3U-P9-OfZ" secondAttribute="bottom" constant="50" id="wuD-oa-jHz"/>
                                 </constraints>
                             </view>
@@ -1015,6 +1045,7 @@
                         <viewLayoutGuide key="safeArea" id="zc5-MJ-MzV"/>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="Orx-bK-kA4" id="CC5-S6-wRf"/>
                         <outlet property="leftTopButton" destination="IWJ-wf-pUy" id="YAH-ni-fbp"/>
                         <outlet property="leftTopButtonConstraint" destination="plc-gc-8yr" id="Kob-tl-rcP"/>
                         <outlet property="rightTopButton" destination="HUo-Nu-dUj" id="NPJ-2q-B63"/>
@@ -1032,7 +1063,7 @@
         <!--Shop View Controller-->
         <scene sceneID="lGt-2W-BPO">
             <objects>
-                <viewController storyboardIdentifier="birdsScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="oiI-oJ-IA8" customClass="ShopViewController" customModule="PooPigeon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="shopScreen" storyboardIdentifier="birdsScreenIdentifier" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="oiI-oJ-IA8" customClass="ShopViewController" customModule="PooPigeon___Debug" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I5L-3r-e4X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1082,7 +1113,7 @@
                                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
-                                                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="birdCellReuseIdentifier" id="uIG-Tc-oNh" customClass="ShopCollectionViewCell" customModule="PooPigeon" customModuleProvider="target">
+                                                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="birdCellReuseIdentifier" id="uIG-Tc-oNh" customClass="ShopCollectionViewCell" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="1" width="180" height="191.5"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1203,7 +1234,7 @@
                                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
-                                                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="levelCellReuseIdentifier" id="qY4-hK-P6D" customClass="ShopCollectionViewCell" customModule="PooPigeon" customModuleProvider="target">
+                                                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="levelCellReuseIdentifier" id="qY4-hK-P6D" customClass="ShopCollectionViewCell" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="-0.5" width="213" height="193.5"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1327,12 +1358,22 @@
                                             <constraint firstAttribute="trailing" secondItem="JgW-2X-HaJ" secondAttribute="trailing" id="urS-Q1-8HH"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2d4-PN-AXA" customClass="GADBannerView">
+                                        <rect key="frame" x="27.5" y="597" width="320" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="0MF-im-m3L"/>
+                                            <constraint firstAttribute="height" constant="50" id="QYm-BF-ifR"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Biz-ZF-CQV" firstAttribute="leading" secondItem="zbP-n9-TQK" secondAttribute="leading" id="9SB-Xp-dUU"/>
+                                    <constraint firstAttribute="bottom" secondItem="2d4-PN-AXA" secondAttribute="bottom" id="KZZ-fm-Zcv"/>
                                     <constraint firstItem="Biz-ZF-CQV" firstAttribute="top" secondItem="zbP-n9-TQK" secondAttribute="top" id="OQT-OV-m3i"/>
                                     <constraint firstAttribute="bottom" secondItem="Biz-ZF-CQV" secondAttribute="bottom" constant="50" id="cmz-c4-kP0"/>
+                                    <constraint firstItem="2d4-PN-AXA" firstAttribute="centerX" secondItem="zbP-n9-TQK" secondAttribute="centerX" id="eEM-GJ-v5q"/>
                                     <constraint firstAttribute="trailing" secondItem="Biz-ZF-CQV" secondAttribute="trailing" id="zhT-al-3bP"/>
                                 </constraints>
                             </view>
@@ -1349,6 +1390,7 @@
                     <connections>
                         <outlet property="backButton" destination="ezB-ky-34p" id="haW-Hh-LIt"/>
                         <outlet property="backButtonConstraint" destination="Ty7-NH-xfe" id="e58-m0-hXC"/>
+                        <outlet property="bannerView" destination="2d4-PN-AXA" id="0lj-ry-3Mm"/>
                         <outlet property="birdsCollectionView" destination="ImD-gP-ShO" id="bNU-Nj-1Uc"/>
                         <outlet property="collectionViewsContainerView" destination="JgW-2X-HaJ" id="1Fz-5N-Z4A"/>
                         <outlet property="levelsCollectionView" destination="bev-vZ-gc2" id="CjC-Eg-6SE"/>
