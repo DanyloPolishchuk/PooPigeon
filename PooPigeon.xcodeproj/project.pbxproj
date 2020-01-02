@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27245B8C4D09398E11AFBAF8 /* Pods_PooPigeon___Release.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2B8548113F17F28B21602D /* Pods_PooPigeon___Release.framework */; };
+		9777C39ECD84746FC09F431B /* Pods_PooPigeon___Debug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739ADA54D75F08424E15D754 /* Pods_PooPigeon___Debug.framework */; };
 		9E0035C623BE5BD300DC0202 /* LaunchScreenDebug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0035C523BE5BD300DC0202 /* LaunchScreenDebug.storyboard */; };
 		9E0035C723BE5BD300DC0202 /* LaunchScreenDebug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0035C523BE5BD300DC0202 /* LaunchScreenDebug.storyboard */; };
 		9E0035CC23BE94B500DC0202 /* ButtonSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E0035CB23BE94B500DC0202 /* ButtonSound.wav */; };
@@ -89,7 +91,11 @@
 
 /* Begin PBXFileReference section */
 		0FDAA4CBA58DA18F316AEB26 /* Pods-PooPigeon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PooPigeon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PooPigeon/Pods-PooPigeon.debug.xcconfig"; sourceTree = "<group>"; };
+		23ED1F3D11627FA50CB72316 /* Pods-PooPigeon - Debug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PooPigeon - Debug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PooPigeon - Debug/Pods-PooPigeon - Debug.debug.xcconfig"; sourceTree = "<group>"; };
 		3C62D000539C3EA504A7A635 /* Pods_PooPigeon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PooPigeon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		739ADA54D75F08424E15D754 /* Pods_PooPigeon___Debug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PooPigeon___Debug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		883A9E129F01129FF26FB73D /* Pods-PooPigeon - Release.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PooPigeon - Release.release.xcconfig"; path = "Pods/Target Support Files/Pods-PooPigeon - Release/Pods-PooPigeon - Release.release.xcconfig"; sourceTree = "<group>"; };
+		9A2B8548113F17F28B21602D /* Pods_PooPigeon___Release.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PooPigeon___Release.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E0035C523BE5BD300DC0202 /* LaunchScreenDebug.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenDebug.storyboard; sourceTree = "<group>"; };
 		9E0035CB23BE94B500DC0202 /* ButtonSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ButtonSound.wav; sourceTree = "<group>"; };
 		9E16740723A2F24D00322AFF /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +138,8 @@
 		9EDDE3DB237A1C2E00A06863 /* Info-Debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Debug.plist"; sourceTree = "<group>"; };
 		9EDDE3E2237B390300A06863 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		9EEE96A723A84A0100C1954F /* UInt+secondsToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt+secondsToString.swift"; sourceTree = "<group>"; };
+		A8C5C2A4C97C54B4E6F51561 /* Pods-PooPigeon - Debug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PooPigeon - Debug.release.xcconfig"; path = "Pods/Target Support Files/Pods-PooPigeon - Debug/Pods-PooPigeon - Debug.release.xcconfig"; sourceTree = "<group>"; };
+		B29E64AAAE83AD7292CF03B9 /* Pods-PooPigeon - Release.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PooPigeon - Release.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PooPigeon - Release/Pods-PooPigeon - Release.debug.xcconfig"; sourceTree = "<group>"; };
 		FD230341FBC3EA1A4B788DD4 /* Pods-PooPigeon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PooPigeon.release.xcconfig"; path = "Pods/Target Support Files/Pods-PooPigeon/Pods-PooPigeon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E82000D23BE3A5C0026A1EC /* Pods_PooPigeon.framework in Frameworks */,
+				27245B8C4D09398E11AFBAF8 /* Pods_PooPigeon___Release.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE48A074F99DAA78537B0155 /* Pods_PooPigeon.framework in Frameworks */,
+				9777C39ECD84746FC09F431B /* Pods_PooPigeon___Debug.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +170,10 @@
 			children = (
 				0FDAA4CBA58DA18F316AEB26 /* Pods-PooPigeon.debug.xcconfig */,
 				FD230341FBC3EA1A4B788DD4 /* Pods-PooPigeon.release.xcconfig */,
+				23ED1F3D11627FA50CB72316 /* Pods-PooPigeon - Debug.debug.xcconfig */,
+				A8C5C2A4C97C54B4E6F51561 /* Pods-PooPigeon - Debug.release.xcconfig */,
+				B29E64AAAE83AD7292CF03B9 /* Pods-PooPigeon - Release.debug.xcconfig */,
+				883A9E129F01129FF26FB73D /* Pods-PooPigeon - Release.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -434,6 +448,8 @@
 			isa = PBXGroup;
 			children = (
 				3C62D000539C3EA504A7A635 /* Pods_PooPigeon.framework */,
+				739ADA54D75F08424E15D754 /* Pods_PooPigeon___Debug.framework */,
+				9A2B8548113F17F28B21602D /* Pods_PooPigeon___Release.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -562,7 +578,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PooPigeon-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PooPigeon - Debug-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -575,7 +591,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PooPigeon/Pods-PooPigeon-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-PooPigeon - Release/Pods-PooPigeon - Release-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -586,7 +602,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PooPigeon/Pods-PooPigeon-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PooPigeon - Release/Pods-PooPigeon - Release-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9E82FFEE23BE3A5C0026A1EC /* [CP] Check Pods Manifest.lock */ = {
@@ -600,7 +616,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PooPigeon-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PooPigeon - Release-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -613,7 +629,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PooPigeon/Pods-PooPigeon-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-PooPigeon - Debug/Pods-PooPigeon - Debug-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -624,7 +640,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PooPigeon/Pods-PooPigeon-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PooPigeon - Debug/Pods-PooPigeon - Debug-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -724,7 +740,7 @@
 /* Begin XCBuildConfiguration section */
 		9E82001923BE3A5C0026A1EC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FDAA4CBA58DA18F316AEB26 /* Pods-PooPigeon.debug.xcconfig */;
+			baseConfigurationReference = B29E64AAAE83AD7292CF03B9 /* Pods-PooPigeon - Release.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -745,7 +761,7 @@
 		};
 		9E82001A23BE3A5C0026A1EC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD230341FBC3EA1A4B788DD4 /* Pods-PooPigeon.release.xcconfig */;
+			baseConfigurationReference = 883A9E129F01129FF26FB73D /* Pods-PooPigeon - Release.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -882,7 +898,7 @@
 		};
 		9EDDE3DF237A1C2E00A06863 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FDAA4CBA58DA18F316AEB26 /* Pods-PooPigeon.debug.xcconfig */;
+			baseConfigurationReference = 23ED1F3D11627FA50CB72316 /* Pods-PooPigeon - Debug.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -903,7 +919,7 @@
 		};
 		9EDDE3E0237A1C2E00A06863 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD230341FBC3EA1A4B788DD4 /* Pods-PooPigeon.release.xcconfig */;
+			baseConfigurationReference = A8C5C2A4C97C54B4E6F51561 /* Pods-PooPigeon - Debug.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
