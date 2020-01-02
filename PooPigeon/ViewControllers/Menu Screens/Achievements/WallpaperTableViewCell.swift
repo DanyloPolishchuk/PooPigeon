@@ -34,11 +34,13 @@ class WallpaperTableViewCell: UITableViewCell {
     }
     
     @IBAction func shareAction(_ sender: Any) {
+        NotificationCenter.default.post(name: .buttonPressed, object: nil)
         if let image = wallpaperImageView.image{
             wallpaperActionsDelegate?.shareImage(image: image)
         }
     }
     @IBAction func unlockAction(_ sender: Any) {
+        NotificationCenter.default.post(name: .buttonPressed, object: nil)
         if let wallpaper = self.wallpaper{
             wallpaperActionsDelegate?.showRewardedAdToUnlockWallpaper(wallpaper: wallpaper)
         }
