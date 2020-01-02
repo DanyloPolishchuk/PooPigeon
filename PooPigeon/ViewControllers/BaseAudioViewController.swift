@@ -31,7 +31,7 @@ class BaseAudioViewController: UIViewController {
     }
     
     private func setupButtonAudioPlayer(){
-        if let buttonClickSoundFileURL = Bundle.main.url(forResource: "signalRocketSound", withExtension: "mp3") {
+        if let buttonClickSoundFileURL = Bundle.main.url(forResource: "ButtonSound", withExtension: "wav") {
             do{
                 buttonAudioPlayer = try AVAudioPlayer(contentsOf: buttonClickSoundFileURL)
                 buttonAudioPlayer.volume = Settings.shared.isSoundEffectsEnabled ? 1.0 : 0.0
