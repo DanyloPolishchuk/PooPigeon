@@ -32,5 +32,7 @@ extension Notification.Name {
     static let setupBird = Notification.Name("setupBirdNotificationKey")
     
     static let pauseOnResignActive = Notification.Name("pauseOnResignActiveNotificationKey")
+    
+    static let rewardedAdDidLoadSuccessfully = Notification.Name("rewardedAdDidLoadSuccessfullyNotificationKey")
 
 }

@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleMobileAds
+import Network
+import Reachability
 
 class AchievementsViewController: BaseBannerAdViewController {
 
@@ -17,6 +19,11 @@ class AchievementsViewController: BaseBannerAdViewController {
     
     //MARK: - Properties
     //
+    
+    @available(iOS 12.0, *)
+    lazy var pathMonitor: NWPathMonitor? = {return nil}()
+    let reachabilityHandler = try? Reachability()
+    
     var rewardedAd: GADRewardedAd?
     var wallpaperToUnlock: Wallpaper?
     
@@ -59,6 +66,7 @@ class AchievementsViewController: BaseBannerAdViewController {
         setupDataSource()
         setupDelegates()
         setupRewardedAd()
+        setupNetworkAvaliabilityChecker()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -89,6 +97,41 @@ class AchievementsViewController: BaseBannerAdViewController {
     }
     func setupRewardedAd(){
         self.rewardedAd = createAndLoadRewardedAd()
+    }
+    func setupNetworkAvaliabilityChecker(){
+        print("setupNetworkAvaliabilityChecker called")
+        // IOS 12+
+        if #available(iOS 12, *) {
+            print("NWPathMonitor setupped")
+            pathMonitor = NWPathMonitor()
+            pathMonitor?.pathUpdateHandler = { path in
+                // closure gets called every time the connection status changes.
+                if path.status == .satisfied {
+                    print("NWPathMonitor path status changed to .satisfied")
+                    if self.rewardedAd?.responseInfo == nil {
+                        print("rewardedAd?.responseInfo == nil; ad reload called")
+                        self.rewardedAd = self.createAndLoadRewardedAd()
+                    }
+                }
+            }
+            let queue = DispatchQueue(label: "Monitor")
+            pathMonitor?.start(queue: queue)
+        }else { // IOS <12
+            print("Reachability setupped")
+            reachabilityHandler?.whenReachable = { reachability in
+                print("Reachability status changed to reachable")
+                if self.rewardedAd?.responseInfo == nil {
+                    print("rewardedAd?.responseInfo == nil; ad reload called")
+                    self.rewardedAd = self.createAndLoadRewardedAd()
+                }
+            }
+            do{
+                try reachabilityHandler?.startNotifier()
+            } catch {
+                print("unable to start notifier")
+            }
+        }
+        
     }
     
     //MARK: - Animation methods
@@ -121,11 +164,13 @@ class AchievementsViewController: BaseBannerAdViewController {
     //
     func createAndLoadRewardedAd() -> GADRewardedAd {
         let rewardedAdAdUnitID = Bundle.main.object(forInfoDictionaryKey: "GADRewardedAdUnitID") as? String
-        let rewardedAd = GADRewardedAd(adUnitID: rewardedAdAdUnitID == nil ? "ca-app-pub-3940256099942544/1712485313" : rewardedAdAdUnitID! )
+        let rewardedAdUnitID = rewardedAdAdUnitID == nil ? "ca-app-pub-3940256099942544/1712485313" : rewardedAdAdUnitID!
+        let rewardedAd = GADRewardedAd(adUnitID: rewardedAdUnitID)
         rewardedAd.load(GADRequest()) { (error) in
             if let error = error {
                 print("RewardedAd Loading failed: \(error)")
             } else {
+                NotificationCenter.default.post(name: .rewardedAdDidLoadSuccessfully, object: nil)
                 print("RewardedAd Loading Succeeded")
             }
         }
@@ -133,10 +178,20 @@ class AchievementsViewController: BaseBannerAdViewController {
     }
     func showRewardedAd(){
         if self.rewardedAd?.isReady == true {
+            manageMusicBeforeShowingAd()
             rewardedAd?.present(fromRootViewController: self, delegate: self)
         }else{
-            //TODO: add some kind of "ad is being loaded" alert
-            print("rewardedAd.is NOT Ready")
+            showAdAlert()
+        }
+    }
+    func manageMusicBeforeShowingAd(){
+        if Settings.shared.isMusicEnabled {
+            NotificationCenter.default.post(name: .turnMusicOff, object: nil)
+        }
+    }
+    func manageMusicAfterShowingAd(){
+        if Settings.shared.isMusicEnabled {
+            NotificationCenter.default.post(name: .turnMusicOn, object: nil)
         }
     }
     func userDidUnlock(wallpaper: Wallpaper) {
@@ -144,9 +199,17 @@ class AchievementsViewController: BaseBannerAdViewController {
         self.wallpapers[wallpaper.wallpaperNumber - 1].isWallpaperUnlocked = true
         setupDataSource()
         self.tableView.reloadSections(IndexSet(integer: 1), with: .automatic)
-        //TODO: may be add cell selection if reloadDoesn't handle it
+        //TODO: may be add cell selection (to scroll to unlocked cell) if reloadSections Doesn't handle it
     }
     
+    //MARK: - Transition methods
+    //
+    func showAdAlert(){
+        if let adAlertVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "adsCantLoadAlertScreen") as? AdsCantLoadAlertViewController {
+            adAlertVC.achievementsViewController = self
+            self.present(adAlertVC, animated: true)
+        }
+    }
     
     //MARK: - Actions
     //
@@ -265,9 +328,11 @@ extension AchievementsViewController: GADRewardedAdDelegate {
     func rewardedAdDidDismiss(_ rewardedAd: GADRewardedAd) {
         print("Rewarded ad dismissed.")
         self.rewardedAd = createAndLoadRewardedAd()
+        manageMusicAfterShowingAd()
     }
     func rewardedAd(_ rewardedAd: GADRewardedAd, didFailToPresentWithError error: Error) {
         print("Rewarded ad failed to present due to error: \(error)")
+        manageMusicAfterShowingAd()
     }
     
 }

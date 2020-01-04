@@ -189,6 +189,15 @@ class Settings: Codable {
             wallpapers = [
                 Wallpaper(wallpaperNumber: 1,
                           wallpaperImageName: "level1NewYorkBackground",
+                          isWallpaperUnlocked: false),
+                Wallpaper(wallpaperNumber: 2,
+                          wallpaperImageName: "level1NewYorkBackground",
+                          isWallpaperUnlocked: false),
+                Wallpaper(wallpaperNumber: 3,
+                          wallpaperImageName: "level1NewYorkBackground",
+                          isWallpaperUnlocked: false),
+                Wallpaper(wallpaperNumber: 4,
+                          wallpaperImageName: "level1NewYorkBackground",
                           isWallpaperUnlocked: false)
             ]
             

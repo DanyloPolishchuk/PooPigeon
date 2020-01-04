@@ -13,6 +13,8 @@
 		9E0035C723BE5BD300DC0202 /* LaunchScreenDebug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0035C523BE5BD300DC0202 /* LaunchScreenDebug.storyboard */; };
 		9E0035CC23BE94B500DC0202 /* ButtonSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E0035CB23BE94B500DC0202 /* ButtonSound.wav */; };
 		9E0035CD23BE94B500DC0202 /* ButtonSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E0035CB23BE94B500DC0202 /* ButtonSound.wav */; };
+		9E0D4A3A23C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D4A3923C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift */; };
+		9E0D4A3B23C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D4A3923C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift */; };
 		9E16740823A2F24D00322AFF /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E16740723A2F24D00322AFF /* ShopViewController.swift */; };
 		9E16740A23A3C34E00322AFF /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E16740923A3C34E00322AFF /* ShopCollectionViewCell.swift */; };
 		9E38218C2386E07900244205 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38218B2386E07900244205 /* Settings.swift */; };
@@ -98,6 +100,7 @@
 		9A2B8548113F17F28B21602D /* Pods_PooPigeon___Release.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PooPigeon___Release.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E0035C523BE5BD300DC0202 /* LaunchScreenDebug.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenDebug.storyboard; sourceTree = "<group>"; };
 		9E0035CB23BE94B500DC0202 /* ButtonSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ButtonSound.wav; sourceTree = "<group>"; };
+		9E0D4A3923C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsCantLoadAlertViewController.swift; sourceTree = "<group>"; };
 		9E16740723A2F24D00322AFF /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		9E16740923A3C34E00322AFF /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E38218B2386E07900244205 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -298,6 +301,7 @@
 				9E5468FC239D54E400857D44 /* ProgressTableViewCell.swift */,
 				9E5468FE239D552400857D44 /* WallpaperTableViewCell.swift */,
 				9E643F79239ECD3600BB5FC0 /* HeaderTableViewCell.swift */,
+				9E0D4A3923C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift */,
 			);
 			path = Achievements;
 			sourceTree = "<group>";
@@ -593,11 +597,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PooPigeon - Release/Pods-PooPigeon - Release-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -631,11 +637,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PooPigeon - Debug/Pods-PooPigeon - Debug-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +684,7 @@
 				9E82000723BE3A5C0026A1EC /* ShopViewController.swift in Sources */,
 				9E82000823BE3A5C0026A1EC /* Enumerations.swift in Sources */,
 				9E82000923BE3A5C0026A1EC /* HeaderTableViewCell.swift in Sources */,
+				9E0D4A3B23C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift in Sources */,
 				9E82000A23BE3A5C0026A1EC /* Settings.swift in Sources */,
 				9E82000B23BE3A5C0026A1EC /* ContactUsViewController.swift in Sources */,
 			);
@@ -711,6 +720,7 @@
 				9E16740823A2F24D00322AFF /* ShopViewController.swift in Sources */,
 				9EDDE3E3237B390300A06863 /* Enumerations.swift in Sources */,
 				9E643F7A239ECD3600BB5FC0 /* HeaderTableViewCell.swift in Sources */,
+				9E0D4A3A23C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift in Sources */,
 				9E38218C2386E07900244205 /* Settings.swift in Sources */,
 				9EDDA7B523ABEF720006FB3C /* ContactUsViewController.swift in Sources */,
 			);
