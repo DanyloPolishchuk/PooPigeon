@@ -113,7 +113,7 @@
                                                         </cells>
                                                     </collectionView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4v-HW-hYF">
-                                                        <rect key="frame" x="62.5" y="33.5" width="234.5" height="44"/>
+                                                        <rect key="frame" x="62" y="33.5" width="235" height="44"/>
                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="50"/>
                                                         <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -311,38 +311,73 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NxV-Fh-KlL">
-                                                <rect key="frame" x="19" y="209" width="337.5" height="179"/>
+                                                <rect key="frame" x="19" y="119.5" width="337.5" height="358"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBGImage2" translatesAutoresizingMaskIntoConstraints="NO" id="dBw-o4-rHB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="179"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="358"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lzn-qF-91k">
-                                                        <rect key="frame" x="42" y="22.5" width="253" height="125"/>
+                                                        <rect key="frame" x="42" y="44.5" width="253" height="251"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Nu-AG-LlA">
-                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="125"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gCR-2c-dH3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="251"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDP-Sw-IQE">
-                                                                        <rect key="frame" x="32.5" y="0.0" width="187.5" height="58.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Contact Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDP-Sw-IQE">
+                                                                        <rect key="frame" x="32.5" y="0.0" width="187.5" height="28.5"/>
                                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="32"/>
                                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PooPigeonExample@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQb-d6-OeL">
-                                                                        <rect key="frame" x="5" y="66.5" width="243" height="58.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Found a bug ? Send us an email at" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eed-fx-RRL">
+                                                                        <rect key="frame" x="10" y="47" width="232.5" height="32"/>
                                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
                                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PooPigeonExample@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQb-d6-OeL">
+                                                                        <rect key="frame" x="12" y="97.5" width="229" height="13.5"/>
+                                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="15"/>
+                                                                        <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKa-q1-uev">
+                                                                        <rect key="frame" x="105" y="129.5" width="43" height="43"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="rKa-q1-uev" secondAttribute="height" multiplier="1:1" id="urQ-Vl-BnF"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button" image="copyButtonNormal"/>
+                                                                        <connections>
+                                                                            <action selector="backAction:" destination="0fo-W1-fQC" eventType="touchUpInside" id="ltE-Rv-zdW"/>
+                                                                            <action selector="copyAction:" destination="Au1-pU-Kye" eventType="touchUpInside" id="8ke-w6-9Q4"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qR-uz-Huh">
+                                                                        <rect key="frame" x="66.5" y="191" width="120" height="60"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="1qR-uz-Huh" secondAttribute="height" multiplier="2:1" id="o6a-qe-xtt"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
+                                                                        <state key="normal" title="EMAIL US" backgroundImage="bigButtonImageNormal">
+                                                                            <color key="titleColor" red="0.45571917299999998" green="0.24684450029999999" blue="0.22351035480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="emailUsAction:" destination="Au1-pU-Kye" eventType="touchUpInside" id="nek-Us-1T0"/>
+                                                                            <action selector="settingsAction:" destination="9Vm-T6-nB1" eventType="touchUpInside" id="j3a-w0-Bts"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="rKa-q1-uev" firstAttribute="width" secondItem="gCR-2c-dH3" secondAttribute="width" multiplier="0.2" constant="-7.6000000000000014" id="GAz-3a-X0a"/>
+                                                                    <constraint firstItem="1qR-uz-Huh" firstAttribute="width" secondItem="gCR-2c-dH3" secondAttribute="width" multiplier="0.55" constant="-19.5" id="d8a-ef-5Iu"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="1Nu-AG-LlA" secondAttribute="trailing" id="1pO-iF-iID"/>
-                                                            <constraint firstItem="1Nu-AG-LlA" firstAttribute="top" secondItem="Lzn-qF-91k" secondAttribute="top" id="3aR-84-Yzi"/>
-                                                            <constraint firstAttribute="bottom" secondItem="1Nu-AG-LlA" secondAttribute="bottom" id="AGG-cN-vek"/>
-                                                            <constraint firstItem="1Nu-AG-LlA" firstAttribute="leading" secondItem="Lzn-qF-91k" secondAttribute="leading" id="nw8-h3-dAN"/>
+                                                            <constraint firstAttribute="trailing" secondItem="gCR-2c-dH3" secondAttribute="trailing" id="IKq-NA-4rU"/>
+                                                            <constraint firstAttribute="bottom" secondItem="gCR-2c-dH3" secondAttribute="bottom" id="JCn-4t-cea"/>
+                                                            <constraint firstItem="gCR-2c-dH3" firstAttribute="top" secondItem="Lzn-qF-91k" secondAttribute="top" id="Lvv-gl-uet"/>
+                                                            <constraint firstItem="gCR-2c-dH3" firstAttribute="leading" secondItem="Lzn-qF-91k" secondAttribute="leading" id="NXx-Ga-tWn"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -358,12 +393,34 @@
                                                     <constraint firstItem="dBw-o4-rHB" firstAttribute="top" secondItem="NxV-Fh-KlL" secondAttribute="top" id="x0G-i6-Cuy"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMd-GN-Y6Z">
+                                                <rect key="frame" x="187.5" y="63.5" width="187.5" height="48"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="EMAIL COPIED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-Vc-KXm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="48"/>
+                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="24"/>
+                                                        <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.24617087841033936" green="0.15822345018386841" blue="0.19598832726478577" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="PEx-Vc-KXm" secondAttribute="trailing" id="P4D-x3-fmY"/>
+                                                    <constraint firstAttribute="bottom" secondItem="PEx-Vc-KXm" secondAttribute="bottom" id="R35-6D-gWH"/>
+                                                    <constraint firstItem="PEx-Vc-KXm" firstAttribute="leading" secondItem="hMd-GN-Y6Z" secondAttribute="leading" id="xR8-9m-YkS"/>
+                                                    <constraint firstItem="PEx-Vc-KXm" firstAttribute="top" secondItem="hMd-GN-Y6Z" secondAttribute="top" id="ygK-eN-X4R"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Rvv-Wa-zbB" secondAttribute="trailing" id="61R-86-goM"/>
-                                            <constraint firstItem="NxV-Fh-KlL" firstAttribute="height" secondItem="JA9-0x-mqg" secondAttribute="height" multiplier="0.3" id="9ur-Ep-a3n"/>
+                                            <constraint firstItem="NxV-Fh-KlL" firstAttribute="height" secondItem="JA9-0x-mqg" secondAttribute="height" multiplier="0.6" id="9ur-Ep-a3n"/>
+                                            <constraint firstAttribute="trailing" secondItem="hMd-GN-Y6Z" secondAttribute="trailing" id="AVz-su-yLZ"/>
                                             <constraint firstAttribute="bottom" secondItem="Rvv-Wa-zbB" secondAttribute="bottom" id="Fia-fl-v4W"/>
+                                            <constraint firstItem="hMd-GN-Y6Z" firstAttribute="height" secondItem="Rvv-Wa-zbB" secondAttribute="height" multiplier="0.08" id="MV5-E9-ole"/>
+                                            <constraint firstItem="NxV-Fh-KlL" firstAttribute="top" secondItem="hMd-GN-Y6Z" secondAttribute="bottom" constant="8" id="YFW-iP-vZs"/>
+                                            <constraint firstItem="hMd-GN-Y6Z" firstAttribute="width" secondItem="Rvv-Wa-zbB" secondAttribute="width" multiplier="0.5" id="bMt-4W-cXF"/>
                                             <constraint firstItem="Rvv-Wa-zbB" firstAttribute="top" secondItem="JA9-0x-mqg" secondAttribute="top" id="eV8-MK-58l"/>
                                             <constraint firstItem="NxV-Fh-KlL" firstAttribute="centerY" secondItem="JA9-0x-mqg" secondAttribute="centerY" id="jcg-Q6-j5n"/>
                                             <constraint firstItem="NxV-Fh-KlL" firstAttribute="width" secondItem="JA9-0x-mqg" secondAttribute="width" multiplier="0.9" id="jgo-KQ-ofQ"/>
@@ -403,12 +460,18 @@
                     <connections>
                         <outlet property="bannerView" destination="ezR-Z9-9lP" id="GWh-pB-1fT"/>
                         <outlet property="contactUsLabel" destination="gDP-Sw-IQE" id="b4i-Nk-7Z0"/>
+                        <outlet property="copyButton" destination="rKa-q1-uev" id="t0u-ib-8Tx"/>
+                        <outlet property="descriptionLabel" destination="eed-fx-RRL" id="vSg-iL-aa3"/>
+                        <outlet property="emailButton" destination="1qR-uz-Huh" id="k4S-bX-ECV"/>
+                        <outlet property="emailCopiedContainerView" destination="hMd-GN-Y6Z" id="nib-dO-YoT"/>
+                        <outlet property="emailCopiedContainerViewConstraint" destination="AVz-su-yLZ" id="Iej-aj-f3g"/>
+                        <outlet property="emailCopiedLabel" destination="PEx-Vc-KXm" id="56P-Sj-hbf"/>
                         <outlet property="emailLabel" destination="oQb-d6-OeL" id="Fqs-Vy-DZE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZR8-ve-29i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1318" y="374"/>
+            <point key="canvasLocation" x="1317.5999999999999" y="373.76311844077964"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Cfo-qb-lMJ">
@@ -684,7 +747,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAUSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boc-X0-Pen">
-                                                        <rect key="frame" x="91.5" y="21.5" width="117.5" height="35.5"/>
+                                                        <rect key="frame" x="91.5" y="21.5" width="117" height="35.5"/>
                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="40"/>
                                                         <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -934,7 +997,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="478"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACHIEVEMENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEp-dq-X4R">
-                                                        <rect key="frame" x="56.5" y="43" width="246.5" height="31"/>
+                                                        <rect key="frame" x="56" y="43" width="247" height="31"/>
                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="35"/>
                                                         <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -957,13 +1020,13 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvH-iU-IWM">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="161.5" height="43.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="179" height="43.5"/>
                                                                             <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="24"/>
                                                                             <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNf-Tu-fOx">
-                                                                            <rect key="frame" x="198.5" y="11" width="70.5" height="21.5"/>
+                                                                            <rect key="frame" x="228.5" y="11" width="70" height="21.5"/>
                                                                             <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="24"/>
                                                                             <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -995,13 +1058,13 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0MC-rD-Zyw">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="134.5" height="119.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="149.5" height="119.5"/>
                                                                         </imageView>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KU9-va-w6y">
-                                                                            <rect key="frame" x="134.5" y="0.0" width="134.5" height="119.5"/>
+                                                                            <rect key="frame" x="149.5" y="0.0" width="149" height="119.5"/>
                                                                             <subviews>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykJ-ku-aUi">
-                                                                                    <rect key="frame" x="33.5" y="26" width="67.5" height="67.5"/>
+                                                                                    <rect key="frame" x="37" y="22.5" width="75" height="74.5"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="ykJ-ku-aUi" secondAttribute="height" multiplier="1:1" id="0Mx-Zd-2A4"/>
                                                                                     </constraints>
@@ -1011,7 +1074,7 @@
                                                                                     </connections>
                                                                                 </button>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00x-dm-VV9">
-                                                                                    <rect key="frame" x="20" y="36" width="94.5" height="47.5"/>
+                                                                                    <rect key="frame" x="22" y="33.5" width="105" height="52.5"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="00x-dm-VV9" secondAttribute="height" multiplier="2:1" id="2V2-Uu-kfa"/>
                                                                                     </constraints>
@@ -1062,7 +1125,7 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header Label Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydm-01-kb5">
-                                                                            <rect key="frame" x="0.0" y="23" width="269" height="49.5"/>
+                                                                            <rect key="frame" x="0.0" y="35.5" width="298.5" height="25"/>
                                                                             <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="28"/>
                                                                             <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -1371,7 +1434,7 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6f-VL-0Ck">
-                                                                                    <rect key="frame" x="74.5" y="8" width="64.5" height="19.5"/>
+                                                                                    <rect key="frame" x="74.5" y="8" width="64" height="19.5"/>
                                                                                     <color key="backgroundColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
                                                                                     <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1631,6 +1694,7 @@
         <image name="achievementsButtonNormal" width="256" height="256"/>
         <image name="backButtonNormal" width="256" height="256"/>
         <image name="bigButtonImageNormal" width="512" height="256"/>
+        <image name="copyButtonNormal" width="256" height="256"/>
         <image name="gameLogo" width="512" height="256"/>
         <image name="homeButtonNormal" width="256" height="256"/>
         <image name="menuBGImage2" width="1280" height="1280"/>

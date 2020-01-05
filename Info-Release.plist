@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BugReportEmail</key>
+	<string>PooPigeonExample@gmail.com</string>
 	<key>GADRewardedAdUnitID</key>
 	<string>ca-app-pub-3987841949353092/2182798649</string>
 	<key>GADBannerViewAdUnitID</key>
@@ -28,6 +30,8 @@ ca-app-pub-3987841949353092/7045625979</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Application saves Level backgrounds as wallpapers to your photo library</string>
+	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Application saves Level backgrounds as wallpapers to your photo library</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
