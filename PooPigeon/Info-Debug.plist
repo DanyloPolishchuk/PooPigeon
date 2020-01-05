@@ -28,6 +28,8 @@
 	<true/>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Application saves Level backgrounds as wallpapers to your photo library</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Application saves Level backgrounds as wallpapers to your photo library</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreenDebug</string>
 	<key>UIMainStoryboardFile</key>

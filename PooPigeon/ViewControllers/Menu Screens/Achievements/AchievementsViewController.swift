@@ -10,6 +10,7 @@ import UIKit
 import GoogleMobileAds
 import Network
 import Reachability
+import Photos
 
 class AchievementsViewController: BaseBannerAdViewController {
 
@@ -181,7 +182,7 @@ class AchievementsViewController: BaseBannerAdViewController {
             manageMusicBeforeShowingAd()
             rewardedAd?.present(fromRootViewController: self, delegate: self)
         }else{
-            showAdAlert()
+            showAdCantLoadAlert()
         }
     }
     func manageMusicBeforeShowingAd(){
@@ -204,10 +205,18 @@ class AchievementsViewController: BaseBannerAdViewController {
     
     //MARK: - Transition methods
     //
-    func showAdAlert(){
+    func showAdCantLoadAlert(){
         if let adAlertVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "adsCantLoadAlertScreen") as? AdsCantLoadAlertViewController {
             adAlertVC.achievementsViewController = self
+            hideBannerView()
             self.present(adAlertVC, animated: true)
+        }
+    }
+    func showImageLibraryCantBeAccessedAlert(){
+        if let imageAccessAlertVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "imageLibraryAccessScreenIdentifier") as? ImageLibraryAccessAlertViewController {
+            imageAccessAlertVC.achievementsViewController = self
+            hideBannerView()
+            self.present(imageAccessAlertVC, animated: true)
         }
     }
     
@@ -300,8 +309,25 @@ extension AchievementsViewController: UITableViewDataSource {
 
 extension AchievementsViewController: WallpaperActionsProtocol {
     
-    //TODO: add "Go to app settings to turn on image library access" alert if images lib is inaccesible
     func shareImage(image: UIImage) {
+        
+        let authorizationStatus =  PHPhotoLibrary.authorizationStatus()
+        print("authorizationStatus = \(authorizationStatus.rawValue)")
+        
+        if authorizationStatus == .notDetermined{
+            PHPhotoLibrary.requestAuthorization { (authorizationStatus) in
+                if authorizationStatus == .authorized {
+                    let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+                    activityVC.popoverPresentationController?.sourceView = self.view
+                    self.present(activityVC, animated: true)
+                }
+            }
+            return
+        }else if authorizationStatus == .denied {
+            showImageLibraryCantBeAccessedAlert()
+            return
+        }
+        
         let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view
         self.present(activityVC, animated: true)
