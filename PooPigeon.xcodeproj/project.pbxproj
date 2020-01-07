@@ -22,6 +22,8 @@
 		9E3821902386E79F00244205 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38218F2386E79F00244205 /* Bird.swift */; };
 		9E3821952387134300244205 /* BaseSKScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3821942387134300244205 /* BaseSKScene.swift */; };
 		9E382198238714EA00244205 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E382197238714EA00244205 /* Protocols.swift */; };
+		9E48D3BF23C3D066005EAD41 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E48D3BE23C3D066005EAD41 /* StoreKit.framework */; };
+		9E48D3C023C3D06F005EAD41 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E48D3BE23C3D066005EAD41 /* StoreKit.framework */; };
 		9E5468FB239D43A600857D44 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5468FA239D43A600857D44 /* AchievementsViewController.swift */; };
 		9E5468FD239D54E400857D44 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5468FC239D54E400857D44 /* ProgressTableViewCell.swift */; };
 		9E5468FF239D552400857D44 /* WallpaperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5468FE239D552400857D44 /* WallpaperTableViewCell.swift */; };
@@ -111,6 +113,7 @@
 		9E3821942387134300244205 /* BaseSKScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSKScene.swift; sourceTree = "<group>"; };
 		9E382197238714EA00244205 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		9E43707D238C43D000B7D42D /* VCR_OSD_MONO_1.001.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VCR_OSD_MONO_1.001.ttf; sourceTree = "<group>"; };
+		9E48D3BE23C3D066005EAD41 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9E5468FA239D43A600857D44 /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		9E5468FC239D54E400857D44 /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
 		9E5468FE239D552400857D44 /* WallpaperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperTableViewCell.swift; sourceTree = "<group>"; };
@@ -154,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E48D3C023C3D06F005EAD41 /* StoreKit.framework in Frameworks */,
 				9E82000D23BE3A5C0026A1EC /* Pods_PooPigeon.framework in Frameworks */,
 				27245B8C4D09398E11AFBAF8 /* Pods_PooPigeon___Release.framework in Frameworks */,
 			);
@@ -163,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E48D3BF23C3D066005EAD41 /* StoreKit.framework in Frameworks */,
 				DE48A074F99DAA78537B0155 /* Pods_PooPigeon.framework in Frameworks */,
 				9777C39ECD84746FC09F431B /* Pods_PooPigeon___Debug.framework in Frameworks */,
 			);
@@ -455,6 +460,7 @@
 		AB626BE7113070CED3F4A4F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E48D3BE23C3D066005EAD41 /* StoreKit.framework */,
 				3C62D000539C3EA504A7A635 /* Pods_PooPigeon.framework */,
 				739ADA54D75F08424E15D754 /* Pods_PooPigeon___Debug.framework */,
 				9A2B8548113F17F28B21602D /* Pods_PooPigeon___Release.framework */,
@@ -513,8 +519,20 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Polishchuk company";
 				TargetAttributes = {
+					9E82FFED23BE3A5C0026A1EC = {
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
+					};
 					9EDDE3C5237A1C2C00A06863 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
