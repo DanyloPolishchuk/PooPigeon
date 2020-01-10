@@ -35,4 +35,10 @@ extension Notification.Name {
     
     static let rewardedAdDidLoadSuccessfully = Notification.Name("rewardedAdDidLoadSuccessfullyNotificationKey")
 
+    // PurchasedSuccessfully
+    static let removeAdsPurchasedSuccessfully = Notification.Name("removeAdsPurchasedSuccessfullyNotificationKey")
+    static let unlockAllBirdsPurchasedSuccessfully = Notification.Name("unlockAllBirdsPurchasedSuccessfullyNotificationKey")
+    static let unlockAllLevelsPurchasedSuccessfully = Notification.Name("unlockAllLevelsPurchasedSuccessfullyNotificationKey")
+    static let unlockAllPurchasedSuccessfully = Notification.Name("unlockAllPurchasedSuccessfullyNotificationKey")
+    
 }

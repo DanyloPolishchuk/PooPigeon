@@ -13,9 +13,6 @@ class ShopCollectionViewCell: UICollectionViewCell {
     var bird: Bird?
     var level: Level?
     
-    let backgroundImageNames = ["cellImageBackground1", "cellImageBackground2", "cellImageBackground3"]
-    
-    
     @IBOutlet weak var birdOrLevelImageView: UIImageView!
     @IBOutlet weak var unlockedStatusImageView: UIImageView!
     @IBOutlet weak var selectedStatusImageView: UIImageView!

@@ -9,6 +9,7 @@
 //TODO: add last cell as "Get All Birds / Levels" cell / just as buttons on top of each CV
 
 import UIKit
+import StoreKit
 
 class ShopViewController: BaseBannerAdViewController {
     
@@ -17,6 +18,9 @@ class ShopViewController: BaseBannerAdViewController {
     var birds: [Bird]?
     var levels: [Level]?
     
+    //IAP
+    var products = [SKProduct]()
+    
     var isFirstSelectedBirdIndexPathSetCall = true
     var isFirstSelectedLevelIndexPathSetCall = true
     var selectedBirdIndexPath: IndexPath?
@@ -24,6 +28,8 @@ class ShopViewController: BaseBannerAdViewController {
     
     let birdCellReuseIdentifier = "birdCellReuseIdentifier"
     let levelCellReuseIdentifier = "levelCellReuseIdentifier"
+    let unlockAllBirdsCellReuseIdentifier = "unlockAllBirdsCellReuseIdentifier"
+    let unlockAllLevelsCellReuseIdentifier = "unlockAllLevelsCellReuseIdentifier"
     
     weak var mainMenuViewController: MainMenuViewController!
     
@@ -45,6 +51,7 @@ class ShopViewController: BaseBannerAdViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupIAP()
         setupTopButtons()
         setupDefaultConstraints()
         updateDataSources()
@@ -111,6 +118,49 @@ class ShopViewController: BaseBannerAdViewController {
                 }
             }
         }
+    }
+    
+    //MARK: - IAP methods
+    //
+    func setupIAP(){
+        NotificationCenter.default.addObserver(self, selector: #selector(allBirdsUnlockedHandler), name: .unlockAllBirdsPurchasedSuccessfully, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(allLevelsUnlockedHandler), name: .unlockAllLevelsPurchasedSuccessfully, object: nil)
+        //        SpinWheelSplash.screen.display()
+        IAPProducts.store.requestProducts{ [weak self] success, products in
+            guard let self = self else { return }
+            if success {
+                self.products = products!
+            }
+            //            SpinWheelSplash.screen.dismiss()
+        }
+    }
+    
+    func buyUnlockAllBirds(){
+        for product in products {
+            if product.productIdentifier == IAPProducts.unlockAllBirdsIdentifier {
+                IAPProducts.store.buyProduct(product)
+                break
+            }
+        }
+    }
+    
+    @objc func allBirdsUnlockedHandler(){
+        birdsCollectionView.reloadData()
+        setupDefaultSelectedCells()
+    }
+    
+    func buyUnlockAllLevels(){
+        for product in products {
+            if product.productIdentifier == IAPProducts.unlockAllLevelsIdentifier {
+                IAPProducts.store.buyProduct(product)
+                break
+            }
+        }
+    }
+    
+    @objc func allLevelsUnlockedHandler(){
+        levelsCollectionView.reloadData()
+        setupDefaultSelectedCells()
     }
     
     //MARK: - Animation methods
@@ -195,11 +245,13 @@ class ShopViewController: BaseBannerAdViewController {
 extension ShopViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
+        
+        let canMakePayments = IAPHelper.canMakePayments()
+        
         if collectionView == birdsCollectionView, self.birds != nil{
-            return self.birds!.count // + (Settings.shared.isEveryBirdUnlocked ? 0 : 1 )
+            return self.birds!.count + (canMakePayments && !Settings.shared.isEveryBirdUnlocked ? 1 : 0)
         }else if collectionView == levelsCollectionView, self.levels != nil{
-            return self.levels!.count // + (Settings.shared.isEveryLevelUnlocked ? 0 : 1 )
+            return self.levels!.count + (canMakePayments && !Settings.shared.isEveryLevelUnlocked ? 1 : 0)
         }else{
             return 0
         }
@@ -207,17 +259,30 @@ extension ShopViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == birdsCollectionView, let birdCell = collectionView.dequeueReusableCell(withReuseIdentifier: birdCellReuseIdentifier, for: indexPath) as? ShopCollectionViewCell, birds != nil {
-            birdCell.displayContent(bird: birds![indexPath.row])
-            return birdCell
-        }else{
-            let levelCell = collectionView.dequeueReusableCell(withReuseIdentifier: levelCellReuseIdentifier, for: indexPath) as! ShopCollectionViewCell
-            if self.levels != nil{
-                levelCell.displayContent(level: levels![indexPath.row])
-            }
-            return levelCell
-        }
         
+        if collectionView == birdsCollectionView {
+            if indexPath.row == birds?.count { // unlockAllBirds cell
+                let unlockAllCell = collectionView.dequeueReusableCell(withReuseIdentifier: unlockAllBirdsCellReuseIdentifier, for: indexPath) as! UnlockAllCollectionViewCell
+                unlockAllCell.type = .UnlockAllBirds
+                unlockAllCell.shopPurchasesDelegate = self
+                return unlockAllCell
+            }else{ // regular bird cell
+                let birdCell = collectionView.dequeueReusableCell(withReuseIdentifier: birdCellReuseIdentifier, for: indexPath) as! ShopCollectionViewCell
+                birdCell.displayContent(bird: birds![indexPath.row])
+                return birdCell
+            }
+        }else{
+            if indexPath.row == levels?.count { // unlockAllLevels cell
+                let unlockAllCell = collectionView.dequeueReusableCell(withReuseIdentifier: unlockAllLevelsCellReuseIdentifier, for: indexPath) as! UnlockAllCollectionViewCell
+                unlockAllCell.type = .UnlockAllLevels
+                unlockAllCell.shopPurchasesDelegate = self
+                return unlockAllCell
+            }else{ // regular level cell
+                let levelCell = collectionView.dequeueReusableCell(withReuseIdentifier: levelCellReuseIdentifier, for: indexPath) as! ShopCollectionViewCell
+                levelCell.displayContent(level: levels![indexPath.row])
+                return levelCell
+            }
+        }
         
     }
     
@@ -288,6 +353,9 @@ extension ShopViewController: UICollectionViewDelegate {
         }
         
         if collectionView == birdsCollectionView{
+            if indexPath.row == birds?.count{ // unlockAllBirds cell is selected
+                return
+            }
             if isFirstSelectedBirdIndexPathSetCall{
                 isFirstSelectedBirdIndexPathSetCall = false
                 return
@@ -305,6 +373,9 @@ extension ShopViewController: UICollectionViewDelegate {
                 
             }
         }else{
+            if indexPath.row == levels?.count { // unlockAllLevels cell is selected
+                return
+            }
             if isFirstSelectedLevelIndexPathSetCall {
                 isFirstSelectedLevelIndexPathSetCall = false
                 return
@@ -339,6 +410,17 @@ extension ShopViewController: UICollectionViewDelegate {
     }
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         print("didUnhighlightItemAtIndex called")
+    }
+    
+}
+
+extension ShopViewController: ShopPurchasesProtocol {
+    func unlockAllBirds() {
+        buyUnlockAllBirds()
+    }
+    
+    func unlockAllLevels() {
+        buyUnlockAllLevels()
     }
     
 }

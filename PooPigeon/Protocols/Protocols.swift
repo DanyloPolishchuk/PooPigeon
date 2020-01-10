@@ -27,5 +27,10 @@ protocol SettingsScreensPresentationProtocol: class {
     func showCredits()
     func showContactInfo()
     func restorePurchases()
-    func removeAdds()
+    func removeAds()
+}
+
+protocol ShopPurchasesProtocol: class {
+    func unlockAllBirds()
+    func unlockAllLevels()
 }

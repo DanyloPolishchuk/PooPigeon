@@ -181,7 +181,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
             settingsScreenPresentationDelegate?.restorePurchases()
             
         case .RemoveAdds:
-            settingsScreenPresentationDelegate?.removeAdds()
+            settingsScreenPresentationDelegate?.removeAds()
             
         case .UIhand:
             let isLeftHandedUI = Settings.shared.isLeftHandedUI

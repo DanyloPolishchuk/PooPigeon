@@ -60,3 +60,8 @@ enum SettingButtonType {
     case RemoveAdds
     case UIhand
 }
+
+enum ShopButtonType {
+    case UnlockAllBirds
+    case UnlockAllLevels
+}

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class SettingsViewController: BaseBannerAdViewController {
     
@@ -25,6 +26,8 @@ class SettingsViewController: BaseBannerAdViewController {
     ]
     var temporaryCellsArr = [SettingButtonType]()
     var finalCellsArr: [SettingButtonType]?
+    //IAP
+    var products = [SKProduct]()
     
     //MARK: - Outlets
     //
@@ -42,6 +45,7 @@ class SettingsViewController: BaseBannerAdViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupIAP()
         setupTopButtonsImages()
         setupTopButtons()
         setupNotifications()
@@ -94,11 +98,40 @@ class SettingsViewController: BaseBannerAdViewController {
 //        if temporarySettings[2] == false{
 //            temporaryCellsArr.append(.Review)
 //        }
-        if temporarySettings[3] == false{
+        if temporarySettings[3] == false && IAPHelper.canMakePayments() {
             temporaryCellsArr.append(.RemoveAdds)
         }
         
         finalCellsArr = constantCellsArr + temporaryCellsArr
+    }
+    
+    //MARK: - IAP methods
+    //
+    func setupIAP(){
+        NotificationCenter.default.addObserver(self, selector: #selector(adsRemovedHandler), name: .removeAdsPurchasedSuccessfully, object: nil)
+//        SpinWheelSplash.screen.display()
+        IAPProducts.store.requestProducts{ [weak self] success, products in
+            guard let self = self else { return }
+            if success {
+                self.products = products!
+            }
+//            SpinWheelSplash.screen.dismiss()
+        }
+    }
+    
+    func buyRemoveAds(){
+        for product in products {
+            if product.productIdentifier == IAPProducts.removeAdsIdentifier {
+                IAPProducts.store.buyProduct(product)
+                break
+            }
+        }
+    }
+    
+    @objc func adsRemovedHandler(){
+        hideBannerView()
+        setupCellsArray()
+        collectionView.reloadData()
     }
     
     //MARK: - Animation methods
@@ -231,14 +264,12 @@ extension SettingsViewController: SettingsScreensPresentationProtocol{
         }
     }
     
-    //TODO: implement Restore purchases
     func restorePurchases() {
-        
+        IAPProducts.store.restorePurchases()
     }
     
-    //TODO: add IAP (In-App-Purchases)
-    func removeAdds() {
-        
+    func removeAds() {
+        buyRemoveAds()
     }
     
 }

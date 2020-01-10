@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>IAP Product Identifiers</key>
+	<dict>
+		<key>RemoveAds</key>
+		<string>com.DanyloPolishchuk.PooPigeon.RemoveAds</string>
+		<key>UnlockAll</key>
+		<string>com.DanyloPolishchuk.PooPigeon.UnlockAll</string>
+		<key>UnlockAllBirds</key>
+		<string>com.DanyloPolishchuk.PooPigeon.UnlockAllBirds</string>
+		<key>UnlockAllLevels</key>
+		<string>com.DanyloPolishchuk.PooPigeon.UnlockAllLevels</string>
+	</dict>
 	<key>CFBundleIconName</key>
 	<string>AppIcon</string>
 	<key>BugReportEmail</key>

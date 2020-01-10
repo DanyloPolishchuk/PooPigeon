@@ -15,7 +15,9 @@ class BaseBannerAdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupGADBannerView()
+        if !Settings.shared.isAddsRemovalPurchased { // || !isPaidVersionOfTheApp
+            setupGADBannerView()
+        }
     }
     
     func setupGADBannerView(){
@@ -34,7 +36,10 @@ class BaseBannerAdViewController: UIViewController {
     }
     
     func unhideBannerView(){
-        self.bannerView.isHidden = false
+        // if !isPaidVersionOfTheApp &&
+        if !Settings.shared.isAddsRemovalPurchased {
+            self.bannerView.isHidden = false
+        }
     }
     
 }

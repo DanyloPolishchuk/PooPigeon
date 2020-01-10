@@ -47,7 +47,9 @@ class Settings: Codable {
     var isApplicationReviewed: Bool
     
     var isAddsRemovalPurchased: Bool
-    //TODO: add restore purchase variables
+    var isUnlockAllPurchased: Bool
+    var isUnlockAllBirdsPurchased: Bool
+    var isUnlockAllLevelsPurchased: Bool
 
     var bestScore: UInt
     var totalScore: UInt
@@ -99,7 +101,11 @@ class Settings: Codable {
             self.isApplicationLiked = settings.isApplicationLiked
             self.isApplicaitonShared = settings.isApplicaitonShared
             self.isApplicationReviewed = settings.isApplicationReviewed
+            
             self.isAddsRemovalPurchased = settings.isAddsRemovalPurchased
+            self.isUnlockAllPurchased = settings.isUnlockAllPurchased
+            self.isUnlockAllBirdsPurchased = settings.isUnlockAllBirdsPurchased
+            self.isUnlockAllLevelsPurchased = settings.isUnlockAllLevelsPurchased
             
             self.bestScore = settings.bestScore
             self.totalScore = settings.totalScore
@@ -215,7 +221,11 @@ class Settings: Codable {
             isApplicationLiked = false
             isApplicaitonShared = false
             isApplicationReviewed = false
+            
             isAddsRemovalPurchased = false
+            isUnlockAllPurchased = false
+            isUnlockAllBirdsPurchased = false
+            isUnlockAllLevelsPurchased = false
             
             bestScore = 0
             totalScore = 0
@@ -285,8 +295,7 @@ class Settings: Codable {
         save()
     }
     
-    //MARK: - Get & Set methods
-    //
+    //MARK: - Temporary Settings
     func getTemporarySettings() -> [Bool] {
         return [
             isApplicationLiked,
@@ -295,12 +304,38 @@ class Settings: Codable {
             isAddsRemovalPurchased
         ]
     }
+    //MARK: - Level Bird methods
+    //
     func getBirds() -> [Bird] {
         return self.birds
     }
     func getLevels() -> [Level] {
         return self.levels
     }
+    func unlockAll(){
+        for index in 0..<birds.count {
+            birds[index].birdIsUnlocked = true
+        }
+        for index in 0..<levels.count {
+            levels[index].levelIsUnlocked = true
+        }
+        save()
+    }
+    func unlockAllBirds(){
+        for index in 0..<birds.count {
+            birds[index].birdIsUnlocked = true
+        }
+        save()
+    }
+    func unlockAllLevels(){
+        for index in 0..<levels.count {
+            levels[index].levelIsUnlocked = true
+        }
+        save()
+    }
+    
+    //MARK: - Wallpapers methods
+    //
     func getWallpapers() -> [Wallpaper] {
         return self.wallpapers
     }
@@ -323,7 +358,7 @@ class Settings: Codable {
         }
     }
     
-    //MARK: - language methods
+    //MARK: - Language methods
     //
     func getLanguage() -> Language{
         return self.language
