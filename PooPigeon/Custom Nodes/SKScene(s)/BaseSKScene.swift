@@ -144,9 +144,6 @@ class BaseSKScene: SKScene {
         removeAction(forKey: spawnKey)
     }
     
-    //TODO: add some randomization from Level.enemies array ( spawn different enemies, each level should have at least 2 M & F.
-    //TODO: experiment with spawn & destination positions ( left -> right / left <- right )
-    
     private func createSequentialEnemies(){
         print("createSequentialEnemies called")
         removeAction(forKey: spawnKey)

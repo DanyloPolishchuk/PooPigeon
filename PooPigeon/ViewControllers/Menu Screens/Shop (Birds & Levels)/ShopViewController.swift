@@ -6,8 +6,6 @@
 //  Copyright © 2019 Polishchuk company. All rights reserved.
 //
 
-//TODO: add last cell as "Get All Birds / Levels" cell / just as buttons on top of each CV
-
 import UIKit
 import StoreKit
 
