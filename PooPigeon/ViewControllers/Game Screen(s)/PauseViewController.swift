@@ -26,6 +26,7 @@ class PauseViewController: BaseBannerAdViewController {
     @IBOutlet weak var leftPauseButton: UIButton!
     @IBOutlet weak var rightPauseButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var streakLabel: UILabel!
     
     @IBOutlet weak var pauseView: UIView!
     @IBOutlet weak var sfxButton: UIButton!
@@ -49,6 +50,9 @@ class PauseViewController: BaseBannerAdViewController {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        streakLabel.isHidden = true
+        streakLabel.text = "x1"
         
         setupNotifications()
         setupDefaultConstraints()
@@ -80,6 +84,8 @@ class PauseViewController: BaseBannerAdViewController {
     }
     func setupNotifications(){
         NotificationCenter.default.addObserver(self, selector: #selector(setupScoreLabel(notification:)), name: .setupScoreKey, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setupStreakLabel(notification:)), name: .setupStreak, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resetScoreAndStreakLabels), name: .resetScoreAndStreak, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showGameOverView(notification:)), name: .showGameOverKey, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(pauseOnResignActive), name: .pauseOnResignActive, object: nil)
     }
@@ -137,6 +143,33 @@ class PauseViewController: BaseBannerAdViewController {
         if let score = notification.object as? UInt{
             scoreLabel.text = String(score)
         }
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.scoreLabel.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+        }) { (animationFinishedBeforeCompletion) in
+            UIView.animate(withDuration: 0.2, animations: {
+                self.scoreLabel.transform = .identity
+            })
+        }
+        
+    }
+    @objc func setupStreakLabel(notification: NSNotification){
+        streakLabel.isHidden = false
+        if let streak = notification.object as? Int{
+            streakLabel.text = "x" + String(streak)
+        }
+        UIView.animate(withDuration: 0.2, animations: {
+            self.streakLabel.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+        }) { (animationFinishedBeforeCompletion) in
+            UIView.animate(withDuration: 0.2, animations: {
+                self.streakLabel.transform = .identity
+            })
+        }
+    }
+    @objc func resetScoreAndStreakLabels(){
+        scoreLabel.text = "0"
+        streakLabel.isHidden = true
+        streakLabel.text = "x1"
     }
     @objc func showGameOverView(notification: NSNotification){
         showGameOverView()

@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-import Foundation
-import UIKit
-
+//TODO: refactor data models. Level holds birds, birds hold bullet types. Hero is separate 
 class Settings: Codable {
     
     static let shared: Settings = {

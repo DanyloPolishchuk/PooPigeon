@@ -7,30 +7,52 @@
 //
 
 import SpriteKit
+import GameplayKit
 
-/// Base Scene of all levels in game. All game logic & stuff is  here(BaseSKScene), animation, particle effects & stuff is in custom children.
+/// Base Scene of all levels in game. All game logic & stuff is  here(BaseSKScene);
+/// Animation, Particle effects & other background stuff is in custom children.
 class BaseSKScene: SKScene {
     
     //MARK: - Properties
     //
+    //TODO: run through all properties & delete not used ones
+    //TODO: sort & MARK all properties by usage category
     var currentBird: Bird!
     var birdNode: BirdSKSpriteNode!
+    var birdNodes = [BirdSKSpriteNode]()
     var currentLevel: Level!
+    
+    let shootableNodes: [PhysicsCategory] = [.Egg, .Egg, .Egg, .Egg, .Egg, .Egg, .Egg, .Poo, .Poo, .Bonus]
+    let indexRandomizer = GKShuffledDistribution(lowestValue: 0, highestValue: 2)
     
     var bg: SKNode!
     var fg: SKNode!
     
+    var eggNode: SKSpriteNode!
+    var bonusNode: SKSpriteNode!
+    var pooNode: SKSpriteNode!
+    
+    let sparklesWhiteEmitter = SKEmitterNode(fileNamed: "SparklesWhiteEmitter")
+    let sparklesGoldEmitter  = SKEmitterNode(fileNamed: "SparklesGoldEmitter")
+    let sparklesBrownEmitter = SKEmitterNode(fileNamed: "SparklesBrownEmitter")
+    let explosionWhiteEmitter = SKEmitterNode(fileNamed: "ExplosionWhiteEmitter")
+    let explosionGoldEmitter = SKEmitterNode(fileNamed: "ExplosionGoldEmitter")
+    let explosionBrownEmitter = SKEmitterNode(fileNamed: "ExplosionBrownEmitter")
+    
+    var mainHeroNode: SKSpriteNode!
+    
     var currentScore = 0
-    var pooSpawnPosition: CGPoint!
-    var birdIsShooting = false
-    var levelIsInGameState = false
+    var currentStreak = 1
+    var isLevelInGameState = false
+    var isFirstTouch = true
     
     // enemy spawn proerties
     let difficultyIncreaseTimeStep: TimeInterval = 5.0
-    let enemySpawnDelayDefault: TimeInterval = 0.5
+    let enemySpawnDelayDefault: TimeInterval = 1.5
     var enemySpawnDelay: TimeInterval = 0.5
-    let enemySpawnDelayIncreaseStep: TimeInterval = 0.25
-    let enemySpawnDelayMaxValue: TimeInterval = 2.0
+    let enemySpawnDelayDecreaseStep: TimeInterval = 0.05
+    let enemySpawnDelayMinValue: TimeInterval = 0.5
+    var spawnSequence = [SKAction]()
     
     var spawnKey = "SpawnKey"
     var difficultyTimerKey = "DifficultyTimerKey"
@@ -49,14 +71,20 @@ class BaseSKScene: SKScene {
     var leftDestinationX: CGFloat = 0
     var rightDestinationX: CGFloat = 0
     var enemySpawnY: CGFloat = 0
-
+    var widthOfVisibleAreaThird: CGFloat = 0
+    var centerBirdNodePosition = CGPoint(x: 0, y: 680)
+    var birdNodePositions = [CGPoint]()
+    
+    var tapHereNodesContainerNode: SKNode!
+    let tapHereAnimationSpeed: TimeInterval = 0.5
+    
 
     
     override func didMove(to view: SKView) {
         
         self.physicsWorld.contactDelegate = self
         
-        // scene bug fix
+        // scene unfroze fix, just in case
         self.isPaused = true
         self.isPaused = false
         
@@ -69,8 +97,6 @@ class BaseSKScene: SKScene {
                 
             }
         }
-        
-        
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: -self.frame.width,
                                                               y: -self.frame.height / 2 + 256,
                                                               width: self.frame.width * 2,
@@ -79,9 +105,21 @@ class BaseSKScene: SKScene {
         
         enemySpawnY = -self.frame.height / 2 + 256 + 5
         
+        setupSpawnDelayActionsSequence()
+        
+        setupEggNode()
+        setupPooNode()
+        setupBonusNode()
+        setupMainHero()
+        
         setupDestinationProperties()
+        setupEdgeProperties()
+        
+        setupTapHereNodes()
     }
     
+    //MARK: - Setup methods
+    //
     func setupDestinationProperties(){
         if let enemy = currentLevel.enemies.first{
             let enemyNodeWidth = EnemySKSpriteNode(enemy, 0).frame.width / 2
@@ -108,17 +146,111 @@ class BaseSKScene: SKScene {
         minHeroXCoordinate = sceneLeftEdgeXCoordinate + maximumHeroDistanceToEdge
         maxHeroXCoordinate = sceneRightEdgeXCoordinate - maximumHeroDistanceToEdge
         
+        widthOfVisibleAreaThird = widthOfVisibleArea / 3
+        birdNodePositions = [
+            CGPoint(x: -widthOfVisibleAreaThird, y: centerBirdNodePosition.y),
+            centerBirdNodePosition,
+            CGPoint(x: widthOfVisibleAreaThird, y: centerBirdNodePosition.y)
+        ]
+        
         print("Edges:\nLeft Edge \(leftEdge)\nRight Edge \(rightEdge)")
         print("VisibleAreaWidth = \(widthOfVisibleArea)")
         print("EdgeXCoordinates:\nleft = \(sceneLeftEdgeXCoordinate)\nright = \(sceneRightEdgeXCoordinate)")
         print("MinMaxCoordinates:\nmin = \(minHeroXCoordinate)\nmax = \(maxHeroXCoordinate)")
     }
     
+    func setupTapHereNodes(){
+        tapHereNodesContainerNode = SKNode()
+        tapHereNodesContainerNode.position = CGPoint(x: 0, y: 0)
+        tapHereNodesContainerNode.zPosition = 10
+        tapHereNodesContainerNode.alpha = 0
+        self.fg.addChild(tapHereNodesContainerNode)
+        
+        let tapHereCenterNode = SKSpriteNode(imageNamed: "tapHereCenterIcon")
+        let tapHereLeftNode = SKSpriteNode(imageNamed: "tapHereLeftIcon")
+        let tapHereRightNode = SKSpriteNode(imageNamed: "tapHereRightIcon")
+        
+        let halfOfTapNodeWidth = tapHereCenterNode.frame.width / 2
+        let tapHereSpawnY = enemySpawnY  + halfOfTapNodeWidth
+        
+        tapHereLeftNode.position = CGPoint(x: birdNodePositions[0].x, y: tapHereSpawnY)
+        tapHereCenterNode.position = CGPoint(x: birdNodePositions[1].x, y: tapHereSpawnY)
+        tapHereRightNode.position = CGPoint(x: birdNodePositions[2].x, y: tapHereSpawnY)
+        
+        let resizeForeverAnimationAction = SKAction.repeatForever(SKAction.sequence([
+            SKAction.scale(to: 1.5, duration: tapHereAnimationSpeed),
+            SKAction.scale(to: 0.75, duration: tapHereAnimationSpeed)
+            ]))
+        
+        tapHereNodesContainerNode.addChild(tapHereLeftNode)
+        tapHereNodesContainerNode.addChild(tapHereCenterNode)
+        tapHereNodesContainerNode.addChild(tapHereRightNode)
+        
+        tapHereLeftNode.run(resizeForeverAnimationAction)
+        tapHereCenterNode.run(resizeForeverAnimationAction)
+        tapHereRightNode.run(resizeForeverAnimationAction)
+    }
+    
+    func setupEggNode(){
+        eggNode = SKSpriteNode(imageNamed: "egg")
+        eggNode.physicsBody = SKPhysicsBody(rectangleOf: eggNode.frame.size)
+        eggNode.physicsBody?.categoryBitMask = PhysicsCategory.Egg.rawValue
+        eggNode.physicsBody?.collisionBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Human.rawValue
+        eggNode.physicsBody?.contactTestBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Human.rawValue
+        eggNode.physicsBody?.fieldBitMask = PhysicsCategory.Field.rawValue
+        eggNode.name = "shootableNode"
+        let eggSparklesEmitter = self.sparklesWhiteEmitter?.copy() as! SKEmitterNode
+        eggNode.addChild(eggSparklesEmitter)
+    }
+    func setupBonusNode(){
+        bonusNode = SKSpriteNode(imageNamed: "bonus")
+        bonusNode.physicsBody = SKPhysicsBody(rectangleOf: bonusNode.frame.size)
+        bonusNode.physicsBody?.categoryBitMask = PhysicsCategory.Bonus.rawValue
+        bonusNode.physicsBody?.collisionBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Human.rawValue
+        bonusNode.physicsBody?.contactTestBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Human.rawValue
+        bonusNode.physicsBody?.fieldBitMask = PhysicsCategory.Field.rawValue
+        bonusNode.name = "shootableNode"
+        let bonusSparklesEmitter = self.sparklesGoldEmitter?.copy() as! SKEmitterNode
+        bonusNode.addChild(bonusSparklesEmitter)
+    }
+    func setupPooNode(){
+        pooNode = SKSpriteNode(imageNamed: "poo")
+        pooNode.physicsBody = SKPhysicsBody(rectangleOf: pooNode.frame.size)
+        pooNode.physicsBody?.categoryBitMask = PhysicsCategory.Poo.rawValue
+        pooNode.physicsBody?.collisionBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Human.rawValue
+        pooNode.physicsBody?.contactTestBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Human.rawValue
+        pooNode.physicsBody?.fieldBitMask = PhysicsCategory.Field.rawValue
+        pooNode.name = "shootableNode"
+        let pooSparklesEmitter = self.sparklesBrownEmitter?.copy() as! SKEmitterNode
+        pooNode.addChild(pooSparklesEmitter)
+    }
+    func setupMainHero(){
+        mainHeroNode = EnemySKSpriteNode(self.currentLevel.enemies[0], self.rightDestinationX)
+        mainHeroNode.position = CGPoint(x: self.leftDestinationX, y: self.enemySpawnY + mainHeroNode.frame.height / 2)
+        mainHeroNode.zPosition = 1
+        self.fg.addChild(mainHeroNode)
+    }
+    func setupSpawnDelayActionsSequence(){
+        spawnSequence = [SKAction]()
+        let spawnAction = SKAction.run {
+            self.shoot()
+        }
+        for delay in stride(from: enemySpawnDelayDefault, to: enemySpawnDelayMinValue, by: -enemySpawnDelayDecreaseStep) {
+            spawnSequence.append(spawnAction)
+            spawnSequence.append(SKAction.wait(forDuration: delay))
+        }
+        spawnSequence.append(SKAction.repeatForever(SKAction.sequence([
+            spawnAction,
+            SKAction.wait(forDuration: enemySpawnDelayMinValue)
+            ])))
+    }
+    
     //MARK: - Game methods
     //
     func startGame(){
         self.isPaused = false
-        self.levelIsInGameState = true
+        self.isLevelInGameState = true
+        // update score & streak labels
         startSpawning()
     }
     func pauseGame(){
@@ -128,7 +260,8 @@ class BaseSKScene: SKScene {
         self.isPaused = false
     }
     func stopGame(){
-        self.levelIsInGameState = false
+        self.isLevelInGameState = false
+        self.isFirstTouch = true
         self.isPaused = false
         stopSpawning()
     }
@@ -137,50 +270,20 @@ class BaseSKScene: SKScene {
     //
     func startSpawning(){
         self.enemySpawnDelay = self.enemySpawnDelayDefault
-        startDifficultyTimer()
+        startSequentialEnemiesSpawning()
     }
     func stopSpawning(){
         removeAction(forKey: difficultyTimerKey)
         removeAction(forKey: spawnKey)
+        self.fg.enumerateChildNodes(withName: "//shootableNode") { (node, nil) in
+            node.removeFromParent()
+        }
     }
     
-    private func createSequentialEnemies(){
-        print("createSequentialEnemies called")
+    private func startSequentialEnemiesSpawning(){
+        print("startSequentialEnemiesSpawning called")
         removeAction(forKey: spawnKey)
-        
-        let spawnAction = SKAction.run {
-            
-            let enemyNode = EnemySKSpriteNode(self.currentLevel.enemies[0], self.rightDestinationX)
-            enemyNode.position = CGPoint(x: self.leftDestinationX, y: self.enemySpawnY + enemyNode.frame.height / 2)
-            enemyNode.zPosition = 1
-            self.fg.addChild(enemyNode)
-            enemyNode.walk()
-            
-        }
-        let spawnDelayAction = SKAction.wait(forDuration: enemySpawnDelay)
-        let spawnSequence = SKAction.sequence([
-            spawnAction,
-            spawnDelayAction
-            ])
-        self.run(SKAction.repeatForever(spawnSequence), withKey: spawnKey)
-    }
-    private func startDifficultyTimer(){
-        print("startDifficultyTimer called")
-        
-        let waitAction = SKAction.wait(forDuration: difficultyIncreaseTimeStep)
-        let increaseDifficultyAction = SKAction.run { [unowned self] in
-            guard self.enemySpawnDelay < self.enemySpawnDelayMaxValue else {
-                self.removeAction(forKey: self.difficultyTimerKey)
-                return
-            }
-            self.enemySpawnDelay += self.enemySpawnDelayIncreaseStep
-            self.createSequentialEnemies()
-        }
-        let increaseDifficultySequnce = SKAction.sequence([
-            waitAction,
-            increaseDifficultyAction
-            ])
-        self.run(SKAction.repeatForever(increaseDifficultySequnce), withKey: difficultyTimerKey)
+        self.run(SKAction.sequence(spawnSequence), withKey: spawnKey)
     }
     
     //MARK: - Score methods
@@ -189,73 +292,125 @@ class BaseSKScene: SKScene {
         print("resetScore called")
         stopGame()
         self.currentScore = 0
+        self.currentStreak = 1
         Settings.shared.amountOfLoses += 1
         Settings.shared.save()
     }
     func increaseScore(){
         print("increaseScore called")
-        self.currentScore += 1
+        self.currentScore += 1 * currentStreak
         
-        Settings.shared.totalScore += 1
+        Settings.shared.totalScore += 1 * UInt(currentStreak)
         if currentScore > Settings.shared.bestScore{
             Settings.shared.bestScore = UInt(currentScore)
         }
         Settings.shared.save()
     }
-    
+    func increaseStreak(){
+        print("increaseStreak called")
+        self.currentStreak += 1
+    }
+    //MARK: - Emitter methods
+    //
+    func addExplosionOfType(_ type: PhysicsCategory, atPoint point: CGPoint){
+        let explosionEmitter: SKEmitterNode
+        if type == .Egg{
+            explosionEmitter = explosionWhiteEmitter?.copy() as! SKEmitterNode
+        }else if type == .Poo{
+            explosionEmitter = explosionBrownEmitter?.copy() as! SKEmitterNode
+        }else{
+            explosionEmitter = explosionGoldEmitter?.copy() as! SKEmitterNode
+        }
+        explosionEmitter.position = point
+        self.fg.addChild(explosionEmitter)
+        explosionEmitter.run(SKAction.sequence([
+            SKAction.wait(forDuration: 1),
+            SKAction.removeFromParent()
+            ]))
+    }
     //MARK: - Shoot methods
     //
     func shoot(){
-        if birdIsShooting {
-            return
+        let shootableNode: SKSpriteNode
+        let shooterIndex = indexRandomizer.nextInt()
+        
+        let shootableNodeType = shootableNodes.randomElement()!
+        if shootableNodeType == .Egg {
+            shootableNode = eggNode.copy() as! SKSpriteNode
+        }else if shootableNodeType == .Poo {
+            shootableNode = pooNode.copy() as! SKSpriteNode
         }else{
-            birdIsShooting = true
-            
-            let pooNode = SKSpriteNode(imageNamed: "poo")
-            pooNode.position = self.pooSpawnPosition
-            pooNode.physicsBody = SKPhysicsBody(rectangleOf: pooNode.frame.size)
-            pooNode.physicsBody?.categoryBitMask = PhysicsCategory.Bullet.rawValue
-            pooNode.physicsBody?.collisionBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Human.rawValue
-            pooNode.physicsBody?.contactTestBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Human.rawValue
-            pooNode.physicsBody?.fieldBitMask = PhysicsCategory.Field.rawValue
-            pooNode.name = "pooNode"
-            
-            birdNode.shoot()
-            self.fg.addChild(pooNode)
+            shootableNode = bonusNode.copy() as! SKSpriteNode
         }
+        
+        shootableNode.position = birdNodePositions[shooterIndex]
+        birdNodes[shooterIndex].shoot()
+        self.fg.addChild(shootableNode)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        
         print("touchesBegan called from baseGameScene")
-        
-        if !levelIsInGameState{
+        if isFirstTouch{
+            isFirstTouch = false
+            hideTapHereContainer()
+            startGame()
             return
         }
-        shoot()
+        if !isLevelInGameState{
+            return
+        }
+        
+        guard let touchPoint = touches.first?.location(in: self) else {return}
+        if touchPoint.x > widthOfVisibleAreaThird / 2 {
+            // right
+            mainHeroNode.run(SKAction.move(to: CGPoint(x: widthOfVisibleAreaThird, y: mainHeroNode.position.y), duration: 0.5))
+        }else if touchPoint.x < widthOfVisibleAreaThird / 2 && touchPoint.x > -widthOfVisibleAreaThird / 2 {
+            // center
+            mainHeroNode.run(SKAction.move(to: CGPoint(x: 0, y: mainHeroNode.position.y), duration: 0.5))
+        }else{
+            // left
+            mainHeroNode.run(SKAction.move(to: CGPoint(x: -widthOfVisibleAreaThird, y: mainHeroNode.position.y), duration: 0.5))
+        }
     }
     
-    //MARK: - next / prev level bird methods
+    //MARK: - Bird methods
     //
     func presentCurrentBird(){
-        
-        if let previousBird = self.childNode(withName: "//birdNode"){
-            previousBird.removeFromParent()
+        birdNodes.removeAll()
+        self.fg.enumerateChildNodes(withName: "//birdNode") { (node, nil) in
+            node.removeFromParent()
         }
-        let currentBird = BirdSKSpriteNode(self.currentBird)
-        currentBird.position = self.currentBird.birdSpawnPosition
-        self.pooSpawnPosition = self.currentBird.birdSpawnPosition
-        currentBird.zPosition = 1
-        currentBird.startIdleAnimation()
-        birdNode = currentBird
-        self.fg.addChild(currentBird)
         
+        for i in 0..<3 {
+            let bird = BirdSKSpriteNode(self.currentBird)
+            bird.position = birdNodePositions[i]
+            bird.zPosition = 1
+            bird.startIdleAnimation()
+            birdNodes.append(bird)
+            self.fg.addChild(bird)
+        }
+    }
+    
+    //MARK: - TapHere methods
+    //
+    func unhideTapHereContainer(){
+        mainHeroNode.run(SKAction.move(to: CGPoint(x: 0, y: mainHeroNode.position.y), duration: 0.5))
+        NotificationCenter.default.post(name: .resetScoreAndStreak, object: nil)
+        let fadeInAnimationAction = SKAction.fadeIn(withDuration: tapHereAnimationSpeed)
+        tapHereNodesContainerNode.isHidden = false
+        tapHereNodesContainerNode.run(fadeInAnimationAction)
+    }
+    
+    func hideTapHereContainer(){
+        let fadeOutAnimationAction = SKAction.fadeOut(withDuration: tapHereAnimationSpeed)
+        tapHereNodesContainerNode.run(fadeOutAnimationAction)
+        tapHereNodesContainerNode.isHidden = true
     }
     
 }
 
-
+//MARK: - PhysicsContact
 extension BaseSKScene: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -264,12 +419,14 @@ extension BaseSKScene: SKPhysicsContactDelegate {
         
         let collisionBitMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
-        var pooNode: SKNode?
+        var shootableNode: SKNode?
         var enemyNode: EnemySKSpriteNode?
-        if contact.bodyA.node?.name == "pooNode" {
-            pooNode = contact.bodyA.node
-        }else if contact.bodyB.node?.name == "pooNode" {
-            pooNode = contact.bodyB.node
+        let contactPoint = contact.contactPoint
+        
+        if contact.bodyA.node?.name == "shootableNode" {
+            shootableNode = contact.bodyA.node
+        }else if contact.bodyB.node?.name == "shootableNode" {
+            shootableNode = contact.bodyB.node
         }
         if contact.bodyA.node?.name == "enemyNode" {
             enemyNode = contact.bodyA.node as? EnemySKSpriteNode
@@ -277,21 +434,40 @@ extension BaseSKScene: SKPhysicsContactDelegate {
             enemyNode = contact.bodyB.node as? EnemySKSpriteNode
         }
         
-        if collisionBitMask == PhysicsCategory.Bullet.rawValue | PhysicsCategory.Human.rawValue{ // GAME CONTINUES
-            pooNode?.physicsBody?.categoryBitMask = PhysicsCategory.None.rawValue
-            pooNode?.removeFromParent()
-            enemyNode?.run()
+        if collisionBitMask == PhysicsCategory.Egg.rawValue | PhysicsCategory.Human.rawValue{
+            shootableNode?.physicsBody?.categoryBitMask = PhysicsCategory.None.rawValue
+            shootableNode?.removeFromParent()
+            addExplosionOfType(.Egg, atPoint: contact.contactPoint)
+            // enemyNode?.runCatchAnimation()
             increaseScore()
-            self.birdIsShooting = false
-            
             NotificationCenter.default.post(name: .setupScoreKey, object: currentScore)
-            
-        }else if collisionBitMask == PhysicsCategory.Bullet.rawValue | PhysicsCategory.Edge.rawValue{ // GAME OVER
-            pooNode?.removeFromParent()
+        }
+        else if collisionBitMask == PhysicsCategory.Egg.rawValue | PhysicsCategory.Edge.rawValue{ // GAME OVER
+            shootableNode?.removeFromParent()
+            addExplosionOfType(.Egg, atPoint: contactPoint)
             resetScore()
-            self.birdIsShooting = false
             
             NotificationCenter.default.post(name: .showGameOverKey, object: nil)
+        }
+        else if collisionBitMask == PhysicsCategory.Bonus.rawValue | PhysicsCategory.Human.rawValue{
+            shootableNode?.removeFromParent()
+            addExplosionOfType(.Bonus, atPoint: contactPoint)
+            increaseStreak()
+            NotificationCenter.default.post(name: .setupStreak, object: currentStreak)
+        }
+        else if collisionBitMask == PhysicsCategory.Bonus.rawValue | PhysicsCategory.Edge.rawValue {
+            shootableNode?.removeFromParent()
+            addExplosionOfType(.Bonus, atPoint: contactPoint)
+        }
+        else if collisionBitMask == PhysicsCategory.Poo.rawValue | PhysicsCategory.Human.rawValue { // GAME OVER
+            shootableNode?.removeFromParent()
+            addExplosionOfType(.Poo, atPoint: contactPoint)
+            resetScore()
+            NotificationCenter.default.post(name: .showGameOverKey, object: nil)
+        }
+        else if collisionBitMask == PhysicsCategory.Poo.rawValue | PhysicsCategory.Edge.rawValue {
+            shootableNode?.removeFromParent()
+            addExplosionOfType(.Poo, atPoint: contactPoint)
         }
     }
     

@@ -133,10 +133,10 @@ class GameViewController: BaseAudioViewController {
     //MARK: - Game methods
     //
     func startGame(_ isCalledFromPauseVC: Bool){
-        currentGameScene.startGame()
         if !isCalledFromPauseVC{
             showPauseScreen()
         }
+        currentGameScene.unhideTapHereContainer()
     }
     func pauseGame(){
         currentGameScene.pauseGame()

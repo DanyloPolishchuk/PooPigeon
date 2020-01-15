@@ -12,8 +12,10 @@ extension Notification.Name {
     
     // NotificationKey
     
-    static let setupScoreKey = Notification.Name(rawValue: "setupScoreNotificationKey")
-    static let showGameOverKey = Notification.Name(rawValue: "showGameOverNotificationKey")
+    static let setupScoreKey = Notification.Name("setupScoreNotificationKey")
+    static let setupStreak = Notification.Name("setupStreakNotificationKey")
+    static let resetScoreAndStreak = Notification.Name("resetScoreAndStreakNotificationKey")
+    static let showGameOverKey = Notification.Name("showGameOverNotificationKey")
     
     static let turnSFXOn = Notification.Name("turnSFXOnNotificationKey")
     static let turnSFXOff = Notification.Name("turnSFXOffNotificationKey")

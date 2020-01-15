@@ -33,8 +33,8 @@ class EnemySKSpriteNode: SKSpriteNode {
         
         self.physicsBody = SKPhysicsBody(texture: enemyPhysicsBodyTexture, size: enemyPhysicsBodyTexture.size())
         self.physicsBody?.categoryBitMask = PhysicsCategory.Human.rawValue
-        self.physicsBody?.collisionBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Bullet.rawValue | PhysicsCategory.VisibleBorder.rawValue
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Bullet.rawValue | PhysicsCategory.VisibleBorder.rawValue
+        self.physicsBody?.collisionBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Egg.rawValue | PhysicsCategory.Poo.rawValue | PhysicsCategory.Bonus.rawValue
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Egg.rawValue | PhysicsCategory.Poo.rawValue | PhysicsCategory.Bonus.rawValue
         self.physicsBody?.allowsRotation = false
         
     }

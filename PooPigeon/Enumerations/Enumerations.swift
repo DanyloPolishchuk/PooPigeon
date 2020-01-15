@@ -13,9 +13,10 @@ enum PhysicsCategory: UInt32 {
     case None           = 0
     case Edge           = 1     //0b1
     case Human          = 2     //0b10
-    case Bullet         = 4     //0b100
+    case Egg            = 4     //0b100
     case Field          = 8     //0b1000
-    case VisibleBorder  = 16    //0b10000
+    case Bonus          = 16    //0b10000
+    case Poo            = 32    //0b100000
 }
 
 enum Language: String, Codable {
