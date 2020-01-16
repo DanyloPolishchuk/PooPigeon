@@ -13,7 +13,7 @@ class ShopViewController: BaseBannerAdViewController {
     
     //MARK: - Properties
     //
-    var birds: [Bird]?
+    var heroes: [Hero]?
     var levels: [Level]?
     
     //IAP
@@ -21,7 +21,7 @@ class ShopViewController: BaseBannerAdViewController {
     
     var isFirstSelectedBirdIndexPathSetCall = true
     var isFirstSelectedLevelIndexPathSetCall = true
-    var selectedBirdIndexPath: IndexPath?
+    var selectedHeroIndexPath: IndexPath?
     var selectedLevelIndexPath: IndexPath?
     
     let birdCellReuseIdentifier = "birdCellReuseIdentifier"
@@ -78,7 +78,7 @@ class ShopViewController: BaseBannerAdViewController {
         Settings.shared.updateCurrentProgressProperties()
     }
     func setupDataSources(){
-        self.birds = Settings.shared.getBirds()
+        self.heroes = Settings.shared.getHeroes()
         self.levels = Settings.shared.getLevels()
     }
     func setupCollectionViews(){
@@ -89,14 +89,14 @@ class ShopViewController: BaseBannerAdViewController {
     }
     func setupDefaultSelectedCells(){
         
-        let currentBird = Settings.shared.currentBird
+        let currentHero = Settings.shared.currentHero
         let currentLevel = Settings.shared.currentLevel
         
-        selectedBirdIndexPath = IndexPath(item: currentBird.birdNumber - 1, section: 0)
+        selectedHeroIndexPath = IndexPath(item: currentHero.number - 1, section: 0)
         selectedLevelIndexPath = IndexPath(item: currentLevel.levelNumber - 1, section: 0)
         
-        if self.selectedBirdIndexPath != nil{
-            birdsCollectionView.delegate?.collectionView?(birdsCollectionView, didSelectItemAt: selectedBirdIndexPath!)
+        if self.selectedHeroIndexPath != nil{
+            birdsCollectionView.delegate?.collectionView?(birdsCollectionView, didSelectItemAt: selectedHeroIndexPath!)
         }
         if self.selectedLevelIndexPath != nil{
             levelsCollectionView.delegate?.collectionView?(levelsCollectionView, didSelectItemAt: selectedLevelIndexPath!)
@@ -105,14 +105,14 @@ class ShopViewController: BaseBannerAdViewController {
         
     }
     func setupSceneBeforeReturning(){
-        if let selectedLevelIndexPath = selectedLevelIndexPath, let selectedLevel = levels?[selectedLevelIndexPath.item], let selectedBirdIndexPath = selectedBirdIndexPath, let selectedBird = birds?[selectedBirdIndexPath.item] {
+        if let selectedLevelIndexPath = selectedLevelIndexPath, let selectedLevel = levels?[selectedLevelIndexPath.item], let selectedHeroIndexPath = selectedHeroIndexPath, let selectedHero = heroes?[selectedHeroIndexPath.item] {
             if !selectedLevel.levelIsUnlocked{
-                NotificationCenter.default.post(name: .setupCurrentLevelAndBird, object: nil)
+                NotificationCenter.default.post(name: .setupCurrentLevelAndHero, object: nil)
             }else{
-                if selectedBird.birdIsUnlocked{
+                if selectedHero.isUnlocked{
                     return
                 }else{
-                    NotificationCenter.default.post(name: .setupCurrentBird, object: nil)
+                    NotificationCenter.default.post(name: .setupCurrentHero, object: nil)
                 }
             }
         }
@@ -121,7 +121,7 @@ class ShopViewController: BaseBannerAdViewController {
     //MARK: - IAP methods
     //
     func setupIAP(){
-        NotificationCenter.default.addObserver(self, selector: #selector(allBirdsUnlockedHandler), name: .unlockAllBirdsPurchasedSuccessfully, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(allBirdsUnlockedHandler), name: .unlockAllHeroesPurchasedSuccessfully, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(allLevelsUnlockedHandler), name: .unlockAllLevelsPurchasedSuccessfully, object: nil)
         //        SpinWheelSplash.screen.display()
         IAPProducts.store.requestProducts{ [weak self] success, products in
@@ -135,7 +135,7 @@ class ShopViewController: BaseBannerAdViewController {
     
     func buyUnlockAllBirds(){
         for product in products {
-            if product.productIdentifier == IAPProducts.unlockAllBirdsIdentifier {
+            if product.productIdentifier == IAPProducts.unlockAllHeroesIdentifier {
                 IAPProducts.store.buyProduct(product)
                 break
             }
@@ -246,8 +246,8 @@ extension ShopViewController: UICollectionViewDataSource {
         
         let canMakePayments = IAPHelper.canMakePayments()
         
-        if collectionView == birdsCollectionView, self.birds != nil{
-            return self.birds!.count + (canMakePayments && !Settings.shared.isEveryBirdUnlocked ? 1 : 0)
+        if collectionView == birdsCollectionView, self.heroes != nil{
+            return self.heroes!.count + (canMakePayments && !Settings.shared.isEveryHeroUnlocked ? 1 : 0)
         }else if collectionView == levelsCollectionView, self.levels != nil{
             return self.levels!.count + (canMakePayments && !Settings.shared.isEveryLevelUnlocked ? 1 : 0)
         }else{
@@ -259,14 +259,14 @@ extension ShopViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == birdsCollectionView {
-            if indexPath.row == birds?.count { // unlockAllBirds cell
+            if indexPath.row == heroes?.count { // unlockAllHeroes cell
                 let unlockAllCell = collectionView.dequeueReusableCell(withReuseIdentifier: unlockAllBirdsCellReuseIdentifier, for: indexPath) as! UnlockAllCollectionViewCell
                 unlockAllCell.type = .UnlockAllBirds
                 unlockAllCell.shopPurchasesDelegate = self
                 return unlockAllCell
             }else{ // regular bird cell
                 let birdCell = collectionView.dequeueReusableCell(withReuseIdentifier: birdCellReuseIdentifier, for: indexPath) as! ShopCollectionViewCell
-                birdCell.displayContent(bird: birds![indexPath.row])
+                birdCell.displayContent(hero: heroes![indexPath.row])
                 return birdCell
             }
         }else{
@@ -351,22 +351,22 @@ extension ShopViewController: UICollectionViewDelegate {
         }
         
         if collectionView == birdsCollectionView{
-            if indexPath.row == birds?.count{ // unlockAllBirds cell is selected
+            if indexPath.row == heroes?.count{ // unlockAllHeroes cell is selected
                 return
             }
             if isFirstSelectedBirdIndexPathSetCall{
                 isFirstSelectedBirdIndexPathSetCall = false
                 return
             }else{
-                selectedBirdIndexPath = indexPath
+                selectedHeroIndexPath = indexPath
                 //update scene & Settings(Optionally)
-                if let selectedBird = birds?[selectedBirdIndexPath!.item] {
-                    if selectedBird.birdIsUnlocked{
+                if let selectedHero = heroes?[selectedHeroIndexPath!.item] {
+                    if selectedHero.isUnlocked{
                         // update Settings
-                        Settings.shared.currentBird = selectedBird
+                        Settings.shared.currentHero = selectedHero
                         Settings.shared.save()
                     }
-                    NotificationCenter.default.post(name: .setupBird, object: selectedBird)
+                    NotificationCenter.default.post(name: .setupHero, object: selectedHero)
                 }
                 
             }
@@ -385,10 +385,10 @@ extension ShopViewController: UICollectionViewDelegate {
                         Settings.shared.currentLevel = selectedLevel
                         Settings.shared.save()
                     }
-                    if let selectedBird = birds?[selectedBirdIndexPath!.item] {
+                    if let selectedHero = heroes?[selectedHeroIndexPath!.item] {
                         let levelAndBirdDictionary: [String : Any] = ["level" : selectedLevel,
-                                                                      "bird" : selectedBird]
-                        NotificationCenter.default.post(name: .setupLevelAndBird, object: levelAndBirdDictionary)
+                                                                      "hero" : selectedHero]
+                        NotificationCenter.default.post(name: .setupLevelAndHero, object: levelAndBirdDictionary)
                     }
                 }
             }

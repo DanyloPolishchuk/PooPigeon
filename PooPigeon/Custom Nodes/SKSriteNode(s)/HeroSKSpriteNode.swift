@@ -1,5 +1,5 @@
 //
-//  EnemySKSpriteNode.swift
+//  HeroSKSpriteNode.swift
 //  PooPigeon
 //
 //  Created by Danylo Polishchuk on 11/30/19.
@@ -9,9 +9,8 @@
 import UIKit
 import SpriteKit
 
-class EnemySKSpriteNode: SKSpriteNode {
+class HeroSKSpriteNode: SKSpriteNode {
     
-    let destinationX: CGFloat
     let walkAnimationActionKey = "walkAnimationActionKey"
     let walkActionKey = "walkActionKey"
     let runActionKey = "runActionKey"
@@ -19,9 +18,8 @@ class EnemySKSpriteNode: SKSpriteNode {
     let runAnimationSpped: TimeInterval = 1/6
     let animationTextures: [SKTexture]
     
-    init(_ enemy: Enemy,_ destinationX: CGFloat) {
+    init(_ enemy: Hero) {
         
-        self.destinationX = destinationX
         self.animationTextures = enemy.animationTextureNames.map{ SKTexture(imageNamed: $0) }
         
         let enemyTexture = SKTexture(imageNamed: enemy.texture)
@@ -29,7 +27,7 @@ class EnemySKSpriteNode: SKSpriteNode {
         
         super.init(texture: enemyTexture, color: .clear, size: enemyTexture.size())
         
-        self.name = "enemyNode"
+        self.name = "heroNode"
         
         self.physicsBody = SKPhysicsBody(texture: enemyPhysicsBodyTexture, size: enemyPhysicsBodyTexture.size())
         self.physicsBody?.categoryBitMask = PhysicsCategory.Human.rawValue
@@ -47,7 +45,7 @@ class EnemySKSpriteNode: SKSpriteNode {
     func walk(){
         let walkAnimationAction = SKAction.animate(with: animationTextures, timePerFrame: walkAnimationSpeed)
         let walkInfiniteAnimationAction = SKAction.repeatForever(walkAnimationAction)
-        let walkMoveAction = SKAction.moveTo(x: destinationX, duration: 4.0)
+        let walkMoveAction = SKAction.moveTo(x: 0, duration: 4.0)
         let walkMoveSequnce = SKAction.sequence([
             walkMoveAction,
             SKAction.removeFromParent(),
@@ -62,7 +60,7 @@ class EnemySKSpriteNode: SKSpriteNode {
         // replace "walkAnimationSpeed" with calculated value
         let walkAnimationAction = SKAction.animate(with: animationTextures, timePerFrame: walkAnimationSpeed)
         let walkInfiniteAnimationAction = SKAction.repeatForever(walkAnimationAction)
-        let walkMoveAction = SKAction.moveTo(x: destinationX, duration: duration)
+        let walkMoveAction = SKAction.moveTo(x: 0, duration: duration)
         let walkMoveSequnce = SKAction.sequence([
             walkMoveAction,
             SKAction.removeFromParent(),
@@ -82,7 +80,7 @@ class EnemySKSpriteNode: SKSpriteNode {
         let runInfiniteAnimationAction = SKAction.repeatForever(runAnimationAction)
         
         // maybe change the destinationPoint to leftDestinationPoint so player can see clearly right side of the screen.
-        let runMoveAction = SKAction.moveTo(x: destinationX, duration: 1.25)
+        let runMoveAction = SKAction.moveTo(x: 0, duration: 1.25)
         let runMoveSequence = SKAction.sequence([
             runMoveAction,
             SKAction.removeFromParent(),

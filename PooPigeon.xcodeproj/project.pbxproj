@@ -41,13 +41,14 @@
 		9E5468FB239D43A600857D44 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5468FA239D43A600857D44 /* AchievementsViewController.swift */; };
 		9E5468FD239D54E400857D44 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5468FC239D54E400857D44 /* ProgressTableViewCell.swift */; };
 		9E5468FF239D552400857D44 /* WallpaperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5468FE239D552400857D44 /* WallpaperTableViewCell.swift */; };
+		9E5633AD23D0C7A10046AFC2 /* Level2Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E5633AC23D0C7A10046AFC2 /* Level2Scene.sks */; };
+		9E5633AE23D0C7A10046AFC2 /* Level2Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E5633AC23D0C7A10046AFC2 /* Level2Scene.sks */; };
 		9E581B52239EE7FA000F7B04 /* VCR_OSD_MONO_1.001.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E43707D238C43D000B7D42D /* VCR_OSD_MONO_1.001.ttf */; };
 		9E643F78239D9C3200BB5FC0 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E643F77239D9C3200BB5FC0 /* Wallpaper.swift */; };
 		9E643F7A239ECD3600BB5FC0 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E643F79239ECD3600BB5FC0 /* HeaderTableViewCell.swift */; };
 		9E6C9A1123916C6300B7AC37 /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C9A1023916C6300B7AC37 /* PauseViewController.swift */; };
 		9E6C9A1423916D7A00B7AC37 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C9A1323916D7A00B7AC37 /* GameViewController.swift */; };
-		9E6C9A162391BBF900B7AC37 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C9A152391BBF900B7AC37 /* Enemy.swift */; };
-		9E6C9A182391EAEB00B7AC37 /* EnemySKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C9A172391EAEB00B7AC37 /* EnemySKSpriteNode.swift */; };
+		9E6C9A182391EAEB00B7AC37 /* HeroSKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C9A172391EAEB00B7AC37 /* HeroSKSpriteNode.swift */; };
 		9E82000023BE3A5C0026A1EC /* BaseSKScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3821942387134300244205 /* BaseSKScene.swift */; };
 		9E82000123BE3A5C0026A1EC /* BirdSKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8FC847239231D800A576C0 /* BirdSKSpriteNode.swift */; };
 		9E82000223BE3A5C0026A1EC /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9862B32389CF7A00809E2B /* MainMenuViewController.swift */; };
@@ -75,7 +76,6 @@
 		9E82FFF323BE3A5C0026A1EC /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E16740923A3C34E00322AFF /* ShopCollectionViewCell.swift */; };
 		9E82FFF423BE3A5C0026A1EC /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5468FC239D54E400857D44 /* ProgressTableViewCell.swift */; };
 		9E82FFF523BE3A5C0026A1EC /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38218D2386E1D300244205 /* Level.swift */; };
-		9E82FFF623BE3A5C0026A1EC /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C9A152391BBF900B7AC37 /* Enemy.swift */; };
 		9E82FFF723BE3A5C0026A1EC /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38218F2386E79F00244205 /* Bird.swift */; };
 		9E82FFF823BE3A5C0026A1EC /* BaseBannerAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E82FFEB23B796CE0026A1EC /* BaseBannerAdViewController.swift */; };
 		9E82FFF923BE3A5C0026A1EC /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E643F77239D9C3200BB5FC0 /* Wallpaper.swift */; };
@@ -84,7 +84,7 @@
 		9E82FFFC23BE3A5C0026A1EC /* SettingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8FC8572399817500A576C0 /* SettingsCollectionViewCell.swift */; };
 		9E82FFFD23BE3A5C0026A1EC /* WallpaperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5468FE239D552400857D44 /* WallpaperTableViewCell.swift */; };
 		9E82FFFE23BE3A5C0026A1EC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E382197238714EA00244205 /* Protocols.swift */; };
-		9E82FFFF23BE3A5C0026A1EC /* EnemySKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C9A172391EAEB00B7AC37 /* EnemySKSpriteNode.swift */; };
+		9E82FFFF23BE3A5C0026A1EC /* HeroSKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C9A172391EAEB00B7AC37 /* HeroSKSpriteNode.swift */; };
 		9E8FC848239231D800A576C0 /* BirdSKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8FC847239231D800A576C0 /* BirdSKSpriteNode.swift */; };
 		9E8FC84E2392522000A576C0 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8FC84D2392522000A576C0 /* NotificationNames.swift */; };
 		9E8FC85123971BDB00A576C0 /* signalRocketSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E8FC85023971BDA00A576C0 /* signalRocketSound.mp3 */; };
@@ -92,6 +92,8 @@
 		9E8FC85523997A8200A576C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8FC85423997A8200A576C0 /* SettingsViewController.swift */; };
 		9E8FC8582399817500A576C0 /* SettingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8FC8572399817500A576C0 /* SettingsCollectionViewCell.swift */; };
 		9E9862B42389CF7A00809E2B /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9862B32389CF7A00809E2B /* MainMenuViewController.swift */; };
+		9EB0D3A823D0A88E00A17EFA /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB0D3A723D0A88E00A17EFA /* Enemy.swift */; };
+		9EB0D3A923D0A88E00A17EFA /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB0D3A723D0A88E00A17EFA /* Enemy.swift */; };
 		9EDDA7B523ABEF720006FB3C /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDDA7B423ABEF720006FB3C /* ContactUsViewController.swift */; };
 		9EDDA7B823AC1A140006FB3C /* RainEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9EDDA7B623AC1A140006FB3C /* RainEmitter.sks */; };
 		9EDDA7B923AC1A140006FB3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EDDA7B723AC1A140006FB3C /* Assets.xcassets */; };
@@ -141,12 +143,12 @@
 		9E5468FA239D43A600857D44 /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		9E5468FC239D54E400857D44 /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
 		9E5468FE239D552400857D44 /* WallpaperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperTableViewCell.swift; sourceTree = "<group>"; };
+		9E5633AC23D0C7A10046AFC2 /* Level2Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2Scene.sks; sourceTree = "<group>"; };
 		9E643F77239D9C3200BB5FC0 /* Wallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
 		9E643F79239ECD3600BB5FC0 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		9E6C9A1023916C6300B7AC37 /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
 		9E6C9A1323916D7A00B7AC37 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		9E6C9A152391BBF900B7AC37 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
-		9E6C9A172391EAEB00B7AC37 /* EnemySKSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemySKSpriteNode.swift; sourceTree = "<group>"; };
+		9E6C9A172391EAEB00B7AC37 /* HeroSKSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSKSpriteNode.swift; sourceTree = "<group>"; };
 		9E82001B23BE3A5C0026A1EC /* PooPigeon - Release.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PooPigeon - Release.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E82001C23BE3A5C0026A1EC /* Info-Release.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Release.plist"; path = "/Users/danylopolishchuk/Documents/KPI/3 Курс/SpriteKit/PooPigeon/Info-Release.plist"; sourceTree = "<absolute>"; };
 		9E82FFEB23B796CE0026A1EC /* BaseBannerAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBannerAdViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		9E8FC85423997A8200A576C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9E8FC8572399817500A576C0 /* SettingsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E9862B32389CF7A00809E2B /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		9EB0D3A723D0A88E00A17EFA /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		9EDDA7B423ABEF720006FB3C /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		9EDDA7B623AC1A140006FB3C /* RainEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainEmitter.sks; sourceTree = "<group>"; };
 		9EDDA7B723AC1A140006FB3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -259,7 +262,7 @@
 			children = (
 				9E38218D2386E1D300244205 /* Level.swift */,
 				9E38218F2386E79F00244205 /* Bird.swift */,
-				9E6C9A152391BBF900B7AC37 /* Enemy.swift */,
+				9EB0D3A723D0A88E00A17EFA /* Enemy.swift */,
 				9E643F77239D9C3200BB5FC0 /* Wallpaper.swift */,
 			);
 			path = Models;
@@ -294,7 +297,7 @@
 		9E382193238712D100244205 /* SKSriteNode(s) */ = {
 			isa = PBXGroup;
 			children = (
-				9E6C9A172391EAEB00B7AC37 /* EnemySKSpriteNode.swift */,
+				9E6C9A172391EAEB00B7AC37 /* HeroSKSpriteNode.swift */,
 				9E8FC847239231D800A576C0 /* BirdSKSpriteNode.swift */,
 			);
 			path = "SKSriteNode(s)";
@@ -400,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				9EDDE3CB237A1C2C00A06863 /* Level1Scene.sks */,
+				9E5633AC23D0C7A10046AFC2 /* Level2Scene.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -612,6 +616,7 @@
 				9E82001423BE3A5C0026A1EC /* Assets.xcassets in Resources */,
 				9E0035C723BE5BD300DC0202 /* LaunchScreenDebug.storyboard in Resources */,
 				9E2A953923CF498000B01EC1 /* SparklesWhiteEmitter.sks in Resources */,
+				9E5633AE23D0C7A10046AFC2 /* Level2Scene.sks in Resources */,
 				9E82001523BE3A5C0026A1EC /* Assets.xcassets in Resources */,
 				9E0035CD23BE94B500DC0202 /* ButtonSound.wav in Resources */,
 				9E2A954823CF59A500B01EC1 /* SparklesBrownEmitter.sks in Resources */,
@@ -635,6 +640,7 @@
 				9EDDE3D7237A1C2E00A06863 /* Assets.xcassets in Resources */,
 				9E0035C623BE5BD300DC0202 /* LaunchScreenDebug.storyboard in Resources */,
 				9E2A953823CF498000B01EC1 /* SparklesWhiteEmitter.sks in Resources */,
+				9E5633AD23D0C7A10046AFC2 /* Level2Scene.sks in Resources */,
 				9EDDA7B923AC1A140006FB3C /* Assets.xcassets in Resources */,
 				9E0035CC23BE94B500DC0202 /* ButtonSound.wav in Resources */,
 				9E2A954723CF59A500B01EC1 /* SparklesBrownEmitter.sks in Resources */,
@@ -739,7 +745,6 @@
 				9E82FFF323BE3A5C0026A1EC /* ShopCollectionViewCell.swift in Sources */,
 				9E82FFF423BE3A5C0026A1EC /* ProgressTableViewCell.swift in Sources */,
 				9E82FFF523BE3A5C0026A1EC /* Level.swift in Sources */,
-				9E82FFF623BE3A5C0026A1EC /* Enemy.swift in Sources */,
 				9E82FFF723BE3A5C0026A1EC /* Bird.swift in Sources */,
 				9E82FFF823BE3A5C0026A1EC /* BaseBannerAdViewController.swift in Sources */,
 				9E82FFF923BE3A5C0026A1EC /* Wallpaper.swift in Sources */,
@@ -749,7 +754,7 @@
 				9E82FFFD23BE3A5C0026A1EC /* WallpaperTableViewCell.swift in Sources */,
 				9E82FFFE23BE3A5C0026A1EC /* Protocols.swift in Sources */,
 				9E2A954B23CFDF8F00B01EC1 /* SKSPriteNode+GlowingEffect.swift in Sources */,
-				9E82FFFF23BE3A5C0026A1EC /* EnemySKSpriteNode.swift in Sources */,
+				9E82FFFF23BE3A5C0026A1EC /* HeroSKSpriteNode.swift in Sources */,
 				9EEA2A9323C8CF2300105B4E /* IAPHelper.swift in Sources */,
 				9E82000023BE3A5C0026A1EC /* BaseSKScene.swift in Sources */,
 				9EE81A2523C22BC7006045CC /* ImageLibraryAccessAlertViewController.swift in Sources */,
@@ -757,6 +762,7 @@
 				9E82000223BE3A5C0026A1EC /* MainMenuViewController.swift in Sources */,
 				9E82000323BE3A5C0026A1EC /* AppDelegate.swift in Sources */,
 				9E82000423BE3A5C0026A1EC /* SettingsViewController.swift in Sources */,
+				9EB0D3A923D0A88E00A17EFA /* Enemy.swift in Sources */,
 				9E82000523BE3A5C0026A1EC /* NotificationNames.swift in Sources */,
 				9E82000623BE3A5C0026A1EC /* BaseAudioViewController.swift in Sources */,
 				9E82000723BE3A5C0026A1EC /* ShopViewController.swift in Sources */,
@@ -780,7 +786,6 @@
 				9E16740A23A3C34E00322AFF /* ShopCollectionViewCell.swift in Sources */,
 				9E5468FD239D54E400857D44 /* ProgressTableViewCell.swift in Sources */,
 				9E38218E2386E1D300244205 /* Level.swift in Sources */,
-				9E6C9A162391BBF900B7AC37 /* Enemy.swift in Sources */,
 				9E3821902386E79F00244205 /* Bird.swift in Sources */,
 				9E82FFEC23B796CE0026A1EC /* BaseBannerAdViewController.swift in Sources */,
 				9E643F78239D9C3200BB5FC0 /* Wallpaper.swift in Sources */,
@@ -790,7 +795,7 @@
 				9E5468FF239D552400857D44 /* WallpaperTableViewCell.swift in Sources */,
 				9E382198238714EA00244205 /* Protocols.swift in Sources */,
 				9E2A954A23CFDF8F00B01EC1 /* SKSPriteNode+GlowingEffect.swift in Sources */,
-				9E6C9A182391EAEB00B7AC37 /* EnemySKSpriteNode.swift in Sources */,
+				9E6C9A182391EAEB00B7AC37 /* HeroSKSpriteNode.swift in Sources */,
 				9EEA2A9223C8CF2300105B4E /* IAPHelper.swift in Sources */,
 				9E3821952387134300244205 /* BaseSKScene.swift in Sources */,
 				9EE81A2423C22BC7006045CC /* ImageLibraryAccessAlertViewController.swift in Sources */,
@@ -798,6 +803,7 @@
 				9E9862B42389CF7A00809E2B /* MainMenuViewController.swift in Sources */,
 				9EDDE3CA237A1C2C00A06863 /* AppDelegate.swift in Sources */,
 				9E8FC85523997A8200A576C0 /* SettingsViewController.swift in Sources */,
+				9EB0D3A823D0A88E00A17EFA /* Enemy.swift in Sources */,
 				9E8FC84E2392522000A576C0 /* NotificationNames.swift in Sources */,
 				9E8FC85323971D5700A576C0 /* BaseAudioViewController.swift in Sources */,
 				9E16740823A2F24D00322AFF /* ShopViewController.swift in Sources */,

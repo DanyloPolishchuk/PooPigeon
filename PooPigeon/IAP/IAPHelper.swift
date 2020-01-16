@@ -29,8 +29,8 @@ open class IAPHelper: NSObject  {
                 purchased = Settings.shared.isAddsRemovalPurchased
             case IAPProducts.unlockAllIdentifier:
                 purchased = Settings.shared.isUnlockAllPurchased
-            case IAPProducts.unlockAllBirdsIdentifier:
-                purchased = Settings.shared.isUnlockAllBirdsPurchased
+            case IAPProducts.unlockAllHeroesIdentifier:
+                purchased = Settings.shared.isUnlockAllHeroesPurchased
             case IAPProducts.unlockAllLevelsIdentifier:
                 purchased = Settings.shared.isUnlockAllLevelsPurchased
             default:
@@ -173,10 +173,10 @@ extension IAPHelper: SKPaymentTransactionObserver {
             Settings.shared.isUnlockAllPurchased = true
             Settings.shared.unlockAll()
             NotificationCenter.default.post(name: .unlockAllPurchasedSuccessfully, object: nil)
-        case IAPProducts.unlockAllBirdsIdentifier:
-            Settings.shared.isUnlockAllBirdsPurchased = true
-            Settings.shared.unlockAllBirds()
-            NotificationCenter.default.post(name: .unlockAllBirdsPurchasedSuccessfully, object: nil)
+        case IAPProducts.unlockAllHeroesIdentifier:
+            Settings.shared.isUnlockAllHeroesPurchased = true
+            Settings.shared.unlockAllHeroes()
+            NotificationCenter.default.post(name: .unlockAllHeroesPurchasedSuccessfully, object: nil)
         case IAPProducts.unlockAllLevelsIdentifier:
             Settings.shared.isUnlockAllLevelsPurchased = true
             Settings.shared.unlockAllLevels()

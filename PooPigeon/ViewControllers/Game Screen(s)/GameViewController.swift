@@ -30,14 +30,14 @@ class GameViewController: BaseAudioViewController {
         
         setupNotifications()
         setupSKView()
-        setupCurrentLevelAndBird()
+        setupCurrentLevelAndHero()
     }
     override func viewDidAppear(_ animated: Bool) {
         print("GameViewController viewDidAppear called")
         super.viewDidAppear(animated)
         
         showMenuScreen()
-        setupCurrentLevelAndBird()
+        setupCurrentLevelAndHero()
     }
     
     //MARK: - Setup methods
@@ -54,65 +54,63 @@ class GameViewController: BaseAudioViewController {
         
     }
     func setupNotifications(){
-        NotificationCenter.default.addObserver(self, selector: #selector(setupCurrentLevelAndBird), name: .setupCurrentLevelAndBird, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(setupLevelAndBird(notification:)), name: .setupLevelAndBird, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(setupCurrentBird), name: .setupCurrentBird, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(setupBird(notification:)), name: .setupBird, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setupCurrentLevelAndHero), name: .setupCurrentLevelAndHero, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setupLevelAndHero(notification:)), name: .setupLevelAndHero, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setupCurrentHero), name: .setupCurrentHero, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setupHero(notification:)), name: .setupHero, object: nil)
     }
-    @objc func setupBird(notification: NSNotification){
-        if let bird = notification.object as? Bird{
-            setupBird(bird)
+    @objc func setupHero(notification: NSNotification){
+        if let hero = notification.object as? Hero{
+            setupHero(hero)
         }
     }
-    @objc func setupLevelAndBird(notification: NSNotification){
-        if let dict = notification.object as? NSDictionary, let level = dict["level"] as? Level, let bird = dict["bird"] as? Bird{
-            setupLevelAndBird(level, bird)
+    @objc func setupLevelAndHero(notification: NSNotification){
+        if let dict = notification.object as? NSDictionary, let level = dict["level"] as? Level, let hero = dict["hero"] as? Hero{
+            setupLevelAndHero(level, hero)
         }
     }
-    @objc func setupCurrentLevelAndBird(){
+    @objc func setupCurrentLevelAndHero(){
         
         let currentLevel = Settings.shared.currentLevel
-        let currentBird = Settings.shared.currentBird
+        let currentHero = Settings.shared.currentHero
         
-        setupAudioPlayers(sfxSoundFileName: currentBird.birdSoundFileName, musicSoundFileName: currentLevel.levelMusicSoundFileName)
+        setupAudioPlayers(sfxSoundFileName: currentLevel.levelMusicSoundFileName, musicSoundFileName: currentLevel.levelMusicSoundFileName)
         
         if let scene = SKScene(fileNamed: currentLevel.levelSceneFileName) {
             currentGameScene = scene as? BaseSKScene
             currentGameScene.currentLevel = currentLevel
-            currentGameScene.currentBird = currentBird
+            currentGameScene.currentHero = currentHero
             
             scene.scaleMode = .aspectFill
             skView.presentScene(scene)
-            (scene as? BaseSKScene)?.presentCurrentBird()
         }
     }
-    func setupLevelAndBird(_ level: Level, _ bird: Bird){
+    func setupLevelAndHero(_ level: Level, _ hero: Hero){
         
         let currentLevel = level
-        let currentBird = bird
+        let currentHero = hero
         
-        setupAudioPlayers(sfxSoundFileName: currentBird.birdSoundFileName, musicSoundFileName: currentLevel.levelMusicSoundFileName)
-        
+        setupAudioPlayers(sfxSoundFileName: currentLevel.levelMusicSoundFileName, musicSoundFileName: currentLevel.levelMusicSoundFileName)
+
         if let scene = SKScene(fileNamed: currentLevel.levelSceneFileName) {
             currentGameScene = scene as? BaseSKScene
             currentGameScene.currentLevel = currentLevel
-            currentGameScene.currentBird = currentBird
+            currentGameScene.currentHero = currentHero
             
             scene.scaleMode = .aspectFill
             skView.presentScene(scene)
-            (scene as? BaseSKScene)?.presentCurrentBird()
         }
     }
-    @objc func setupCurrentBird(){
-        let currentBird = Settings.shared.currentBird
-        setupSFXAudioPlayerWith(currentBirdSoundFileName: currentBird.birdSoundFileName)
-        currentGameScene.currentBird = currentBird
-        currentGameScene.presentCurrentBird()
+    @objc func setupCurrentHero(){
+        let currentHero = Settings.shared.currentHero
+//        setupSFXAudioPlayerWith(currentBirdSoundFileName: currentHero.birdSoundFileName)
+        currentGameScene.currentHero = currentHero
+        currentGameScene.setupMainHero()
     }
-    func setupBird(_ bird: Bird){
-        setupSFXAudioPlayerWith(currentBirdSoundFileName: bird.birdSoundFileName)
-        currentGameScene.currentBird = bird
-        currentGameScene.presentCurrentBird()
+    func setupHero(_ hero: Hero){
+//        setupSFXAudioPlayerWith(currentBirdSoundFileName: hero.birdSoundFileName)
+        currentGameScene.currentHero = hero
+        currentGameScene.setupMainHero()
     }
     
     //MARK: - Transition methods

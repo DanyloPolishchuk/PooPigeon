@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-//TODO: refactor data models. Level holds birds, birds hold bullet types. Hero is separate 
 class Settings: Codable {
     
     static let shared: Settings = {
@@ -26,10 +25,10 @@ class Settings: Codable {
     // - insensitive
     
     var currentLevel: Level
-    var currentBird: Bird
+    var currentHero: Hero
     
     private var levels: [Level]
-    private var birds: [Bird]
+    private var heroes: [Hero]
     private var wallpapers: [Wallpaper]
     
     private var language: Language
@@ -46,7 +45,7 @@ class Settings: Codable {
     
     var isAddsRemovalPurchased: Bool
     var isUnlockAllPurchased: Bool
-    var isUnlockAllBirdsPurchased: Bool
+    var isUnlockAllHeroesPurchased: Bool
     var isUnlockAllLevelsPurchased: Bool
 
     var bestScore: UInt
@@ -61,9 +60,9 @@ class Settings: Codable {
     
     //MARK: - Computed properties
     //
-    var isEveryBirdUnlocked: Bool {
+    var isEveryHeroUnlocked: Bool {
         get{
-            return self.birds.allSatisfy({ $0.birdIsUnlocked })
+            return self.heroes.allSatisfy({ $0.isUnlocked })
         }
     }
     
@@ -82,10 +81,10 @@ class Settings: Codable {
             print("\n\nSettings instance initialization from UD\n\n")
             
             self.currentLevel = settings.currentLevel
-            self.currentBird = settings.currentBird
+            self.currentHero = settings.currentHero
             
             self.levels = settings.levels
-            self.birds = settings.birds
+            self.heroes = settings.heroes
             self.wallpapers = settings.wallpapers
             
             self.language = settings.language
@@ -102,7 +101,7 @@ class Settings: Codable {
             
             self.isAddsRemovalPurchased = settings.isAddsRemovalPurchased
             self.isUnlockAllPurchased = settings.isUnlockAllPurchased
-            self.isUnlockAllBirdsPurchased = settings.isUnlockAllBirdsPurchased
+            self.isUnlockAllHeroesPurchased = settings.isUnlockAllHeroesPurchased
             self.isUnlockAllLevelsPurchased = settings.isUnlockAllLevelsPurchased
             
             self.bestScore = settings.bestScore
@@ -126,15 +125,15 @@ class Settings: Codable {
                       // REPLACE_WITH_ACTUAL_SOUND_FILE
                     levelMusicSoundFileName: "signalRocketSound",
                     levelPreviewImageName: "level1NewYorkBackground" ,
-                    enemies: [
-                        Enemy(texture: "level1ManWalkingFrame1",
-                              physicsBodyTexture: "level1ManWalkingBodyTexture",
-                              animationTextureNames: [
-                                "level1ManWalkingFrame1",
-                                "level1ManWalkingFrame2",
-                                "level1ManWalkingFrame3"
-                            ])
-                    ],
+                    bird: Bird(birdNumber: 1,
+                               birdName: "Pigeon",
+                               birdSpawnPosition: CGPoint(x: 0, y: 680),
+                               birdTexture: "pigeonDefault",
+                               birdAnimationTextureNames: [
+                                "pigeonDefault",
+                                "pigeonDefaultFrame2"],
+                               birdShootTextureName: "pigeonDefaultShootFrame",
+                               birdSoundFileName: "signalRocketSound"),
                     levelIsUnlocked: true,
                     levelChallengeType: .None,
                     levelChallengeScoreType: .None,
@@ -144,48 +143,69 @@ class Settings: Codable {
                     neededChallengeNumberValue: nil,
                     neededChallengeBoolValue: nil,
                     neededChallengeDateValue: nil
+                ),
+                Level(levelName: "Cave",
+                      levelNumber: 2,
+                      levelSceneFileName: "Level2Scene",
+                      // REPLACE_WITH_ACTUAL_SOUND_FILE
+                    levelMusicSoundFileName: "signalRocketSound",
+                    levelPreviewImageName: "caveLevelBGTest" ,
+                    bird: Bird(birdNumber: 2,
+                               birdName: "Bat",
+                               birdSpawnPosition: CGPoint(x: 0, y: 744),
+                               birdTexture: "batFrame1",
+                               birdAnimationTextureNames: [
+                                "batFrame1",
+                                "batFrame2"],
+                               birdShootTextureName: "batShootFrame",
+                               birdSoundFileName: "signalRocketSound"),
+                    levelIsUnlocked: false,
+                    levelChallengeType: .BestScore,
+                    levelChallengeScoreType: .NumberValue,
+                    currentChallengeNumberValueProgress: 0,
+                    currentChallengeBoolValueProgress: nil,
+                    currentChallengeDateValueProgress: nil,
+                    neededChallengeNumberValue: 100,
+                    neededChallengeBoolValue: nil,
+                    neededChallengeDateValue: nil
                 )
             ]
             
-            birds = [
-                Bird(birdNumber: 1,
-                     birdName: "Pigeon",
-                     birdSpawnPosition: CGPoint(x: 0, y: 680),
-                     birdTexture: "pigeonDefault",
-                     birdAnimationTextureNames: [
-                        "pigeonDefault",
-                        "pigeonDefaultFrame2"
+            heroes = [
+                Hero(number: 1,
+                     name: "Test1",
+                     texture: "level1ManWalkingBodyTexture",
+                     physicsBodyTexture: "level1ManWalkingBodyTexture",
+                     animationTextureNames: [
+                        "level1ManWalkingBodyTexture",
+                        "level1ManWalkingBodyTexture",
+                        "level1ManWalkingBodyTexture"
                     ],
-                     birdShootTextureName: "pigeonDefaultShootFrame",
-                     // REPLACE_WITH_ACTUAL_SOUND_FILE
-                     birdSoundFileName: "signalRocketSound",
-                     birdIsUnlocked: true,
-                     birdChallengeType: .None,
-                     birdChallengeScoreType: .None,
+                     isUnlocked: true,
+                     challengeType: .None,
+                     challengeScoreType: .None,
                      currentChallengeNumberValueProgress: nil,
                      currentChallengeBoolValueProgress: nil,
                      currentChallengeDateValueProgress: nil,
                      neededChallengeNumberValue: nil,
                      neededChallengeBoolValue: nil,
                      neededChallengeDateValue: nil),
-                Bird(birdNumber: 2,
-                     birdName: "Bat",
-                     birdSpawnPosition: CGPoint(x: 0, y: 744),
-                     birdTexture: "batFrame1",
-                     birdAnimationTextureNames: [
-                        "batFrame1",
-                        "batFrame2"
+                Hero(number: 2,
+                     name: "Test2",
+                     texture: "level1ManWalkingFrame2",
+                     physicsBodyTexture: "level1ManWalkingFrame2",
+                     animationTextureNames: [
+                        "level1ManWalkingFrame1",
+                        "level1ManWalkingFrame2",
+                        "level1ManWalkingFrame3"
                     ],
-                     birdShootTextureName: "batShootFrame",
-                     // REPLACE_WITH_ACTUAL_SOUND_FILE
-                     birdSoundFileName: "signalRocketSound",
-                     birdIsUnlocked: false,
-                     birdChallengeType: .TotalScore,
-                     birdChallengeScoreType: .NumberValue,
+                     isUnlocked: false,
+                     challengeType: .TotalScore,
+                     challengeScoreType: .NumberValue,
                      currentChallengeNumberValueProgress: 0,
                      currentChallengeBoolValueProgress: nil,
                      currentChallengeDateValueProgress: nil,
-                     neededChallengeNumberValue: 50,
+                     neededChallengeNumberValue: 100,
                      neededChallengeBoolValue: nil,
                      neededChallengeDateValue: nil)
             ]
@@ -193,20 +213,11 @@ class Settings: Codable {
             wallpapers = [
                 Wallpaper(wallpaperNumber: 1,
                           wallpaperImageName: "level1NewYorkBackground",
-                          isWallpaperUnlocked: false),
-                Wallpaper(wallpaperNumber: 2,
-                          wallpaperImageName: "level1NewYorkBackground",
-                          isWallpaperUnlocked: false),
-                Wallpaper(wallpaperNumber: 3,
-                          wallpaperImageName: "level1NewYorkBackground",
-                          isWallpaperUnlocked: false),
-                Wallpaper(wallpaperNumber: 4,
-                          wallpaperImageName: "level1NewYorkBackground",
                           isWallpaperUnlocked: false)
             ]
             
             currentLevel = levels[0]
-            currentBird = birds[0]
+            currentHero = heroes[0]
             
             language = Language.English
             
@@ -222,7 +233,7 @@ class Settings: Codable {
             
             isAddsRemovalPurchased = false
             isUnlockAllPurchased = false
-            isUnlockAllBirdsPurchased = false
+            isUnlockAllHeroesPurchased = false
             isUnlockAllLevelsPurchased = false
             
             bestScore = 0
@@ -246,27 +257,27 @@ class Settings: Codable {
     //MARK: - Progressable properties update methods
     //
     func updateCurrentProgressProperties(){
-        self.birds = self.birds.map({ (bird: Bird) -> Bird in
-            var newBird = bird
-            if !newBird.birdIsUnlocked {
-                switch newBird.birdChallengeType{
+        self.heroes = self.heroes.map({ (hero: Hero) -> Hero in
+            var newHero = hero
+            if !newHero.isUnlocked {
+                switch newHero.challengeType{
                 case .BestScore:
-                    newBird.currentChallengeNumberValueProgress = self.bestScore
+                    newHero.currentChallengeNumberValueProgress = self.bestScore
                 case .TotalScore:
-                    newBird.currentChallengeNumberValueProgress = self.totalScore
+                    newHero.currentChallengeNumberValueProgress = self.totalScore
                 case .TotalLoseTimes:
-                    newBird.currentChallengeNumberValueProgress = self.amountOfLoses
+                    newHero.currentChallengeNumberValueProgress = self.amountOfLoses
                 case .TotalTimeSpentInGame:
-                    newBird.currentChallengeNumberValueProgress = self.timeInSecsSpentInGame
+                    newHero.currentChallengeNumberValueProgress = self.timeInSecsSpentInGame
                 case .TotalTimesGameWasLaunched:
-                    newBird.currentChallengeNumberValueProgress = self.timesGameWasLaunched
+                    newHero.currentChallengeNumberValueProgress = self.timesGameWasLaunched
                 case .TotalDaysGameWasLaunched:
-                    newBird.currentChallengeNumberValueProgress = self.amountOfDaysGameWasLaunched
+                    newHero.currentChallengeNumberValueProgress = self.amountOfDaysGameWasLaunched
                 default:
                     break
                 }
             }
-            return newBird
+            return newHero
         })
         self.levels = self.levels.map({ (level: Level) -> Level in
             var newLevel = level
@@ -302,26 +313,26 @@ class Settings: Codable {
             isAddsRemovalPurchased
         ]
     }
-    //MARK: - Level Bird methods
+    //MARK: - Level & Hero methods
     //
-    func getBirds() -> [Bird] {
-        return self.birds
+    func getHeroes() -> [Hero] {
+        return self.heroes
     }
     func getLevels() -> [Level] {
         return self.levels
     }
     func unlockAll(){
-        for index in 0..<birds.count {
-            birds[index].birdIsUnlocked = true
+        for index in 0..<heroes.count {
+            heroes[index].isUnlocked = true
         }
         for index in 0..<levels.count {
             levels[index].levelIsUnlocked = true
         }
         save()
     }
-    func unlockAllBirds(){
-        for index in 0..<birds.count {
-            birds[index].birdIsUnlocked = true
+    func unlockAllHeroes(){
+        for index in 0..<heroes.count {
+            heroes[index].isUnlocked = true
         }
         save()
     }

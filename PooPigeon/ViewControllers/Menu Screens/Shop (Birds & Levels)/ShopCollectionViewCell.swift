@@ -10,7 +10,7 @@ import UIKit
 
 class ShopCollectionViewCell: UICollectionViewCell {
     
-    var bird: Bird?
+    var hero: Hero?
     var level: Level?
     
     @IBOutlet weak var birdOrLevelImageView: UIImageView!
@@ -28,37 +28,37 @@ class ShopCollectionViewCell: UICollectionViewCell {
         self.selectedStatusImageView.isHidden = true
     }
     
-    func displayContent(bird: Bird){
-        self.bird = bird
+    func displayContent(hero: Hero){
+        self.hero = hero
         
-        birdOrLevelImageView.image = UIImage(named: bird.birdTexture)
-        unlockedStatusImageView.image = UIImage(named: bird.birdIsUnlocked ? "unlockedIcon" : "lockedIcon")
-        nameLabel.text = bird.birdName
+        birdOrLevelImageView.image = UIImage(named: hero.texture)
+        unlockedStatusImageView.image = UIImage(named: hero.isUnlocked ? "unlockedIcon" : "lockedIcon")
+        nameLabel.text = hero.name
         
-        switch bird.birdChallengeType {
+        switch hero.challengeType {
         case .TotalTimeSpentInGame:
             // replace with localized one
             let localizedTimeInGameString = "Time in game"
             var neededTimeString = ""
-            if let neededNumValue = bird.neededChallengeNumberValue{
+            if let neededNumValue = hero.neededChallengeNumberValue{
                 neededTimeString = UInt.secondsToString(seconds: neededNumValue)
             }
             challengeTypeLabel.text = "\(localizedTimeInGameString): \(neededTimeString)"
         default:
-            challengeTypeLabel.text = bird.birdChallengeType.rawValue
+            challengeTypeLabel.text = hero.challengeType.rawValue
         }
         
-        switch bird.birdChallengeScoreType {
+        switch hero.challengeScoreType {
         case .NumberValue:
-            if let current = bird.currentChallengeNumberValueProgress, let needed = bird.neededChallengeNumberValue{
-                if bird.birdIsUnlocked{
-                    if bird.birdChallengeType == .TotalTimeSpentInGame{
+            if let current = hero.currentChallengeNumberValueProgress, let needed = hero.neededChallengeNumberValue{
+                if hero.isUnlocked{
+                    if hero.challengeType == .TotalTimeSpentInGame{
                         challengeProgressLabel.text = "Time left: 0m"
                     }else{
                         challengeProgressLabel.text = "\(needed) / \(needed)"
                     }
                 }else{
-                    if bird.birdChallengeType == .TotalTimeSpentInGame {
+                    if hero.challengeType == .TotalTimeSpentInGame {
                         let localizedTimeInGameString = "Time left"
                         let timeDifference = needed - current
                         let leftTimeString = UInt.secondsToString(seconds: timeDifference)
@@ -70,13 +70,13 @@ class ShopCollectionViewCell: UICollectionViewCell {
                 }
             }
         case .BoolValue:
-            if bird.neededChallengeBoolValue == bird.currentChallengeBoolValueProgress{
+            if hero.neededChallengeBoolValue == hero.currentChallengeBoolValueProgress{
                 challengeProgressLabel.text = "Completed"
             }else{
                 challengeProgressLabel.text = "Not Completed"
             }
         case .DateValue:
-            if let current = bird.currentChallengeDateValueProgress, let needed = bird.neededChallengeDateValue{
+            if let current = hero.currentChallengeDateValueProgress, let needed = hero.neededChallengeDateValue{
                 challengeProgressLabel.text = "\(current) / \(needed)"
             }
         case .None:

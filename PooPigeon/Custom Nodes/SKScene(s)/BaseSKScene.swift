@@ -16,7 +16,8 @@ class BaseSKScene: SKScene {
     //MARK: - Properties
     //
     //MARK: Custom nodes
-    var currentBird: Bird!
+    var currentHero: Hero!
+    var mainHeroNode: HeroSKSpriteNode!
     var birdNodes = [BirdSKSpriteNode]()
     var currentLevel: Level!
     
@@ -40,9 +41,6 @@ class BaseSKScene: SKScene {
     let explosionWhiteEmitter = SKEmitterNode(fileNamed: "ExplosionWhiteEmitter")
     let explosionGoldEmitter = SKEmitterNode(fileNamed: "ExplosionGoldEmitter")
     let explosionBrownEmitter = SKEmitterNode(fileNamed: "ExplosionBrownEmitter")
-    
-    //MARK: MainHero properties
-    var mainHeroNode: SKSpriteNode!
     
     //MARK: Game properties
     var currentScore = 0
@@ -69,9 +67,6 @@ class BaseSKScene: SKScene {
     var maxHeroXCoordinate: CGFloat = 0
     var minHeroYCoordinate: CGFloat = 0
     var maxHeroYCoordinate: CGFloat = 0
-    
-    var leftDestinationX: CGFloat = 0
-    var rightDestinationX: CGFloat = 0
     
     //MARK: Tap Here properties
     var tapHereNodesContainerNode: SKNode!
@@ -109,22 +104,13 @@ class BaseSKScene: SKScene {
         setupBonusNode()
         setupMainHero()
         
-        setupDestinationProperties()
         setupEdgeProperties()
-        
+        setupCurrentBirds()
         setupTapHereNodes()
     }
     
     //MARK: - Setup methods
     //
-    func setupDestinationProperties(){
-        if let enemy = currentLevel.enemies.first{
-            let enemyNodeWidth = EnemySKSpriteNode(enemy, 0).frame.width / 2
-            leftDestinationX = -sceneWidth / 2 - enemyNodeWidth
-            rightDestinationX =  sceneWidth / 2 + enemyNodeWidth
-        }
-    }
-    
     func setupEdgeProperties() {
         
         let newSceneWidth = (CGFloat(sceneWidth) * (view?.frame.height)!) / CGFloat(sceneHeight)
@@ -224,10 +210,28 @@ class BaseSKScene: SKScene {
         pooNode.addChild(pooSparklesEmitter)
     }
     func setupMainHero(){
-        mainHeroNode = EnemySKSpriteNode(self.currentLevel.enemies[0], self.rightDestinationX)
-        mainHeroNode.position = CGPoint(x: self.leftDestinationX, y: self.enemySpawnY + mainHeroNode.frame.height / 2)
+        self.fg.enumerateChildNodes(withName: "//heroNode") { (node, nil) in
+            node.removeFromParent()
+        }
+        mainHeroNode = HeroSKSpriteNode(currentHero)
+        mainHeroNode.position = CGPoint(x: 0, y: self.enemySpawnY + mainHeroNode.frame.height / 2)
         mainHeroNode.zPosition = 1
         self.fg.addChild(mainHeroNode)
+    }
+    func setupCurrentBirds(){
+        birdNodes.removeAll()
+        self.fg.enumerateChildNodes(withName: "//birdNode") { (node, nil) in
+            node.removeFromParent()
+        }
+        
+        for i in 0..<3 {
+            let bird = BirdSKSpriteNode(self.currentLevel.bird)
+            bird.position = birdNodePositions[i]
+            bird.zPosition = 1
+            bird.startIdleAnimation()
+            birdNodes.append(bird)
+            self.fg.addChild(bird)
+        }
     }
     func setupSpawnDelayActionsSequence(){
         let spawnAction = SKAction.run {
@@ -373,24 +377,6 @@ class BaseSKScene: SKScene {
         }
     }
     
-    //MARK: - Bird methods
-    //
-    func presentCurrentBird(){
-        birdNodes.removeAll()
-        self.fg.enumerateChildNodes(withName: "//birdNode") { (node, nil) in
-            node.removeFromParent()
-        }
-        
-        for i in 0..<3 {
-            let bird = BirdSKSpriteNode(self.currentBird)
-            bird.position = birdNodePositions[i]
-            bird.zPosition = 1
-            bird.startIdleAnimation()
-            birdNodes.append(bird)
-            self.fg.addChild(bird)
-        }
-    }
-    
     //MARK: - TapHere methods
     //
     func unhideTapHereContainer(){
@@ -420,18 +406,12 @@ extension BaseSKScene: SKPhysicsContactDelegate {
         let collisionBitMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         var shootableNode: SKNode?
-        var enemyNode: EnemySKSpriteNode?
         let contactPoint = contact.contactPoint
         
         if contact.bodyA.node?.name == "shootableNode" {
             shootableNode = contact.bodyA.node
         }else if contact.bodyB.node?.name == "shootableNode" {
             shootableNode = contact.bodyB.node
-        }
-        if contact.bodyA.node?.name == "enemyNode" {
-            enemyNode = contact.bodyA.node as? EnemySKSpriteNode
-        }else if contact.bodyB.node?.name == "enemyNode" {
-            enemyNode = contact.bodyB.node as? EnemySKSpriteNode
         }
         
         if collisionBitMask == PhysicsCategory.Egg.rawValue | PhysicsCategory.Human.rawValue{

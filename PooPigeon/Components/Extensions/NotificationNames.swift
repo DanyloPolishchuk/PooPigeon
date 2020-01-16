@@ -28,10 +28,10 @@ extension Notification.Name {
     static let changeTopButton = Notification.Name("changeTopButtonNotificationKey")
     static let updateLanguage = Notification.Name("updateLanguageNotificationKey")
     
-    static let setupCurrentLevelAndBird = Notification.Name("setupCurrentLevelAndBirdNotificationKey")
-    static let setupLevelAndBird = Notification.Name("setupLevelAndBirdNotificationKey")
-    static let setupCurrentBird = Notification.Name("setupCurrentBirdNotificationKey")
-    static let setupBird = Notification.Name("setupBirdNotificationKey")
+    static let setupCurrentLevelAndHero = Notification.Name("setupCurrentLevelAndHeroNotificationKey")
+    static let setupLevelAndHero = Notification.Name("setupLevelAndHeroNotificationKey")
+    static let setupCurrentHero = Notification.Name("setupCurrentHeroNotificationKey")
+    static let setupHero = Notification.Name("setupHeroNotificationKey")
     
     static let pauseOnResignActive = Notification.Name("pauseOnResignActiveNotificationKey")
     
@@ -39,7 +39,7 @@ extension Notification.Name {
 
     // PurchasedSuccessfully
     static let removeAdsPurchasedSuccessfully = Notification.Name("removeAdsPurchasedSuccessfullyNotificationKey")
-    static let unlockAllBirdsPurchasedSuccessfully = Notification.Name("unlockAllBirdsPurchasedSuccessfullyNotificationKey")
+    static let unlockAllHeroesPurchasedSuccessfully = Notification.Name("unlockAllHeroesPurchasedSuccessfullyNotificationKey")
     static let unlockAllLevelsPurchasedSuccessfully = Notification.Name("unlockAllLevelsPurchasedSuccessfullyNotificationKey")
     static let unlockAllPurchasedSuccessfully = Notification.Name("unlockAllPurchasedSuccessfullyNotificationKey")
     

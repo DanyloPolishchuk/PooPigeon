@@ -14,13 +14,13 @@ struct IAPProducts {
 
     static let removeAdsIdentifier          = productIdentifiersDictionary["RemoveAds"] as! String
     static let unlockAllIdentifier          = productIdentifiersDictionary["UnlockAll"] as! String
-    static let unlockAllBirdsIdentifier     = productIdentifiersDictionary["UnlockAllBirds"] as! String
+    static let unlockAllHeroesIdentifier     = productIdentifiersDictionary["UnlockAllBirds"] as! String
     static let unlockAllLevelsIdentifier    = productIdentifiersDictionary["UnlockAllLevels"] as! String
 
     private static let productIdentifiers: Set<ProductIdentifier> = [
         IAPProducts.removeAdsIdentifier,
         IAPProducts.unlockAllIdentifier,
-        IAPProducts.unlockAllBirdsIdentifier,
+        IAPProducts.unlockAllHeroesIdentifier,
         IAPProducts.unlockAllLevelsIdentifier
     ]
     
