@@ -29,6 +29,8 @@
 		9E2A954623CF59A500B01EC1 /* ExplosionBrownEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E2A954323CF59A500B01EC1 /* ExplosionBrownEmitter.sks */; };
 		9E2A954723CF59A500B01EC1 /* SparklesBrownEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E2A954423CF59A500B01EC1 /* SparklesBrownEmitter.sks */; };
 		9E2A954823CF59A500B01EC1 /* SparklesBrownEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E2A954423CF59A500B01EC1 /* SparklesBrownEmitter.sks */; };
+		9E2A954A23CFDF8F00B01EC1 /* SKSPriteNode+GlowingEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2A954923CFDF8F00B01EC1 /* SKSPriteNode+GlowingEffect.swift */; };
+		9E2A954B23CFDF8F00B01EC1 /* SKSPriteNode+GlowingEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2A954923CFDF8F00B01EC1 /* SKSPriteNode+GlowingEffect.swift */; };
 		9E38218C2386E07900244205 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38218B2386E07900244205 /* Settings.swift */; };
 		9E38218E2386E1D300244205 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38218D2386E1D300244205 /* Level.swift */; };
 		9E3821902386E79F00244205 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38218F2386E79F00244205 /* Bird.swift */; };
@@ -128,6 +130,7 @@
 		9E2A953E23CF563100B01EC1 /* SparklesGoldEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SparklesGoldEmitter.sks; sourceTree = "<group>"; };
 		9E2A954323CF59A500B01EC1 /* ExplosionBrownEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ExplosionBrownEmitter.sks; sourceTree = "<group>"; };
 		9E2A954423CF59A500B01EC1 /* SparklesBrownEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SparklesBrownEmitter.sks; sourceTree = "<group>"; };
+		9E2A954923CFDF8F00B01EC1 /* SKSPriteNode+GlowingEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSPriteNode+GlowingEffect.swift"; sourceTree = "<group>"; };
 		9E38218B2386E07900244205 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		9E38218D2386E1D300244205 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		9E38218F2386E79F00244205 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
@@ -359,6 +362,7 @@
 			children = (
 				9E8FC84D2392522000A576C0 /* NotificationNames.swift */,
 				9EEE96A723A84A0100C1954F /* UInt+secondsToString.swift */,
+				9E2A954923CFDF8F00B01EC1 /* SKSPriteNode+GlowingEffect.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -744,6 +748,7 @@
 				9E82FFFC23BE3A5C0026A1EC /* SettingsCollectionViewCell.swift in Sources */,
 				9E82FFFD23BE3A5C0026A1EC /* WallpaperTableViewCell.swift in Sources */,
 				9E82FFFE23BE3A5C0026A1EC /* Protocols.swift in Sources */,
+				9E2A954B23CFDF8F00B01EC1 /* SKSPriteNode+GlowingEffect.swift in Sources */,
 				9E82FFFF23BE3A5C0026A1EC /* EnemySKSpriteNode.swift in Sources */,
 				9EEA2A9323C8CF2300105B4E /* IAPHelper.swift in Sources */,
 				9E82000023BE3A5C0026A1EC /* BaseSKScene.swift in Sources */,
@@ -784,6 +789,7 @@
 				9E8FC8582399817500A576C0 /* SettingsCollectionViewCell.swift in Sources */,
 				9E5468FF239D552400857D44 /* WallpaperTableViewCell.swift in Sources */,
 				9E382198238714EA00244205 /* Protocols.swift in Sources */,
+				9E2A954A23CFDF8F00B01EC1 /* SKSPriteNode+GlowingEffect.swift in Sources */,
 				9E6C9A182391EAEB00B7AC37 /* EnemySKSpriteNode.swift in Sources */,
 				9EEA2A9223C8CF2300105B4E /* IAPHelper.swift in Sources */,
 				9E3821952387134300244205 /* BaseSKScene.swift in Sources */,

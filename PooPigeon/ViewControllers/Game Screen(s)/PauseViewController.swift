@@ -69,6 +69,7 @@ class PauseViewController: BaseBannerAdViewController {
         setupPlayButtons()
         setupGameOverView()
         setupPauseButton()
+        setupScoreAndStreakLabelAnimations()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -79,9 +80,6 @@ class PauseViewController: BaseBannerAdViewController {
     
     //MARK: - setup methods
     //
-    func setupScoreLabelWithValue(_ value: UInt){
-        scoreLabel.text = String(value)
-    }
     func setupNotifications(){
         NotificationCenter.default.addObserver(self, selector: #selector(setupScoreLabel(notification:)), name: .setupScoreKey, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setupStreakLabel(notification:)), name: .setupStreak, object: nil)
@@ -135,6 +133,19 @@ class PauseViewController: BaseBannerAdViewController {
     func setupGameOverView(){
         bestScoreLabel.text = String(Settings.shared.bestScore)
         totalScoreLabel.text = String(Settings.shared.totalScore)
+    }
+    func setupScoreAndStreakLabelAnimations(){
+        scoreLabel.layer.shadowColor = UIColor.white.cgColor
+        scoreLabel.layer.shadowOffset = .zero
+        scoreLabel.layer.shadowRadius = 10 
+        scoreLabel.layer.shadowOpacity = 1.0
+        scoreLabel.layer.masksToBounds = false
+        
+        streakLabel.layer.shadowColor = UIColor.white.cgColor
+        streakLabel.layer.shadowOffset = .zero
+        streakLabel.layer.shadowRadius = 10
+        streakLabel.layer.shadowOpacity = 1.0
+        streakLabel.layer.masksToBounds = false
     }
     
     //MARK: - Notification methods
@@ -308,7 +319,6 @@ class PauseViewController: BaseBannerAdViewController {
             hidePauseView()
             gameViewController.continueGame()
         }else if sender.tag == 1 { // game over view
-            setupScoreLabelWithValue(0)
             hideGameOverView()
             gameViewController.startGame(true)
         

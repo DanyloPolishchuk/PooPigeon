@@ -15,23 +15,25 @@ class BaseSKScene: SKScene {
     
     //MARK: - Properties
     //
-    //TODO: run through all properties & delete not used ones
-    //TODO: sort & MARK all properties by usage category
+    //MARK: Custom nodes
     var currentBird: Bird!
-    var birdNode: BirdSKSpriteNode!
     var birdNodes = [BirdSKSpriteNode]()
     var currentLevel: Level!
     
+    //MARK: Shoot randomization properties
     let shootableNodes: [PhysicsCategory] = [.Egg, .Egg, .Egg, .Egg, .Egg, .Egg, .Egg, .Poo, .Poo, .Bonus]
     let indexRandomizer = GKShuffledDistribution(lowestValue: 0, highestValue: 2)
     
+    //MARK: Foreground & Background
     var bg: SKNode!
     var fg: SKNode!
     
+    //MARK: Copiable nodes
     var eggNode: SKSpriteNode!
     var bonusNode: SKSpriteNode!
     var pooNode: SKSpriteNode!
     
+    //MARK: Copiable emitter nodes
     let sparklesWhiteEmitter = SKEmitterNode(fileNamed: "SparklesWhiteEmitter")
     let sparklesGoldEmitter  = SKEmitterNode(fileNamed: "SparklesGoldEmitter")
     let sparklesBrownEmitter = SKEmitterNode(fileNamed: "SparklesBrownEmitter")
@@ -39,28 +41,28 @@ class BaseSKScene: SKScene {
     let explosionGoldEmitter = SKEmitterNode(fileNamed: "ExplosionGoldEmitter")
     let explosionBrownEmitter = SKEmitterNode(fileNamed: "ExplosionBrownEmitter")
     
+    //MARK: MainHero properties
     var mainHeroNode: SKSpriteNode!
     
+    //MARK: Game properties
     var currentScore = 0
     var currentStreak = 1
     var isLevelInGameState = false
     var isFirstTouch = true
     
-    // enemy spawn proerties
-    let difficultyIncreaseTimeStep: TimeInterval = 5.0
-    let enemySpawnDelayDefault: TimeInterval = 1.5
-    var enemySpawnDelay: TimeInterval = 0.5
-    let enemySpawnDelayDecreaseStep: TimeInterval = 0.05
-    let enemySpawnDelayMinValue: TimeInterval = 0.5
+    //MARK: Spawn properties
+    let spawnDelayMaxValue: TimeInterval = 1.5
+    let spawnDelayDecreaseStep: TimeInterval = 0.05
+    let spawnDelayMinValue: TimeInterval = 0.5
     var spawnSequence = [SKAction]()
+    let spawnKey = "SpawnKey"
+    var enemySpawnY: CGFloat = 0
+    var widthOfVisibleAreaThird: CGFloat = 0
+    var centerBirdNodePosition = CGPoint(x: 0, y: 680)
+    var birdNodePositions = [CGPoint]()
     
-    var spawnKey = "SpawnKey"
-    var difficultyTimerKey = "DifficultyTimerKey"
-    
-    // width & height are fixed throughout this project cause pixelArt levels are all the same size (320x320 px) multiplied by 8
-    /// Width of scene
+    //MARK: Scene size properties
     var sceneWidth: CGFloat     = 2560
-    /// Height of scene
     var sceneHeight: CGFloat    = 2560
     
     var minHeroXCoordinate: CGFloat = 0
@@ -70,21 +72,16 @@ class BaseSKScene: SKScene {
     
     var leftDestinationX: CGFloat = 0
     var rightDestinationX: CGFloat = 0
-    var enemySpawnY: CGFloat = 0
-    var widthOfVisibleAreaThird: CGFloat = 0
-    var centerBirdNodePosition = CGPoint(x: 0, y: 680)
-    var birdNodePositions = [CGPoint]()
     
+    //MARK: Tap Here properties
     var tapHereNodesContainerNode: SKNode!
     let tapHereAnimationSpeed: TimeInterval = 0.5
-    
-
     
     override func didMove(to view: SKView) {
         
         self.physicsWorld.contactDelegate = self
         
-        // scene unfroze fix, just in case
+        // scene unfreeze fix, just in case
         self.isPaused = true
         self.isPaused = false
         
@@ -201,6 +198,7 @@ class BaseSKScene: SKScene {
         eggNode.name = "shootableNode"
         let eggSparklesEmitter = self.sparklesWhiteEmitter?.copy() as! SKEmitterNode
         eggNode.addChild(eggSparklesEmitter)
+        eggNode.addGlow(radius: 128)
     }
     func setupBonusNode(){
         bonusNode = SKSpriteNode(imageNamed: "bonus")
@@ -212,6 +210,7 @@ class BaseSKScene: SKScene {
         bonusNode.name = "shootableNode"
         let bonusSparklesEmitter = self.sparklesGoldEmitter?.copy() as! SKEmitterNode
         bonusNode.addChild(bonusSparklesEmitter)
+        bonusNode.addGlow(radius: 128)
     }
     func setupPooNode(){
         pooNode = SKSpriteNode(imageNamed: "poo")
@@ -231,17 +230,24 @@ class BaseSKScene: SKScene {
         self.fg.addChild(mainHeroNode)
     }
     func setupSpawnDelayActionsSequence(){
-        spawnSequence = [SKAction]()
         let spawnAction = SKAction.run {
             self.shoot()
         }
-        for delay in stride(from: enemySpawnDelayDefault, to: enemySpawnDelayMinValue, by: -enemySpawnDelayDecreaseStep) {
+        for delay in stride(from: spawnDelayMaxValue, to: 1.25, by: -spawnDelayDecreaseStep) {
+            spawnSequence.append(spawnAction)
+            spawnSequence.append(SKAction.wait(forDuration: delay))
+        }
+        for delay in stride(from: 1.25, to: 0.75, by: -spawnDelayDecreaseStep / 2) {
+            spawnSequence.append(spawnAction)
+            spawnSequence.append(SKAction.wait(forDuration: delay))
+        }
+        for delay in stride(from: 0.75, to: spawnDelayMinValue, by: -spawnDelayDecreaseStep) {
             spawnSequence.append(spawnAction)
             spawnSequence.append(SKAction.wait(forDuration: delay))
         }
         spawnSequence.append(SKAction.repeatForever(SKAction.sequence([
             spawnAction,
-            SKAction.wait(forDuration: enemySpawnDelayMinValue)
+            SKAction.wait(forDuration: spawnDelayMinValue)
             ])))
     }
     
@@ -261,7 +267,6 @@ class BaseSKScene: SKScene {
     }
     func stopGame(){
         self.isLevelInGameState = false
-        self.isFirstTouch = true
         self.isPaused = false
         stopSpawning()
     }
@@ -269,19 +274,16 @@ class BaseSKScene: SKScene {
     //MARK: - Spawn methods
     //
     func startSpawning(){
-        self.enemySpawnDelay = self.enemySpawnDelayDefault
-        startSequentialEnemiesSpawning()
+        startSequentialNodeSpawning()
     }
     func stopSpawning(){
-        removeAction(forKey: difficultyTimerKey)
         removeAction(forKey: spawnKey)
         self.fg.enumerateChildNodes(withName: "//shootableNode") { (node, nil) in
             node.removeFromParent()
         }
     }
     
-    private func startSequentialEnemiesSpawning(){
-        print("startSequentialEnemiesSpawning called")
+    private func startSequentialNodeSpawning(){
         removeAction(forKey: spawnKey)
         self.run(SKAction.sequence(spawnSequence), withKey: spawnKey)
     }
@@ -289,7 +291,6 @@ class BaseSKScene: SKScene {
     //MARK: - Score methods
     //
     func resetScore(){
-        print("resetScore called")
         stopGame()
         self.currentScore = 0
         self.currentStreak = 1
@@ -297,7 +298,6 @@ class BaseSKScene: SKScene {
         Settings.shared.save()
     }
     func increaseScore(){
-        print("increaseScore called")
         self.currentScore += 1 * currentStreak
         
         Settings.shared.totalScore += 1 * UInt(currentStreak)
@@ -307,7 +307,6 @@ class BaseSKScene: SKScene {
         Settings.shared.save()
     }
     func increaseStreak(){
-        print("increaseStreak called")
         self.currentStreak += 1
     }
     //MARK: - Emitter methods
@@ -350,7 +349,7 @@ class BaseSKScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        print("touchesBegan called from baseGameScene")
+        
         if isFirstTouch{
             isFirstTouch = false
             hideTapHereContainer()
@@ -395,6 +394,7 @@ class BaseSKScene: SKScene {
     //MARK: - TapHere methods
     //
     func unhideTapHereContainer(){
+        self.isFirstTouch = true
         mainHeroNode.run(SKAction.move(to: CGPoint(x: 0, y: mainHeroNode.position.y), duration: 0.5))
         NotificationCenter.default.post(name: .resetScoreAndStreak, object: nil)
         let fadeInAnimationAction = SKAction.fadeIn(withDuration: tapHereAnimationSpeed)
@@ -450,6 +450,7 @@ extension BaseSKScene: SKPhysicsContactDelegate {
             NotificationCenter.default.post(name: .showGameOverKey, object: nil)
         }
         else if collisionBitMask == PhysicsCategory.Bonus.rawValue | PhysicsCategory.Human.rawValue{
+            shootableNode?.physicsBody?.categoryBitMask = PhysicsCategory.None.rawValue
             shootableNode?.removeFromParent()
             addExplosionOfType(.Bonus, atPoint: contactPoint)
             increaseStreak()
