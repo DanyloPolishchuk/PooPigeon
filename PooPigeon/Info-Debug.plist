@@ -2,31 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>IAP Product Identifiers</key>
-	<dict>
-		<key>RemoveAds</key>
-		<string>com.DanyloPolishchuk.PooPigeon.RemoveAds</string>
-		<key>UnlockAll</key>
-		<string>com.DanyloPolishchuk.PooPigeon.UnlockAll</string>
-		<key>UnlockAllBirds</key>
-		<string>com.DanyloPolishchuk.PooPigeon.UnlockAllBirds</string>
-		<key>UnlockAllLevels</key>
-		<string>com.DanyloPolishchuk.PooPigeon.UnlockAllLevels</string>
-	</dict>
-	<key>CFBundleIconName</key>
-	<string>AppIcon</string>
 	<key>BugReportEmail</key>
 	<string>PooPigeonExample@gmail.com</string>
-	<key>GADRewardedAdUnitID</key>
-	<string>ca-app-pub-3940256099942544/1712485313</string>
-	<key>GADBannerViewAdUnitID</key>
-	<string>ca-app-pub-3940256099942544/2934735716</string>
-	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544~1458002511</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIconName</key>
+	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -39,6 +22,23 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<key>GADBannerViewAdUnitID</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>GADRewardedAdUnitID</key>
+	<string>ca-app-pub-3940256099942544/1712485313</string>
+	<key>IAP Product Identifiers</key>
+	<dict>
+		<key>RemoveAds</key>
+		<string>com.DanyloPolishchuk.PooPigeon.RemoveAds</string>
+		<key>UnlockAll</key>
+		<string>com.DanyloPolishchuk.PooPigeon.UnlockAll</string>
+		<key>UnlockAllBirds</key>
+		<string>com.DanyloPolishchuk.PooPigeon.UnlockAllBirds</string>
+		<key>UnlockAllLevels</key>
+		<string>com.DanyloPolishchuk.PooPigeon.UnlockAllLevels</string>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryAddUsageDescription</key>
@@ -53,6 +53,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 	<key>UIStatusBarHidden</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
@@ -61,10 +63,7 @@
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
