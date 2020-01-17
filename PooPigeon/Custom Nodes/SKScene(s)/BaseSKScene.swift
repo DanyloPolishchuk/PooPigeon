@@ -54,7 +54,7 @@ class BaseSKScene: SKScene {
     let spawnDelayMinValue: TimeInterval = 0.5
     var spawnSequence = [SKAction]()
     let spawnKey = "SpawnKey"
-    var enemySpawnY: CGFloat = 0
+    var heroSpawnY: CGFloat = 0
     var widthOfVisibleAreaThird: CGFloat = 0
     var centerBirdNodePosition = CGPoint(x: 0, y: 680)
     var birdNodePositions = [CGPoint]()
@@ -95,7 +95,7 @@ class BaseSKScene: SKScene {
                                                               height: self.frame.height - 256))
         physicsBody?.categoryBitMask = PhysicsCategory.Edge.rawValue
         
-        enemySpawnY = -self.frame.height / 2 + 256 + 5
+        heroSpawnY = -self.frame.height / 2 + 256 + 5
         
         setupSpawnDelayActionsSequence()
         
@@ -154,7 +154,7 @@ class BaseSKScene: SKScene {
         let tapHereRightNode = SKSpriteNode(imageNamed: "tapHereRightIcon")
         
         let halfOfTapNodeWidth = tapHereCenterNode.frame.width / 2
-        let tapHereSpawnY = enemySpawnY  + halfOfTapNodeWidth
+        let tapHereSpawnY = heroSpawnY  + halfOfTapNodeWidth
         
         tapHereLeftNode.position = CGPoint(x: birdNodePositions[0].x, y: tapHereSpawnY)
         tapHereCenterNode.position = CGPoint(x: birdNodePositions[1].x, y: tapHereSpawnY)
@@ -214,7 +214,7 @@ class BaseSKScene: SKScene {
             node.removeFromParent()
         }
         mainHeroNode = HeroSKSpriteNode(currentHero)
-        mainHeroNode.position = CGPoint(x: 0, y: self.enemySpawnY + mainHeroNode.frame.height / 2)
+        mainHeroNode.position = CGPoint(x: 0, y: self.heroSpawnY + mainHeroNode.frame.height / 2)
         mainHeroNode.zPosition = 1
         self.fg.addChild(mainHeroNode)
     }
@@ -418,13 +418,14 @@ extension BaseSKScene: SKPhysicsContactDelegate {
             shootableNode?.physicsBody?.categoryBitMask = PhysicsCategory.None.rawValue
             shootableNode?.removeFromParent()
             addExplosionOfType(.Egg, atPoint: contact.contactPoint)
-            // enemyNode?.runCatchAnimation()
+            mainHeroNode.hit()
             increaseScore()
             NotificationCenter.default.post(name: .setupScoreKey, object: currentScore)
         }
         else if collisionBitMask == PhysicsCategory.Egg.rawValue | PhysicsCategory.Edge.rawValue{ // GAME OVER
             shootableNode?.removeFromParent()
             addExplosionOfType(.Egg, atPoint: contactPoint)
+            mainHeroNode.lose()
             resetScore()
             
             NotificationCenter.default.post(name: .showGameOverKey, object: nil)
@@ -433,6 +434,7 @@ extension BaseSKScene: SKPhysicsContactDelegate {
             shootableNode?.physicsBody?.categoryBitMask = PhysicsCategory.None.rawValue
             shootableNode?.removeFromParent()
             addExplosionOfType(.Bonus, atPoint: contactPoint)
+            mainHeroNode.hit()
             increaseStreak()
             NotificationCenter.default.post(name: .setupStreak, object: currentStreak)
         }
@@ -441,12 +443,15 @@ extension BaseSKScene: SKPhysicsContactDelegate {
             addExplosionOfType(.Bonus, atPoint: contactPoint)
         }
         else if collisionBitMask == PhysicsCategory.Poo.rawValue | PhysicsCategory.Human.rawValue { // GAME OVER
+            shootableNode?.physicsBody?.categoryBitMask = PhysicsCategory.None.rawValue
             shootableNode?.removeFromParent()
             addExplosionOfType(.Poo, atPoint: contactPoint)
+            mainHeroNode.lose()
             resetScore()
             NotificationCenter.default.post(name: .showGameOverKey, object: nil)
         }
         else if collisionBitMask == PhysicsCategory.Poo.rawValue | PhysicsCategory.Edge.rawValue {
+            shootableNode?.physicsBody?.categoryBitMask = PhysicsCategory.None.rawValue
             shootableNode?.removeFromParent()
             addExplosionOfType(.Poo, atPoint: contactPoint)
         }

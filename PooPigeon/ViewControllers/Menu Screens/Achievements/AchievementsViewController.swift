@@ -20,7 +20,6 @@ class AchievementsViewController: BaseBannerAdViewController {
     
     //MARK: - Properties
     //
-    
     @available(iOS 12.0, *)
     lazy var pathMonitor: NWPathMonitor? = {return nil}()
     let reachabilityHandler = try? Reachability()

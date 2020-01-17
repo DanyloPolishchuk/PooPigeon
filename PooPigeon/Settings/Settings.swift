@@ -149,7 +149,7 @@ class Settings: Codable {
                       levelSceneFileName: "Level2Scene",
                       // REPLACE_WITH_ACTUAL_SOUND_FILE
                     levelMusicSoundFileName: "signalRocketSound",
-                    levelPreviewImageName: "caveLevelBGTest" ,
+                    levelPreviewImageName: "level2BGWallpaper" ,
                     bird: Bird(birdNumber: 2,
                                birdName: "Bat",
                                birdSpawnPosition: CGPoint(x: 0, y: 744),
@@ -173,13 +173,20 @@ class Settings: Codable {
             
             heroes = [
                 Hero(number: 1,
-                     name: "Test1",
-                     texture: "level1ManWalkingBodyTexture",
-                     physicsBodyTexture: "level1ManWalkingBodyTexture",
-                     animationTextureNames: [
-                        "level1ManWalkingBodyTexture",
-                        "level1ManWalkingBodyTexture",
-                        "level1ManWalkingBodyTexture"
+                     name: "Casey",
+                     texture: "hero1IdleFrame1",
+                     physicsBodyTexture: "hero1PhysicsBodyTexture",
+                     idleTextureNames: [
+                        "hero1IdleFrame1",
+                        "hero1IdleFrame2"
+                    ],
+                     hitTextureNames: [
+                        "hero1HitFrame1",
+                        "hero1HitFrame2"
+                    ],
+                     loseTextureNames: [
+                        "hero1LoseFrame1",
+                        "hero1LoseFrame2"
                     ],
                      isUnlocked: true,
                      challengeType: .None,
@@ -191,13 +198,20 @@ class Settings: Codable {
                      neededChallengeBoolValue: nil,
                      neededChallengeDateValue: nil),
                 Hero(number: 2,
-                     name: "Test2",
-                     texture: "level1ManWalkingFrame2",
-                     physicsBodyTexture: "level1ManWalkingFrame2",
-                     animationTextureNames: [
-                        "level1ManWalkingFrame1",
-                        "level1ManWalkingFrame2",
-                        "level1ManWalkingFrame3"
+                     name: "Steve",
+                     texture: "hero2IdleFrame1",
+                     physicsBodyTexture: "hero2PhysicsBodyTexture",
+                     idleTextureNames: [
+                        "hero2IdleFrame1",
+                        "hero2IdleFrame2"
+                    ],
+                     hitTextureNames: [
+                        "hero2HitFrame1",
+                        "hero2HitFrame2"
+                    ],
+                     loseTextureNames: [
+                        "hero2LoseFrame1",
+                        "hero2LoseFrame2"
                     ],
                      isUnlocked: false,
                      challengeType: .TotalScore,
@@ -213,6 +227,9 @@ class Settings: Codable {
             wallpapers = [
                 Wallpaper(wallpaperNumber: 1,
                           wallpaperImageName: "level1NewYorkBackground",
+                          isWallpaperUnlocked: false),
+                Wallpaper(wallpaperNumber: 2,
+                          wallpaperImageName: "level2BGWallpaper",
                           isWallpaperUnlocked: false)
             ]
             

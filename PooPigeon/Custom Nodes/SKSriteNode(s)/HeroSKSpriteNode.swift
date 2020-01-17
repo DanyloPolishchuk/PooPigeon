@@ -11,85 +11,65 @@ import SpriteKit
 
 class HeroSKSpriteNode: SKSpriteNode {
     
-    let walkAnimationActionKey = "walkAnimationActionKey"
-    let walkActionKey = "walkActionKey"
-    let runActionKey = "runActionKey"
-    let walkAnimationSpeed: TimeInterval = 1/3
-    let runAnimationSpped: TimeInterval = 1/6
-    let animationTextures: [SKTexture]
+    let idleAnimationActionKey = "idleAnimationActionKey"
+    let hitAnimationActionKey = "hitAnimationActionKey"
+    let loseAnimationActionKey = "loseAnimationActionKey"
+    let animationTime: TimeInterval = 1/2
+    let hitAnimationTime: TimeInterval = 1/6
     
-    init(_ enemy: Hero) {
+    let idleAnimationTextures:  [SKTexture]
+    let hitAnimationTextures:   [SKTexture]
+    let loseAnimationTextures:  [SKTexture]
+    
+    init(_ hero: Hero) {
         
-        self.animationTextures = enemy.animationTextureNames.map{ SKTexture(imageNamed: $0) }
+        self.idleAnimationTextures = hero.idleTextureNames.map{ SKTexture(imageNamed: $0) }
+        self.hitAnimationTextures = hero.hitTextureNames.map{ SKTexture(imageNamed: $0) }
+        self.loseAnimationTextures = hero.loseTextureNames.map{ SKTexture(imageNamed: $0) }
         
-        let enemyTexture = SKTexture(imageNamed: enemy.texture)
-        let enemyPhysicsBodyTexture = SKTexture(imageNamed: enemy.physicsBodyTexture)
+        let heroTexture = SKTexture(imageNamed: hero.texture)
+        let heroPhysicsBodyTexture = SKTexture(imageNamed: hero.physicsBodyTexture)
         
-        super.init(texture: enemyTexture, color: .clear, size: enemyTexture.size())
+        super.init(texture: heroTexture, color: .clear, size: heroTexture.size())
         
         self.name = "heroNode"
         
-        self.physicsBody = SKPhysicsBody(texture: enemyPhysicsBodyTexture, size: enemyPhysicsBodyTexture.size())
+        self.physicsBody = SKPhysicsBody(texture: heroPhysicsBodyTexture, size: heroPhysicsBodyTexture.size())
         self.physicsBody?.categoryBitMask = PhysicsCategory.Human.rawValue
         self.physicsBody?.collisionBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Egg.rawValue | PhysicsCategory.Poo.rawValue | PhysicsCategory.Bonus.rawValue
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Edge.rawValue | PhysicsCategory.Egg.rawValue | PhysicsCategory.Poo.rawValue | PhysicsCategory.Bonus.rawValue
         self.physicsBody?.allowsRotation = false
-        
+        idle()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    /// starts walk texture animation & moveToX action
-    func walk(){
-        let walkAnimationAction = SKAction.animate(with: animationTextures, timePerFrame: walkAnimationSpeed)
-        let walkInfiniteAnimationAction = SKAction.repeatForever(walkAnimationAction)
-        let walkMoveAction = SKAction.moveTo(x: 0, duration: 4.0)
-        let walkMoveSequnce = SKAction.sequence([
-            walkMoveAction,
-            SKAction.removeFromParent(),
-            SKAction.run {
-                print("enemyNode is removed after walk")
-            }
-            ])
-        self.run(walkInfiniteAnimationAction, withKey: walkAnimationActionKey)
-        self.run(walkMoveSequnce, withKey: walkActionKey)
+    private func idle(){
+        let idleAnimationAction = SKAction.animate(with: idleAnimationTextures, timePerFrame: animationTime)
+        self.run(SKAction.repeatForever(idleAnimationAction), withKey: idleAnimationActionKey)
     }
-    func walk(duration: Double){
-        // replace "walkAnimationSpeed" with calculated value
-        let walkAnimationAction = SKAction.animate(with: animationTextures, timePerFrame: walkAnimationSpeed)
-        let walkInfiniteAnimationAction = SKAction.repeatForever(walkAnimationAction)
-        let walkMoveAction = SKAction.moveTo(x: 0, duration: duration)
-        let walkMoveSequnce = SKAction.sequence([
-            walkMoveAction,
-            SKAction.removeFromParent(),
-            SKAction.run {
-                print("enemyNode is removed after walk")
-            }
-            ])
-        self.run(walkInfiniteAnimationAction, withKey: walkAnimationActionKey)
-        self.run(walkMoveSequnce, withKey: walkActionKey)
+    func hit(){
+        let hitAnimationAction = SKAction.animate(with: hitAnimationTextures, timePerFrame: hitAnimationTime)
+        let idleAnimationAction = SKAction.run {
+            self.idle()
+        }
+        self.run(SKAction.sequence([
+            hitAnimationAction,
+            idleAnimationAction
+            ]), withKey: hitAnimationActionKey)
     }
-    /// cancels previous action, starts run texture animation & moveToX action & removes node
-    func run(){
-        self.removeAction(forKey: walkActionKey)
-        self.removeAction(forKey: walkAnimationActionKey)
-        
-        let runAnimationAction = SKAction.animate(with: animationTextures, timePerFrame: runAnimationSpped)
-        let runInfiniteAnimationAction = SKAction.repeatForever(runAnimationAction)
-        
-        // maybe change the destinationPoint to leftDestinationPoint so player can see clearly right side of the screen.
-        let runMoveAction = SKAction.moveTo(x: 0, duration: 1.25)
-        let runMoveSequence = SKAction.sequence([
-            runMoveAction,
-            SKAction.removeFromParent(),
-            SKAction.run {
-                print("enemyNode is removed after run")
-            }
-            ])
-        self.run(runInfiniteAnimationAction, withKey: runActionKey)
-        self.run(runMoveSequence)
+    func lose(){
+        let loseAnimationAction = SKAction.animate(with: loseAnimationTextures, timePerFrame: animationTime)
+//        let idleAnimationAction = SKAction.run {
+//            self.idle()
+//        }
+//        self.run(SKAction.sequence([
+//            loseAnimationAction,
+//            idleAnimationAction
+//            ]), withKey: loseAnimationActionKey)
+        self.run(SKAction.repeatForever(loseAnimationAction), withKey: loseAnimationActionKey)
     }
-    
+
 }

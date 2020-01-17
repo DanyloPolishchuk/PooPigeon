@@ -1,8 +1,8 @@
 //
-//  Bird.swift
+//  Hero.swift
 //  PooPigeon
 //
-//  Created by Danylo Polishchuk on 11/21/19.
+//  Created by Danylo Polishchuk on 11/29/19.
 //  Copyright © 2019 Polishchuk company. All rights reserved.
 //
 
@@ -12,25 +12,23 @@ import UIKit
 struct Hero: Codable {
     
     let number: Int
-//    let birdLevelNumber: Int
     let name: String
-//    let birdSceneFileName: String
     
-    let birdSpawnPosition: CGPoint
-    let textureName: String
-    let animationTextureNames: [String]
-    let birdShootTextureName: String
-    let birdSoundFileName: String
+    let texture: String
+    let physicsBodyTexture: String
+    let idleTextureNames: [String]
+    let hitTextureNames: [String]
+    let loseTextureNames: [String]
     
-    var birdIsUnlocked: Bool
-    let birdChallengeType: ChallengeType
-    let birdChallengeScoreType: ChallengeScoreType
+    var isUnlocked: Bool
+    let challengeType: ChallengeType
+    let challengeScoreType: ChallengeScoreType
     var currentChallengeNumberValueProgress: UInt? {
         didSet{
             if self.currentChallengeNumberValueProgress != nil,
                 self.neededChallengeNumberValue != nil,
                 self.currentChallengeNumberValueProgress! >= self.neededChallengeNumberValue! {
-                birdIsUnlocked = true
+                isUnlocked = true
             }
         }
     }
@@ -39,5 +37,5 @@ struct Hero: Codable {
     let neededChallengeNumberValue: UInt?
     let neededChallengeBoolValue: Bool?
     let neededChallengeDateValue: String?
-    //TODO: find out an implementation way to track current challenge progress of each bird & unlock bird once challenge passed, & set isNewUnlockedBird/Level flag to true. 
+    
 }
