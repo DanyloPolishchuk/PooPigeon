@@ -74,11 +74,11 @@ class Settings: Codable {
     
     private init(){
         
-        print("\n\nSettings singleton init\n\n")
+        print("\nSettings singleton init\n")
         
         if let data = UserDefaults.standard.value(forKey: "settingsUDKey") as? Data, let settings = try? PropertyListDecoder().decode(Settings.self, from: data) {
             
-            print("\n\nSettings instance initialization from UD\n\n")
+            print("\nSettings instance initialization from UD\n")
             
             self.currentLevel = settings.currentLevel
             self.currentHero = settings.currentHero
@@ -114,152 +114,43 @@ class Settings: Codable {
             
         }else{
             
-            print("\n\nSettings instance initialization from code\n\n")
+            print("\nSettings instance initialization from \"SettingsDefault.json\" \n")
             
-            //TODO: replace default level & bird values to separate .swift file / JSON
-            levels = [
-                
-                Level(levelName: "City",
-                      levelNumber: 1,
-                      levelSceneFileName: "Level1Scene",
-                      // REPLACE_WITH_ACTUAL_SOUND_FILE
-                    levelMusicSoundFileName: "signalRocketSound",
-                    levelPreviewImageName: "level1NewYorkBackground" ,
-                    bird: Bird(birdNumber: 1,
-                               birdName: "Pigeon",
-                               birdSpawnPosition: CGPoint(x: 0, y: 680),
-                               birdTexture: "pigeonDefault",
-                               birdAnimationTextureNames: [
-                                "pigeonDefault",
-                                "pigeonDefaultFrame2"],
-                               birdShootTextureName: "pigeonDefaultShootFrame",
-                               birdSoundFileName: "signalRocketSound"),
-                    levelIsUnlocked: true,
-                    levelChallengeType: .None,
-                    levelChallengeScoreType: .None,
-                    currentChallengeNumberValueProgress: nil,
-                    currentChallengeBoolValueProgress: nil,
-                    currentChallengeDateValueProgress: nil,
-                    neededChallengeNumberValue: nil,
-                    neededChallengeBoolValue: nil,
-                    neededChallengeDateValue: nil
-                ),
-                Level(levelName: "Cave",
-                      levelNumber: 2,
-                      levelSceneFileName: "Level2Scene",
-                      // REPLACE_WITH_ACTUAL_SOUND_FILE
-                    levelMusicSoundFileName: "signalRocketSound",
-                    levelPreviewImageName: "level2BGWallpaper" ,
-                    bird: Bird(birdNumber: 2,
-                               birdName: "Bat",
-                               birdSpawnPosition: CGPoint(x: 0, y: 744),
-                               birdTexture: "batFrame1",
-                               birdAnimationTextureNames: [
-                                "batFrame1",
-                                "batFrame2"],
-                               birdShootTextureName: "batShootFrame",
-                               birdSoundFileName: "signalRocketSound"),
-                    levelIsUnlocked: false,
-                    levelChallengeType: .BestScore,
-                    levelChallengeScoreType: .NumberValue,
-                    currentChallengeNumberValueProgress: 0,
-                    currentChallengeBoolValueProgress: nil,
-                    currentChallengeDateValueProgress: nil,
-                    neededChallengeNumberValue: 100,
-                    neededChallengeBoolValue: nil,
-                    neededChallengeDateValue: nil
-                )
-            ]
+            let settingsDefaultJSONURL = Bundle.main.url(forResource: "SettingsDefault", withExtension: "json")!
+            let data = try! Data(contentsOf: settingsDefaultJSONURL)
+            let settings = try! JSONDecoder().decode(Settings.self, from: data)
+
+            self.currentLevel = settings.currentLevel
+            self.currentHero = settings.currentHero
             
-            heroes = [
-                Hero(number: 1,
-                     name: "Casey",
-                     texture: "hero1IdleFrame1",
-                     physicsBodyTexture: "hero1PhysicsBodyTexture",
-                     idleTextureNames: [
-                        "hero1IdleFrame1",
-                        "hero1IdleFrame2"
-                    ],
-                     hitTextureNames: [
-                        "hero1HitFrame1",
-                        "hero1HitFrame2"
-                    ],
-                     loseTextureNames: [
-                        "hero1LoseFrame1",
-                        "hero1LoseFrame2"
-                    ],
-                     isUnlocked: true,
-                     challengeType: .None,
-                     challengeScoreType: .None,
-                     currentChallengeNumberValueProgress: nil,
-                     currentChallengeBoolValueProgress: nil,
-                     currentChallengeDateValueProgress: nil,
-                     neededChallengeNumberValue: nil,
-                     neededChallengeBoolValue: nil,
-                     neededChallengeDateValue: nil),
-                Hero(number: 2,
-                     name: "Steve",
-                     texture: "hero2IdleFrame1",
-                     physicsBodyTexture: "hero2PhysicsBodyTexture",
-                     idleTextureNames: [
-                        "hero2IdleFrame1",
-                        "hero2IdleFrame2"
-                    ],
-                     hitTextureNames: [
-                        "hero2HitFrame1",
-                        "hero2HitFrame2"
-                    ],
-                     loseTextureNames: [
-                        "hero2LoseFrame1",
-                        "hero2LoseFrame2"
-                    ],
-                     isUnlocked: false,
-                     challengeType: .TotalScore,
-                     challengeScoreType: .NumberValue,
-                     currentChallengeNumberValueProgress: 0,
-                     currentChallengeBoolValueProgress: nil,
-                     currentChallengeDateValueProgress: nil,
-                     neededChallengeNumberValue: 100,
-                     neededChallengeBoolValue: nil,
-                     neededChallengeDateValue: nil)
-            ]
+            self.levels = settings.levels
+            self.heroes = settings.heroes
+            self.wallpapers = settings.wallpapers
             
-            wallpapers = [
-                Wallpaper(wallpaperNumber: 1,
-                          wallpaperImageName: "level1NewYorkBackground",
-                          isWallpaperUnlocked: false),
-                Wallpaper(wallpaperNumber: 2,
-                          wallpaperImageName: "level2BGWallpaper",
-                          isWallpaperUnlocked: false)
-            ]
+            self.language = settings.language
             
-            currentLevel = levels[0]
-            currentHero = heroes[0]
+            self.isFirstLaunch = settings.isFirstLaunch
             
-            language = Language.English
+            self.isLeftHandedUI = settings.isLeftHandedUI
+            self.isSoundEffectsEnabled = settings.isSoundEffectsEnabled
+            self.isMusicEnabled = settings.isMusicEnabled
             
-            isFirstLaunch = true
+            self.isApplicationLiked = settings.isApplicationLiked
+            self.isApplicaitonShared = settings.isApplicaitonShared
+            self.isApplicationReviewed = settings.isApplicationReviewed
             
-            isLeftHandedUI = false
-            isSoundEffectsEnabled = true
-            isMusicEnabled = true
+            self.isAddsRemovalPurchased = settings.isAddsRemovalPurchased
+            self.isUnlockAllPurchased = settings.isUnlockAllPurchased
+            self.isUnlockAllHeroesPurchased = settings.isUnlockAllHeroesPurchased
+            self.isUnlockAllLevelsPurchased = settings.isUnlockAllLevelsPurchased
             
-            isApplicationLiked = false
-            isApplicaitonShared = false
-            isApplicationReviewed = false
-            
-            isAddsRemovalPurchased = false
-            isUnlockAllPurchased = false
-            isUnlockAllHeroesPurchased = false
-            isUnlockAllLevelsPurchased = false
-            
-            bestScore = 0
-            totalScore = 0
-            lastLaunchTimeDate = Date()
-            timeInSecsSpentInGame = 0
-            timesGameWasLaunched = 0
-            amountOfDaysGameWasLaunched = 0
-            amountOfLoses = 0
+            self.bestScore = settings.bestScore
+            self.totalScore = settings.totalScore
+            self.lastLaunchTimeDate = settings.lastLaunchTimeDate
+            self.timeInSecsSpentInGame = settings.timeInSecsSpentInGame
+            self.timesGameWasLaunched = settings.timesGameWasLaunched
+            self.amountOfDaysGameWasLaunched = settings.amountOfDaysGameWasLaunched
+            self.amountOfLoses = settings.amountOfLoses
             
             save()
         }

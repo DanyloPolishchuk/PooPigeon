@@ -1,0 +1,193 @@
+{
+    "currentLevel" : {
+        "levelPreviewImageName" : "level1NewYorkBackground",
+        "levelChallengeType" : "Default",
+        "levelIsUnlocked" : true,
+        "levelChallengeScoreType" : "None",
+        "levelNumber" : 1,
+        "levelMusicSoundFileName" : "signalRocketSound",
+        "bird" : {
+            "birdNumber" : 1,
+            "birdName" : "Pigeon",
+            "birdSpawnPosition" : [
+                0,
+                680
+            ],
+            "birdTexture" : "pigeonDefault",
+            "birdAnimationTextureNames" : [
+                "pigeonDefault",
+                "pigeonDefaultFrame2"
+            ],
+            "birdSoundFileName" : "signalRocketSound",
+            "birdShootTextureName" : "pigeonDefaultShootFrame"
+        },
+        "levelName" : "City",
+        "levelSceneFileName" : "Level1Scene"
+    },
+    
+    "currentHero" : {
+        "number" : 1,
+        "name" : "Casey",
+        "idleTextureNames" : [
+            "hero1IdleFrame1",
+            "hero1IdleFrame2"
+        ],
+        "hitTextureNames" : [
+            "hero1HitFrame1",
+            "hero1HitFrame2"
+        ],
+        "texture" : "hero1IdleFrame1",
+        "isUnlocked" : true,
+        "challengeType" : "Default",
+        "challengeScoreType" : "None",
+        "loseTextureNames" : [
+            "hero1LoseFrame1",
+            "hero1LoseFrame2"
+        ],
+        "physicsBodyTexture" : "hero1PhysicsBodyTexture"
+    },
+    
+    "levels" : [
+        {
+            "levelPreviewImageName" : "level1NewYorkBackground",
+            "levelChallengeType" : "Default",
+            "levelIsUnlocked" : true,
+            "levelChallengeScoreType" : "None",
+            "levelNumber" : 1,
+            "levelMusicSoundFileName" : "signalRocketSound",
+            "bird" : {
+                "birdNumber" : 1,
+                "birdName" : "Pigeon",
+                "birdSpawnPosition" : [
+                    0,
+                    680
+                ],
+                "birdTexture" : "pigeonDefault",
+                "birdAnimationTextureNames" : [
+                    "pigeonDefault",
+                    "pigeonDefaultFrame2"
+                ],
+                "birdSoundFileName" : "signalRocketSound",
+                "birdShootTextureName" : "pigeonDefaultShootFrame"
+            },
+            "levelName" : "City",
+            "levelSceneFileName" : "Level1Scene"
+        },
+        {
+            "levelPreviewImageName" : "level2BGWallpaper",
+            "levelChallengeType" : "Best Score",
+            "levelIsUnlocked" : false,
+            "levelChallengeScoreType" : "NumberValue",
+            "neededChallengeNumberValue" : 100,
+            "currentChallengeNumberValueProgress" : 0,
+            "levelNumber" : 2,
+            "levelMusicSoundFileName" : "signalRocketSound",
+            "bird" : {
+                "birdNumber" : 2,
+                "birdName" : "Bat",
+                "birdSpawnPosition" : [
+                    0,
+                    744
+                ],
+                "birdTexture" : "batFrame1",
+                "birdAnimationTextureNames" : [
+                    "batFrame1",
+                    "batFrame2"
+                ],
+                "birdSoundFileName" : "signalRocketSound",
+                "birdShootTextureName" : "batShootFrame"
+            },
+            "levelName" : "Cave",
+            "levelSceneFileName" : "Level2Scene"
+        }
+    ],
+    
+    "heroes" : [
+        {
+            "number" : 1,
+            "name" : "Casey",
+            "idleTextureNames" : [
+                "hero1IdleFrame1",
+                "hero1IdleFrame2"
+            ],
+            "hitTextureNames" : [
+                "hero1HitFrame1",
+                "hero1HitFrame2"
+            ],
+            "texture" : "hero1IdleFrame1",
+            "isUnlocked" : true,
+            "challengeType" : "Default",
+            "challengeScoreType" : "None",
+            "loseTextureNames" : [
+                "hero1LoseFrame1",
+                "hero1LoseFrame2"
+            ],
+            "physicsBodyTexture" : "hero1PhysicsBodyTexture"
+        },
+        {
+            "currentChallengeNumberValueProgress" : 0,
+            "physicsBodyTexture" : "hero2PhysicsBodyTexture",
+            "loseTextureNames" : [
+                "hero2LoseFrame1",
+                "hero2LoseFrame2"
+            ],
+            "idleTextureNames" : [
+                "hero2IdleFrame1",
+                "hero2IdleFrame2"
+            ],
+            "texture" : "hero2IdleFrame1",
+            "neededChallengeNumberValue" : 100,
+            "challengeType" : "Total Score",
+            "isUnlocked" : false,
+            "number" : 2,
+            "hitTextureNames" : [
+                "hero2HitFrame1",
+                "hero2HitFrame2"
+            ],
+            "challengeScoreType" : "NumberValue",
+            "name" : "Steve"
+        }
+    ],
+    
+    "wallpapers" : [
+        {
+            "wallpaperImageName" : "level1NewYorkBackground",
+            "isWallpaperUnlocked" : false,
+            "wallpaperNumber" : 1
+        },
+        {
+            
+            "wallpaperImageName" : "level2BGWallpaper",
+            "isWallpaperUnlocked" : false,
+            "wallpaperNumber" : 2
+        }
+    ],
+    
+    "language" : "English",
+    
+    "isFirstLaunch" : true,
+    
+    "isLeftHandedUI" : false,
+    "isSoundEffectsEnabled" : true,
+    "isMusicEnabled" : true,
+    
+    "isApplicationLiked" : false,
+    "isApplicaitonShared" : false,
+    "isApplicationReviewed" : false,
+    
+    "isAddsRemovalPurchased" : false,
+    "isUnlockAllPurchased" : false,
+    "isUnlockAllHeroesPurchased" : false,
+    "isUnlockAllLevelsPurchased" : false,
+    
+    "bestScore" : 0,
+    "totalScore" : 0,
+    "amountOfLoses" : 0,
+    
+    "timeInSecsSpentInGame" : 0,
+    "timesGameWasLaunched" : 0,
+    
+    "lastLaunchTimeDate" : 0,
+    "amountOfDaysGameWasLaunched" : 0
+}
+
