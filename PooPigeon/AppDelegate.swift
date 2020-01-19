@@ -8,6 +8,9 @@
 
 import UIKit
 import GoogleMobileAds
+import SecureDefaults
+
+let secureDefaultsShared = SecureDefaults.shared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Lifecycle methods
     //
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        setupSecureDefaults()
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
@@ -109,6 +114,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Settings.shared.save()
         }
         
+    }
+    //MARK: - Setup methods
+    //
+    func setupSecureDefaults(){
+        if !secureDefaultsShared.isKeyCreated {
+            secureDefaultsShared.password = NSUUID().uuidString
+        }
     }
 
 }

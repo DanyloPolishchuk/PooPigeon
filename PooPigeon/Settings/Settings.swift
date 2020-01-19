@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SecureDefaults
 
 class Settings: Codable {
     
@@ -17,12 +18,6 @@ class Settings: Codable {
     
     //MARK: - Properties
     //
-    
-    //TODO: separate important properties that must be encrypted from usual ones (like music, sound effects, leftHandUI ... ) for keychainUsage     OR
-    //TODO: rewrite using SecureDefaults https://github.com/vpeschenkov/SecureDefaults
-    
-    // - sensitive
-    // - insensitive
     
     var currentLevel: Level
     var currentHero: Hero
@@ -76,8 +71,8 @@ class Settings: Codable {
         
         print("\nSettings singleton init\n")
         
-        if let data = UserDefaults.standard.value(forKey: "settingsUDKey") as? Data, let settings = try? PropertyListDecoder().decode(Settings.self, from: data) {
-            
+        if let data = secureDefaultsShared.value(forKey: "settingsUDKey") as? Data, let settings = try? PropertyListDecoder().decode(Settings.self, from: data) {
+
             print("\nSettings instance initialization from UD\n")
             
             self.currentLevel = settings.currentLevel
@@ -158,8 +153,8 @@ class Settings: Codable {
     }
     
     func save(){
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(self), forKey: "settingsUDKey")
-        UserDefaults.standard.synchronize()
+        secureDefaultsShared.set(try? PropertyListEncoder().encode(self), forKey: "settingsUDKey")
+        secureDefaultsShared.synchronize()
     }
     
     //MARK: - Progressable properties update methods

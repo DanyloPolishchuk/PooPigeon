@@ -22,7 +22,7 @@ open class IAPHelper: NSObject  {
         productIdentifiers = productIds
         for productIdentifier in productIds {
             
-            var purchased = false // = UserDefaults.standard.bool(forKey: productIdentifier)
+            var purchased = false
             
             switch productIdentifier {
             case IAPProducts.removeAdsIdentifier:

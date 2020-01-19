@@ -216,7 +216,7 @@ extension SettingsViewController: UICollectionViewDelegateFlowLayout {
 
 extension SettingsViewController: SettingsScreensPresentationProtocol{
     
-    //TODO: add Like implementation here once needed URL is avaliable
+    //TODO: add Like implementation once needed URL is avaliable
     func likeApplication() {
         
 //        import StoreKit
@@ -237,7 +237,7 @@ extension SettingsViewController: SettingsScreensPresentationProtocol{
         
     }
     
-    //TODO: add share implementation here. Copy wallpaper image share func but insead share link of an app. Do once needed URL is avaliable
+    //TODO: add Share implementation once needed URL is avaliable
     func shareApplication() {
         
 //        if let name = URL(string: "https://itunes.apple.com/us/app/myapp/idxxxxxxxx?ls=1&mt=8"), !name.absoluteString.isEmpty {
