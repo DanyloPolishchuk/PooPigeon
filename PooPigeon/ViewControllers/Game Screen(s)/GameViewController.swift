@@ -74,7 +74,7 @@ class GameViewController: BaseAudioViewController {
         let currentLevel = Settings.shared.currentLevel
         let currentHero = Settings.shared.currentHero
         
-        setupAudioPlayers(sfxSoundFileName: currentLevel.levelMusicSoundFileName, musicSoundFileName: currentLevel.levelMusicSoundFileName)
+        setupAudioPlayers(musicSoundFileName: currentLevel.levelMusicSoundFileName)
         
         if let scene = SKScene(fileNamed: currentLevel.levelSceneFileName) {
             currentGameScene = scene as? BaseSKScene
@@ -90,7 +90,7 @@ class GameViewController: BaseAudioViewController {
         let currentLevel = level
         let currentHero = hero
         
-        setupAudioPlayers(sfxSoundFileName: currentLevel.levelMusicSoundFileName, musicSoundFileName: currentLevel.levelMusicSoundFileName)
+        setupAudioPlayers(musicSoundFileName: currentLevel.levelMusicSoundFileName)
 
         if let scene = SKScene(fileNamed: currentLevel.levelSceneFileName) {
             currentGameScene = scene as? BaseSKScene
@@ -103,12 +103,10 @@ class GameViewController: BaseAudioViewController {
     }
     @objc func setupCurrentHero(){
         let currentHero = Settings.shared.currentHero
-//        setupSFXAudioPlayerWith(currentBirdSoundFileName: currentHero.birdSoundFileName)
         currentGameScene.currentHero = currentHero
         currentGameScene.setupMainHero()
     }
     func setupHero(_ hero: Hero){
-//        setupSFXAudioPlayerWith(currentBirdSoundFileName: hero.birdSoundFileName)
         currentGameScene.currentHero = hero
         currentGameScene.setupMainHero()
     }

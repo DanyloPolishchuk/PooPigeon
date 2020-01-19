@@ -5,7 +5,7 @@
         "levelIsUnlocked" : true,
         "levelChallengeScoreType" : "None",
         "levelNumber" : 1,
-        "levelMusicSoundFileName" : "signalRocketSound",
+        "levelMusicSoundFileName" : "POL-star-way-short",
         "bird" : {
             "birdNumber" : 1,
             "birdName" : "Pigeon",
@@ -18,7 +18,7 @@
                 "pigeonDefault",
                 "pigeonDefaultFrame2"
             ],
-            "birdSoundFileName" : "signalRocketSound",
+            "birdSoundFileName" : "",
             "birdShootTextureName" : "pigeonDefaultShootFrame"
         },
         "levelName" : "City",
@@ -54,7 +54,7 @@
             "levelIsUnlocked" : true,
             "levelChallengeScoreType" : "None",
             "levelNumber" : 1,
-            "levelMusicSoundFileName" : "signalRocketSound",
+            "levelMusicSoundFileName" : "POL-star-way-short",
             "bird" : {
                 "birdNumber" : 1,
                 "birdName" : "Pigeon",
@@ -67,7 +67,7 @@
                     "pigeonDefault",
                     "pigeonDefaultFrame2"
                 ],
-                "birdSoundFileName" : "signalRocketSound",
+                "birdSoundFileName" : "",
                 "birdShootTextureName" : "pigeonDefaultShootFrame"
             },
             "levelName" : "City",
@@ -81,7 +81,7 @@
             "neededChallengeNumberValue" : 100,
             "currentChallengeNumberValueProgress" : 0,
             "levelNumber" : 2,
-            "levelMusicSoundFileName" : "signalRocketSound",
+            "levelMusicSoundFileName" : "POL-star-way-short",
             "bird" : {
                 "birdNumber" : 2,
                 "birdName" : "Bat",
@@ -94,7 +94,7 @@
                     "batFrame1",
                     "batFrame2"
                 ],
-                "birdSoundFileName" : "signalRocketSound",
+                "birdSoundFileName" : "",
                 "birdShootTextureName" : "batShootFrame"
             },
             "levelName" : "Cave",

@@ -15,7 +15,6 @@ class BirdSKSpriteNode: SKSpriteNode {
     let birdTexture: String
     let shootTexture: SKTexture
     let idleAnimationTextures: [SKTexture]
-    let birdSoundFileName: String
     
     init(_ bird: Bird) {
         
@@ -23,7 +22,6 @@ class BirdSKSpriteNode: SKSpriteNode {
         self.birdTexture = bird.birdTexture
         self.idleAnimationTextures = bird.birdAnimationTextureNames.map{ SKTexture(imageNamed: $0) }
         self.shootTexture = SKTexture(imageNamed: bird.birdShootTextureName)
-        self.birdSoundFileName = bird.birdSoundFileName
         
         super.init(texture: birdTexture, color: .clear, size: birdTexture.size())
         
@@ -44,7 +42,6 @@ class BirdSKSpriteNode: SKSpriteNode {
         
         let shootAction = SKAction.run {
             self.texture = self.shootTexture
-            NotificationCenter.default.post(name: .sfxSoundPlay, object: nil)
         }
         let shootActionSequence = SKAction.sequence([
             shootAction,

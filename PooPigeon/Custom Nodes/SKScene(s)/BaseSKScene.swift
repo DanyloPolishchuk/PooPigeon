@@ -35,29 +35,29 @@ class BaseSKScene: SKScene {
     var pooNode: SKSpriteNode!
     
     //MARK: Copiable emitter nodes
-    let sparklesWhiteEmitter = SKEmitterNode(fileNamed: "SparklesWhiteEmitter")
-    let sparklesGoldEmitter  = SKEmitterNode(fileNamed: "SparklesGoldEmitter")
-    let sparklesBrownEmitter = SKEmitterNode(fileNamed: "SparklesBrownEmitter")
-    let explosionWhiteEmitter = SKEmitterNode(fileNamed: "ExplosionWhiteEmitter")
-    let explosionGoldEmitter = SKEmitterNode(fileNamed: "ExplosionGoldEmitter")
-    let explosionBrownEmitter = SKEmitterNode(fileNamed: "ExplosionBrownEmitter")
+    let sparklesWhiteEmitter    = SKEmitterNode(fileNamed: "SparklesWhiteEmitter")
+    let sparklesGoldEmitter     = SKEmitterNode(fileNamed: "SparklesGoldEmitter")
+    let sparklesBrownEmitter    = SKEmitterNode(fileNamed: "SparklesBrownEmitter")
+    let explosionWhiteEmitter   = SKEmitterNode(fileNamed: "ExplosionWhiteEmitter")
+    let explosionGoldEmitter    = SKEmitterNode(fileNamed: "ExplosionGoldEmitter")
+    let explosionBrownEmitter   = SKEmitterNode(fileNamed: "ExplosionBrownEmitter")
     
     //MARK: Game properties
-    var currentScore = 0
-    var currentStreak = 1
-    var isLevelInGameState = false
-    var isFirstTouch = true
+    var currentScore        = 0
+    var currentStreak       = 1
+    var isLevelInGameState  = false
+    var isFirstTouch        = true
     
     //MARK: Spawn properties
-    let spawnDelayMaxValue: TimeInterval = 1.5
-    let spawnDelayDecreaseStep: TimeInterval = 0.05
-    let spawnDelayMinValue: TimeInterval = 0.5
-    var spawnSequence = [SKAction]()
-    let spawnKey = "SpawnKey"
-    var heroSpawnY: CGFloat = 0
-    var widthOfVisibleAreaThird: CGFloat = 0
-    var centerBirdNodePosition = CGPoint(x: 0, y: 680)
-    var birdNodePositions = [CGPoint]()
+    let spawnDelayMaxValue: TimeInterval        = 1.5
+    let spawnDelayDecreaseStep: TimeInterval    = 0.05
+    let spawnDelayMinValue: TimeInterval        = 0.5
+    var spawnSequence                           = [SKAction]()
+    let spawnKey                                = "SpawnKey"
+    var heroSpawnY: CGFloat                     = 0
+    var widthOfVisibleAreaThird: CGFloat        = 0
+    var centerBirdNodePosition                  = CGPoint(x: 0, y: 680)
+    var birdNodePositions                       = [CGPoint]()
     
     //MARK: Scene size properties
     var sceneWidth: CGFloat     = 2560
@@ -71,6 +71,15 @@ class BaseSKScene: SKScene {
     //MARK: Tap Here properties
     var tapHereNodesContainerNode: SKNode!
     let tapHereAnimationSpeed: TimeInterval = 0.5
+    
+    //MARK: Audio properties
+    let gameOverAudioNode       = SKAudioNode(fileNamed: "GameOver.wav")
+    let bonusHitPlayerAudioNode = SKAudioNode(fileNamed: "BonusHitPlayer.wav")
+    let eggHitPlayerAudioNode   = SKAudioNode(fileNamed: "EggHitPlayer.wav")
+    let pooHitPlayerAudioNode   = SKAudioNode(fileNamed: "PooHitPlayer.wav")
+    let anyHitGroundAudioNode   = SKAudioNode(fileNamed: "AnyHitGround.wav")
+    let turnVolumeOff           = SKAction.changeVolume(to: 0, duration: 0)
+    let turnVolumeOn            = SKAction.changeVolume(to: 1.0, duration: 0)
     
     override func didMove(to view: SKView) {
         
@@ -107,6 +116,9 @@ class BaseSKScene: SKScene {
         setupEdgeProperties()
         setupCurrentBirds()
         setupTapHereNodes()
+        
+        setupAudioNodes()
+        setupNotificationsForAudioNodes()
     }
     
     //MARK: - Setup methods
@@ -254,6 +266,39 @@ class BaseSKScene: SKScene {
             SKAction.wait(forDuration: spawnDelayMinValue)
             ])))
     }
+    func setupAudioNodes(){
+        let isSFXEnabled = Settings.shared.isSoundEffectsEnabled
+        
+        gameOverAudioNode.autoplayLooped = false
+        bonusHitPlayerAudioNode.autoplayLooped = false
+        eggHitPlayerAudioNode.autoplayLooped = false
+        pooHitPlayerAudioNode.autoplayLooped = false
+        anyHitGroundAudioNode.autoplayLooped = false
+        
+        if isSFXEnabled{
+            gameOverAudioNode.run(turnVolumeOn)
+            bonusHitPlayerAudioNode.run(turnVolumeOn)
+            eggHitPlayerAudioNode.run(turnVolumeOn)
+            pooHitPlayerAudioNode.run(turnVolumeOn)
+            anyHitGroundAudioNode.run(turnVolumeOn)
+        }else{
+            gameOverAudioNode.run(turnVolumeOff)
+            bonusHitPlayerAudioNode.run(turnVolumeOff)
+            eggHitPlayerAudioNode.run(turnVolumeOff)
+            pooHitPlayerAudioNode.run(turnVolumeOff)
+            anyHitGroundAudioNode.run(turnVolumeOff)
+        }
+        
+        self.bg.addChild(gameOverAudioNode)
+        self.bg.addChild(bonusHitPlayerAudioNode)
+        self.bg.addChild(eggHitPlayerAudioNode)
+        self.bg.addChild(pooHitPlayerAudioNode)
+        self.bg.addChild(anyHitGroundAudioNode)
+    }
+    func setupNotificationsForAudioNodes(){
+        NotificationCenter.default.addObserver(self, selector: #selector(turnSFXOn), name: .turnSFXOn, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(turnSFXOff), name: .turnSFXOff, object: nil)
+    }
     
     //MARK: - Game methods
     //
@@ -394,6 +439,23 @@ class BaseSKScene: SKScene {
         tapHereNodesContainerNode.isHidden = true
     }
     
+    //MARK: - Audio Node methods
+    //
+    @objc func turnSFXOff(){
+        gameOverAudioNode.run(turnVolumeOff)
+        bonusHitPlayerAudioNode.run(turnVolumeOff)
+        eggHitPlayerAudioNode.run(turnVolumeOff)
+        pooHitPlayerAudioNode.run(turnVolumeOff)
+        anyHitGroundAudioNode.run(turnVolumeOff)
+    }
+    @objc func turnSFXOn(){
+        gameOverAudioNode.run(turnVolumeOn)
+        bonusHitPlayerAudioNode.run(turnVolumeOn)
+        eggHitPlayerAudioNode.run(turnVolumeOn)
+        pooHitPlayerAudioNode.run(turnVolumeOn)
+        anyHitGroundAudioNode.run(turnVolumeOn)
+    }
+    
 }
 
 //MARK: - PhysicsContact
@@ -418,6 +480,7 @@ extension BaseSKScene: SKPhysicsContactDelegate {
             shootableNode?.physicsBody?.categoryBitMask = PhysicsCategory.None.rawValue
             shootableNode?.removeFromParent()
             addExplosionOfType(.Egg, atPoint: contact.contactPoint)
+            eggHitPlayerAudioNode.run(SKAction.play())
             mainHeroNode.hit()
             increaseScore()
             NotificationCenter.default.post(name: .setupScoreKey, object: currentScore)
@@ -425,6 +488,12 @@ extension BaseSKScene: SKPhysicsContactDelegate {
         else if collisionBitMask == PhysicsCategory.Egg.rawValue | PhysicsCategory.Edge.rawValue{ // GAME OVER
             shootableNode?.removeFromParent()
             addExplosionOfType(.Egg, atPoint: contactPoint)
+            anyHitGroundAudioNode.run(SKAction.sequence([
+                SKAction.play(),
+                SKAction.run {
+                    self.gameOverAudioNode.run(SKAction.play())
+                }
+                ]))
             mainHeroNode.lose()
             resetScore()
             
@@ -434,18 +503,26 @@ extension BaseSKScene: SKPhysicsContactDelegate {
             shootableNode?.physicsBody?.categoryBitMask = PhysicsCategory.None.rawValue
             shootableNode?.removeFromParent()
             addExplosionOfType(.Bonus, atPoint: contactPoint)
+            bonusHitPlayerAudioNode.run(SKAction.play())
             mainHeroNode.hit()
             increaseStreak()
             NotificationCenter.default.post(name: .setupStreak, object: currentStreak)
         }
         else if collisionBitMask == PhysicsCategory.Bonus.rawValue | PhysicsCategory.Edge.rawValue {
             shootableNode?.removeFromParent()
+            anyHitGroundAudioNode.run(SKAction.play())
             addExplosionOfType(.Bonus, atPoint: contactPoint)
         }
         else if collisionBitMask == PhysicsCategory.Poo.rawValue | PhysicsCategory.Human.rawValue { // GAME OVER
             shootableNode?.physicsBody?.categoryBitMask = PhysicsCategory.None.rawValue
             shootableNode?.removeFromParent()
             addExplosionOfType(.Poo, atPoint: contactPoint)
+            pooHitPlayerAudioNode.run(SKAction.sequence([
+                SKAction.play(),
+                SKAction.run {
+                    self.gameOverAudioNode.run(SKAction.play())
+                }
+                ]))
             mainHeroNode.lose()
             resetScore()
             NotificationCenter.default.post(name: .showGameOverKey, object: nil)
@@ -453,6 +530,7 @@ extension BaseSKScene: SKPhysicsContactDelegate {
         else if collisionBitMask == PhysicsCategory.Poo.rawValue | PhysicsCategory.Edge.rawValue {
             shootableNode?.physicsBody?.categoryBitMask = PhysicsCategory.None.rawValue
             shootableNode?.removeFromParent()
+            anyHitGroundAudioNode.run(SKAction.play())
             addExplosionOfType(.Poo, atPoint: contactPoint)
         }
     }
