@@ -34,7 +34,7 @@ class ContactUsViewController: BaseBannerAdViewController {
         // replace with localized strings
         contactUsLabel.text = "Contact Us"
         descriptionLabel.text = "Found a bug ? Send us an email at"
-        emailLabel.text = "PooPigeonExample@gmail.com"
+        emailLabel.text = emailString
         copyButton.setImage(UIImage(named: "copyButtonPressed"), for: .highlighted)
         // setup localized button label text
         emailButton.setBackgroundImage(UIImage(named: "bigButtonImagePressed"), for: .highlighted)
