@@ -29,6 +29,8 @@
 		9E1EF6E723D4F7E600B00D7A /* PooHitPlayer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E1EF6DD23D4F7E600B00D7A /* PooHitPlayer.wav */; };
 		9E1EF6E923D4F82800B00D7A /* POL-star-way-short.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E1EF6E823D4F82800B00D7A /* POL-star-way-short.wav */; };
 		9E1EF6EA23D4F82800B00D7A /* POL-star-way-short.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E1EF6E823D4F82800B00D7A /* POL-star-way-short.wav */; };
+		9E1EF6EC23D6481800B00D7A /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1EF6EB23D6481800B00D7A /* CreditsViewController.swift */; };
+		9E1EF6ED23D6481800B00D7A /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1EF6EB23D6481800B00D7A /* CreditsViewController.swift */; };
 		9E2A953823CF498000B01EC1 /* SparklesWhiteEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E2A953723CF498000B01EC1 /* SparklesWhiteEmitter.sks */; };
 		9E2A953923CF498000B01EC1 /* SparklesWhiteEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E2A953723CF498000B01EC1 /* SparklesWhiteEmitter.sks */; };
 		9E2A953B23CF4FCC00B01EC1 /* ExplosionWhiteEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E2A953A23CF4FCC00B01EC1 /* ExplosionWhiteEmitter.sks */; };
@@ -144,6 +146,7 @@
 		9E1EF6DC23D4F7E500B00D7A /* GameOver.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GameOver.wav; sourceTree = "<group>"; };
 		9E1EF6DD23D4F7E600B00D7A /* PooHitPlayer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PooHitPlayer.wav; sourceTree = "<group>"; };
 		9E1EF6E823D4F82800B00D7A /* POL-star-way-short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "POL-star-way-short.wav"; sourceTree = "<group>"; };
+		9E1EF6EB23D6481800B00D7A /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		9E2A953723CF498000B01EC1 /* SparklesWhiteEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SparklesWhiteEmitter.sks; sourceTree = "<group>"; };
 		9E2A953A23CF4FCC00B01EC1 /* ExplosionWhiteEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ExplosionWhiteEmitter.sks; sourceTree = "<group>"; };
 		9E2A953D23CF563100B01EC1 /* ExplosionGoldEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ExplosionGoldEmitter.sks; sourceTree = "<group>"; };
@@ -410,6 +413,7 @@
 				9E8FC85423997A8200A576C0 /* SettingsViewController.swift */,
 				9E8FC8572399817500A576C0 /* SettingsCollectionViewCell.swift */,
 				9EDDA7B423ABEF720006FB3C /* ContactUsViewController.swift */,
+				9E1EF6EB23D6481800B00D7A /* CreditsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -815,6 +819,7 @@
 				9E82000623BE3A5C0026A1EC /* BaseAudioViewController.swift in Sources */,
 				9E82000723BE3A5C0026A1EC /* ShopViewController.swift in Sources */,
 				9EEA2A9623C8D79100105B4E /* IAPProducts.swift in Sources */,
+				9E1EF6ED23D6481800B00D7A /* CreditsViewController.swift in Sources */,
 				9E82000823BE3A5C0026A1EC /* Enumerations.swift in Sources */,
 				9E82000923BE3A5C0026A1EC /* HeaderTableViewCell.swift in Sources */,
 				9E0D4A3B23C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift in Sources */,
@@ -856,6 +861,7 @@
 				9E8FC85323971D5700A576C0 /* BaseAudioViewController.swift in Sources */,
 				9E16740823A2F24D00322AFF /* ShopViewController.swift in Sources */,
 				9EEA2A9523C8D79100105B4E /* IAPProducts.swift in Sources */,
+				9E1EF6EC23D6481800B00D7A /* CreditsViewController.swift in Sources */,
 				9EDDE3E3237B390300A06863 /* Enumerations.swift in Sources */,
 				9E643F7A239ECD3600BB5FC0 /* HeaderTableViewCell.swift in Sources */,
 				9E0D4A3A23C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift in Sources */,

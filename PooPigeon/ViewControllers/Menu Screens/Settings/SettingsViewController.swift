@@ -251,9 +251,12 @@ extension SettingsViewController: SettingsScreensPresentationProtocol{
         
     }
     
-    //TODO: implement credits screen presentation
     func showCredits() {
-        
+        if let creditsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "creditsScreenStoryboardID") as? CreditsViewController {
+            creditsVC.settingsViewController = self
+            hideBannerView()
+            self.present(creditsVC, animated: true)
+        }
     }
     
     func showContactInfo() {
