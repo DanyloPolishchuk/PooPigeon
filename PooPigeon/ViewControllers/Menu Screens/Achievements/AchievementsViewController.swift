@@ -64,6 +64,7 @@ class AchievementsViewController: BaseBannerAdViewController {
         setupTopButtons()
         setupDefaultConstraints()
         setupDataSource()
+        setupTimeSpentInGame()
         setupDelegates()
         setupRewardedAd()
         setupNetworkAvaliabilityChecker()
@@ -132,6 +133,9 @@ class AchievementsViewController: BaseBannerAdViewController {
             }
         }
         
+    }
+    func setupTimeSpentInGame(){
+        (UIApplication.shared.delegate as? AppDelegate)?.updateTimeSpentInGame()
     }
     
     //MARK: - Animation methods

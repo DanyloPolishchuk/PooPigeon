@@ -44,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
         
-        endTime = DispatchTime.now()
         updateTimeSpentInGame()
         
         NotificationCenter.default.post(name: .pauseOnResignActive, object: nil)
@@ -72,15 +71,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Challenge tracking methods
     //
     func updateTimeSpentInGame(){
+        
+        self.endTime = DispatchTime.now()
+        
         if let startTime = self.startTime, let endTime = self.endTime{
-            self.startTime  = nil
-            self.endTime    = nil
             
             let nanoTimeDifference = endTime.uptimeNanoseconds - startTime.uptimeNanoseconds
             let timeInterval = Double(nanoTimeDifference)
             let timeIntervalInSeconds = UInt(timeInterval * nanoSecsToSecsMultiplier)
             Settings.shared.timeInSecsSpentInGame += timeIntervalInSeconds
             Settings.shared.save()
+            
+            self.startTime = DispatchTime.now()
         }
     }
     
