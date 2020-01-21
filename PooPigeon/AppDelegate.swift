@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import SecureDefaults
+import AVFoundation
 
 let secureDefaultsShared = SecureDefaults.shared
 
@@ -28,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Lifecycle methods
     //
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        setupAudioSession()
         
         setupSecureDefaults()
         
@@ -122,6 +125,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setupSecureDefaults(){
         if !secureDefaultsShared.isKeyCreated {
             secureDefaultsShared.password = NSUUID().uuidString
+        }
+    }
+    
+    private func setupAudioSession() {
+        if AVAudioSession.sharedInstance().isOtherAudioPlaying {
+            try? AVAudioSession.sharedInstance().setCategory(.ambient)
+            try? AVAudioSession.sharedInstance().setActive(true, options: [])
         }
     }
 
