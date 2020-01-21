@@ -30,6 +30,8 @@ class Settings: Codable {
     
     var isFirstLaunch: Bool
     
+    var isTutorialSupposedToBeShown: Bool
+    
     var isLeftHandedUI: Bool
     var isSoundEffectsEnabled: Bool
     var isMusicEnabled: Bool
@@ -86,6 +88,8 @@ class Settings: Codable {
             
             self.isFirstLaunch = settings.isFirstLaunch
             
+            self.isTutorialSupposedToBeShown = settings.isTutorialSupposedToBeShown
+            
             self.isLeftHandedUI = settings.isLeftHandedUI
             self.isSoundEffectsEnabled = settings.isSoundEffectsEnabled
             self.isMusicEnabled = settings.isMusicEnabled
@@ -125,6 +129,8 @@ class Settings: Codable {
             self.language = settings.language
             
             self.isFirstLaunch = settings.isFirstLaunch
+            
+            self.isTutorialSupposedToBeShown = settings.isTutorialSupposedToBeShown
             
             self.isLeftHandedUI = settings.isLeftHandedUI
             self.isSoundEffectsEnabled = settings.isSoundEffectsEnabled

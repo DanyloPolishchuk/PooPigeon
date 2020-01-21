@@ -167,6 +167,8 @@
     
     "isFirstLaunch" : true,
     
+    "isTutorialSupposedToBeShown": true,
+    
     "isLeftHandedUI" : false,
     "isSoundEffectsEnabled" : true,
     "isMusicEnabled" : true,

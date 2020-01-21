@@ -30,6 +30,7 @@ class MainMenuViewController: BaseBannerAdViewController {
     @IBOutlet weak var rightTopButton: UIButton!
     @IBOutlet weak var leftBottomButton: UIButton!
     @IBOutlet weak var leftTopButton: UIButton!
+    @IBOutlet weak var tutorialButton: UIButton!
     @IBOutlet weak var logoImageView: UIImageView!
     // constraints
     @IBOutlet weak var topLeftButtonConstraint: NSLayoutConstraint!
@@ -49,6 +50,7 @@ class MainMenuViewController: BaseBannerAdViewController {
         print("MainMenuViewController viewWillAppear called")
         setupDefaultConstraints()
         setupButtons()
+        setupTutorialButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,6 +75,8 @@ class MainMenuViewController: BaseBannerAdViewController {
         leftTopButton.setImage(UIImage(named: "settingsButtonPressed"), for: .highlighted)
         playButton.setImage(UIImage(named: "playButtonPressed"), for: .highlighted)
         
+        tutorialButton.setImage(UIImage(named: "tutorialButtonPressed"), for: .highlighted)
+        
         self.isLeftHandedUI = Settings.shared.isLeftHandedUI
         
         (isLeftHandedUI ? rightTopButton : leftTopButton)?.isHidden = true
@@ -83,6 +87,17 @@ class MainMenuViewController: BaseBannerAdViewController {
         leftBottomButton.setImage(UIImage(named: isLeftHandedUI ? "pigeonButtonPressed" : "achievementsButtonPressed" ), for: .highlighted)
         rightBottomButton.setImage(UIImage(named: isLeftHandedUI ? "achievementsButtonNormal" : "pigeonButtonNormal" ), for: .normal)
         leftBottomButton.setImage(UIImage(named: isLeftHandedUI ? "pigeonButtonNormal" : "achievementsButtonNormal" ), for: .normal)
+    }
+    func setupTutorialButton(){
+        let shouldShowTutorial = Settings.shared.isTutorialSupposedToBeShown
+        tutorialButton.isHidden = !shouldShowTutorial
+        if shouldShowTutorial {
+            UIView.animate(withDuration: 0.5, delay: 0, options: [.allowUserInteraction ,.repeat, .autoreverse, .beginFromCurrentState], animations: {
+                self.tutorialButton.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+            }) { (animationsFinishedBeforeCompletion) in
+                self.tutorialButton.transform = .identity
+            }
+        }
     }
     
     //MARK: - Animation methods
@@ -176,6 +191,12 @@ class MainMenuViewController: BaseBannerAdViewController {
         hideBannerView()
         hideUI {
             self.showSettings()
+        }
+    }
+    @IBAction func tutorialAction(_ sender: Any) {
+        if let tutorialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tutorialScreenStoryboardID") as? TutorialViewController{
+            tutorialVC.mainMenuViewController = self
+            self.present(tutorialVC, animated: true)
         }
     }
     

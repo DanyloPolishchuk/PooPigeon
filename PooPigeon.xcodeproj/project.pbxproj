@@ -108,6 +108,8 @@
 		9E93032123D233170074EA95 /* SettingsDefault.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E93032023D233170074EA95 /* SettingsDefault.json */; };
 		9E93032223D233170074EA95 /* SettingsDefault.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E93032023D233170074EA95 /* SettingsDefault.json */; };
 		9E9862B42389CF7A00809E2B /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9862B32389CF7A00809E2B /* MainMenuViewController.swift */; };
+		9EA5CECF23D737A600B7E290 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5CECE23D737A600B7E290 /* TutorialViewController.swift */; };
+		9EA5CED023D737A600B7E290 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5CECE23D737A600B7E290 /* TutorialViewController.swift */; };
 		9EDDA7B523ABEF720006FB3C /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDDA7B423ABEF720006FB3C /* ContactUsViewController.swift */; };
 		9EDDA7B823AC1A140006FB3C /* RainEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9EDDA7B623AC1A140006FB3C /* RainEmitter.sks */; };
 		9EDDA7B923AC1A140006FB3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EDDA7B723AC1A140006FB3C /* Assets.xcassets */; };
@@ -181,6 +183,7 @@
 		9E93031C23D1F8130074EA95 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		9E93032023D233170074EA95 /* SettingsDefault.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SettingsDefault.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		9E9862B32389CF7A00809E2B /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		9EA5CECE23D737A600B7E290 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		9EDDA7B423ABEF720006FB3C /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		9EDDA7B623AC1A140006FB3C /* RainEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainEmitter.sks; sourceTree = "<group>"; };
 		9EDDA7B723AC1A140006FB3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -373,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				9E9862B32389CF7A00809E2B /* MainMenuViewController.swift */,
+				9EA5CECE23D737A600B7E290 /* TutorialViewController.swift */,
 				9E8FC8562399814400A576C0 /* Settings */,
 				9E5468F9239D425C00857D44 /* Achievements */,
 				9E16740623A2F0EB00322AFF /* Shop (Birds & Levels) */,
@@ -800,6 +804,7 @@
 				9E82FFF723BE3A5C0026A1EC /* Bird.swift in Sources */,
 				9E82FFF823BE3A5C0026A1EC /* BaseBannerAdViewController.swift in Sources */,
 				9E82FFF923BE3A5C0026A1EC /* Wallpaper.swift in Sources */,
+				9EA5CED023D737A600B7E290 /* TutorialViewController.swift in Sources */,
 				9E82FFFA23BE3A5C0026A1EC /* Level1Scene.swift in Sources */,
 				9E82FFFB23BE3A5C0026A1EC /* GameViewController.swift in Sources */,
 				9E82FFFC23BE3A5C0026A1EC /* SettingsCollectionViewCell.swift in Sources */,
@@ -842,6 +847,7 @@
 				9E3821902386E79F00244205 /* Bird.swift in Sources */,
 				9E82FFEC23B796CE0026A1EC /* BaseBannerAdViewController.swift in Sources */,
 				9E643F78239D9C3200BB5FC0 /* Wallpaper.swift in Sources */,
+				9EA5CECF23D737A600B7E290 /* TutorialViewController.swift in Sources */,
 				9EDDE3D0237A1C2C00A06863 /* Level1Scene.swift in Sources */,
 				9E6C9A1423916D7A00B7AC37 /* GameViewController.swift in Sources */,
 				9E8FC8582399817500A576C0 /* SettingsCollectionViewCell.swift in Sources */,
