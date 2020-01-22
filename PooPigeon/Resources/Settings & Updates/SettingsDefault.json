@@ -81,7 +81,7 @@
             "neededChallengeNumberValue" : 100,
             "currentChallengeNumberValueProgress" : 0,
             "levelNumber" : 2,
-            "levelMusicSoundFileName" : "POL-star-way-short",
+            "levelMusicSoundFileName" : "POL-galactic-trek-short",
             "bird" : {
                 "birdNumber" : 2,
                 "birdName" : "Bat",
@@ -99,6 +99,33 @@
             },
             "levelName" : "Cave",
             "levelSceneFileName" : "Level2Scene"
+        },
+        {
+            "levelPreviewImageName" : "level3BGWallpaper",
+            "levelChallengeType" : "Best Score",
+            "levelIsUnlocked" : false,
+            "levelChallengeScoreType" : "NumberValue",
+            "neededChallengeNumberValue" : 150,
+            "currentChallengeNumberValueProgress" : 0,
+            "levelNumber" : 3,
+            "levelMusicSoundFileName" : "POL-pyramid-sands-short",
+            "bird" : {
+                "birdNumber" : 3,
+                "birdName" : "Mummy Bat",
+                "birdSpawnPosition" : [
+                    0,
+                    744
+                ],
+                "birdTexture" : "bird3Frame1",
+                "birdAnimationTextureNames" : [
+                    "bird3Frame1",
+                    "bird3Frame2"
+                ],
+                "birdSoundFileName" : "",
+                "birdShootTextureName" : "bird3ShootFrame"
+            },
+            "levelName" : "Pyramids",
+            "levelSceneFileName" : "Level3Scene"
         }
     ],
     
@@ -146,6 +173,29 @@
             ],
             "challengeScoreType" : "NumberValue",
             "name" : "Steve"
+        },
+        {
+            "currentChallengeNumberValueProgress" : 0,
+            "physicsBodyTexture" : "hero3PhysicsBodyTexture",
+            "loseTextureNames" : [
+                "hero3LoseFrame1",
+                "hero3LoseFrame2"
+            ],
+            "idleTextureNames" : [
+                "hero3IdleFrame1",
+                "hero3IdleFrame2"
+            ],
+            "texture" : "hero3IdleFrame1",
+            "neededChallengeNumberValue" : 500,
+            "challengeType" : "Total Score",
+            "isUnlocked" : false,
+            "number" : 3,
+            "hitTextureNames" : [
+                "hero3HitFrame1",
+                "hero3HitFrame2"
+            ],
+            "challengeScoreType" : "NumberValue",
+            "name" : "Pharaoh"
         }
     ],
     
@@ -160,6 +210,12 @@
             "wallpaperImageName" : "level2BGWallpaper",
             "isWallpaperUnlocked" : false,
             "wallpaperNumber" : 2
+        },
+        {
+            
+            "wallpaperImageName" : "level3BGWallpaper",
+            "isWallpaperUnlocked" : false,
+            "wallpaperNumber" : 3
         }
     ],
     
