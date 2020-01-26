@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "hero1PhysicsBodyTexture.png",
+      "filename" : "hero5IdleFrame1.png",
       "scale" : "1x"
     },
     {

@@ -44,7 +44,7 @@
             "hero1LoseFrame1",
             "hero1LoseFrame2"
         ],
-        "physicsBodyTexture" : "hero1PhysicsBodyTexture"
+        "physicsBodyTexture" : "heroPhysicsBodyTexture"
     },
     
     "levels" : [
@@ -126,6 +126,60 @@
             },
             "levelName" : "Pyramids",
             "levelSceneFileName" : "Level3Scene"
+        },
+        {
+            "levelPreviewImageName" : "level4BG",
+            "levelChallengeType" : "Best Score",
+            "levelIsUnlocked" : false,
+            "levelChallengeScoreType" : "NumberValue",
+            "neededChallengeNumberValue" : 500,
+            "currentChallengeNumberValueProgress" : 0,
+            "levelNumber" : 4,
+            "levelMusicSoundFileName" : "POL-waving-grass-short",
+            "bird" : {
+                "birdNumber" : 4,
+                "birdName" : "Space Bird",
+                "birdSpawnPosition" : [
+                    0,
+                    744
+                ],
+                "birdTexture" : "bird4Frame1",
+                "birdAnimationTextureNames" : [
+                    "bird4Frame1",
+                    "bird4Frame2"
+                ],
+                "birdSoundFileName" : "",
+                "birdShootTextureName" : "bird4ShootFrame"
+            },
+            "levelName" : "Space",
+            "levelSceneFileName" : "Level4Scene"
+        },
+        {
+            "levelPreviewImageName" : "level5BG",
+            "levelChallengeType" : "Best Score",
+            "levelIsUnlocked" : false,
+            "levelChallengeScoreType" : "NumberValue",
+            "neededChallengeNumberValue" : 750,
+            "currentChallengeNumberValueProgress" : 0,
+            "levelNumber" : 5,
+            "levelMusicSoundFileName" : "POL-chamber-of-secrets-short",
+            "bird" : {
+                "birdNumber" : 5,
+                "birdName" : "Halloween Bat",
+                "birdSpawnPosition" : [
+                    0,
+                    744
+                ],
+                "birdTexture" : "bird5Frame1",
+                "birdAnimationTextureNames" : [
+                    "bird5Frame1",
+                    "bird5Frame2"
+                ],
+                "birdSoundFileName" : "",
+                "birdShootTextureName" : "bird5ShootFrame"
+            },
+            "levelName" : "Halloween",
+            "levelSceneFileName" : "Level5Scene"
         }
     ],
     
@@ -149,11 +203,11 @@
                 "hero1LoseFrame1",
                 "hero1LoseFrame2"
             ],
-            "physicsBodyTexture" : "hero1PhysicsBodyTexture"
+            "physicsBodyTexture" : "heroPhysicsBodyTexture"
         },
         {
             "currentChallengeNumberValueProgress" : 0,
-            "physicsBodyTexture" : "hero2PhysicsBodyTexture",
+            "physicsBodyTexture" : "heroPhysicsBodyTexture",
             "loseTextureNames" : [
                 "hero2LoseFrame1",
                 "hero2LoseFrame2"
@@ -176,7 +230,7 @@
         },
         {
             "currentChallengeNumberValueProgress" : 0,
-            "physicsBodyTexture" : "hero3PhysicsBodyTexture",
+            "physicsBodyTexture" : "heroPhysicsBodyTexture",
             "loseTextureNames" : [
                 "hero3LoseFrame1",
                 "hero3LoseFrame2"
@@ -186,7 +240,7 @@
                 "hero3IdleFrame2"
             ],
             "texture" : "hero3IdleFrame1",
-            "neededChallengeNumberValue" : 500,
+            "neededChallengeNumberValue" : 1000,
             "challengeType" : "Total Score",
             "isUnlocked" : false,
             "number" : 3,
@@ -196,6 +250,52 @@
             ],
             "challengeScoreType" : "NumberValue",
             "name" : "Pharaoh"
+        },
+        {
+            "currentChallengeNumberValueProgress" : 0,
+            "physicsBodyTexture" : "heroPhysicsBodyTexture",
+            "loseTextureNames" : [
+                "hero4LoseFrame1",
+                "hero4LoseFrame2"
+            ],
+            "idleTextureNames" : [
+                "hero4IdleFrame1",
+                "hero4IdleFrame2"
+            ],
+            "texture" : "hero4IdleFrame1",
+            "neededChallengeNumberValue" : 5000,
+            "challengeType" : "Total Score",
+            "isUnlocked" : false,
+            "number" : 4,
+            "hitTextureNames" : [
+                "hero4HitFrame1",
+                "hero4HitFrame2"
+            ],
+            "challengeScoreType" : "NumberValue",
+            "name" : "Houston"
+        },
+        {
+            "currentChallengeNumberValueProgress" : 0,
+            "physicsBodyTexture" : "heroPhysicsBodyTexture",
+            "loseTextureNames" : [
+                "hero5LoseFrame1",
+                "hero5LoseFrame2"
+            ],
+            "idleTextureNames" : [
+                "hero5IdleFrame1",
+                "hero5IdleFrame2"
+            ],
+            "texture" : "hero5IdleFrame1",
+            "neededChallengeNumberValue" : 2500,
+            "challengeType" : "Total Score",
+            "isUnlocked" : false,
+            "number" : 5,
+            "hitTextureNames" : [
+                "hero5HitFrame1",
+                "hero5HitFrame2"
+            ],
+            "challengeScoreType" : "NumberValue",
+            "name" : "Pumpkin man"
         }
     ],
     
@@ -216,6 +316,18 @@
             "wallpaperImageName" : "level3BGWallpaper",
             "isWallpaperUnlocked" : false,
             "wallpaperNumber" : 3
+        },
+        {
+            
+            "wallpaperImageName" : "level4BG",
+            "isWallpaperUnlocked" : false,
+            "wallpaperNumber" : 4
+        },
+        {
+            
+            "wallpaperImageName" : "level5BG",
+            "isWallpaperUnlocked" : false,
+            "wallpaperNumber" : 5
         }
     ],
     
