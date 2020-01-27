@@ -55,12 +55,11 @@ class ShopViewController: BaseBannerAdViewController {
         updateDataSources()
         setupDataSources()
         setupCollectionViews()
+        setupDefaultSelectedCells()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        unhideUI {
-            self.setupDefaultSelectedCells()
-        }
+        unhideUI {}
     }
     
     //MARK: - Setup methods
@@ -95,12 +94,25 @@ class ShopViewController: BaseBannerAdViewController {
         selectedHeroIndexPath = IndexPath(item: currentHero.number - 1, section: 0)
         selectedLevelIndexPath = IndexPath(item: currentLevel.levelNumber - 1, section: 0)
         
-        if self.selectedHeroIndexPath != nil{
-            birdsCollectionView.delegate?.collectionView?(birdsCollectionView, didSelectItemAt: selectedHeroIndexPath!)
+        self.birdsCollectionView.performBatchUpdates({
+            self.birdsCollectionView.reloadData()
+        }) { (isFinished) in
+            if isFinished {
+                if self.selectedHeroIndexPath != nil{
+                    self.birdsCollectionView.delegate?.collectionView?(self.birdsCollectionView, didSelectItemAt: self.selectedHeroIndexPath!)
+                }
+            }
         }
-        if self.selectedLevelIndexPath != nil{
-            levelsCollectionView.delegate?.collectionView?(levelsCollectionView, didSelectItemAt: selectedLevelIndexPath!)
-            
+        
+        self.levelsCollectionView.performBatchUpdates({
+            self.levelsCollectionView.reloadData()
+        }) { (isFinished) in
+            if isFinished {
+                if self.selectedLevelIndexPath != nil{
+                    self.levelsCollectionView.delegate?.collectionView?(self.levelsCollectionView, didSelectItemAt: self.selectedLevelIndexPath!)
+                    
+                }
+            }
         }
         
     }
@@ -267,6 +279,11 @@ extension ShopViewController: UICollectionViewDataSource {
             }else{ // regular bird cell
                 let birdCell = collectionView.dequeueReusableCell(withReuseIdentifier: birdCellReuseIdentifier, for: indexPath) as! ShopCollectionViewCell
                 birdCell.displayContent(hero: heroes![indexPath.row])
+                
+                if let selectedHeroIndexPath = self.selectedHeroIndexPath, selectedHeroIndexPath == indexPath {
+                    birdCell.selectCell()
+                }
+                
                 return birdCell
             }
         }else{
@@ -278,6 +295,11 @@ extension ShopViewController: UICollectionViewDataSource {
             }else{ // regular level cell
                 let levelCell = collectionView.dequeueReusableCell(withReuseIdentifier: levelCellReuseIdentifier, for: indexPath) as! ShopCollectionViewCell
                 levelCell.displayContent(level: levels![indexPath.row])
+                
+                if let selectedLevelIndexPath = self.selectedLevelIndexPath, selectedLevelIndexPath == indexPath {
+                    levelCell.selectCell()
+                }
+                
                 return levelCell
             }
         }

@@ -95,8 +95,7 @@ class ShopCollectionViewCell: UICollectionViewCell {
         
         switch level.levelChallengeType {
         case .None:
-            challengeTypeLabel.text = ""
-            challengeTypeLabel.isHidden = true
+            challengeTypeLabel.text = level.levelChallengeType.rawValue
         case .TotalTimeSpentInGame:
             // replace with localized one
             let localizedTimeInGameString = "Time in game"
@@ -142,7 +141,6 @@ class ShopCollectionViewCell: UICollectionViewCell {
             }
         case .None:
             challengeProgressLabel.text = ""
-            challengeProgressLabel.isHidden = true
             break
         }
         
