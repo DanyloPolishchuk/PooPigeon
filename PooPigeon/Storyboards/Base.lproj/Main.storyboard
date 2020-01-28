@@ -1344,7 +1344,7 @@
                                                                                         <constraint firstAttribute="trailing" secondItem="yVA-qm-igf" secondAttribute="trailing" id="zwz-2O-KvC"/>
                                                                                     </constraints>
                                                                                 </view>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hAi-KM-Ucs">
+                                                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hAi-KM-Ucs">
                                                                                     <rect key="frame" x="157.5" y="9.5" width="45" height="45"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="hAi-KM-Ucs" secondAttribute="height" multiplier="1:1" id="yL2-ms-CIo"/>
@@ -1469,28 +1469,28 @@
                                                                                         <constraint firstAttribute="width" secondItem="r3D-hg-t9Q" secondAttribute="height" multiplier="1:1" id="uMv-Op-4Vv"/>
                                                                                     </constraints>
                                                                                 </imageView>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XIA-So-jAT">
+                                                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XIA-So-jAT">
                                                                                     <rect key="frame" x="191.5" y="9.5" width="43" height="43"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="XIA-So-jAT" secondAttribute="height" multiplier="1:1" id="F1I-p4-Dpp"/>
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuA-mt-Mxz">
-                                                                                    <rect key="frame" x="84.5" y="135.5" width="44.5" height="21"/>
+                                                                                    <rect key="frame" x="80" y="145.5" width="53" height="16"/>
                                                                                     <color key="backgroundColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
                                                                                     <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXK-RZ-G82">
-                                                                                    <rect key="frame" x="84.5" y="164.5" width="44.5" height="21"/>
+                                                                                    <rect key="frame" x="80" y="169.5" width="53" height="16"/>
                                                                                     <color key="backgroundColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
                                                                                     <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6f-VL-0Ck">
-                                                                                    <rect key="frame" x="79.5" y="8" width="54" height="26"/>
+                                                                                    <rect key="frame" x="74.5" y="8" width="64.5" height="19.5"/>
                                                                                     <color key="backgroundColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
                                                                                     <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2214,6 +2214,7 @@
         <image name="backButtonNormal" width="256" height="256"/>
         <image name="bigButtonImageNormal" width="512" height="256"/>
         <image name="bonus" width="128" height="128"/>
+        <image name="checkIcon" width="256" height="256"/>
         <image name="copyButtonNormal" width="256" height="256"/>
         <image name="egg" width="128" height="128"/>
         <image name="gameLogo" width="512" height="256"/>

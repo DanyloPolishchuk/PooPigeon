@@ -105,7 +105,7 @@
             "levelChallengeType" : "Best Score",
             "levelIsUnlocked" : false,
             "levelChallengeScoreType" : "NumberValue",
-            "neededChallengeNumberValue" : 150,
+            "neededChallengeNumberValue" : 200,
             "currentChallengeNumberValueProgress" : 0,
             "levelNumber" : 3,
             "levelMusicSoundFileName" : "POL-pyramid-sands-short",
@@ -132,7 +132,7 @@
             "levelChallengeType" : "Best Score",
             "levelIsUnlocked" : false,
             "levelChallengeScoreType" : "NumberValue",
-            "neededChallengeNumberValue" : 500,
+            "neededChallengeNumberValue" : 300,
             "currentChallengeNumberValueProgress" : 0,
             "levelNumber" : 4,
             "levelMusicSoundFileName" : "POL-waving-grass-short",
@@ -159,7 +159,7 @@
             "levelChallengeType" : "Best Score",
             "levelIsUnlocked" : false,
             "levelChallengeScoreType" : "NumberValue",
-            "neededChallengeNumberValue" : 750,
+            "neededChallengeNumberValue" : 400,
             "currentChallengeNumberValueProgress" : 0,
             "levelNumber" : 5,
             "levelMusicSoundFileName" : "POL-chamber-of-secrets-short",
@@ -180,6 +180,33 @@
             },
             "levelName" : "Halloween",
             "levelSceneFileName" : "Level5Scene"
+        },
+        {
+            "levelPreviewImageName" : "level6BGFrame1",
+            "levelChallengeType" : "Best Score",
+            "levelIsUnlocked" : false,
+            "levelChallengeScoreType" : "NumberValue",
+            "neededChallengeNumberValue" : 500,
+            "currentChallengeNumberValueProgress" : 0,
+            "levelNumber" : 6,
+            "levelMusicSoundFileName" : "POL-chamber-of-secrets-short",
+            "bird" : {
+                "birdNumber" : 6,
+                "birdName" : "Robot Bird",
+                "birdSpawnPosition" : [
+                    0,
+                    744
+                ],
+                "birdTexture" : "bird6Frame1",
+                "birdAnimationTextureNames" : [
+                    "bird6Frame1",
+                    "bird6Frame2"
+                ],
+                "birdSoundFileName" : "",
+                "birdShootTextureName" : "bird6ShootFrame"
+            },
+            "levelName" : "Future City",
+            "levelSceneFileName" : "Level6Scene"
         }
     ],
     
@@ -263,7 +290,7 @@
                 "hero4IdleFrame2"
             ],
             "texture" : "hero4IdleFrame1",
-            "neededChallengeNumberValue" : 5000,
+            "neededChallengeNumberValue" : 2000,
             "challengeType" : "Total Score",
             "isUnlocked" : false,
             "number" : 4,
@@ -286,7 +313,7 @@
                 "hero5IdleFrame2"
             ],
             "texture" : "hero5IdleFrame1",
-            "neededChallengeNumberValue" : 2500,
+            "neededChallengeNumberValue" : 3500,
             "challengeType" : "Total Score",
             "isUnlocked" : false,
             "number" : 5,
@@ -296,6 +323,29 @@
             ],
             "challengeScoreType" : "NumberValue",
             "name" : "Pumpkin man"
+        },
+        {
+            "currentChallengeNumberValueProgress" : 0,
+            "physicsBodyTexture" : "heroPhysicsBodyTexture",
+            "loseTextureNames" : [
+                "hero6LoseFrame1",
+                "hero6LoseFrame2"
+            ],
+            "idleTextureNames" : [
+                "hero6IdleFrame1",
+                "hero6IdleFrame2"
+            ],
+            "texture" : "hero6IdleFrame1",
+            "neededChallengeNumberValue" : 5000,
+            "challengeType" : "Total Score",
+            "isUnlocked" : false,
+            "number" : 6,
+            "hitTextureNames" : [
+                "hero6HitFrame1",
+                "hero6HitFrame2"
+            ],
+            "challengeScoreType" : "NumberValue",
+            "name" : "Robot"
         }
     ],
     
@@ -306,28 +356,29 @@
             "wallpaperNumber" : 1
         },
         {
-            
             "wallpaperImageName" : "level2BGWallpaper",
             "isWallpaperUnlocked" : false,
             "wallpaperNumber" : 2
         },
         {
-            
             "wallpaperImageName" : "level3BGWallpaper",
             "isWallpaperUnlocked" : false,
             "wallpaperNumber" : 3
         },
         {
-            
             "wallpaperImageName" : "level4BG",
             "isWallpaperUnlocked" : false,
             "wallpaperNumber" : 4
         },
         {
-            
             "wallpaperImageName" : "level5BG",
             "isWallpaperUnlocked" : false,
             "wallpaperNumber" : 5
+        },
+        {
+            "wallpaperImageName" : "level6BGFrame1",
+            "isWallpaperUnlocked" : false,
+            "wallpaperNumber" : 6
         }
     ],
     
