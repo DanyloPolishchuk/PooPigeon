@@ -23,11 +23,6 @@ class ShopCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Setup methods
     //
-    override func awakeFromNib() {
-        self.selectedStatusImageView.image = UIImage(named: "checkIcon")
-        self.selectedStatusImageView.isHidden = true
-    }
-    
     func displayContent(hero: Hero){
         self.hero = hero
         

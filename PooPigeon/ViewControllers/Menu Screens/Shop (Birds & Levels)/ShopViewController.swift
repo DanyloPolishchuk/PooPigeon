@@ -268,8 +268,34 @@ extension ShopViewController: UICollectionViewDataSource {
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
+        if collectionView == birdsCollectionView{
+            
+            if let selectedHeroIndexPath = self.selectedHeroIndexPath{
+                if selectedHeroIndexPath == indexPath {
+                    (cell as? ShopCollectionViewCell)?.selectCell()
+                }else{
+                    (cell as? ShopCollectionViewCell)?.deselectCell()
+                }
+            }
+            
+        }else{
+            
+            if let selectedLevelIndexPath = self.selectedLevelIndexPath{
+                if selectedLevelIndexPath == indexPath {
+                    (cell as? ShopCollectionViewCell)?.selectCell()
+                }else{
+                    (cell as? ShopCollectionViewCell)?.deselectCell()
+                }
+            }
+            
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                
         if collectionView == birdsCollectionView {
             if indexPath.row == heroes?.count { // unlockAllHeroes cell
                 let unlockAllCell = collectionView.dequeueReusableCell(withReuseIdentifier: unlockAllBirdsCellReuseIdentifier, for: indexPath) as! UnlockAllCollectionViewCell
@@ -279,10 +305,6 @@ extension ShopViewController: UICollectionViewDataSource {
             }else{ // regular bird cell
                 let birdCell = collectionView.dequeueReusableCell(withReuseIdentifier: birdCellReuseIdentifier, for: indexPath) as! ShopCollectionViewCell
                 birdCell.displayContent(hero: heroes![indexPath.row])
-                
-                if let selectedHeroIndexPath = self.selectedHeroIndexPath, selectedHeroIndexPath == indexPath {
-                    birdCell.selectCell()
-                }
                 
                 return birdCell
             }
@@ -295,10 +317,6 @@ extension ShopViewController: UICollectionViewDataSource {
             }else{ // regular level cell
                 let levelCell = collectionView.dequeueReusableCell(withReuseIdentifier: levelCellReuseIdentifier, for: indexPath) as! ShopCollectionViewCell
                 levelCell.displayContent(level: levels![indexPath.row])
-                
-                if let selectedLevelIndexPath = self.selectedLevelIndexPath, selectedLevelIndexPath == indexPath {
-                    levelCell.selectCell()
-                }
                 
                 return levelCell
             }

@@ -189,7 +189,7 @@
             "neededChallengeNumberValue" : 500,
             "currentChallengeNumberValueProgress" : 0,
             "levelNumber" : 6,
-            "levelMusicSoundFileName" : "POL-chamber-of-secrets-short",
+            "levelMusicSoundFileName" : "POL-bomberguy-short",
             "bird" : {
                 "birdNumber" : 6,
                 "birdName" : "Robot Bird",
@@ -244,7 +244,7 @@
                 "hero2IdleFrame2"
             ],
             "texture" : "hero2IdleFrame1",
-            "neededChallengeNumberValue" : 100,
+            "neededChallengeNumberValue" : 500,
             "challengeType" : "Total Score",
             "isUnlocked" : false,
             "number" : 2,
