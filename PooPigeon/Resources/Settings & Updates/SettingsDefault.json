@@ -207,6 +207,33 @@
             },
             "levelName" : "Future City",
             "levelSceneFileName" : "Level6Scene"
+        },
+        {
+            "levelPreviewImageName" : "level7BGWallpaper",
+            "levelChallengeType" : "Best Score",
+            "levelIsUnlocked" : false,
+            "levelChallengeScoreType" : "NumberValue",
+            "neededChallengeNumberValue" : 600,
+            "currentChallengeNumberValueProgress" : 0,
+            "levelNumber" : 7,
+            "levelMusicSoundFileName" : "POL-course-of-nature-short",
+            "bird" : {
+                "birdNumber" : 7,
+                "birdName" : "Strange japaneese tucan",
+                "birdSpawnPosition" : [
+                    0,
+                    744
+                ],
+                "birdTexture" : "bird7Frame1",
+                "birdAnimationTextureNames" : [
+                    "bird7Frame1",
+                    "bird7Frame2"
+                ],
+                "birdSoundFileName" : "",
+                "birdShootTextureName" : "bird7ShootFrame"
+            },
+            "levelName" : "Fuji",
+            "levelSceneFileName" : "Level7Scene"
         }
     ],
     
@@ -346,6 +373,29 @@
             ],
             "challengeScoreType" : "NumberValue",
             "name" : "Robot"
+        },
+        {
+            "currentChallengeNumberValueProgress" : 0,
+            "physicsBodyTexture" : "heroPhysicsBodyTexture",
+            "loseTextureNames" : [
+                "hero7LoseFrame1",
+                "hero7LoseFrame2"
+            ],
+            "idleTextureNames" : [
+                "hero7IdleFrame1",
+                "hero7IdleFrame2"
+            ],
+            "texture" : "hero7IdleFrame1",
+            "neededChallengeNumberValue" : 6500,
+            "challengeType" : "Total Score",
+            "isUnlocked" : false,
+            "number" : 7,
+            "hitTextureNames" : [
+                "hero6HitFrame1",
+                "hero6HitFrame2"
+            ],
+            "challengeScoreType" : "NumberValue",
+            "name" : "Ronin"
         }
     ],
     
@@ -379,6 +429,11 @@
             "wallpaperImageName" : "level6BGFrame1",
             "isWallpaperUnlocked" : false,
             "wallpaperNumber" : 6
+        },
+        {
+            "wallpaperImageName" : "level7BGWallpaper",
+            "isWallpaperUnlocked" : false,
+            "wallpaperNumber" : 7
         }
     ],
     
