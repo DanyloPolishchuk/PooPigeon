@@ -126,6 +126,10 @@
 		9E9EB3CC23E468B20082B6B1 /* POL-cactus-land-short.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E9EB3CA23E468B10082B6B1 /* POL-cactus-land-short.wav */; };
 		9EA5CECF23D737A600B7E290 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5CECE23D737A600B7E290 /* TutorialViewController.swift */; };
 		9EA5CED023D737A600B7E290 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5CECE23D737A600B7E290 /* TutorialViewController.swift */; };
+		9EB76B5223E4C0D9007DAE83 /* POL-stable-boy-short.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EB76B5123E4C0D9007DAE83 /* POL-stable-boy-short.wav */; };
+		9EB76B5323E4C0D9007DAE83 /* POL-stable-boy-short.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EB76B5123E4C0D9007DAE83 /* POL-stable-boy-short.wav */; };
+		9EB76B5523E4C100007DAE83 /* Level9Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9EB76B5423E4C100007DAE83 /* Level9Scene.sks */; };
+		9EB76B5623E4C100007DAE83 /* Level9Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9EB76B5423E4C100007DAE83 /* Level9Scene.sks */; };
 		9EC8192823DDEC7200682DE8 /* Level4Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9EC8192723DDEC7200682DE8 /* Level4Scene.sks */; };
 		9EC8192923DDEC7200682DE8 /* Level4Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9EC8192723DDEC7200682DE8 /* Level4Scene.sks */; };
 		9EC8192B23DE3ECE00682DE8 /* Level5Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9EC8192A23DE3ECE00682DE8 /* Level5Scene.sks */; };
@@ -218,6 +222,8 @@
 		9E9EB3C723E367630082B6B1 /* Level8Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level8Scene.sks; sourceTree = "<group>"; };
 		9E9EB3CA23E468B10082B6B1 /* POL-cactus-land-short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "POL-cactus-land-short.wav"; sourceTree = "<group>"; };
 		9EA5CECE23D737A600B7E290 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		9EB76B5123E4C0D9007DAE83 /* POL-stable-boy-short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "POL-stable-boy-short.wav"; sourceTree = "<group>"; };
+		9EB76B5423E4C100007DAE83 /* Level9Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level9Scene.sks; sourceTree = "<group>"; };
 		9EC8192723DDEC7200682DE8 /* Level4Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4Scene.sks; sourceTree = "<group>"; };
 		9EC8192A23DE3ECE00682DE8 /* Level5Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5Scene.sks; sourceTree = "<group>"; };
 		9EC8192D23DE43F700682DE8 /* POL-waving-grass-short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "POL-waving-grass-short.wav"; sourceTree = "<group>"; };
@@ -311,6 +317,7 @@
 				9E7AA8C723E0B84E00222F78 /* POL-bomberguy-short.wav */,
 				9E1F33E623E2353000E5AC74 /* POL-course-of-nature-short.wav */,
 				9E9EB3CA23E468B10082B6B1 /* POL-cactus-land-short.wav */,
+				9EB76B5123E4C0D9007DAE83 /* POL-stable-boy-short.wav */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -496,6 +503,7 @@
 				9E9A8B8323E08BA4000F0E81 /* Level6Scene.sks */,
 				9ED36D8D23E22F7200288D35 /* Level7Scene.sks */,
 				9E9EB3C723E367630082B6B1 /* Level8Scene.sks */,
+				9EB76B5423E4C100007DAE83 /* Level9Scene.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -707,6 +715,7 @@
 				9ED36D8F23E22F7200288D35 /* Level7Scene.sks in Resources */,
 				9E82001123BE3A5C0026A1EC /* Main.storyboard in Resources */,
 				9E82001223BE3A5C0026A1EC /* Level1Scene.sks in Resources */,
+				9EB76B5623E4C100007DAE83 /* Level9Scene.sks in Resources */,
 				9EC8192923DDEC7200682DE8 /* Level4Scene.sks in Resources */,
 				9E7132B223D8EB4C00BAFA93 /* Level3Scene.sks in Resources */,
 				9E2A954223CF563100B01EC1 /* SparklesGoldEmitter.sks in Resources */,
@@ -721,6 +730,7 @@
 				9E7AA8C923E0B84F00222F78 /* POL-bomberguy-short.wav in Resources */,
 				9E2A953923CF498000B01EC1 /* SparklesWhiteEmitter.sks in Resources */,
 				9E5633AE23D0C7A10046AFC2 /* Level2Scene.sks in Resources */,
+				9EB76B5323E4C0D9007DAE83 /* POL-stable-boy-short.wav in Resources */,
 				9E82001523BE3A5C0026A1EC /* Assets.xcassets in Resources */,
 				9E93032223D233170074EA95 /* SettingsDefault.json in Resources */,
 				9EC8192F23DE43F700682DE8 /* POL-waving-grass-short.wav in Resources */,
@@ -750,6 +760,7 @@
 				9ED36D8E23E22F7200288D35 /* Level7Scene.sks in Resources */,
 				9EDDE3D5237A1C2C00A06863 /* Main.storyboard in Resources */,
 				9EDDE3CC237A1C2C00A06863 /* Level1Scene.sks in Resources */,
+				9EB76B5523E4C100007DAE83 /* Level9Scene.sks in Resources */,
 				9EC8192823DDEC7200682DE8 /* Level4Scene.sks in Resources */,
 				9E7132B123D8EB4C00BAFA93 /* Level3Scene.sks in Resources */,
 				9E2A954123CF563100B01EC1 /* SparklesGoldEmitter.sks in Resources */,
@@ -764,6 +775,7 @@
 				9E7AA8C823E0B84F00222F78 /* POL-bomberguy-short.wav in Resources */,
 				9E2A953823CF498000B01EC1 /* SparklesWhiteEmitter.sks in Resources */,
 				9E5633AD23D0C7A10046AFC2 /* Level2Scene.sks in Resources */,
+				9EB76B5223E4C0D9007DAE83 /* POL-stable-boy-short.wav in Resources */,
 				9EDDA7B923AC1A140006FB3C /* Assets.xcassets in Resources */,
 				9E93032123D233170074EA95 /* SettingsDefault.json in Resources */,
 				9EC8192E23DE43F700682DE8 /* POL-waving-grass-short.wav in Resources */,
