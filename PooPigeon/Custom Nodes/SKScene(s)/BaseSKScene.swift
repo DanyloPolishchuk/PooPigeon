@@ -142,6 +142,7 @@ class BaseSKScene: SKScene {
         maxHeroXCoordinate = sceneRightEdgeXCoordinate - maximumHeroDistanceToEdge
         
         widthOfVisibleAreaThird = widthOfVisibleArea / 3
+        centerBirdNodePosition = currentLevel.bird.birdSpawnPosition
         birdNodePositions = [
             CGPoint(x: -widthOfVisibleAreaThird, y: centerBirdNodePosition.y),
             centerBirdNodePosition,

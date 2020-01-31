@@ -110,6 +110,7 @@ class MainMenuViewController: BaseBannerAdViewController {
             self.bottomRightButtonConstraint.constant = -self.rightBottomButton.frame.width - 8
             self.playButtonConstraint.constant = -self.playButton.frame.height - 66
             self.logoImageView.alpha = 0.0
+            self.tutorialButton.isHidden = true
             
             self.viewUI.layoutIfNeeded()
         }) { (animationsFinishedBeforeCompletion) in
@@ -128,6 +129,7 @@ class MainMenuViewController: BaseBannerAdViewController {
             
             self.viewUI.layoutIfNeeded()
         }) { (animationsFinishedBeforeCompletion) in
+            self.setupTutorialButton()
             completion()
         }
     }

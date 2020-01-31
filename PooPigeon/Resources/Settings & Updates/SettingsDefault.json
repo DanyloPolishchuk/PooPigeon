@@ -234,6 +234,33 @@
             },
             "levelName" : "Fuji",
             "levelSceneFileName" : "Level7Scene"
+        },
+        {
+            "levelPreviewImageName" : "level8BGWallpaper",
+            "levelChallengeType" : "Best Score",
+            "levelIsUnlocked" : false,
+            "levelChallengeScoreType" : "NumberValue",
+            "neededChallengeNumberValue" : 700,
+            "currentChallengeNumberValueProgress" : 0,
+            "levelNumber" : 8,
+            "levelMusicSoundFileName" : "POL-cactus-land-short",
+            "bird" : {
+                "birdNumber" : 8,
+                "birdName" : "Scavenger",
+                "birdSpawnPosition" : [
+                    0,
+                    872
+                ],
+                "birdTexture" : "bird8Frame1",
+                "birdAnimationTextureNames" : [
+                    "bird8Frame1",
+                    "bird8Frame2"
+                ],
+                "birdSoundFileName" : "",
+                "birdShootTextureName" : "bird8ShootFrame"
+            },
+            "levelName" : "Wild West",
+            "levelSceneFileName" : "Level8Scene"
         }
     ],
     
@@ -391,11 +418,34 @@
             "isUnlocked" : false,
             "number" : 7,
             "hitTextureNames" : [
-                "hero6HitFrame1",
-                "hero6HitFrame2"
+                "hero7HitFrame1",
+                "hero7HitFrame2"
             ],
             "challengeScoreType" : "NumberValue",
             "name" : "Ronin"
+        },
+        {
+            "currentChallengeNumberValueProgress" : 0,
+            "physicsBodyTexture" : "heroPhysicsBodyTexture",
+            "loseTextureNames" : [
+                "hero8LoseFrame1",
+                "hero8LoseFrame2"
+            ],
+            "idleTextureNames" : [
+                "hero8IdleFrame1",
+                "hero8IdleFrame2"
+            ],
+            "texture" : "hero8IdleFrame1",
+            "neededChallengeNumberValue" : 8000,
+            "challengeType" : "Total Score",
+            "isUnlocked" : false,
+            "number" : 8,
+            "hitTextureNames" : [
+                "hero8HitFrame1",
+                "hero8HitFrame2"
+            ],
+            "challengeScoreType" : "NumberValue",
+            "name" : "The Good"
         }
     ],
     
@@ -434,6 +484,11 @@
             "wallpaperImageName" : "level7BGWallpaper",
             "isWallpaperUnlocked" : false,
             "wallpaperNumber" : 7
+        },
+        {
+            "wallpaperImageName" : "level8BGWallpaper",
+            "isWallpaperUnlocked" : false,
+            "wallpaperNumber" : 8
         }
     ],
     
