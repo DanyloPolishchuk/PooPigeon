@@ -17,6 +17,8 @@
 		9E0D4A3B23C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D4A3923C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift */; };
 		9E16740823A2F24D00322AFF /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E16740723A2F24D00322AFF /* ShopViewController.swift */; };
 		9E16740A23A3C34E00322AFF /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E16740923A3C34E00322AFF /* ShopCollectionViewCell.swift */; };
+		9E17325623E5E20B004E11F3 /* GetAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E17325523E5E20B004E11F3 /* GetAllViewController.swift */; };
+		9E17325723E5E20B004E11F3 /* GetAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E17325523E5E20B004E11F3 /* GetAllViewController.swift */; };
 		9E1EF6DE23D4F7E600B00D7A /* BonusHitPlayer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E1EF6D923D4F7E500B00D7A /* BonusHitPlayer.wav */; };
 		9E1EF6DF23D4F7E600B00D7A /* BonusHitPlayer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E1EF6D923D4F7E500B00D7A /* BonusHitPlayer.wav */; };
 		9E1EF6E023D4F7E600B00D7A /* EggHitPlayer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E1EF6DA23D4F7E500B00D7A /* EggHitPlayer.wav */; };
@@ -172,6 +174,7 @@
 		9E0D4A3923C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsCantLoadAlertViewController.swift; sourceTree = "<group>"; };
 		9E16740723A2F24D00322AFF /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		9E16740923A3C34E00322AFF /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E17325523E5E20B004E11F3 /* GetAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllViewController.swift; sourceTree = "<group>"; };
 		9E1EF6D923D4F7E500B00D7A /* BonusHitPlayer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BonusHitPlayer.wav; sourceTree = "<group>"; };
 		9E1EF6DA23D4F7E500B00D7A /* EggHitPlayer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = EggHitPlayer.wav; sourceTree = "<group>"; };
 		9E1EF6DB23D4F7E500B00D7A /* AnyHitGround.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AnyHitGround.wav; sourceTree = "<group>"; };
@@ -289,6 +292,7 @@
 				9E16740723A2F24D00322AFF /* ShopViewController.swift */,
 				9E16740923A3C34E00322AFF /* ShopCollectionViewCell.swift */,
 				9EEA2A9723C9064F00105B4E /* UnlockAllCollectionViewCell.swift */,
+				9E17325523E5E20B004E11F3 /* GetAllViewController.swift */,
 			);
 			path = "Shop (Birds & Levels)";
 			sourceTree = "<group>";
@@ -911,6 +915,7 @@
 				9E82000323BE3A5C0026A1EC /* AppDelegate.swift in Sources */,
 				9E82000423BE3A5C0026A1EC /* SettingsViewController.swift in Sources */,
 				9E82000523BE3A5C0026A1EC /* NotificationNames.swift in Sources */,
+				9E17325723E5E20B004E11F3 /* GetAllViewController.swift in Sources */,
 				9E82000623BE3A5C0026A1EC /* BaseAudioViewController.swift in Sources */,
 				9E82000723BE3A5C0026A1EC /* ShopViewController.swift in Sources */,
 				9EEA2A9623C8D79100105B4E /* IAPProducts.swift in Sources */,
@@ -954,6 +959,7 @@
 				9EDDE3CA237A1C2C00A06863 /* AppDelegate.swift in Sources */,
 				9E8FC85523997A8200A576C0 /* SettingsViewController.swift in Sources */,
 				9E8FC84E2392522000A576C0 /* NotificationNames.swift in Sources */,
+				9E17325623E5E20B004E11F3 /* GetAllViewController.swift in Sources */,
 				9E8FC85323971D5700A576C0 /* BaseAudioViewController.swift in Sources */,
 				9E16740823A2F24D00322AFF /* ShopViewController.swift in Sources */,
 				9EEA2A9523C8D79100105B4E /* IAPProducts.swift in Sources */,

@@ -17,6 +17,7 @@ class UnlockAllCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         unlockButton.setBackgroundImage(UIImage(named: "bigButtonImagePressed"), for: .highlighted)
+        // setup localized text & font
     }
     
     @IBAction func unlockAction(_ sender: UIButton) {

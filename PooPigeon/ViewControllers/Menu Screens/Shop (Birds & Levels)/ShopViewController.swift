@@ -38,6 +38,8 @@ class ShopViewController: BaseBannerAdViewController {
     @IBOutlet weak var viewUI: UIView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var backButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var getAllButton: UIButton!
+    @IBOutlet weak var getAllButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var previewButton: UIButton!
     @IBOutlet weak var previewButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionViewsContainerView: UIView!
@@ -51,6 +53,7 @@ class ShopViewController: BaseBannerAdViewController {
         
         setupIAP()
         setupTopButtons()
+//        setupGetAllButton()
         setupDefaultConstraints()
         updateDataSources()
         setupDataSources()
@@ -59,18 +62,33 @@ class ShopViewController: BaseBannerAdViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        unhideUI {}
+        unhideUI {
+            self.setupGetAllButton()
+        }
     }
     
     //MARK: - Setup methods
     //
     func setupTopButtons(){
         backButton.setImage(UIImage(named: "backButtonPressed"), for: .highlighted)
+        getAllButton.setBackgroundImage(UIImage(named: "bigButtonRedImagePressed"), for: .highlighted)
         previewButton.setImage(UIImage(named: "previewButtonPressed"), for: .highlighted)
+    }
+    func setupGetAllButton(){
+        let shouldShowGetAll = IAPHelper.canMakePayments() && !Settings.shared.isEveryHeroUnlocked && !Settings.shared.isEveryLevelUnlocked
+        self.getAllButton.isHidden = !shouldShowGetAll
+        if shouldShowGetAll {
+            UIView.animate(withDuration: 0.5, delay: 0, options: [.allowUserInteraction ,.repeat, .autoreverse, .beginFromCurrentState], animations: {
+                self.getAllButton.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            }) { (animationsFinishedBeforeCompletion) in
+                self.getAllButton.transform = .identity
+            }
+        }
     }
     func setupDefaultConstraints(){
         self.backButtonConstraint.constant = -self.backButton.frame.width - 8
         self.previewButtonConstraint.constant = -self.previewButton.frame.width - 8
+        self.getAllButtonConstraint.constant = -self.getAllButton.frame.width - 8
         self.collectionViewsContainerView.alpha = 0.0
     }
     func updateDataSources(){
@@ -135,13 +153,12 @@ class ShopViewController: BaseBannerAdViewController {
     func setupIAP(){
         NotificationCenter.default.addObserver(self, selector: #selector(allBirdsUnlockedHandler), name: .unlockAllHeroesPurchasedSuccessfully, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(allLevelsUnlockedHandler), name: .unlockAllLevelsPurchasedSuccessfully, object: nil)
-        //        SpinWheelSplash.screen.display()
+        NotificationCenter.default.addObserver(self, selector: #selector(allUnlockedHandler), name: .unlockAllPurchasedSuccessfully, object: nil)
         IAPProducts.store.requestProducts{ [weak self] success, products in
             guard let self = self else { return }
             if success {
                 self.products = products!
             }
-            //            SpinWheelSplash.screen.dismiss()
         }
     }
     
@@ -173,12 +190,29 @@ class ShopViewController: BaseBannerAdViewController {
         setupDefaultSelectedCells()
     }
     
+    func buyUnlockAll(){
+        for product in products {
+            if product.productIdentifier == IAPProducts.unlockAllIdentifier {
+                IAPProducts.store.buyProduct(product)
+                break
+            }
+        }
+    }
+    
+    @objc func allUnlockedHandler(){
+        setupGetAllButton()
+        birdsCollectionView.reloadData()
+        levelsCollectionView.reloadData()
+        setupDefaultSelectedCells()
+    }
+    
     //MARK: - Animation methods
     //
     func hideUI(completion: @escaping () -> () ){
         UIView.animate(withDuration: 0.25, animations: {
-            self.backButtonConstraint.constant = -self.backButton.frame.width - 8
-            self.previewButtonConstraint.constant = -self.previewButton.frame.width - 8
+            self.backButtonConstraint.constant      = -self.backButton.frame.width - 8
+            self.previewButtonConstraint.constant   = -self.previewButton.frame.width - 8
+            self.getAllButtonConstraint.constant    = -self.getAllButton.frame.width - 8
             self.collectionViewsContainerView.alpha = 0.0
             
             self.viewUI.layoutIfNeeded()
@@ -189,8 +223,9 @@ class ShopViewController: BaseBannerAdViewController {
     
     func unhideUI(completion: @escaping () -> () ){
         UIView.animate(withDuration: 0.25, animations: {
-            self.backButtonConstraint.constant = 8
-            self.previewButtonConstraint.constant = 8
+            self.backButtonConstraint.constant      = 8
+            self.previewButtonConstraint.constant   = 8
+            self.getAllButtonConstraint.constant    = 8
             self.collectionViewsContainerView.alpha = 1.0
             
             self.viewUI.layoutIfNeeded()
@@ -210,7 +245,8 @@ class ShopViewController: BaseBannerAdViewController {
     func hideUIForPreview(){
         isUIHiddenForPreview = true
         UIView.animate(withDuration: 0.25) {
-            self.backButtonConstraint.constant = -self.backButton.frame.width - 8
+            self.backButtonConstraint.constant      = -self.backButton.frame.width - 8
+            self.getAllButtonConstraint.constant    = -self.getAllButton.frame.width - 8
             self.collectionViewsContainerView.alpha = 0.0
 
             self.viewUI.layoutIfNeeded()
@@ -220,10 +256,19 @@ class ShopViewController: BaseBannerAdViewController {
     func unhideUIForPreview(){
         isUIHiddenForPreview = false
         UIView.animate(withDuration: 0.25) {
-            self.backButtonConstraint.constant = 8
+            self.backButtonConstraint.constant      = 8
+            self.getAllButtonConstraint.constant    = 8
             self.collectionViewsContainerView.alpha = 1.0
 
             self.viewUI.layoutIfNeeded()
+        }
+    }
+    
+    func showGetAllScreen(){
+        if let getAllVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "getAllScreenStoryboardIdentifier") as? GetAllViewController {
+            getAllVC.shopViewController = self
+            hideBannerView()
+            self.present(getAllVC, animated: true)
         }
     }
     
@@ -238,6 +283,9 @@ class ShopViewController: BaseBannerAdViewController {
                 self.mainMenuViewController.viewDidAppear(true)
             })
         }
+    }
+    @IBAction func getAllAction(_ sender: UIButton) {
+        showGetAllScreen()
     }
     @IBAction func previewAction(_ sender: UIButton) {
         NotificationCenter.default.post(name: .buttonPressed, object: nil)
