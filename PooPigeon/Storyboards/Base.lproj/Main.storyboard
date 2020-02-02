@@ -1263,7 +1263,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="6kL-Tm-EzO" secondAttribute="height" multiplier="1:1" id="N9P-c5-qFa"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="previewButtonNormal"/>
+                                                <state key="normal" title="Button" image="previewButtonNormal">
+                                                    <color key="titleColor" red="0.45490196078431372" green="0.24705882352941178" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="previewAction:" destination="oiI-oJ-IA8" eventType="touchUpInside" id="aHF-8L-foM"/>
                                                 </connections>
@@ -1404,14 +1406,21 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="180" height="191.5"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrU-OU-oes">
-                                                                                    <rect key="frame" x="22.5" y="62" width="135" height="67.5"/>
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zrU-OU-oes">
+                                                                                    <rect key="frame" x="9" y="55.5" width="162" height="81"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="zrU-OU-oes" secondAttribute="height" multiplier="2:1" id="a4s-gY-Gae"/>
                                                                                     </constraints>
-                                                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
-                                                                                    <state key="normal" title="UNLOCK ALL" backgroundImage="bigButtonImageNormal">
-                                                                                        <color key="titleColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <state key="normal" backgroundImage="bigButtonImageNormal">
+                                                                                        <attributedString key="attributedTitle">
+                                                                                            <fragment content="UNLOCK ALL HEROES">
+                                                                                                <attributes>
+                                                                                                    <color key="NSColor" red="0.59215686274509804" green="0.35686274509803922" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                    <font key="NSFont" size="20" name="VCROSDMono"/>
+                                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                                </attributes>
+                                                                                            </fragment>
+                                                                                        </attributedString>
                                                                                     </state>
                                                                                     <connections>
                                                                                         <action selector="unlockAction:" destination="PAE-I3-rXe" eventType="touchUpInside" id="rC3-Wm-tlu"/>
@@ -1422,7 +1431,7 @@
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstItem="zrU-OU-oes" firstAttribute="centerY" secondItem="PAE-I3-rXe" secondAttribute="centerY" id="UOY-0i-hGu"/>
-                                                                            <constraint firstItem="zrU-OU-oes" firstAttribute="width" secondItem="PAE-I3-rXe" secondAttribute="width" multiplier="0.75" id="VYl-UJ-cF4"/>
+                                                                            <constraint firstItem="zrU-OU-oes" firstAttribute="width" secondItem="PAE-I3-rXe" secondAttribute="width" multiplier="0.9" id="VYl-UJ-cF4"/>
                                                                             <constraint firstItem="zrU-OU-oes" firstAttribute="centerX" secondItem="PAE-I3-rXe" secondAttribute="centerX" id="uOa-kT-a9g"/>
                                                                         </constraints>
                                                                         <connections>
@@ -1548,14 +1557,21 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="213" height="193.5"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRd-5X-MZ5">
-                                                                                    <rect key="frame" x="40.5" y="63.5" width="132" height="66.5"/>
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRd-5X-MZ5">
+                                                                                    <rect key="frame" x="10.5" y="49" width="192" height="95.5"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="uRd-5X-MZ5" secondAttribute="height" multiplier="2:1" id="fZk-hG-0hx"/>
                                                                                     </constraints>
-                                                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
-                                                                                    <state key="normal" title="UNLOCK ALL" backgroundImage="bigButtonImageNormal">
-                                                                                        <color key="titleColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <state key="normal" backgroundImage="bigButtonImageNormal">
+                                                                                        <attributedString key="attributedTitle">
+                                                                                            <fragment content="UNLOCK ALL LEVELS">
+                                                                                                <attributes>
+                                                                                                    <color key="NSColor" red="0.59215686274509804" green="0.35686274509803922" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                    <font key="NSFont" size="20" name="VCROSDMono"/>
+                                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                                </attributes>
+                                                                                            </fragment>
+                                                                                        </attributedString>
                                                                                     </state>
                                                                                     <connections>
                                                                                         <action selector="unlockAction:" destination="Umv-Vy-RWv" eventType="touchUpInside" id="ds6-HY-goO"/>
@@ -1565,7 +1581,7 @@
                                                                         </view>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstItem="uRd-5X-MZ5" firstAttribute="width" secondItem="Umv-Vy-RWv" secondAttribute="width" multiplier="0.62" id="OU7-RC-3xZ"/>
+                                                                            <constraint firstItem="uRd-5X-MZ5" firstAttribute="width" secondItem="Umv-Vy-RWv" secondAttribute="width" multiplier="0.9" id="OU7-RC-3xZ"/>
                                                                             <constraint firstItem="uRd-5X-MZ5" firstAttribute="centerY" secondItem="Umv-Vy-RWv" secondAttribute="centerY" id="R2W-iQ-Lt5"/>
                                                                             <constraint firstItem="uRd-5X-MZ5" firstAttribute="centerX" secondItem="Umv-Vy-RWv" secondAttribute="centerX" id="ZlD-Sf-wik"/>
                                                                         </constraints>
