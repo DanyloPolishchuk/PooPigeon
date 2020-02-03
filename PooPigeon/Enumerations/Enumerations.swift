@@ -20,9 +20,9 @@ enum PhysicsCategory: UInt32 {
 }
 
 enum Language: String, Codable {
-    case English
-    case Ukrainian
-    case Russian
+    case English = "en"
+    case Ukrainian = "uk"
+    case Russian = "ru"
 }
 
 enum ChallengeType: String, Codable {

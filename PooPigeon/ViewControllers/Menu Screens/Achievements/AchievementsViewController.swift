@@ -256,10 +256,10 @@ extension AchievementsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let headerCell = tableView.dequeueReusableCell(withIdentifier: headerViewCellReuseIdentifier) as? HeaderTableViewCell {
-            if section == 0{ // replace with localized strings
-                headerCell.displayContent(headerText: "PROGRESS")
+            if section == 0{
+                headerCell.displayContent(headerText: LocalizationHelper.defaultLocalizer.stringForKey(key: "PROGRESS"))
             }else{
-                headerCell.displayContent(headerText: "WALLPAPERS")
+                headerCell.displayContent(headerText: LocalizationHelper.defaultLocalizer.stringForKey(key: "WALLPAPERS"))
             }
             return headerCell
         }else{

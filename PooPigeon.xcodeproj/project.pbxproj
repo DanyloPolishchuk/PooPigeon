@@ -19,6 +19,8 @@
 		9E16740A23A3C34E00322AFF /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E16740923A3C34E00322AFF /* ShopCollectionViewCell.swift */; };
 		9E17325623E5E20B004E11F3 /* GetAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E17325523E5E20B004E11F3 /* GetAllViewController.swift */; };
 		9E17325723E5E20B004E11F3 /* GetAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E17325523E5E20B004E11F3 /* GetAllViewController.swift */; };
+		9E17325923E73F4F004E11F3 /* haxrcorp_4089_cyrillic_altgr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E17325823E73F4E004E11F3 /* haxrcorp_4089_cyrillic_altgr.ttf */; };
+		9E17325A23E73F4F004E11F3 /* haxrcorp_4089_cyrillic_altgr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E17325823E73F4E004E11F3 /* haxrcorp_4089_cyrillic_altgr.ttf */; };
 		9E1EF6DE23D4F7E600B00D7A /* BonusHitPlayer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E1EF6D923D4F7E500B00D7A /* BonusHitPlayer.wav */; };
 		9E1EF6DF23D4F7E600B00D7A /* BonusHitPlayer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E1EF6D923D4F7E500B00D7A /* BonusHitPlayer.wav */; };
 		9E1EF6E023D4F7E600B00D7A /* EggHitPlayer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E1EF6DA23D4F7E500B00D7A /* EggHitPlayer.wav */; };
@@ -110,6 +112,14 @@
 		9E82FFFD23BE3A5C0026A1EC /* WallpaperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5468FE239D552400857D44 /* WallpaperTableViewCell.swift */; };
 		9E82FFFE23BE3A5C0026A1EC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E382197238714EA00244205 /* Protocols.swift */; };
 		9E82FFFF23BE3A5C0026A1EC /* HeroSKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C9A172391EAEB00B7AC37 /* HeroSKSpriteNode.swift */; };
+		9E8BBF7423E861C700C6AF91 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E8BBF7723E861C700C6AF91 /* Localizable.strings */; };
+		9E8BBF7523E861C700C6AF91 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E8BBF7723E861C700C6AF91 /* Localizable.strings */; };
+		9E8BBF7B23E865E500C6AF91 /* LocalizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8BBF7A23E865E500C6AF91 /* LocalizationHelper.swift */; };
+		9E8BBF7C23E865E500C6AF91 /* LocalizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8BBF7A23E865E500C6AF91 /* LocalizationHelper.swift */; };
+		9E8BBF7E23E86B3000C6AF91 /* LocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8BBF7D23E86B3000C6AF91 /* LocalizedLabel.swift */; };
+		9E8BBF7F23E86B3000C6AF91 /* LocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8BBF7D23E86B3000C6AF91 /* LocalizedLabel.swift */; };
+		9E8BBF8123E86B7200C6AF91 /* LocalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8BBF8023E86B7200C6AF91 /* LocalizedButton.swift */; };
+		9E8BBF8223E86B7200C6AF91 /* LocalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8BBF8023E86B7200C6AF91 /* LocalizedButton.swift */; };
 		9E8FC848239231D800A576C0 /* BirdSKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8FC847239231D800A576C0 /* BirdSKSpriteNode.swift */; };
 		9E8FC84E2392522000A576C0 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8FC84D2392522000A576C0 /* NotificationNames.swift */; };
 		9E8FC85323971D5700A576C0 /* BaseAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8FC85223971D5700A576C0 /* BaseAudioViewController.swift */; };
@@ -175,6 +185,7 @@
 		9E16740723A2F24D00322AFF /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		9E16740923A3C34E00322AFF /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E17325523E5E20B004E11F3 /* GetAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllViewController.swift; sourceTree = "<group>"; };
+		9E17325823E73F4E004E11F3 /* haxrcorp_4089_cyrillic_altgr.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = haxrcorp_4089_cyrillic_altgr.ttf; sourceTree = "<group>"; };
 		9E1EF6D923D4F7E500B00D7A /* BonusHitPlayer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BonusHitPlayer.wav; sourceTree = "<group>"; };
 		9E1EF6DA23D4F7E500B00D7A /* EggHitPlayer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = EggHitPlayer.wav; sourceTree = "<group>"; };
 		9E1EF6DB23D4F7E500B00D7A /* AnyHitGround.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AnyHitGround.wav; sourceTree = "<group>"; };
@@ -213,6 +224,12 @@
 		9E82001B23BE3A5C0026A1EC /* PooPigeon - Release.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PooPigeon - Release.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E82001C23BE3A5C0026A1EC /* Info-Release.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Release.plist"; path = "/Users/danylopolishchuk/Documents/KPI/3 Курс/SpriteKit/PooPigeon/Info-Release.plist"; sourceTree = "<absolute>"; };
 		9E82FFEB23B796CE0026A1EC /* BaseBannerAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBannerAdViewController.swift; sourceTree = "<group>"; };
+		9E8BBF7623E861C700C6AF91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9E8BBF7823E8632200C6AF91 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9E8BBF7923E8645500C6AF91 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9E8BBF7A23E865E500C6AF91 /* LocalizationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationHelper.swift; sourceTree = "<group>"; };
+		9E8BBF7D23E86B3000C6AF91 /* LocalizedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLabel.swift; sourceTree = "<group>"; };
+		9E8BBF8023E86B7200C6AF91 /* LocalizedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedButton.swift; sourceTree = "<group>"; };
 		9E8FC847239231D800A576C0 /* BirdSKSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdSKSpriteNode.swift; sourceTree = "<group>"; };
 		9E8FC84D2392522000A576C0 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		9E8FC85223971D5700A576C0 /* BaseAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAudioViewController.swift; sourceTree = "<group>"; };
@@ -411,6 +428,7 @@
 		9E43707C238C439100B7D42D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				9E17325823E73F4E004E11F3 /* haxrcorp_4089_cyrillic_altgr.ttf */,
 				9E43707D238C43D000B7D42D /* VCR_OSD_MONO_1.001.ttf */,
 			);
 			path = Fonts;
@@ -439,6 +457,17 @@
 				9E16740623A2F0EB00322AFF /* Shop (Birds & Levels) */,
 			);
 			path = "Menu Screens";
+			sourceTree = "<group>";
+		};
+		9E8BBF7023E85D0D00C6AF91 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				9E8BBF7A23E865E500C6AF91 /* LocalizationHelper.swift */,
+				9E8BBF7D23E86B3000C6AF91 /* LocalizedLabel.swift */,
+				9E8BBF8023E86B7200C6AF91 /* LocalizedButton.swift */,
+				9E8BBF7723E861C700C6AF91 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		9E8FC84B239251D400A576C0 /* Components */ = {
@@ -581,6 +610,7 @@
 				9E9862AD23898DFE00809E2B /* ViewControllers */,
 				9E43707B238C436900B7D42D /* Resources */,
 				9E186F3923A6A70A0004E1B1 /* Storyboards */,
+				9E8BBF7023E85D0D00C6AF91 /* Localization */,
 				9EDDE3D6237A1C2E00A06863 /* Assets.xcassets */,
 				9EDDE3DB237A1C2E00A06863 /* Info-Debug.plist */,
 				9E82001C23BE3A5C0026A1EC /* Info-Release.plist */,
@@ -691,6 +721,8 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
+				ru,
 			);
 			mainGroup = 9EDDE3BD237A1C2B00A06863;
 			productRefGroup = 9EDDE3C7237A1C2C00A06863 /* Products */;
@@ -713,6 +745,7 @@
 				9E7132B523D8EEB300BAFA93 /* POL-pyramid-sands-short.wav in Resources */,
 				9E2A954623CF59A500B01EC1 /* ExplosionBrownEmitter.sks in Resources */,
 				9E9EB3C923E367630082B6B1 /* Level8Scene.sks in Resources */,
+				9E8BBF7523E861C700C6AF91 /* Localizable.strings in Resources */,
 				9E1EF6E723D4F7E600B00D7A /* PooHitPlayer.wav in Resources */,
 				9E82000F23BE3A5C0026A1EC /* VCR_OSD_MONO_1.001.ttf in Resources */,
 				9E82001023BE3A5C0026A1EC /* RainEmitter.sks in Resources */,
@@ -720,6 +753,7 @@
 				9E82001123BE3A5C0026A1EC /* Main.storyboard in Resources */,
 				9E82001223BE3A5C0026A1EC /* Level1Scene.sks in Resources */,
 				9EB76B5623E4C100007DAE83 /* Level9Scene.sks in Resources */,
+				9E17325A23E73F4F004E11F3 /* haxrcorp_4089_cyrillic_altgr.ttf in Resources */,
 				9EC8192923DDEC7200682DE8 /* Level4Scene.sks in Resources */,
 				9E7132B223D8EB4C00BAFA93 /* Level3Scene.sks in Resources */,
 				9E2A954223CF563100B01EC1 /* SparklesGoldEmitter.sks in Resources */,
@@ -758,6 +792,7 @@
 				9E7132B423D8EEB300BAFA93 /* POL-pyramid-sands-short.wav in Resources */,
 				9E2A954523CF59A500B01EC1 /* ExplosionBrownEmitter.sks in Resources */,
 				9E9EB3C823E367630082B6B1 /* Level8Scene.sks in Resources */,
+				9E8BBF7423E861C700C6AF91 /* Localizable.strings in Resources */,
 				9E1EF6E623D4F7E600B00D7A /* PooHitPlayer.wav in Resources */,
 				9E581B52239EE7FA000F7B04 /* VCR_OSD_MONO_1.001.ttf in Resources */,
 				9EDDA7B823AC1A140006FB3C /* RainEmitter.sks in Resources */,
@@ -765,6 +800,7 @@
 				9EDDE3D5237A1C2C00A06863 /* Main.storyboard in Resources */,
 				9EDDE3CC237A1C2C00A06863 /* Level1Scene.sks in Resources */,
 				9EB76B5523E4C100007DAE83 /* Level9Scene.sks in Resources */,
+				9E17325923E73F4F004E11F3 /* haxrcorp_4089_cyrillic_altgr.ttf in Resources */,
 				9EC8192823DDEC7200682DE8 /* Level4Scene.sks in Resources */,
 				9E7132B123D8EB4C00BAFA93 /* Level3Scene.sks in Resources */,
 				9E2A954123CF563100B01EC1 /* SparklesGoldEmitter.sks in Resources */,
@@ -907,6 +943,7 @@
 				9E2A954B23CFDF8F00B01EC1 /* SKSPriteNode+GlowingEffect.swift in Sources */,
 				9E82FFFF23BE3A5C0026A1EC /* HeroSKSpriteNode.swift in Sources */,
 				9E93031E23D1F8130074EA95 /* Hero.swift in Sources */,
+				9E8BBF8223E86B7200C6AF91 /* LocalizedButton.swift in Sources */,
 				9EEA2A9323C8CF2300105B4E /* IAPHelper.swift in Sources */,
 				9E82000023BE3A5C0026A1EC /* BaseSKScene.swift in Sources */,
 				9EE81A2523C22BC7006045CC /* ImageLibraryAccessAlertViewController.swift in Sources */,
@@ -916,10 +953,12 @@
 				9E82000423BE3A5C0026A1EC /* SettingsViewController.swift in Sources */,
 				9E82000523BE3A5C0026A1EC /* NotificationNames.swift in Sources */,
 				9E17325723E5E20B004E11F3 /* GetAllViewController.swift in Sources */,
+				9E8BBF7C23E865E500C6AF91 /* LocalizationHelper.swift in Sources */,
 				9E82000623BE3A5C0026A1EC /* BaseAudioViewController.swift in Sources */,
 				9E82000723BE3A5C0026A1EC /* ShopViewController.swift in Sources */,
 				9EEA2A9623C8D79100105B4E /* IAPProducts.swift in Sources */,
 				9E1EF6ED23D6481800B00D7A /* CreditsViewController.swift in Sources */,
+				9E8BBF7F23E86B3000C6AF91 /* LocalizedLabel.swift in Sources */,
 				9E82000823BE3A5C0026A1EC /* Enumerations.swift in Sources */,
 				9E82000923BE3A5C0026A1EC /* HeaderTableViewCell.swift in Sources */,
 				9E0D4A3B23C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift in Sources */,
@@ -951,6 +990,7 @@
 				9E2A954A23CFDF8F00B01EC1 /* SKSPriteNode+GlowingEffect.swift in Sources */,
 				9E6C9A182391EAEB00B7AC37 /* HeroSKSpriteNode.swift in Sources */,
 				9E93031D23D1F8130074EA95 /* Hero.swift in Sources */,
+				9E8BBF8123E86B7200C6AF91 /* LocalizedButton.swift in Sources */,
 				9EEA2A9223C8CF2300105B4E /* IAPHelper.swift in Sources */,
 				9E3821952387134300244205 /* BaseSKScene.swift in Sources */,
 				9EE81A2423C22BC7006045CC /* ImageLibraryAccessAlertViewController.swift in Sources */,
@@ -960,10 +1000,12 @@
 				9E8FC85523997A8200A576C0 /* SettingsViewController.swift in Sources */,
 				9E8FC84E2392522000A576C0 /* NotificationNames.swift in Sources */,
 				9E17325623E5E20B004E11F3 /* GetAllViewController.swift in Sources */,
+				9E8BBF7B23E865E500C6AF91 /* LocalizationHelper.swift in Sources */,
 				9E8FC85323971D5700A576C0 /* BaseAudioViewController.swift in Sources */,
 				9E16740823A2F24D00322AFF /* ShopViewController.swift in Sources */,
 				9EEA2A9523C8D79100105B4E /* IAPProducts.swift in Sources */,
 				9E1EF6EC23D6481800B00D7A /* CreditsViewController.swift in Sources */,
+				9E8BBF7E23E86B3000C6AF91 /* LocalizedLabel.swift in Sources */,
 				9EDDE3E3237B390300A06863 /* Enumerations.swift in Sources */,
 				9E643F7A239ECD3600BB5FC0 /* HeaderTableViewCell.swift in Sources */,
 				9E0D4A3A23C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift in Sources */,
@@ -975,6 +1017,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		9E8BBF7723E861C700C6AF91 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E8BBF7623E861C700C6AF91 /* en */,
+				9E8BBF7823E8632200C6AF91 /* uk */,
+				9E8BBF7923E8645500C6AF91 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		9EDDE3D3237A1C2C00A06863 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1040,6 +1092,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1101,6 +1154,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -50,7 +50,6 @@ class MainMenuViewController: BaseBannerAdViewController {
         print("MainMenuViewController viewWillAppear called")
         setupDefaultConstraints()
         setupButtons()
-        setupTutorialButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {

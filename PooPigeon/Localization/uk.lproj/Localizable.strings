@@ -1,0 +1,114 @@
+/* 
+  Localizable.strings
+  PooPigeon
+
+  Created by Danylo Polishchuk on 2/3/20.
+  Copyright © 2020 Polishchuk company. All rights reserved.
+*/
+
+// UKRAINIAN
+
+//MARK: - SettingsViewController
+//
+"Settings" = "Налаштування";
+"Sound" = "Звук";
+"Music" = "Музика";
+"Language" = "Мова";
+"Like" = "Лайкнути";
+"Share" = "Поділитись";
+"Credits" = "Титри";
+"Contact Info" = "Контакти";
+"Restore Purchases" = "Відновити покупки";
+"Remove Ads" = "Видалити рекламу";
+"UI Hand" = "Рука інтерфейсу";
+
+//MARK: - TutorialViewController
+//
+"Tutorial" = "Інструкція";
+"Avoid" = "Уникайте";
+"Catch" = "Ловіть";
+"100% Catch" = "100% Ловіть";
+"Do not show anymore" = "Більше не показувати";
+
+//MARK: - AdsCantLoadAlertViewController
+//
+"needInternetConnection" = "Для завантаження оголошень потрібне підключення до Інтернету.";
+
+//MARK: - ImageLibraryAccessAlertViewController
+//
+"needImageLibraryAccess" = "Для збереження зображень необхідний доступ до бібліотеки зображень";
+"Settings" = "НАЛАШТУВАННЯ";
+
+//MARK: - ContactUsViewController
+//
+"emailCopied" = "ІМЕЙЛ СКОПІЙОВАНО";
+"contactUS" = "Зв'яжіться З Нами";
+"foundABug" = "Знайшли помилку? Надішліть нам електронний лист за адресою";
+"emailUs" = "НАДІСЛАТИ";
+
+//MARK: - CreditsViewController
+//
+"Credits" = "Титри";
+"thankYouForPlaying" = "Дякую, що грали в мою гру";
+"musicBy" = "Автор музики:";
+
+//MARK: - GetAllViewController
+//
+"getAllLabelText" = "Всі рівні та герої. Знижка 50%";
+"getAllButtonText" = "РОЗБЛОКУВАТИ";
+
+//MARK: - PauseViewController
+//
+"pause" = "ПАУЗА";
+"gameOver" = "ГРА ЗАКІНЧЕНА";
+"best" = "НАЙКРАЩИЙ";
+"total" = "ЗАГАЛЬНИЙ";
+
+//MARK: - AchievementsViewController
+//
+// general
+"achievements" = "ДОСЯГНЕННЯ";
+"unlock" = "РОЗБЛОКУВАТИ";
+// headers
+"PROGRESS" = "ПРОГРЕС";
+"WALLPAPERS" = "ШПАЛЕРИ";
+//MARK: Localized challenges
+"Default" = "За замовчуванням";
+"Best Score" = "Найкращий Рахунок";
+"Total Score" = "Загальний Рахунок";
+"Time Spent In Game" = "Час Проведений У Грі";
+"Launch Game" = "Кількість Запусків";
+"Launch Days" = "Кількість Днів";
+"Launch At Day" = "Запуск У День";
+"Lose Score" = "Кількість Програшів";
+"Like Us" = "Лайкніть Нас";
+"Share Us" = "Поділіться";
+"Review Us" = "Напишіть відгук";
+
+//MARK: - ShopViewController
+//
+"getAll50Off" = "ЗНИЖКА 50% НА ВСЕ";
+"unlockAllHeroes" = "РОЗБЛОКУВАТИ ВСІХ ГЕРОЇВ";
+"unlockAllLevels" = "РОЗБЛОКУВАТИ ВСІ РІВНІ";
+"timeInGame" = "Час у грі";
+"timeLeft" = "Залишилось часу";
+//MARK: Hero names localization
+"Casey" = "Кейсі";
+"Steve" = "Стів";
+"Pharaoh" = "Фараон";
+"Houston" = "Х'юстон";
+"Scarecrow" = "Опудало";
+"Robot" = "Робот";
+"Ronin" = "Ронін";
+"The Good" = "Хороший";
+"Parzival" = "Парсіваль";
+//MARK: Level names localization
+"City" = "Місто";
+"Cave" = "Печера";
+"Pyramids" = "Піраміди";
+"Space" = "Космос";
+"Halloween" = "Хеллоуїн";
+"Future City" = "Місто Майбутнього";
+"Fuji" = "Фудзі";
+"Wild West" = "Дикий Захід";
+"Forest" = "Ліс";

@@ -28,19 +28,18 @@ class ShopCollectionViewCell: UICollectionViewCell {
         
         birdOrLevelImageView.image = UIImage(named: hero.texture)
         unlockedStatusImageView.image = UIImage(named: hero.isUnlocked ? "unlockedIcon" : "lockedIcon")
-        nameLabel.text = hero.name
+        nameLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: hero.name)
         
         switch hero.challengeType {
         case .TotalTimeSpentInGame:
-            // replace with localized one
-            let localizedTimeInGameString = "Time in game"
+            let localizedTimeInGameString = LocalizationHelper.defaultLocalizer.stringForKey(key: "timeInGame")
             var neededTimeString = ""
             if let neededNumValue = hero.neededChallengeNumberValue{
                 neededTimeString = UInt.secondsToString(seconds: neededNumValue)
             }
             challengeTypeLabel.text = "\(localizedTimeInGameString): \(neededTimeString)"
         default:
-            challengeTypeLabel.text = hero.challengeType.rawValue
+            challengeTypeLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: hero.challengeType.rawValue )
         }
         
         switch hero.challengeScoreType {
@@ -48,13 +47,13 @@ class ShopCollectionViewCell: UICollectionViewCell {
             if let current = hero.currentChallengeNumberValueProgress, let needed = hero.neededChallengeNumberValue{
                 if hero.isUnlocked{
                     if hero.challengeType == .TotalTimeSpentInGame{
-                        challengeProgressLabel.text = "Time left: 0m"
+                        challengeProgressLabel.text = "\(LocalizationHelper.defaultLocalizer.stringForKey(key: "timeLeft")): 0m"
                     }else{
                         challengeProgressLabel.text = "\(needed) / \(needed)"
                     }
                 }else{
                     if hero.challengeType == .TotalTimeSpentInGame {
-                        let localizedTimeInGameString = "Time left"
+                        let localizedTimeInGameString = LocalizationHelper.defaultLocalizer.stringForKey(key: "timeLeft")
                         let timeDifference = needed - current
                         let leftTimeString = UInt.secondsToString(seconds: timeDifference)
                         challengeProgressLabel.text = "\(localizedTimeInGameString): \(leftTimeString)"
@@ -86,21 +85,20 @@ class ShopCollectionViewCell: UICollectionViewCell {
         
         birdOrLevelImageView.image = UIImage(named: level.levelPreviewImageName)
         unlockedStatusImageView.image = UIImage(named: level.levelIsUnlocked ? "unlockedIcon" : "lockedIcon")
-        nameLabel.text = level.levelName
+        nameLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: level.levelName)
         
         switch level.levelChallengeType {
         case .None:
-            challengeTypeLabel.text = level.levelChallengeType.rawValue
+            challengeTypeLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: level.levelChallengeType.rawValue )
         case .TotalTimeSpentInGame:
-            // replace with localized one
-            let localizedTimeInGameString = "Time in game"
+            let localizedTimeInGameString = LocalizationHelper.defaultLocalizer.stringForKey(key: "timeInGame" )
             var neededTimeString = ""
             if let neededNumValue = level.neededChallengeNumberValue{
                 neededTimeString = UInt.secondsToString(seconds: neededNumValue)
             }
             challengeTypeLabel.text = "\(localizedTimeInGameString): \(neededTimeString)"
         default:
-            challengeTypeLabel.text = level.levelChallengeType.rawValue
+            challengeTypeLabel.text =  LocalizationHelper.defaultLocalizer.stringForKey(key: level.levelChallengeType.rawValue )
         }
         
         switch level.levelChallengeScoreType {
@@ -108,13 +106,13 @@ class ShopCollectionViewCell: UICollectionViewCell {
             if let current = level.currentChallengeNumberValueProgress, let needed = level.neededChallengeNumberValue{
                 if level.levelIsUnlocked{
                     if level.levelChallengeType == .TotalTimeSpentInGame{
-                        challengeProgressLabel.text = "Time left: 0m"
+                        challengeProgressLabel.text = "\(LocalizationHelper.defaultLocalizer.stringForKey(key: "timeLeft")): 0m"
                     }else{
                         challengeProgressLabel.text = "\(needed) / \(needed)"
                     }
                 }else{
                     if level.levelChallengeType == .TotalTimeSpentInGame {
-                        let localizedTimeInGameString = "Time left"
+                        let localizedTimeInGameString = LocalizationHelper.defaultLocalizer.stringForKey(key: "timeLeft")
                         let timeDifference = needed - current
                         let leftTimeString = UInt.secondsToString(seconds: timeDifference)
                         challengeProgressLabel.text = "\(localizedTimeInGameString): \(leftTimeString)"

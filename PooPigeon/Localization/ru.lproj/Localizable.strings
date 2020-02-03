@@ -1,0 +1,115 @@
+/* 
+  Localizable.strings
+  PooPigeon
+
+  Created by Danylo Polishchuk on 2/3/20.
+  Copyright © 2020 Polishchuk company. All rights reserved.
+*/
+
+// RUSSIAN
+
+//MARK: - SettingsViewController
+//
+"Settings" = "Настройки";
+"Sound" = "Звук";
+"Music" = "Музыка";
+"Language" = "Язык";
+"Like" = "Лайкнуть";
+"Share" = "Поделиться";
+"Credits" = "Титры";
+"Contact Info" = "Контакты";
+"Restore Purchases" = "Обновить покупки";
+"Remove Ads" = "Убрать рекламу";
+"UI Hand" = "Рука интерфейса";
+
+//MARK: - TutorialViewController
+//
+"Tutorial" = "Туториал";
+"Avoid" = "Уклоняйтесь";
+"Catch" = "Ловите";
+"100% Catch" = "100% Ловите";
+"Do not show anymore" = "Не показывать больше";
+
+
+//MARK: - AdsCantLoadAlertViewController
+//
+"needInternetConnection" = "Для загрузки рекламы требуется подключение к интернету.";
+
+//MARK: - ImageLibraryAccessAlertViewController
+//
+"needImageLibraryAccess" = "Доступ к библиотеке изображений необходим для возможности сохранения изображений";
+"Settings" = "НАСТРОЙКИ";
+
+//MARK: - ContactUsViewController
+//
+"emailCopied" = "ИМЕЙЛ СКОПИРОВАНО";
+"contactUS" = "Свяжитесь с нами";
+"foundABug" = "Нашли ошибку? Отправьте нам письмо на";
+"emailUs" = "ОТПРАВИТЬ";
+
+//MARK: - CreditsViewController
+//
+"Credits" = "Титры";
+"thankYouForPlaying" = "Спасибо что играли в мою игру";
+"musicBy" = "Автор музыки:";
+
+//MARK: - GetAllViewController
+//
+"getAllLabelText" = "Все уровни и герои. Скидка 50%";
+"getAllButtonText" = "РАЗБЛОКИРОВАТЬ";
+
+//MARK: - PauseViewController
+//
+"pause" = "ПАУЗА";
+"gameOver" = "ИРГРА ОКОНЧЕНА";
+"best" = "ЛУЧШИЙ";
+"total" = "ОБЩИЙ";
+
+//MARK: - AchievementsViewController
+//
+// general
+"achievements" = "ДОСТИЖЕНИЯ";
+"unlock" = "РАЗБЛОКИРОВАТЬ";
+// headers
+"PROGRESS" = "ПРОГРЕСС";
+"WALLPAPERS" = "ОБОИ";
+//MARK: Localized challenges
+"Default" = "По умолчанию";
+"Best Score" = "Лучший счет";
+"Total Score" = "Общий счет";
+"Time Spent In Game" = "Время проведенное в игре";
+"Launch Game" = "Кол-во запусков";
+"Launch Days" = "Кол-во дней";
+"Launch At Day" = "Запуск в День";
+"Lose Score" = "Кол-во Проигрышей";
+"Like Us" = "Лайкнуть Нас";
+"Share Us" = "Поделиться";
+"Review Us" = "Написать отзыв";
+
+//MARK: - ShopViewController
+//
+"getAll50Off" = "СКИДКА 50% НА ВСЕ";
+"unlockAllHeroes" = "РАЗБЛОКИРОВАТЬ ВСЕХ ГЕРОЕВ";
+"unlockAllLevels" = "РАЗБЛОКИРОВАТЬ ВСЕ УРОВНИ";
+"timeInGame" = "Время в игре";
+"timeLeft" = "Осталось времени";
+//MARK: Hero names localization
+"Casey" = "Кейси";
+"Steve" = "Стив";
+"Pharaoh" = "Фараон";
+"Houston" = "Хьюстон";
+"Scarecrow" = "Пугало";
+"Robot" = "Робот";
+"Ronin" = "Ронин";
+"The Good" = "Хороший";
+"Parzival" = "Парсифаль";
+//MARK: Level names localization
+"City" = "Город";
+"Cave" = "Пещера";
+"Pyramids" = "Пирамиды";
+"Space" = "Космос";
+"Halloween" = "Хэллоуин";
+"Future City" = "Город Будущего";
+"Fuji" = "Фудзи";
+"Wild West" = "Дикий Запад";
+"Forest" = "Лес";

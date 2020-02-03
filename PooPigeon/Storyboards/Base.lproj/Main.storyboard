@@ -90,7 +90,7 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f17-J3-G0e">
                                                                             <rect key="frame" x="0.0" y="123" width="128" height="15"/>
                                                                             <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="17"/>
-                                                                            <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -112,11 +112,14 @@
                                                             </collectionViewCell>
                                                         </cells>
                                                     </collectionView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4v-HW-hYF">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4v-HW-hYF" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                         <rect key="frame" x="62" y="33.5" width="235" height="44"/>
                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="50"/>
-                                                        <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Settings"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,6 +188,7 @@
                         <outlet property="leftTopButtonConstraint" destination="tYX-Lf-5Bg" id="YVA-x8-CW6"/>
                         <outlet property="rightTopButton" destination="GOh-rb-WoP" id="R8e-fB-Fug"/>
                         <outlet property="rightTopButtonConstraint" destination="R9z-Li-Mvb" id="5gk-RH-BkL"/>
+                        <outlet property="settingsLabel" destination="W4v-HW-hYF" id="JcC-fK-rbA"/>
                         <outlet property="viewUI" destination="573-pP-9O8" id="ftQ-aG-sVq"/>
                     </connections>
                 </viewController>
@@ -215,11 +219,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J65-B2-jvI">
                                                         <rect key="frame" x="42" y="30" width="253" height="167"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ads need internet connection to load." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yu-U7-lNt">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ads need internet connection to load." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yu-U7-lNt" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="167"/>
                                                                 <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
-                                                                <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="needInternetConnection"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -322,17 +329,23 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gCR-2c-dH3">
                                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="251"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Contact Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDP-Sw-IQE">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Contact Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDP-Sw-IQE" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                         <rect key="frame" x="32.5" y="0.0" width="187.5" height="28.5"/>
                                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="32"/>
                                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="contactUS"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Found a bug ? Send us an email at" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eed-fx-RRL">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Found a bug ? Send us an email at" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eed-fx-RRL" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                         <rect key="frame" x="10" y="47" width="232.5" height="32"/>
                                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
                                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="foundABug"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PooPigeonExample@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQb-d6-OeL">
                                                                         <rect key="frame" x="12" y="97.5" width="229" height="13.5"/>
@@ -351,7 +364,7 @@
                                                                             <action selector="copyAction:" destination="Au1-pU-Kye" eventType="touchUpInside" id="8ke-w6-9Q4"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qR-uz-Huh">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qR-uz-Huh" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                         <rect key="frame" x="66.5" y="191" width="120" height="60"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="1qR-uz-Huh" secondAttribute="height" multiplier="2:1" id="o6a-qe-xtt"/>
@@ -360,6 +373,9 @@
                                                                         <state key="normal" title="EMAIL US" backgroundImage="bigButtonImageNormal">
                                                                             <color key="titleColor" red="0.45571917299999998" green="0.24684450029999999" blue="0.22351035480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="emailUs"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="emailUsAction:" destination="Au1-pU-Kye" eventType="touchUpInside" id="nek-Us-1T0"/>
                                                                             <action selector="settingsAction:" destination="9Vm-T6-nB1" eventType="touchUpInside" id="j3a-w0-Bts"/>
@@ -396,11 +412,14 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMd-GN-Y6Z">
                                                 <rect key="frame" x="187.5" y="63.5" width="187.5" height="48"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="EMAIL COPIED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-Vc-KXm">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="EMAIL COPIED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-Vc-KXm" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="48"/>
                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="24"/>
                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="emailCopied"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.24617087841033936" green="0.15822345018386841" blue="0.19598832726478577" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -767,11 +786,14 @@
                                                             <constraint firstItem="nmH-TA-zvo" firstAttribute="centerX" secondItem="KP6-Iz-DeU" secondAttribute="centerX" id="yES-Wx-PyY"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAUSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boc-X0-Pen">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAUSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boc-X0-Pen" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                         <rect key="frame" x="91.5" y="21.5" width="117" height="35.5"/>
                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="40"/>
-                                                        <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="pause"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -811,16 +833,19 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAo-Sq-pE2">
                                                                 <rect key="frame" x="0.0" y="21" width="112.5" height="84"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MC-ip-Ufy">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MC-ip-Ufy" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="112.5" height="18"/>
                                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
-                                                                        <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="best"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb3-N6-D17">
                                                                         <rect key="frame" x="0.0" y="26" width="112.5" height="18"/>
                                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
-                                                                        <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -838,16 +863,19 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCK-ud-eIe">
                                                                 <rect key="frame" x="112.5" y="21" width="112.5" height="84"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw5-hi-MxW">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw5-hi-MxW" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="112.5" height="18"/>
                                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
-                                                                        <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="total"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaW-0V-PfC">
                                                                         <rect key="frame" x="0.0" y="26" width="112.5" height="18"/>
                                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
-                                                                        <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -878,11 +906,14 @@
                                                             <constraint firstItem="GCK-ud-eIe" firstAttribute="width" secondItem="cKY-d6-zZH" secondAttribute="width" multiplier="0.5" id="zjF-p2-a7b"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDC-fD-dhj">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDC-fD-dhj" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                         <rect key="frame" x="44.5" y="27" width="211" height="35.5"/>
                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="40"/>
-                                                        <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="gameOver"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1020,11 +1051,14 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBGImage2" translatesAutoresizingMaskIntoConstraints="NO" id="cb5-l4-Qpg">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="478"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACHIEVEMENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEp-dq-X4R">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACHIEVEMENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEp-dq-X4R" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                         <rect key="frame" x="56.5" y="43" width="246.5" height="31"/>
                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="35"/>
-                                                        <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="achievements"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="brO-Bz-4Rl">
                                                         <rect key="frame" x="45" y="76.5" width="269" height="329.5"/>
@@ -1046,13 +1080,13 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvH-iU-IWM">
                                                                             <rect key="frame" x="0.0" y="0.0" width="161.5" height="43.5"/>
                                                                             <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="24"/>
-                                                                            <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNf-Tu-fOx">
                                                                             <rect key="frame" x="198.5" y="11" width="70.5" height="21.5"/>
                                                                             <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="24"/>
-                                                                            <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -1097,7 +1131,7 @@
                                                                                         <action selector="shareAction:" destination="1ZD-Vq-hzR" eventType="touchUpInside" id="kbq-kC-JdW"/>
                                                                                     </connections>
                                                                                 </button>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00x-dm-VV9">
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00x-dm-VV9" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                                     <rect key="frame" x="20" y="36" width="94.5" height="47.5"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="00x-dm-VV9" secondAttribute="height" multiplier="2:1" id="2V2-Uu-kfa"/>
@@ -1106,6 +1140,9 @@
                                                                                     <state key="normal" title="UNLOCK" backgroundImage="bigButtonImageNormal">
                                                                                         <color key="titleColor" red="0.45571917295455933" green="0.24684450030326843" blue="0.22351035475730896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     </state>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="unlock"/>
+                                                                                    </userDefinedRuntimeAttributes>
                                                                                     <connections>
                                                                                         <action selector="unlockAction:" destination="1ZD-Vq-hzR" eventType="touchUpInside" id="w5e-iD-hoV"/>
                                                                                     </connections>
@@ -1151,7 +1188,7 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header Label Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydm-01-kb5">
                                                                             <rect key="frame" x="0.0" y="23" width="269" height="49.5"/>
                                                                             <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="28"/>
-                                                                            <color key="textColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -1280,12 +1317,15 @@
                                                     <action selector="backAction:" destination="oiI-oJ-IA8" eventType="touchUpInside" id="9dw-ka-SIO"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0d8-Q3-ook">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0d8-Q3-ook" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                 <rect key="frame" x="103" y="8" width="169" height="56.5"/>
                                                 <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
                                                 <state key="normal" title="ALL 50% OFF" backgroundImage="bigButtonRedImageNormal">
                                                     <color key="titleColor" red="0.45571917295455933" green="0.24684450030326843" blue="0.22351035475730896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="getAll50Off"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="getAllAction:" destination="oiI-oJ-IA8" eventType="touchUpInside" id="8hJ-Oh-cAp"/>
                                                 </connections>
@@ -1406,22 +1446,18 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="180" height="191.5"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zrU-OU-oes">
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zrU-OU-oes" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                                     <rect key="frame" x="9" y="55.5" width="162" height="81"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="zrU-OU-oes" secondAttribute="height" multiplier="2:1" id="a4s-gY-Gae"/>
                                                                                     </constraints>
-                                                                                    <state key="normal" backgroundImage="bigButtonImageNormal">
-                                                                                        <attributedString key="attributedTitle">
-                                                                                            <fragment content="UNLOCK ALL HEROES">
-                                                                                                <attributes>
-                                                                                                    <color key="NSColor" red="0.59215686274509804" green="0.35686274509803922" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                                    <font key="NSFont" size="20" name="VCROSDMono"/>
-                                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                                </attributes>
-                                                                                            </fragment>
-                                                                                        </attributedString>
+                                                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
+                                                                                    <state key="normal" title="UNLOCK ALL HEROES" backgroundImage="bigButtonImageNormal">
+                                                                                        <color key="titleColor" red="0.59215686274509804" green="0.35686274509803922" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     </state>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="unlockAllHeroes"/>
+                                                                                    </userDefinedRuntimeAttributes>
                                                                                     <connections>
                                                                                         <action selector="unlockAction:" destination="PAE-I3-rXe" eventType="touchUpInside" id="rC3-Wm-tlu"/>
                                                                                     </connections>
@@ -1557,22 +1593,18 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="213" height="193.5"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRd-5X-MZ5">
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uRd-5X-MZ5" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                                     <rect key="frame" x="10.5" y="49" width="192" height="95.5"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="uRd-5X-MZ5" secondAttribute="height" multiplier="2:1" id="fZk-hG-0hx"/>
                                                                                     </constraints>
-                                                                                    <state key="normal" backgroundImage="bigButtonImageNormal">
-                                                                                        <attributedString key="attributedTitle">
-                                                                                            <fragment content="UNLOCK ALL LEVELS">
-                                                                                                <attributes>
-                                                                                                    <color key="NSColor" red="0.59215686274509804" green="0.35686274509803922" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                                    <font key="NSFont" size="20" name="VCROSDMono"/>
-                                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                                </attributes>
-                                                                                            </fragment>
-                                                                                        </attributedString>
+                                                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
+                                                                                    <state key="normal" title="UNLOCK ALL LEVELS" backgroundImage="bigButtonImageNormal">
+                                                                                        <color key="titleColor" red="0.59215686274509804" green="0.35686274509803922" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     </state>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="unlockAllLevels"/>
+                                                                                    </userDefinedRuntimeAttributes>
                                                                                     <connections>
                                                                                         <action selector="unlockAction:" destination="Umv-Vy-RWv" eventType="touchUpInside" id="ds6-HY-goO"/>
                                                                                     </connections>
@@ -1712,16 +1744,19 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Bi-Lh-kne">
                                                         <rect key="frame" x="42" y="30" width="253" height="167"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image library access needed to be able to save images" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nav-uI-EtL">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image library access needed to be able to save images" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nav-uI-EtL" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="83.5"/>
                                                                 <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="needImageLibraryAccess"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ut-iU-1sE">
                                                                 <rect key="frame" x="0.0" y="83.5" width="253" height="83.5"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLK-8l-vSZ">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLK-8l-vSZ" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                         <rect key="frame" x="63" y="10" width="127" height="63.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="WLK-8l-vSZ" secondAttribute="height" multiplier="2:1" id="D7Q-I2-PL0"/>
@@ -1730,6 +1765,9 @@
                                                                         <state key="normal" title="SETTINGS" backgroundImage="bigButtonImageNormal">
                                                                             <color key="titleColor" red="0.45571917299999998" green="0.24684450029999999" blue="0.22351035480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Settings"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="settingsAction:" destination="9Vm-T6-nB1" eventType="touchUpInside" id="oNV-6a-Tch"/>
                                                                         </connections>
@@ -1839,11 +1877,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7W-qQ-f4Y">
                                                         <rect key="frame" x="42" y="44.5" width="253" height="251"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Credits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUw-Ky-oKC">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Credits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUw-Ky-oKC" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="28.5"/>
                                                                 <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="32"/>
                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Credits"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRW-oD-aSC">
                                                                 <rect key="frame" x="0.0" y="28.5" width="253" height="222.5"/>
@@ -1947,11 +1988,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="253" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Thank you for playing my game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk2-gE-cXg">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Thank you for playing my game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk2-gE-cXg" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="8" width="253" height="91.5"/>
                                                     <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="24"/>
                                                     <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="thankYouForPlaying"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -1971,11 +2015,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="253" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Music by:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEy-4a-K8z">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Music by:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEy-4a-K8z" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="8" width="116.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
                                                     <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="musicBy"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicBy" translatesAutoresizingMaskIntoConstraints="NO" id="18f-8r-hC6">
                                                     <rect key="frame" x="15" y="35.5" width="59.5" height="59.5"/>
@@ -2044,11 +2091,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESZ-q9-CkZ">
                                                         <rect key="frame" x="36.5" y="37" width="292.5" height="209"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qp9-0f-itv">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qp9-0f-itv" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="292.5" height="21.5"/>
                                                                 <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="24"/>
                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Tutorial"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12e-H4-svz">
                                                                 <rect key="frame" x="0.0" y="29.5" width="292.5" height="125.5"/>
@@ -2056,11 +2106,14 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNY-cX-9zS">
                                                                         <rect key="frame" x="0.0" y="0.0" width="97" height="125.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avoid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d97-ce-3wC">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avoid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d97-ce-3wC" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="8" width="97" height="16"/>
                                                                                 <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
                                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Avoid"/>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poo" translatesAutoresizingMaskIntoConstraints="NO" id="FID-SD-bOD">
                                                                                 <rect key="frame" x="14.5" y="50" width="68" height="67.5"/>
@@ -2082,11 +2135,14 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtD-nl-9rg">
                                                                         <rect key="frame" x="196" y="0.0" width="96.5" height="125.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% Catch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TV-Bk-jv6">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% Catch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TV-Bk-jv6" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="8" width="96.5" height="32"/>
                                                                                 <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
                                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="100% Catch"/>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bonus" translatesAutoresizingMaskIntoConstraints="NO" id="mh3-OO-kdw">
                                                                                 <rect key="frame" x="14.5" y="50" width="68" height="67.5"/>
@@ -2108,11 +2164,14 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JsY-RN-JKl">
                                                                         <rect key="frame" x="98" y="0.0" width="97" height="125.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvs-ac-dpK">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvs-ac-dpK" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="8" width="97" height="16"/>
                                                                                 <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
                                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Catch"/>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="egg" translatesAutoresizingMaskIntoConstraints="NO" id="pwW-6O-YAp">
                                                                                 <rect key="frame" x="14.5" y="50" width="68" height="67.5"/>
@@ -2151,11 +2210,14 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbE-eP-KkP">
                                                                 <rect key="frame" x="0.0" y="155" width="292.5" height="54"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not show anymore" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRU-Rh-2C6">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not show anymore" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRU-Rh-2C6" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                         <rect key="frame" x="66" y="19" width="200.5" height="16"/>
                                                                         <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
                                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Do not show anymore"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3PW-tf-Hpe">
                                                                         <rect key="frame" x="9" y="11.5" width="51" height="31"/>
@@ -2269,11 +2331,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fE8-zQ-nKw">
                                                         <rect key="frame" x="42" y="52.5" width="253" height="292.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get All Levels &amp; Heroes. 50% OFF" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1C-DJ-bxr">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get All Levels &amp; Heroes. 50% OFF" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1C-DJ-bxr" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="39"/>
                                                                 <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="getAllLabelText"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="getAllPreviewImage" translatesAutoresizingMaskIntoConstraints="NO" id="WYA-Xq-OVI">
                                                                 <rect key="frame" x="0.0" y="47" width="253" height="253"/>
@@ -2281,12 +2346,15 @@
                                                                     <constraint firstAttribute="width" secondItem="WYA-Xq-OVI" secondAttribute="height" multiplier="1:1" id="16H-2e-HgQ"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtN-Xb-9D0">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtN-Xb-9D0" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="63" y="141.5" width="127" height="63.5"/>
                                                                 <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
                                                                 <state key="normal" title="GET ALL" backgroundImage="bigButtonImageNormal">
                                                                     <color key="titleColor" red="0.45571917299999998" green="0.24684450029999999" blue="0.22351035480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="getAllButtonText"/>
+                                                                </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="getAllAction:" destination="nSg-94-9vu" eventType="touchUpInside" id="Y3B-ht-d40"/>
                                                                 </connections>

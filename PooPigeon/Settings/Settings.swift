@@ -127,6 +127,7 @@ class Settings: Codable {
             self.wallpapers = settings.wallpapers
             
             self.language = settings.language
+            LocalizationHelper.defaultLocalizer.setSelectedLanguage(lang: language.rawValue)
             
             self.isFirstLaunch = settings.isFirstLaunch
             
@@ -284,6 +285,7 @@ class Settings: Codable {
     func changeLanguageTo(language: Language){
         if self.language != language{
             self.language = language
+            LocalizationHelper.defaultLocalizer.setSelectedLanguage(lang: language.rawValue)
             self.save()
         }
     }

@@ -18,7 +18,7 @@ class ProgressTableViewCell: UITableViewCell {
     func displayContent(challengeType: ChallengeType){
         self.challengeType = challengeType
         
-        progressTypeNameLabel.text = challengeType.rawValue
+        progressTypeNameLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: challengeType.rawValue)
         switch challengeType {
         case .BestScore:
             progressValueLabel.text = String(Settings.shared.bestScore)

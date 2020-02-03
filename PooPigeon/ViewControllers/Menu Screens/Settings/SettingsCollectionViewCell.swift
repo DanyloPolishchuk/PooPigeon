@@ -28,37 +28,37 @@ class SettingsCollectionViewCell: UICollectionViewCell {
         switch buttonType {
             
         case .Sound:
-            settingsDescriptionLabel.text = "Sound" // replace with localized string for ... once Localization is implemented
+            settingsDescriptionLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: "Sound")
             
         case .Music:
-            settingsDescriptionLabel.text = "Music"
+            settingsDescriptionLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: "Music")
             
         case .Language:
-            settingsDescriptionLabel.text = "Language"
+            settingsDescriptionLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: "Language")
             
         case .Like:
-            settingsDescriptionLabel.text = "Like"
+            settingsDescriptionLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: "Like")
             
         case .Share:
-            settingsDescriptionLabel.text = "Share"
+            settingsDescriptionLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: "Share")
             
         case .Review:
             // probably'll be deleted
             break
         case .Credits:
-            settingsDescriptionLabel.text = "Credits"
+            settingsDescriptionLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: "Credits")
             
         case .ContantInfo:
-            settingsDescriptionLabel.text = "Contact Info"
+            settingsDescriptionLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: "Contact Info")
             
         case .RestorePurchases:
-            settingsDescriptionLabel.text = "Restore Purchases"
+            settingsDescriptionLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: "Restore Purchases")
             
         case .RemoveAdds:
-            settingsDescriptionLabel.text = "Remove Ads"
+            settingsDescriptionLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: "Remove Ads")
             
         case .UIhand:
-            settingsDescriptionLabel.text = "UI Hand"
+            settingsDescriptionLabel.text = LocalizationHelper.defaultLocalizer.stringForKey(key: "UI Hand")
             
         }
     }

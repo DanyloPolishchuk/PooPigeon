@@ -36,6 +36,7 @@ class SettingsViewController: BaseBannerAdViewController {
     @IBOutlet weak var rightTopButton: UIButton!
     @IBOutlet weak var rightTopButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionViewContainerView: UIView!
+    @IBOutlet weak var settingsLabel: LocalizedLabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewUI: UIView!
     
@@ -74,6 +75,7 @@ class SettingsViewController: BaseBannerAdViewController {
         (Settings.shared.isLeftHandedUI ? leftTopButton : rightTopButton)?.isHidden = false
     }
     @objc func updateLanguage(){
+        settingsLabel.update()
         collectionView.reloadData()
     }
     func setupDefaultConstraints(){

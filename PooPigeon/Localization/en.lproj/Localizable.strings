@@ -1,0 +1,114 @@
+/* 
+  Localizable.strings
+  PooPigeon
+
+  Created by Danylo Polishchuk on 2/3/20.
+  Copyright © 2020 Polishchuk company. All rights reserved.
+*/
+
+// ENGLISH
+
+//MARK: - SettingsViewController
+//
+"Settings" = "Settings";
+"Sound" = "Sound";
+"Music" = "Music";
+"Language" = "Language";
+"Like" = "Like";
+"Share" = "Share";
+"Credits" = "Credits";
+"Contact Info" = "Contact Info";
+"Restore Purchases" = "Restore Purchases";
+"Remove Ads" = "Remove Ads";
+"UI Hand" = "UI Hand";
+
+//MARK: - TutorialViewController
+//
+"Tutorial" = "Tutorial";
+"Avoid" = "Avoid";
+"Catch" = "Catch";
+"100% Catch" = "100% Catch";
+"Do not show anymore" = "Do not show anymore";
+
+//MARK: - AdsCantLoadAlertViewController
+//
+"needInternetConnection" = "Ads need internet connection to load.";
+
+//MARK: - ImageLibraryAccessAlertViewController
+//
+"needImageLibraryAccess" = "Image library access needed to be able to save images";
+"Settings" = "SETTINGS";
+
+//MARK: - ContactUsViewController
+//
+"emailCopied" = "EMAIL COPIED";
+"contactUS" = "Contact Us";
+"foundABug" = "Found a bug ? Send us an email at";
+"emailUs" = "EMAIL US";
+
+//MARK: - CreditsViewController
+//
+"Credits" = "Credits";
+"thankYouForPlaying" = "Thank you for playing my game";
+"musicBy" = "Music By:";
+
+//MARK: - GetAllViewController
+//
+"getAllLabelText" = "Get All Levels & Heroes. 50% OFF";
+"getAllButtonText" = "GET ALL";
+
+//MARK: - PauseViewController
+//
+"pause" = "PAUSE";
+"gameOver" = "GAME OVER";
+"best" = "Best";
+"total" = "Total";
+
+//MARK: - AchievementsViewController
+//
+// general
+"achievements" = "ACHIEVEMENTS";
+"unlock" = "UNLOCK";
+// headers
+"PROGRESS" = "PROGRESS";
+"WALLPAPERS" = "WALLPAPERS";
+//MARK: Localized challenges
+"Default" = "Default";
+"Best Score" = "Best Score";
+"Total Score" = "Total Score";
+"Time Spent In Game" = "Time Spent In Game";
+"Launch Game" = "Launch Game";
+"Launch Days" = "Launch Days";
+"Launch At Day" = "Launch At Day";
+"Lose Score" = "Lose Score";
+"Like Us" = "Like Us";
+"Share Us" = "Share Us";
+"Review Us" = "Review Us";
+
+//MARK: - ShopViewController
+//
+"getAll50Off" = "ALL 50% OFF";
+"unlockAllHeroes" = "UNLOCK ALL HEROES";
+"unlockAllLevels" = "UNLOCK ALL LEVELS";
+"timeInGame" = "Time in game";
+"timeLeft" = "Time left";
+//MARK: Hero names localization
+"Casey" = "Casey";
+"Steve" = "Steve";
+"Pharaoh" = "Pharaoh";
+"Houston" = "Houston";
+"Scarecrow" = "Scarecrow";
+"Robot" = "Robot";
+"Ronin" = "Ronin";
+"The Good" = "The Good";
+"Parzival" = "Parzival";
+//MARK: Level names localization
+"City" = "City";
+"Cave" = "Cave";
+"Pyramids" = "Pyramids";
+"Space" = "Space";
+"Halloween" = "Halloween";
+"Future City" = "Future City";
+"Fuji" = "Fuji";
+"Wild West" = "Wild West";
+"Forest" = "Forest";
