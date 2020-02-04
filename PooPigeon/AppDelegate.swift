@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         increaseGameLaunchesCount()
         updateGameLaunchDaysCount()
         setupLastLaunchTime()
+        setupDefaultLocalizationBundle()
         
         return true
     }
@@ -133,6 +134,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             try? AVAudioSession.sharedInstance().setCategory(.ambient)
             try? AVAudioSession.sharedInstance().setActive(true, options: [])
         }
+    }
+    
+    private func setupDefaultLocalizationBundle(){
+        let currentLanguage = Settings.shared.getLanguage()
+        LocalizationHelper.defaultLocalizer.setSelectedLanguage(lang: currentLanguage.rawValue)
     }
 
 }

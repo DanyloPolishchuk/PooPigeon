@@ -14,6 +14,9 @@
         <array key="VCR_OSD_MONO_1.001.ttf">
             <string>VCROSDMono</string>
         </array>
+        <array key="haxrcorp_4089_cyrillic_altgr.ttf">
+            <string>HaxrCorp-4089-Cyrillic-AltGr</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Settings View Controller-->
@@ -87,9 +90,9 @@
                                                                                 <action selector="performAction:" destination="9bR-RF-0pP" eventType="touchUpInside" id="Yys-Pf-t2k"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f17-J3-G0e">
-                                                                            <rect key="frame" x="0.0" y="123" width="128" height="15"/>
-                                                                            <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="17"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="f17-J3-G0e">
+                                                                            <rect key="frame" x="0.0" y="123" width="128" height="24"/>
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                                             <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -112,9 +115,9 @@
                                                             </collectionViewCell>
                                                         </cells>
                                                     </collectionView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4v-HW-hYF" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                        <rect key="frame" x="62" y="33.5" width="235" height="44"/>
-                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="50"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="W4v-HW-hYF" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                        <rect key="frame" x="45" y="33.5" width="269" height="52.5"/>
+                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="70"/>
                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -132,6 +135,7 @@
                                                     <constraint firstItem="UE0-wo-X7I" firstAttribute="top" secondItem="eDQ-ps-CHZ" secondAttribute="top" id="QV0-DO-df2"/>
                                                     <constraint firstItem="tsu-Sx-2xC" firstAttribute="width" secondItem="UE0-wo-X7I" secondAttribute="width" multiplier="0.75" id="UXc-OL-I21"/>
                                                     <constraint firstItem="tsu-Sx-2xC" firstAttribute="top" secondItem="eDQ-ps-CHZ" secondAttribute="centerY" multiplier="0.34" id="ViX-TH-1iF"/>
+                                                    <constraint firstItem="W4v-HW-hYF" firstAttribute="width" secondItem="UE0-wo-X7I" secondAttribute="width" multiplier="0.75" id="am8-J4-Mul"/>
                                                     <constraint firstItem="UE0-wo-X7I" firstAttribute="leading" secondItem="eDQ-ps-CHZ" secondAttribute="leading" id="wce-Xk-FBV"/>
                                                     <constraint firstItem="tsu-Sx-2xC" firstAttribute="centerX" secondItem="eDQ-ps-CHZ" secondAttribute="centerX" id="yHi-1f-umx"/>
                                                 </constraints>
@@ -221,7 +225,7 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ads need internet connection to load." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yu-U7-lNt" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="167"/>
-                                                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
+                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="48"/>
                                                                 <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -330,8 +334,8 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="251"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Contact Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDP-Sw-IQE" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                        <rect key="frame" x="32.5" y="0.0" width="187.5" height="28.5"/>
-                                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="32"/>
+                                                                        <rect key="frame" x="57.5" y="0.0" width="138" height="36"/>
+                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="48"/>
                                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -339,8 +343,8 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Found a bug ? Send us an email at" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eed-fx-RRL" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                        <rect key="frame" x="10" y="47" width="232.5" height="32"/>
-                                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
+                                                                        <rect key="frame" x="20.5" y="47.5" width="212" height="48"/>
+                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -348,13 +352,13 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PooPigeonExample@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQb-d6-OeL">
-                                                                        <rect key="frame" x="12" y="97.5" width="229" height="13.5"/>
-                                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="15"/>
+                                                                        <rect key="frame" x="28" y="107" width="196.5" height="18"/>
+                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="24"/>
                                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKa-q1-uev">
-                                                                        <rect key="frame" x="105" y="129.5" width="43" height="43"/>
+                                                                        <rect key="frame" x="105" y="136.5" width="43" height="43"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="rKa-q1-uev" secondAttribute="height" multiplier="1:1" id="urQ-Vl-BnF"/>
                                                                         </constraints>
@@ -369,12 +373,13 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="1qR-uz-Huh" secondAttribute="height" multiplier="2:1" id="o6a-qe-xtt"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
+                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                         <state key="normal" title="EMAIL US" backgroundImage="bigButtonImageNormal">
                                                                             <color key="titleColor" red="0.45571917299999998" green="0.24684450029999999" blue="0.22351035480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="emailUs"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="emailUsAction:" destination="Au1-pU-Kye" eventType="touchUpInside" id="nek-Us-1T0"/>
@@ -414,7 +419,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="EMAIL COPIED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-Vc-KXm" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="48"/>
-                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="24"/>
+                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -786,9 +791,9 @@
                                                             <constraint firstItem="nmH-TA-zvo" firstAttribute="centerX" secondItem="KP6-Iz-DeU" secondAttribute="centerX" id="yES-Wx-PyY"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAUSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boc-X0-Pen" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                        <rect key="frame" x="91.5" y="21.5" width="117" height="35.5"/>
-                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="40"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAUSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boc-X0-Pen" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                        <rect key="frame" x="30" y="21.5" width="240" height="45"/>
+                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="60"/>
                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -798,6 +803,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="boc-X0-Pen" firstAttribute="width" secondItem="elL-36-NgC" secondAttribute="width" multiplier="0.8" id="5gU-e8-e6Y"/>
                                                     <constraint firstAttribute="trailing" secondItem="abY-d9-PN7" secondAttribute="trailing" id="BgX-y7-dN2"/>
                                                     <constraint firstItem="KP6-Iz-DeU" firstAttribute="height" secondItem="abY-d9-PN7" secondAttribute="height" multiplier="0.8" id="EUB-EU-1ah"/>
                                                     <constraint firstItem="boc-X0-Pen" firstAttribute="top" secondItem="elL-36-NgC" secondAttribute="centerY" multiplier="0.17" id="RZO-0a-obX"/>
@@ -833,18 +839,18 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAo-Sq-pE2">
                                                                 <rect key="frame" x="0.0" y="21" width="112.5" height="84"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MC-ip-Ufy" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="18"/>
-                                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="6MC-ip-Ufy" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="27"/>
+                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="best"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb3-N6-D17">
-                                                                        <rect key="frame" x="0.0" y="26" width="112.5" height="18"/>
-                                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Qb3-N6-D17">
+                                                                        <rect key="frame" x="0.0" y="35" width="112.5" height="27"/>
+                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -863,18 +869,18 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCK-ud-eIe">
                                                                 <rect key="frame" x="112.5" y="21" width="112.5" height="84"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw5-hi-MxW" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="18"/>
-                                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Mw5-hi-MxW" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="27"/>
+                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="total"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaW-0V-PfC">
-                                                                        <rect key="frame" x="0.0" y="26" width="112.5" height="18"/>
-                                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="DaW-0V-PfC">
+                                                                        <rect key="frame" x="0.0" y="35" width="112.5" height="27"/>
+                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -906,9 +912,9 @@
                                                             <constraint firstItem="GCK-ud-eIe" firstAttribute="width" secondItem="cKY-d6-zZH" secondAttribute="width" multiplier="0.5" id="zjF-p2-a7b"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDC-fD-dhj" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                        <rect key="frame" x="44.5" y="27" width="211" height="35.5"/>
-                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="40"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="hDC-fD-dhj" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                        <rect key="frame" x="37.5" y="27" width="225" height="37.5"/>
+                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="50"/>
                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -928,6 +934,7 @@
                                                     <constraint firstItem="LFU-Rc-8Pz" firstAttribute="leading" secondItem="Wwt-SU-Z2F" secondAttribute="leading" id="plp-sY-eLL"/>
                                                     <constraint firstItem="cKY-d6-zZH" firstAttribute="height" secondItem="LFU-Rc-8Pz" secondAttribute="height" multiplier="0.7" id="s69-FZ-oL3"/>
                                                     <constraint firstItem="cKY-d6-zZH" firstAttribute="centerX" secondItem="Wwt-SU-Z2F" secondAttribute="centerX" id="vE9-kh-cAn"/>
+                                                    <constraint firstItem="hDC-fD-dhj" firstAttribute="width" secondItem="cKY-d6-zZH" secondAttribute="width" id="yV0-cP-i5y"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -1051,9 +1058,9 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBGImage2" translatesAutoresizingMaskIntoConstraints="NO" id="cb5-l4-Qpg">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="478"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACHIEVEMENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEp-dq-X4R" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                        <rect key="frame" x="56.5" y="43" width="246.5" height="31"/>
-                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="35"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACHIEVEMENTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEp-dq-X4R" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                        <rect key="frame" x="45" y="43" width="269" height="40.5"/>
+                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="54"/>
                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -1061,7 +1068,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="brO-Bz-4Rl">
-                                                        <rect key="frame" x="45" y="76.5" width="269" height="329.5"/>
+                                                        <rect key="frame" x="45" y="84" width="269" height="315"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="separatorColor" red="0.91756576300000003" green="0.83195948600000003" blue="0.66552352910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1077,15 +1084,15 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="269" height="43.5"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvH-iU-IWM">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvH-iU-IWM">
                                                                             <rect key="frame" x="0.0" y="0.0" width="161.5" height="43.5"/>
-                                                                            <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="24"/>
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                             <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNf-Tu-fOx">
-                                                                            <rect key="frame" x="198.5" y="11" width="70.5" height="21.5"/>
-                                                                            <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="24"/>
+                                                                            <rect key="frame" x="208" y="8.5" width="61" height="27"/>
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                             <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -1136,12 +1143,13 @@
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="00x-dm-VV9" secondAttribute="height" multiplier="2:1" id="2V2-Uu-kfa"/>
                                                                                     </constraints>
-                                                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
+                                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                                     <state key="normal" title="UNLOCK" backgroundImage="bigButtonImageNormal">
                                                                                         <color key="titleColor" red="0.45571917295455933" green="0.24684450030326843" blue="0.22351035475730896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     </state>
                                                                                     <userDefinedRuntimeAttributes>
                                                                                         <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="unlock"/>
+                                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                                                     </userDefinedRuntimeAttributes>
                                                                                     <connections>
                                                                                         <action selector="unlockAction:" destination="1ZD-Vq-hzR" eventType="touchUpInside" id="w5e-iD-hoV"/>
@@ -1186,8 +1194,8 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header Label Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydm-01-kb5">
-                                                                            <rect key="frame" x="0.0" y="23" width="269" height="49.5"/>
-                                                                            <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="28"/>
+                                                                            <rect key="frame" x="0.0" y="30" width="269" height="36"/>
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="48"/>
                                                                             <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -1212,8 +1220,9 @@
                                                     <constraint firstAttribute="bottom" secondItem="cb5-l4-Qpg" secondAttribute="bottom" id="LZ3-VA-ve1"/>
                                                     <constraint firstItem="cb5-l4-Qpg" firstAttribute="leading" secondItem="W1k-85-Y1t" secondAttribute="leading" id="R3n-nW-AEL"/>
                                                     <constraint firstItem="brO-Bz-4Rl" firstAttribute="centerY" secondItem="W1k-85-Y1t" secondAttribute="centerY" multiplier="1.01" id="SuK-xc-Hv7"/>
+                                                    <constraint firstItem="xEp-dq-X4R" firstAttribute="width" secondItem="W1k-85-Y1t" secondAttribute="width" multiplier="0.75" id="TVK-na-tQ5"/>
                                                     <constraint firstItem="xEp-dq-X4R" firstAttribute="top" secondItem="W1k-85-Y1t" secondAttribute="centerY" multiplier="0.18" id="Vvn-sL-Wwd"/>
-                                                    <constraint firstItem="brO-Bz-4Rl" firstAttribute="height" secondItem="W1k-85-Y1t" secondAttribute="height" multiplier="0.69" id="ban-4C-OPm"/>
+                                                    <constraint firstItem="brO-Bz-4Rl" firstAttribute="height" secondItem="W1k-85-Y1t" secondAttribute="height" multiplier="0.66" id="ban-4C-OPm"/>
                                                     <constraint firstAttribute="trailing" secondItem="cb5-l4-Qpg" secondAttribute="trailing" id="hfB-Xn-WSQ"/>
                                                     <constraint firstItem="brO-Bz-4Rl" firstAttribute="width" secondItem="W1k-85-Y1t" secondAttribute="width" multiplier="0.75" id="iQM-hP-MR3"/>
                                                     <constraint firstItem="cb5-l4-Qpg" firstAttribute="top" secondItem="W1k-85-Y1t" secondAttribute="top" id="vO7-ig-wh5"/>
@@ -1319,12 +1328,13 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0d8-Q3-ook" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                 <rect key="frame" x="103" y="8" width="169" height="56.5"/>
-                                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                 <state key="normal" title="ALL 50% OFF" backgroundImage="bigButtonRedImageNormal">
                                                     <color key="titleColor" red="0.45571917295455933" green="0.24684450030326843" blue="0.22351035475730896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="getAll50Off"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="getAllAction:" destination="oiI-oJ-IA8" eventType="touchUpInside" id="8hJ-Oh-cAp"/>
@@ -1362,9 +1372,9 @@
                                                                                         <constraint firstAttribute="width" secondItem="zce-mx-FWl" secondAttribute="height" multiplier="1:1" id="Str-WY-tnz"/>
                                                                                     </constraints>
                                                                                 </imageView>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpJ-LP-6CT">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="lpJ-LP-6CT">
                                                                                     <rect key="frame" x="22.5" y="0.0" width="135" height="28.5"/>
-                                                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
+                                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                                                     <color key="textColor" red="0.59100401401519775" green="0.35494732856750488" blue="0.25488176941871643" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -1373,13 +1383,13 @@
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bW-Ud-oeW">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="180" height="23"/>
-                                                                                            <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
+                                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="24"/>
                                                                                             <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVA-qm-igf">
                                                                                             <rect key="frame" x="0.0" y="23" width="180" height="23"/>
-                                                                                            <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
+                                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="24"/>
                                                                                             <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
@@ -1446,17 +1456,18 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="180" height="191.5"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zrU-OU-oes" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                                    <rect key="frame" x="9" y="55.5" width="162" height="81"/>
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrU-OU-oes" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="66" width="180" height="60"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" secondItem="zrU-OU-oes" secondAttribute="height" multiplier="2:1" id="a4s-gY-Gae"/>
+                                                                                        <constraint firstAttribute="width" secondItem="zrU-OU-oes" secondAttribute="height" multiplier="3:1" id="a4s-gY-Gae"/>
                                                                                     </constraints>
-                                                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
+                                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                                                     <state key="normal" title="UNLOCK ALL HEROES" backgroundImage="bigButtonImageNormal">
                                                                                         <color key="titleColor" red="0.59215686274509804" green="0.35686274509803922" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     </state>
                                                                                     <userDefinedRuntimeAttributes>
                                                                                         <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="unlockAllHeroes"/>
+                                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                                                     </userDefinedRuntimeAttributes>
                                                                                     <connections>
                                                                                         <action selector="unlockAction:" destination="PAE-I3-rXe" eventType="touchUpInside" id="rC3-Wm-tlu"/>
@@ -1467,7 +1478,7 @@
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstItem="zrU-OU-oes" firstAttribute="centerY" secondItem="PAE-I3-rXe" secondAttribute="centerY" id="UOY-0i-hGu"/>
-                                                                            <constraint firstItem="zrU-OU-oes" firstAttribute="width" secondItem="PAE-I3-rXe" secondAttribute="width" multiplier="0.9" id="VYl-UJ-cF4"/>
+                                                                            <constraint firstItem="zrU-OU-oes" firstAttribute="width" secondItem="PAE-I3-rXe" secondAttribute="width" id="VYl-UJ-cF4"/>
                                                                             <constraint firstItem="zrU-OU-oes" firstAttribute="centerX" secondItem="PAE-I3-rXe" secondAttribute="centerX" id="uOa-kT-a9g"/>
                                                                         </constraints>
                                                                         <connections>
@@ -1530,24 +1541,24 @@
                                                                                         <constraint firstAttribute="width" secondItem="XIA-So-jAT" secondAttribute="height" multiplier="1:1" id="F1I-p4-Dpp"/>
                                                                                     </constraints>
                                                                                 </imageView>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuA-mt-Mxz">
-                                                                                    <rect key="frame" x="80" y="145.5" width="53" height="16"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="nuA-mt-Mxz">
+                                                                                    <rect key="frame" x="89.5" y="141.5" width="34.5" height="18"/>
                                                                                     <color key="backgroundColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
+                                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="24"/>
                                                                                     <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXK-RZ-G82">
-                                                                                    <rect key="frame" x="80" y="169.5" width="53" height="16"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="XXK-RZ-G82">
+                                                                                    <rect key="frame" x="89.5" y="167.5" width="34.5" height="18"/>
                                                                                     <color key="backgroundColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
+                                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="24"/>
                                                                                     <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6f-VL-0Ck">
-                                                                                    <rect key="frame" x="74.5" y="8" width="64.5" height="19.5"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="o6f-VL-0Ck">
+                                                                                    <rect key="frame" x="83.5" y="8" width="46" height="24"/>
                                                                                     <color key="backgroundColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
+                                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                                                     <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -1593,17 +1604,18 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="213" height="193.5"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uRd-5X-MZ5" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                                    <rect key="frame" x="10.5" y="49" width="192" height="95.5"/>
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRd-5X-MZ5" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="61.5" width="213" height="71"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" secondItem="uRd-5X-MZ5" secondAttribute="height" multiplier="2:1" id="fZk-hG-0hx"/>
+                                                                                        <constraint firstAttribute="width" secondItem="uRd-5X-MZ5" secondAttribute="height" multiplier="3:1" id="fZk-hG-0hx"/>
                                                                                     </constraints>
-                                                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
+                                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                                                     <state key="normal" title="UNLOCK ALL LEVELS" backgroundImage="bigButtonImageNormal">
                                                                                         <color key="titleColor" red="0.59215686274509804" green="0.35686274509803922" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     </state>
                                                                                     <userDefinedRuntimeAttributes>
                                                                                         <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="unlockAllLevels"/>
+                                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                                                     </userDefinedRuntimeAttributes>
                                                                                     <connections>
                                                                                         <action selector="unlockAction:" destination="Umv-Vy-RWv" eventType="touchUpInside" id="ds6-HY-goO"/>
@@ -1613,7 +1625,7 @@
                                                                         </view>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstItem="uRd-5X-MZ5" firstAttribute="width" secondItem="Umv-Vy-RWv" secondAttribute="width" multiplier="0.9" id="OU7-RC-3xZ"/>
+                                                                            <constraint firstItem="uRd-5X-MZ5" firstAttribute="width" secondItem="Umv-Vy-RWv" secondAttribute="width" id="OU7-RC-3xZ"/>
                                                                             <constraint firstItem="uRd-5X-MZ5" firstAttribute="centerY" secondItem="Umv-Vy-RWv" secondAttribute="centerY" id="R2W-iQ-Lt5"/>
                                                                             <constraint firstItem="uRd-5X-MZ5" firstAttribute="centerX" secondItem="Umv-Vy-RWv" secondAttribute="centerX" id="ZlD-Sf-wik"/>
                                                                         </constraints>
@@ -1746,7 +1758,7 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image library access needed to be able to save images" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nav-uI-EtL" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="83.5"/>
-                                                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="20"/>
+                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -1761,12 +1773,13 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="WLK-8l-vSZ" secondAttribute="height" multiplier="2:1" id="D7Q-I2-PL0"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
+                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                         <state key="normal" title="SETTINGS" backgroundImage="bigButtonImageNormal">
                                                                             <color key="titleColor" red="0.45571917299999998" green="0.24684450029999999" blue="0.22351035480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Settings"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="settingsAction:" destination="9Vm-T6-nB1" eventType="touchUpInside" id="oNV-6a-Tch"/>
@@ -1877,9 +1890,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7W-qQ-f4Y">
                                                         <rect key="frame" x="42" y="44.5" width="253" height="251"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Credits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUw-Ky-oKC" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="28.5"/>
-                                                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="32"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Credits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="rUw-Ky-oKC" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="36"/>
+                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="48"/>
                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -1887,7 +1900,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRW-oD-aSC">
-                                                                <rect key="frame" x="0.0" y="28.5" width="253" height="222.5"/>
+                                                                <rect key="frame" x="0.0" y="36" width="253" height="215"/>
                                                                 <connections>
                                                                     <segue destination="0qB-No-nFy" kind="embed" id="W1M-z9-Gt6"/>
                                                                 </connections>
@@ -1972,7 +1985,7 @@
             <objects>
                 <tableViewController id="0qB-No-nFy" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xjW-YW-uZa">
-                        <rect key="frame" x="0.0" y="0.0" width="253" height="222.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="253" height="215"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1990,7 +2003,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Thank you for playing my game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk2-gE-cXg" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="8" width="253" height="91.5"/>
-                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                     <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -2016,8 +2029,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Music by:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEy-4a-K8z" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="8" width="116.5" height="19.5"/>
-                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
+                                                    <rect key="frame" x="15" y="8" width="85.5" height="27"/>
+                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                     <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -2025,14 +2038,14 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicBy" translatesAutoresizingMaskIntoConstraints="NO" id="18f-8r-hC6">
-                                                    <rect key="frame" x="15" y="35.5" width="59.5" height="59.5"/>
+                                                    <rect key="frame" x="15" y="43" width="59.5" height="59.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="18f-8r-hC6" secondAttribute="height" multiplier="1:1" id="pix-Ed-s1T"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="playonloop.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m06-w4-Ujs">
-                                                    <rect key="frame" x="90" y="57.5" width="148" height="16"/>
-                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
+                                                    <rect key="frame" x="94" y="59.5" width="144" height="27"/>
+                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                     <color key="textColor" red="0.4692305326461792" green="0.5250009298324585" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2091,9 +2104,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESZ-q9-CkZ">
                                                         <rect key="frame" x="36.5" y="37" width="292.5" height="209"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qp9-0f-itv" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="292.5" height="21.5"/>
-                                                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="24"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="Qp9-0f-itv" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="292.5" height="40.5"/>
+                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="54"/>
                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -2101,14 +2114,14 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12e-H4-svz">
-                                                                <rect key="frame" x="0.0" y="29.5" width="292.5" height="125.5"/>
+                                                                <rect key="frame" x="0.0" y="48.5" width="292.5" height="125.5"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNY-cX-9zS">
                                                                         <rect key="frame" x="0.0" y="0.0" width="97" height="125.5"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avoid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d97-ce-3wC" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="8" width="97" height="16"/>
-                                                                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
+                                                                                <rect key="frame" x="0.0" y="8" width="97" height="22.5"/>
+                                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="30"/>
                                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2136,8 +2149,8 @@
                                                                         <rect key="frame" x="196" y="0.0" width="96.5" height="125.5"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% Catch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TV-Bk-jv6" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="8" width="96.5" height="32"/>
-                                                                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
+                                                                                <rect key="frame" x="0.0" y="8" width="96.5" height="22.5"/>
+                                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="30"/>
                                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2165,8 +2178,8 @@
                                                                         <rect key="frame" x="98" y="0.0" width="97" height="125.5"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvs-ac-dpK" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="8" width="97" height="16"/>
-                                                                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
+                                                                                <rect key="frame" x="0.0" y="8" width="97" height="22.5"/>
+                                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="30"/>
                                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2208,11 +2221,11 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbE-eP-KkP">
-                                                                <rect key="frame" x="0.0" y="155" width="292.5" height="54"/>
+                                                                <rect key="frame" x="0.0" y="174" width="292.5" height="35"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not show anymore" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRU-Rh-2C6" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                        <rect key="frame" x="66" y="19" width="200.5" height="16"/>
-                                                                        <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="18"/>
+                                                                        <rect key="frame" x="66" y="7" width="157.5" height="21"/>
+                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="28"/>
                                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -2220,7 +2233,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3PW-tf-Hpe">
-                                                                        <rect key="frame" x="9" y="11.5" width="51" height="31"/>
+                                                                        <rect key="frame" x="9" y="2" width="51" height="31"/>
                                                                         <color key="onTintColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </switch>
                                                                 </subviews>
@@ -2331,9 +2344,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fE8-zQ-nKw">
                                                         <rect key="frame" x="42" y="52.5" width="253" height="292.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get All Levels &amp; Heroes. 50% OFF" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1C-DJ-bxr" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="39"/>
-                                                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get All Levels &amp; Heroes. 50% OFF" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="M1C-DJ-bxr" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="54"/>
+                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -2341,19 +2354,20 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="getAllPreviewImage" translatesAutoresizingMaskIntoConstraints="NO" id="WYA-Xq-OVI">
-                                                                <rect key="frame" x="0.0" y="47" width="253" height="253"/>
+                                                                <rect key="frame" x="0.0" y="62" width="253" height="253"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="WYA-Xq-OVI" secondAttribute="height" multiplier="1:1" id="16H-2e-HgQ"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtN-Xb-9D0" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                <rect key="frame" x="63" y="141.5" width="127" height="63.5"/>
-                                                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="22"/>
+                                                                <rect key="frame" x="63" y="156.5" width="127" height="63.5"/>
+                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                 <state key="normal" title="GET ALL" backgroundImage="bigButtonImageNormal">
                                                                     <color key="titleColor" red="0.45571917299999998" green="0.24684450029999999" blue="0.22351035480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="getAllButtonText"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="getAllAction:" destination="nSg-94-9vu" eventType="touchUpInside" id="Y3B-ht-d40"/>

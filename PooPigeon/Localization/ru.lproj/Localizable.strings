@@ -69,7 +69,7 @@
 //
 // general
 "achievements" = "ДОСТИЖЕНИЯ";
-"unlock" = "РАЗБЛОКИРОВАТЬ";
+"unlock" = "ОТКРЫТЬ";
 // headers
 "PROGRESS" = "ПРОГРЕСС";
 "WALLPAPERS" = "ОБОИ";
@@ -77,20 +77,20 @@
 "Default" = "По умолчанию";
 "Best Score" = "Лучший счет";
 "Total Score" = "Общий счет";
-"Time Spent In Game" = "Время проведенное в игре";
-"Launch Game" = "Кол-во запусков";
-"Launch Days" = "Кол-во дней";
+"Time Spent In Game" = "Время в игре";
+"Launch Game" = "Запуски";
+"Launch Days" = "Дни";
 "Launch At Day" = "Запуск в День";
-"Lose Score" = "Кол-во Проигрышей";
+"Lose Score" = "Проигрыши";
 "Like Us" = "Лайкнуть Нас";
 "Share Us" = "Поделиться";
 "Review Us" = "Написать отзыв";
 
 //MARK: - ShopViewController
 //
-"getAll50Off" = "СКИДКА 50% НА ВСЕ";
-"unlockAllHeroes" = "РАЗБЛОКИРОВАТЬ ВСЕХ ГЕРОЕВ";
-"unlockAllLevels" = "РАЗБЛОКИРОВАТЬ ВСЕ УРОВНИ";
+"getAll50Off" = "СКИДКА 50% НА ВСЁ";
+"unlockAllHeroes" = "ОТКРЫТЬ ВСЕХ ГЕРОЕВ";
+"unlockAllLevels" = "ОТКРЫТЬ ВСЕ УРОВНИ";
 "timeInGame" = "Время в игре";
 "timeLeft" = "Осталось времени";
 //MARK: Hero names localization

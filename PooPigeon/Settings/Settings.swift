@@ -287,6 +287,7 @@ class Settings: Codable {
             self.language = language
             LocalizationHelper.defaultLocalizer.setSelectedLanguage(lang: language.rawValue)
             self.save()
+            NotificationCenter.default.post(name: .updateLanguage, object: nil)
         }
     }
     

@@ -68,5 +68,9 @@ ca-app-pub-3987841949353092/7045625979</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>haxrcorp_4089_cyrillic_altgr.ttf</string>
+	</array>
 </dict>
 </plist>

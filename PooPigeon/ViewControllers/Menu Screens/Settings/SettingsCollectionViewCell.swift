@@ -158,8 +158,6 @@ class SettingsCollectionViewCell: UICollectionViewCell {
             case .Russian:
                 Settings.shared.changeLanguageTo(language: .English)
             }
-            updateCellButtonImage()
-            NotificationCenter.default.post(name: .updateLanguage, object: nil)
             
         case .Like:
             settingsScreenPresentationDelegate?.likeApplication()
