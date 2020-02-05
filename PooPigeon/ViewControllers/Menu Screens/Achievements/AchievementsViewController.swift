@@ -77,6 +77,8 @@ class AchievementsViewController: BaseBannerAdViewController {
     //MARK: - Setup methods
     //
     func setupTopButtons(){
+        rightTopButton.setImage(UIImage(named: "backButtonPressed"), for: .highlighted)
+        leftTopButton.setImage(UIImage(named: "backButtonPressed"), for: .highlighted)
         (Settings.shared.isLeftHandedUI ? rightTopButton : leftTopButton)?.isHidden = true
         (Settings.shared.isLeftHandedUI ? leftTopButton : rightTopButton)?.isHidden = false
     }
@@ -203,7 +205,6 @@ class AchievementsViewController: BaseBannerAdViewController {
         self.wallpapers[wallpaper.wallpaperNumber - 1].isWallpaperUnlocked = true
         setupDataSource()
         self.tableView.reloadSections(IndexSet(integer: 1), with: .automatic)
-        //TODO: may be add cell selection (to scroll to unlocked cell) if reloadSections Doesn't handle it. To be tested
     }
     
     //MARK: - Transition methods

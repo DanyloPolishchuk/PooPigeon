@@ -95,6 +95,9 @@
                                                                             <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                                             <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
+                                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="64"/>
+                                                                            </variation>
                                                                         </label>
                                                                     </subviews>
                                                                 </view>
@@ -116,19 +119,21 @@
                                                         </cells>
                                                     </collectionView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="W4v-HW-hYF" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                        <rect key="frame" x="45" y="33.5" width="269" height="52.5"/>
+                                                        <rect key="frame" x="45" y="21" width="269" height="52.5"/>
                                                         <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="70"/>
                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Settings"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="110"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="UE0-wo-X7I" secondAttribute="trailing" id="5Q6-L4-d4I"/>
-                                                    <constraint firstItem="W4v-HW-hYF" firstAttribute="top" secondItem="eDQ-ps-CHZ" secondAttribute="centerY" multiplier="0.14" id="8pS-g4-E2t"/>
                                                     <constraint firstItem="W4v-HW-hYF" firstAttribute="centerX" secondItem="eDQ-ps-CHZ" secondAttribute="centerX" id="FFC-Md-vqe"/>
                                                     <constraint firstAttribute="bottom" secondItem="UE0-wo-X7I" secondAttribute="bottom" id="FWK-l1-W9U"/>
                                                     <constraint firstItem="tsu-Sx-2xC" firstAttribute="height" secondItem="UE0-wo-X7I" secondAttribute="height" multiplier="0.65" id="QGw-J3-jnf"/>
@@ -136,6 +141,7 @@
                                                     <constraint firstItem="tsu-Sx-2xC" firstAttribute="width" secondItem="UE0-wo-X7I" secondAttribute="width" multiplier="0.75" id="UXc-OL-I21"/>
                                                     <constraint firstItem="tsu-Sx-2xC" firstAttribute="top" secondItem="eDQ-ps-CHZ" secondAttribute="centerY" multiplier="0.34" id="ViX-TH-1iF"/>
                                                     <constraint firstItem="W4v-HW-hYF" firstAttribute="width" secondItem="UE0-wo-X7I" secondAttribute="width" multiplier="0.75" id="am8-J4-Mul"/>
+                                                    <constraint firstItem="tsu-Sx-2xC" firstAttribute="top" secondItem="W4v-HW-hYF" secondAttribute="bottom" constant="8" id="tB5-23-Kox"/>
                                                     <constraint firstItem="UE0-wo-X7I" firstAttribute="leading" secondItem="eDQ-ps-CHZ" secondAttribute="leading" id="wce-Xk-FBV"/>
                                                     <constraint firstItem="tsu-Sx-2xC" firstAttribute="centerX" secondItem="eDQ-ps-CHZ" secondAttribute="centerX" id="yHi-1f-umx"/>
                                                 </constraints>
@@ -223,7 +229,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J65-B2-jvI">
                                                         <rect key="frame" x="42" y="30" width="253" height="167"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ads need internet connection to load." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yu-U7-lNt" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ads need internet connection to load." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="9yu-U7-lNt" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="167"/>
                                                                 <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="48"/>
                                                                 <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -231,6 +237,9 @@
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="needInternetConnection"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="110"/>
+                                                                </variation>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -333,7 +342,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gCR-2c-dH3">
                                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="251"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Contact Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDP-Sw-IQE" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Contact Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="gDP-Sw-IQE" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                         <rect key="frame" x="57.5" y="0.0" width="138" height="36"/>
                                                                         <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="48"/>
                                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -341,24 +350,33 @@
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="contactUS"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="100"/>
+                                                                        </variation>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Found a bug ? Send us an email at" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eed-fx-RRL" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                        <rect key="frame" x="20.5" y="47.5" width="212" height="48"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Found a bug ? Send us an email at" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="eed-fx-RRL" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                                        <rect key="frame" x="20.5" y="52.5" width="212" height="48"/>
                                                                         <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="foundABug"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="60"/>
+                                                                        </variation>
                                                                     </label>
-                                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PooPigeonExample@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQb-d6-OeL">
-                                                                        <rect key="frame" x="28" y="107" width="196.5" height="18"/>
+                                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PooPigeonExample@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="oQb-d6-OeL">
+                                                                        <rect key="frame" x="28" y="117" width="196.5" height="18"/>
                                                                         <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="24"/>
                                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="50"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKa-q1-uev">
-                                                                        <rect key="frame" x="105" y="136.5" width="43" height="43"/>
+                                                                        <rect key="frame" x="105" y="151.5" width="43" height="43"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="rKa-q1-uev" secondAttribute="height" multiplier="1:1" id="urQ-Vl-BnF"/>
                                                                         </constraints>
@@ -369,9 +387,9 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qR-uz-Huh" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                        <rect key="frame" x="66.5" y="191" width="120" height="60"/>
+                                                                        <rect key="frame" x="66.5" y="211" width="120" height="40"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" secondItem="1qR-uz-Huh" secondAttribute="height" multiplier="2:1" id="o6a-qe-xtt"/>
+                                                                            <constraint firstAttribute="width" secondItem="1qR-uz-Huh" secondAttribute="height" multiplier="3:1" id="o6a-qe-xtt"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                         <state key="normal" title="EMAIL US" backgroundImage="bigButtonImageNormal">
@@ -381,6 +399,9 @@
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="emailUs"/>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="90"/>
+                                                                        </variation>
                                                                         <connections>
                                                                             <action selector="emailUsAction:" destination="Au1-pU-Kye" eventType="touchUpInside" id="nek-Us-1T0"/>
                                                                             <action selector="settingsAction:" destination="9Vm-T6-nB1" eventType="touchUpInside" id="j3a-w0-Bts"/>
@@ -417,7 +438,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMd-GN-Y6Z">
                                                 <rect key="frame" x="187.5" y="63.5" width="187.5" height="48"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="EMAIL COPIED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-Vc-KXm" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="EMAIL COPIED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-Vc-KXm" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="48"/>
                                                         <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -425,6 +446,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="emailCopied"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="70"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.24617087841033936" green="0.15822345018386841" blue="0.19598832726478577" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -712,12 +736,18 @@
                                                 <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="40"/>
                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="80"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25e-B0-3SC">
                                                 <rect key="frame" x="169" y="59.5" width="37.5" height="28.5"/>
                                                 <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="32"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="60"/>
+                                                </variation>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elL-36-NgC">
                                                 <rect key="frame" x="37.5" y="173.5" width="300" height="250"/>
@@ -818,16 +848,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wwt-SU-Z2F" userLabel="gameOverView">
-                                                <rect key="frame" x="37.5" y="148.5" width="300" height="300"/>
+                                                <rect key="frame" x="37.5" y="149.5" width="300" height="298.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBGImage2" translatesAutoresizingMaskIntoConstraints="NO" id="LFU-Rc-8Pz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="298.5"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKY-d6-zZH">
-                                                        <rect key="frame" x="37.5" y="45" width="225" height="210"/>
+                                                        <rect key="frame" x="37.5" y="44.5" width="225" height="209"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtX-f6-1ln">
-                                                                <rect key="frame" x="60" y="105" width="105" height="52.5"/>
+                                                                <rect key="frame" x="60.5" y="130.5" width="104" height="52.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="XtX-f6-1ln" secondAttribute="height" multiplier="2:1" id="I8n-pw-mfQ"/>
                                                                 </constraints>
@@ -837,52 +867,64 @@
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAo-Sq-pE2">
-                                                                <rect key="frame" x="0.0" y="21" width="112.5" height="84"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="112.5" height="104.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="6MC-ip-Ufy" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="27"/>
+                                                                        <rect key="frame" x="0.0" y="42.5" width="112.5" height="27"/>
                                                                         <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="best"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="90"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Qb3-N6-D17">
-                                                                        <rect key="frame" x="0.0" y="35" width="112.5" height="27"/>
+                                                                        <rect key="frame" x="0.0" y="77.5" width="112.5" height="27"/>
                                                                         <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="90"/>
+                                                                        </variation>
                                                                     </label>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="6MC-ip-Ufy" firstAttribute="top" secondItem="dAo-Sq-pE2" secondAttribute="top" id="BML-ic-j4y"/>
+                                                                    <constraint firstItem="6MC-ip-Ufy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dAo-Sq-pE2" secondAttribute="top" id="BML-ic-j4y"/>
                                                                     <constraint firstItem="Qb3-N6-D17" firstAttribute="leading" secondItem="dAo-Sq-pE2" secondAttribute="leading" id="Edc-fo-TX8"/>
                                                                     <constraint firstAttribute="trailing" secondItem="Qb3-N6-D17" secondAttribute="trailing" id="UMg-88-uys"/>
                                                                     <constraint firstItem="6MC-ip-Ufy" firstAttribute="leading" secondItem="dAo-Sq-pE2" secondAttribute="leading" id="bTp-vk-rfk"/>
                                                                     <constraint firstAttribute="trailing" secondItem="6MC-ip-Ufy" secondAttribute="trailing" id="eCM-VU-uQ9"/>
                                                                     <constraint firstItem="Qb3-N6-D17" firstAttribute="top" secondItem="6MC-ip-Ufy" secondAttribute="bottom" constant="8" id="qio-jQ-b1q"/>
-                                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Qb3-N6-D17" secondAttribute="bottom" id="vDa-xj-cKu"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Qb3-N6-D17" secondAttribute="bottom" id="vDa-xj-cKu"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCK-ud-eIe">
-                                                                <rect key="frame" x="112.5" y="21" width="112.5" height="84"/>
+                                                                <rect key="frame" x="112.5" y="0.0" width="112.5" height="104.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Mw5-hi-MxW" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="27"/>
+                                                                        <rect key="frame" x="0.0" y="42.5" width="112.5" height="27"/>
                                                                         <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="total"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="90"/>
+                                                                        </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="DaW-0V-PfC">
-                                                                        <rect key="frame" x="0.0" y="35" width="112.5" height="27"/>
+                                                                        <rect key="frame" x="0.0" y="77.5" width="112.5" height="27"/>
                                                                         <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="90"/>
+                                                                        </variation>
                                                                     </label>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -890,36 +932,39 @@
                                                                     <constraint firstAttribute="trailing" secondItem="Mw5-hi-MxW" secondAttribute="trailing" id="44y-vE-SG5"/>
                                                                     <constraint firstItem="DaW-0V-PfC" firstAttribute="leading" secondItem="GCK-ud-eIe" secondAttribute="leading" id="5rF-bT-pcb"/>
                                                                     <constraint firstItem="Mw5-hi-MxW" firstAttribute="leading" secondItem="GCK-ud-eIe" secondAttribute="leading" id="ROT-Nl-xjy"/>
-                                                                    <constraint firstItem="Mw5-hi-MxW" firstAttribute="top" secondItem="GCK-ud-eIe" secondAttribute="top" id="kqg-p0-eSt"/>
+                                                                    <constraint firstItem="Mw5-hi-MxW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GCK-ud-eIe" secondAttribute="top" id="kqg-p0-eSt"/>
                                                                     <constraint firstItem="DaW-0V-PfC" firstAttribute="top" secondItem="Mw5-hi-MxW" secondAttribute="bottom" constant="8" id="lqy-sp-EXB"/>
                                                                     <constraint firstAttribute="trailing" secondItem="DaW-0V-PfC" secondAttribute="trailing" id="q3N-Op-RkA"/>
-                                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DaW-0V-PfC" secondAttribute="bottom" id="rBn-R6-OzC"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="DaW-0V-PfC" secondAttribute="bottom" id="rBn-R6-OzC"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="XtX-f6-1ln" firstAttribute="height" secondItem="cKY-d6-zZH" secondAttribute="height" multiplier="0.25" id="27L-53-drG"/>
-                                                            <constraint firstItem="XtX-f6-1ln" firstAttribute="top" secondItem="GCK-ud-eIe" secondAttribute="bottom" id="3rv-wo-2dz"/>
-                                                            <constraint firstItem="GCK-ud-eIe" firstAttribute="height" secondItem="cKY-d6-zZH" secondAttribute="height" multiplier="0.4" id="7AZ-vt-WyB"/>
+                                                            <constraint firstItem="GCK-ud-eIe" firstAttribute="height" secondItem="cKY-d6-zZH" secondAttribute="height" multiplier="0.5" id="7AZ-vt-WyB"/>
                                                             <constraint firstItem="XtX-f6-1ln" firstAttribute="centerX" secondItem="cKY-d6-zZH" secondAttribute="centerX" id="7IU-25-eZy"/>
                                                             <constraint firstItem="dAo-Sq-pE2" firstAttribute="width" secondItem="cKY-d6-zZH" secondAttribute="width" multiplier="0.5" id="I6F-4v-PjA"/>
-                                                            <constraint firstItem="XtX-f6-1ln" firstAttribute="top" secondItem="dAo-Sq-pE2" secondAttribute="bottom" id="ReU-g0-PyB"/>
-                                                            <constraint firstItem="dAo-Sq-pE2" firstAttribute="height" secondItem="cKY-d6-zZH" secondAttribute="height" multiplier="0.4" id="WTx-xl-VW3"/>
+                                                            <constraint firstItem="dAo-Sq-pE2" firstAttribute="top" secondItem="cKY-d6-zZH" secondAttribute="top" id="NZs-8g-mdO"/>
+                                                            <constraint firstItem="GCK-ud-eIe" firstAttribute="top" secondItem="cKY-d6-zZH" secondAttribute="top" id="WQ0-O7-Izo"/>
+                                                            <constraint firstItem="dAo-Sq-pE2" firstAttribute="height" secondItem="cKY-d6-zZH" secondAttribute="height" multiplier="0.5" id="WTx-xl-VW3"/>
                                                             <constraint firstAttribute="trailing" secondItem="GCK-ud-eIe" secondAttribute="trailing" id="oSa-Fn-w97"/>
-                                                            <constraint firstItem="XtX-f6-1ln" firstAttribute="top" secondItem="cKY-d6-zZH" secondAttribute="centerY" id="wb4-Co-byw"/>
+                                                            <constraint firstItem="XtX-f6-1ln" firstAttribute="centerY" secondItem="cKY-d6-zZH" secondAttribute="centerY" multiplier="1.5" id="wb4-Co-byw"/>
                                                             <constraint firstItem="dAo-Sq-pE2" firstAttribute="leading" secondItem="cKY-d6-zZH" secondAttribute="leading" id="zVc-9t-gZz"/>
                                                             <constraint firstItem="GCK-ud-eIe" firstAttribute="width" secondItem="cKY-d6-zZH" secondAttribute="width" multiplier="0.5" id="zjF-p2-a7b"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="hDC-fD-dhj" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                        <rect key="frame" x="37.5" y="27" width="225" height="37.5"/>
+                                                        <rect key="frame" x="37.5" y="26.5" width="225" height="37.5"/>
                                                         <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="50"/>
                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="gameOver"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="100"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -947,7 +992,7 @@
                                             <constraint firstItem="elL-36-NgC" firstAttribute="width" secondItem="PYP-Yr-foV" secondAttribute="width" multiplier="0.8" id="E2d-4A-QN6"/>
                                             <constraint firstItem="JCx-4y-NoU" firstAttribute="centerX" secondItem="PYP-Yr-foV" secondAttribute="centerX" id="LH6-jh-r30"/>
                                             <constraint firstItem="elL-36-NgC" firstAttribute="centerY" secondItem="PYP-Yr-foV" secondAttribute="centerY" id="VgJ-tR-huC"/>
-                                            <constraint firstItem="Wwt-SU-Z2F" firstAttribute="width" secondItem="Wwt-SU-Z2F" secondAttribute="height" multiplier="1:1" id="aKl-bd-3dY"/>
+                                            <constraint firstItem="Wwt-SU-Z2F" firstAttribute="height" secondItem="PYP-Yr-foV" secondAttribute="height" multiplier="0.5" id="aWe-bV-wem"/>
                                             <constraint firstItem="25e-B0-3SC" firstAttribute="centerX" secondItem="JCx-4y-NoU" secondAttribute="centerX" id="b3a-wV-mnx"/>
                                             <constraint firstItem="dNA-O1-VKU" firstAttribute="top" secondItem="PYP-Yr-foV" secondAttribute="top" constant="8" id="bj5-lG-x0x"/>
                                             <constraint firstItem="dNA-O1-VKU" firstAttribute="leading" secondItem="PYP-Yr-foV" secondAttribute="leading" constant="8" id="bqe-af-4Ex"/>
@@ -1058,14 +1103,17 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBGImage2" translatesAutoresizingMaskIntoConstraints="NO" id="cb5-l4-Qpg">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="478"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACHIEVEMENTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEp-dq-X4R" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                        <rect key="frame" x="45" y="43" width="269" height="40.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACHIEVEMENTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="xEp-dq-X4R" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                        <rect key="frame" x="45" y="35.5" width="269" height="40.5"/>
                                                         <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="54"/>
                                                         <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="achievements"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="100"/>
+                                                        </variation>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="brO-Bz-4Rl">
                                                         <rect key="frame" x="45" y="84" width="269" height="315"/>
@@ -1085,16 +1133,22 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvH-iU-IWM">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="161.5" height="43.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="368" height="43.5"/>
                                                                             <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                             <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
+                                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="72"/>
+                                                                            </variation>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNf-Tu-fOx">
-                                                                            <rect key="frame" x="208" y="8.5" width="61" height="27"/>
+                                                                            <rect key="frame" x="552.5" y="8.5" width="61" height="27"/>
                                                                             <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                             <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
+                                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="72"/>
+                                                                            </variation>
                                                                         </label>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1123,13 +1177,13 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0MC-rD-Zyw">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="134.5" height="119.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="307" height="119.5"/>
                                                                         </imageView>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KU9-va-w6y">
-                                                                            <rect key="frame" x="134.5" y="0.0" width="134.5" height="119.5"/>
+                                                                            <rect key="frame" x="307" y="0.0" width="306.5" height="119.5"/>
                                                                             <subviews>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykJ-ku-aUi">
-                                                                                    <rect key="frame" x="33.5" y="26" width="67.5" height="67.5"/>
+                                                                                    <rect key="frame" x="76.5" y="-17" width="153.5" height="153.5"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="ykJ-ku-aUi" secondAttribute="height" multiplier="1:1" id="0Mx-Zd-2A4"/>
                                                                                     </constraints>
@@ -1139,7 +1193,7 @@
                                                                                     </connections>
                                                                                 </button>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00x-dm-VV9" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                                    <rect key="frame" x="20" y="36" width="94.5" height="47.5"/>
+                                                                                    <rect key="frame" x="46" y="6" width="214.5" height="107.5"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="00x-dm-VV9" secondAttribute="height" multiplier="2:1" id="2V2-Uu-kfa"/>
                                                                                     </constraints>
@@ -1151,6 +1205,9 @@
                                                                                         <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="unlock"/>
                                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                                                     </userDefinedRuntimeAttributes>
+                                                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="72"/>
+                                                                                    </variation>
                                                                                     <connections>
                                                                                         <action selector="unlockAction:" destination="1ZD-Vq-hzR" eventType="touchUpInside" id="w5e-iD-hoV"/>
                                                                                     </connections>
@@ -1194,10 +1251,13 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header Label Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydm-01-kb5">
-                                                                            <rect key="frame" x="0.0" y="30" width="269" height="36"/>
+                                                                            <rect key="frame" x="0.0" y="30" width="613.5" height="36"/>
                                                                             <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="48"/>
                                                                             <color key="textColor" red="0.89411764705882346" green="0.65098039215686276" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
+                                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="80"/>
+                                                                            </variation>
                                                                         </label>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1221,8 +1281,8 @@
                                                     <constraint firstItem="cb5-l4-Qpg" firstAttribute="leading" secondItem="W1k-85-Y1t" secondAttribute="leading" id="R3n-nW-AEL"/>
                                                     <constraint firstItem="brO-Bz-4Rl" firstAttribute="centerY" secondItem="W1k-85-Y1t" secondAttribute="centerY" multiplier="1.01" id="SuK-xc-Hv7"/>
                                                     <constraint firstItem="xEp-dq-X4R" firstAttribute="width" secondItem="W1k-85-Y1t" secondAttribute="width" multiplier="0.75" id="TVK-na-tQ5"/>
-                                                    <constraint firstItem="xEp-dq-X4R" firstAttribute="top" secondItem="W1k-85-Y1t" secondAttribute="centerY" multiplier="0.18" id="Vvn-sL-Wwd"/>
                                                     <constraint firstItem="brO-Bz-4Rl" firstAttribute="height" secondItem="W1k-85-Y1t" secondAttribute="height" multiplier="0.66" id="ban-4C-OPm"/>
+                                                    <constraint firstItem="brO-Bz-4Rl" firstAttribute="top" secondItem="xEp-dq-X4R" secondAttribute="bottom" constant="8" id="dPJ-hZ-CGP"/>
                                                     <constraint firstAttribute="trailing" secondItem="cb5-l4-Qpg" secondAttribute="trailing" id="hfB-Xn-WSQ"/>
                                                     <constraint firstItem="brO-Bz-4Rl" firstAttribute="width" secondItem="W1k-85-Y1t" secondAttribute="width" multiplier="0.75" id="iQM-hP-MR3"/>
                                                     <constraint firstItem="cb5-l4-Qpg" firstAttribute="top" secondItem="W1k-85-Y1t" secondAttribute="top" id="vO7-ig-wh5"/>
@@ -1336,6 +1396,9 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="getAll50Off"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="70"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="getAllAction:" destination="oiI-oJ-IA8" eventType="touchUpInside" id="8hJ-Oh-cAp"/>
                                                 </connections>
@@ -1377,21 +1440,30 @@
                                                                                     <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                                                     <color key="textColor" red="0.59100401401519775" green="0.35494732856750488" blue="0.25488176941871643" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
+                                                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="64"/>
+                                                                                    </variation>
                                                                                 </label>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8g-m2-GT9">
                                                                                     <rect key="frame" x="0.0" y="145.5" width="180" height="46"/>
                                                                                     <subviews>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bW-Ud-oeW">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="8bW-Ud-oeW">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="180" height="23"/>
                                                                                             <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="24"/>
                                                                                             <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
+                                                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="48"/>
+                                                                                            </variation>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVA-qm-igf">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="yVA-qm-igf">
                                                                                             <rect key="frame" x="0.0" y="23" width="180" height="23"/>
                                                                                             <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="24"/>
                                                                                             <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <nil key="highlightedColor"/>
+                                                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                                                <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="48"/>
+                                                                                            </variation>
                                                                                         </label>
                                                                                     </subviews>
                                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1469,6 +1541,9 @@
                                                                                         <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="unlockAllHeroes"/>
                                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                                                     </userDefinedRuntimeAttributes>
+                                                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="64"/>
+                                                                                    </variation>
                                                                                     <connections>
                                                                                         <action selector="unlockAction:" destination="PAE-I3-rXe" eventType="touchUpInside" id="rC3-Wm-tlu"/>
                                                                                     </connections>
@@ -1547,6 +1622,9 @@
                                                                                     <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="24"/>
                                                                                     <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
+                                                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="48"/>
+                                                                                    </variation>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="XXK-RZ-G82">
                                                                                     <rect key="frame" x="89.5" y="167.5" width="34.5" height="18"/>
@@ -1554,6 +1632,9 @@
                                                                                     <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="24"/>
                                                                                     <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
+                                                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="48"/>
+                                                                                    </variation>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="o6f-VL-0Ck">
                                                                                     <rect key="frame" x="83.5" y="8" width="46" height="24"/>
@@ -1561,6 +1642,9 @@
                                                                                     <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                                                     <color key="textColor" red="0.59100401400000002" green="0.3549473286" blue="0.25488176940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
+                                                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="64"/>
+                                                                                    </variation>
                                                                                 </label>
                                                                             </subviews>
                                                                         </view>
@@ -1617,6 +1701,9 @@
                                                                                         <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="unlockAllLevels"/>
                                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                                                     </userDefinedRuntimeAttributes>
+                                                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="64"/>
+                                                                                    </variation>
                                                                                     <connections>
                                                                                         <action selector="unlockAction:" destination="Umv-Vy-RWv" eventType="touchUpInside" id="ds6-HY-goO"/>
                                                                                     </connections>
@@ -1756,7 +1843,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Bi-Lh-kne">
                                                         <rect key="frame" x="42" y="30" width="253" height="167"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image library access needed to be able to save images" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nav-uI-EtL" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image library access needed to be able to save images" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="nav-uI-EtL" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="83.5"/>
                                                                 <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1764,6 +1851,9 @@
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="needImageLibraryAccess"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="100"/>
+                                                                </variation>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ut-iU-1sE">
                                                                 <rect key="frame" x="0.0" y="83.5" width="253" height="83.5"/>
@@ -1781,6 +1871,9 @@
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Settings"/>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="90"/>
+                                                                        </variation>
                                                                         <connections>
                                                                             <action selector="settingsAction:" destination="9Vm-T6-nB1" eventType="touchUpInside" id="oNV-6a-Tch"/>
                                                                         </connections>
@@ -1898,6 +1991,9 @@
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Credits"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="100"/>
+                                                                </variation>
                                                             </label>
                                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRW-oD-aSC">
                                                                 <rect key="frame" x="0.0" y="36" width="253" height="215"/>
@@ -1994,21 +2090,24 @@
                         <sections>
                             <tableViewSection id="zvD-3G-EeG">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="kXA-x6-EE8">
-                                        <rect key="frame" x="0.0" y="0.0" width="253" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="kXA-x6-EE8">
+                                        <rect key="frame" x="0.0" y="0.0" width="253" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kXA-x6-EE8" id="A9D-1n-vU5">
-                                            <rect key="frame" x="0.0" y="0.0" width="253" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="253" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Thank you for playing my game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk2-gE-cXg" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="8" width="253" height="91.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Thank you for playing my game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="hk2-gE-cXg" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="8" width="563" height="191.5"/>
                                                     <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                     <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="thankYouForPlaying"/>
                                                     </userDefinedRuntimeAttributes>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="100"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -2021,11 +2120,11 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="wrT-gY-BIj">
-                                        <rect key="frame" x="0.0" y="100" width="253" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="300" id="wrT-gY-BIj">
+                                        <rect key="frame" x="0.0" y="200" width="253" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wrT-gY-BIj" id="7gE-aK-rOy">
-                                            <rect key="frame" x="0.0" y="0.0" width="253" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="253" height="299.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Music by:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEy-4a-K8z" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
@@ -2036,28 +2135,35 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="musicBy"/>
                                                     </userDefinedRuntimeAttributes>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="80"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicBy" translatesAutoresizingMaskIntoConstraints="NO" id="18f-8r-hC6">
-                                                    <rect key="frame" x="15" y="43" width="59.5" height="59.5"/>
+                                                    <rect key="frame" x="15" y="43" width="186" height="186"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="18f-8r-hC6" secondAttribute="height" multiplier="1:1" id="pix-Ed-s1T"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="playonloop.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m06-w4-Ujs">
-                                                    <rect key="frame" x="94" y="59.5" width="144" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="playonloop.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="m06-w4-Ujs">
+                                                    <rect key="frame" x="209" y="122.5" width="144" height="27"/>
                                                     <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                     <color key="textColor" red="0.4692305326461792" green="0.5250009298324585" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="80"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="m06-w4-Ujs" firstAttribute="leading" secondItem="18f-8r-hC6" secondAttribute="trailing" constant="8" id="2lZ-5V-KMF"/>
                                                 <constraint firstItem="18f-8r-hC6" firstAttribute="leading" secondItem="7gE-aK-rOy" secondAttribute="leading" constant="15" id="5wg-4I-S2b"/>
-                                                <constraint firstAttribute="trailing" secondItem="m06-w4-Ujs" secondAttribute="trailing" constant="15" id="Ix6-P5-G24"/>
-                                                <constraint firstItem="18f-8r-hC6" firstAttribute="height" secondItem="7gE-aK-rOy" secondAttribute="height" multiplier="0.6" id="YaQ-gz-Yfj"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m06-w4-Ujs" secondAttribute="trailing" constant="15" id="Ix6-P5-G24"/>
                                                 <constraint firstItem="m06-w4-Ujs" firstAttribute="centerY" secondItem="18f-8r-hC6" secondAttribute="centerY" id="alE-7O-CU6"/>
                                                 <constraint firstItem="ZEy-4a-K8z" firstAttribute="top" secondItem="7gE-aK-rOy" secondAttribute="top" constant="8" id="bNh-35-4Vu"/>
                                                 <constraint firstItem="18f-8r-hC6" firstAttribute="top" secondItem="ZEy-4a-K8z" secondAttribute="bottom" constant="8" id="ekI-Im-I3e"/>
                                                 <constraint firstItem="ZEy-4a-K8z" firstAttribute="leading" secondItem="7gE-aK-rOy" secondAttribute="leading" constant="15" id="glD-or-udr"/>
+                                                <constraint firstItem="18f-8r-hC6" firstAttribute="width" secondItem="7gE-aK-rOy" secondAttribute="width" multiplier="0.33" id="m22-1J-5mo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2105,21 +2211,24 @@
                                                         <rect key="frame" x="36.5" y="37" width="292.5" height="209"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="Qp9-0f-itv" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="292.5" height="40.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="292.5" height="31.5"/>
                                                                 <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="54"/>
                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Tutorial"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="100"/>
+                                                                </variation>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12e-H4-svz">
-                                                                <rect key="frame" x="0.0" y="48.5" width="292.5" height="125.5"/>
+                                                                <rect key="frame" x="0.0" y="31.5" width="292.5" height="125.5"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNY-cX-9zS">
                                                                         <rect key="frame" x="0.0" y="0.0" width="97" height="125.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avoid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d97-ce-3wC" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avoid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="d97-ce-3wC" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="8" width="97" height="22.5"/>
                                                                                 <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="30"/>
                                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2127,9 +2236,12 @@
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Avoid"/>
                                                                                 </userDefinedRuntimeAttributes>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="70"/>
+                                                                                </variation>
                                                                             </label>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poo" translatesAutoresizingMaskIntoConstraints="NO" id="FID-SD-bOD">
-                                                                                <rect key="frame" x="14.5" y="50" width="68" height="67.5"/>
+                                                                                <rect key="frame" x="14.5" y="49.5" width="68" height="68"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="FID-SD-bOD" secondAttribute="height" multiplier="1:1" id="i9b-O6-PYg"/>
                                                                                 </constraints>
@@ -2143,12 +2255,13 @@
                                                                             <constraint firstItem="FID-SD-bOD" firstAttribute="width" secondItem="YNY-cX-9zS" secondAttribute="width" multiplier="0.7" id="Pfn-gz-qPF"/>
                                                                             <constraint firstAttribute="trailing" secondItem="d97-ce-3wC" secondAttribute="trailing" id="TzV-6Y-JVX"/>
                                                                             <constraint firstItem="d97-ce-3wC" firstAttribute="leading" secondItem="YNY-cX-9zS" secondAttribute="leading" id="UG7-Um-lQg"/>
+                                                                            <constraint firstItem="FID-SD-bOD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="d97-ce-3wC" secondAttribute="bottom" id="n0J-qA-wJv"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtD-nl-9rg">
                                                                         <rect key="frame" x="196" y="0.0" width="96.5" height="125.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% Catch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TV-Bk-jv6" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% Catch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8TV-Bk-jv6" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="8" width="96.5" height="22.5"/>
                                                                                 <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="30"/>
                                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2156,9 +2269,12 @@
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="100% Catch"/>
                                                                                 </userDefinedRuntimeAttributes>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="70"/>
+                                                                                </variation>
                                                                             </label>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bonus" translatesAutoresizingMaskIntoConstraints="NO" id="mh3-OO-kdw">
-                                                                                <rect key="frame" x="14.5" y="50" width="68" height="67.5"/>
+                                                                                <rect key="frame" x="14.5" y="49.5" width="68" height="68"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="mh3-OO-kdw" secondAttribute="height" multiplier="1:1" id="7PH-kH-KcE"/>
                                                                                 </constraints>
@@ -2166,6 +2282,7 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
+                                                                            <constraint firstItem="mh3-OO-kdw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8TV-Bk-jv6" secondAttribute="bottom" id="Ixc-A4-NoT"/>
                                                                             <constraint firstAttribute="trailing" secondItem="8TV-Bk-jv6" secondAttribute="trailing" id="QOf-tn-b2X"/>
                                                                             <constraint firstItem="mh3-OO-kdw" firstAttribute="width" secondItem="gtD-nl-9rg" secondAttribute="width" multiplier="0.7" id="S3f-VB-FAG"/>
                                                                             <constraint firstAttribute="bottom" secondItem="mh3-OO-kdw" secondAttribute="bottom" constant="8" id="ftt-hw-EsC"/>
@@ -2177,7 +2294,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JsY-RN-JKl">
                                                                         <rect key="frame" x="98" y="0.0" width="97" height="125.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvs-ac-dpK" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="jvs-ac-dpK" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="8" width="97" height="22.5"/>
                                                                                 <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="30"/>
                                                                                 <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2185,9 +2302,12 @@
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Catch"/>
                                                                                 </userDefinedRuntimeAttributes>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="70"/>
+                                                                                </variation>
                                                                             </label>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="egg" translatesAutoresizingMaskIntoConstraints="NO" id="pwW-6O-YAp">
-                                                                                <rect key="frame" x="14.5" y="50" width="68" height="67.5"/>
+                                                                                <rect key="frame" x="14.5" y="49.5" width="68" height="68"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="pwW-6O-YAp" secondAttribute="height" multiplier="1:1" id="0Wz-wy-uGI"/>
                                                                                 </constraints>
@@ -2201,6 +2321,7 @@
                                                                             <constraint firstItem="jvs-ac-dpK" firstAttribute="top" secondItem="JsY-RN-JKl" secondAttribute="top" constant="8" id="QTk-Qy-Q0X"/>
                                                                             <constraint firstItem="pwW-6O-YAp" firstAttribute="centerX" secondItem="JsY-RN-JKl" secondAttribute="centerX" id="dtJ-m7-usI"/>
                                                                             <constraint firstAttribute="trailing" secondItem="jvs-ac-dpK" secondAttribute="trailing" id="iHG-JP-3Ye"/>
+                                                                            <constraint firstItem="pwW-6O-YAp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jvs-ac-dpK" secondAttribute="bottom" id="kh1-nG-gzX"/>
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
@@ -2221,29 +2342,32 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbE-eP-KkP">
-                                                                <rect key="frame" x="0.0" y="174" width="292.5" height="35"/>
+                                                                <rect key="frame" x="0.0" y="157" width="292.5" height="52"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not show anymore" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRU-Rh-2C6" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                        <rect key="frame" x="66" y="7" width="157.5" height="21"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not show anymore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="aRU-Rh-2C6" customClass="LocalizedLabel" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                                                        <rect key="frame" x="81" y="15.5" width="157.5" height="21"/>
                                                                         <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="28"/>
                                                                         <color key="textColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Do not show anymore"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                                            <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="100"/>
+                                                                        </variation>
                                                                     </label>
-                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3PW-tf-Hpe">
-                                                                        <rect key="frame" x="9" y="2" width="51" height="31"/>
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3PW-tf-Hpe">
+                                                                        <rect key="frame" x="16" y="10.5" width="51" height="31"/>
                                                                         <color key="onTintColor" red="0.89340299369999998" green="0.652133882" blue="0.44755148890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </switch>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="3PW-tf-Hpe" firstAttribute="leading" secondItem="hbE-eP-KkP" secondAttribute="leading" constant="9" id="9VO-xp-g2T"/>
+                                                                    <constraint firstItem="3PW-tf-Hpe" firstAttribute="leading" secondItem="hbE-eP-KkP" secondAttribute="leading" constant="16" id="9VO-xp-g2T"/>
                                                                     <constraint firstItem="3PW-tf-Hpe" firstAttribute="centerY" secondItem="hbE-eP-KkP" secondAttribute="centerY" id="D4K-IX-oK3"/>
                                                                     <constraint firstItem="aRU-Rh-2C6" firstAttribute="centerY" secondItem="hbE-eP-KkP" secondAttribute="centerY" id="DVA-EQ-c3C"/>
                                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aRU-Rh-2C6" secondAttribute="trailing" constant="8" id="pUc-ei-8WO"/>
-                                                                    <constraint firstItem="aRU-Rh-2C6" firstAttribute="leading" secondItem="3PW-tf-Hpe" secondAttribute="trailing" constant="8" id="s7e-du-nIe"/>
+                                                                    <constraint firstItem="aRU-Rh-2C6" firstAttribute="leading" secondItem="3PW-tf-Hpe" secondAttribute="trailing" constant="16" id="s7e-du-nIe"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -2251,11 +2375,12 @@
                                                         <constraints>
                                                             <constraint firstItem="12e-H4-svz" firstAttribute="leading" secondItem="ESZ-q9-CkZ" secondAttribute="leading" id="25Z-Di-Zck"/>
                                                             <constraint firstItem="12e-H4-svz" firstAttribute="height" secondItem="ESZ-q9-CkZ" secondAttribute="height" multiplier="0.6" id="3a6-c1-GdO"/>
+                                                            <constraint firstItem="hbE-eP-KkP" firstAttribute="height" secondItem="ESZ-q9-CkZ" secondAttribute="height" multiplier="0.25" id="4lr-u5-vJw"/>
                                                             <constraint firstItem="Qp9-0f-itv" firstAttribute="top" secondItem="ESZ-q9-CkZ" secondAttribute="top" id="5tc-BT-8C0"/>
                                                             <constraint firstItem="Qp9-0f-itv" firstAttribute="leading" secondItem="ESZ-q9-CkZ" secondAttribute="leading" id="6ft-Ri-nuB"/>
                                                             <constraint firstItem="hbE-eP-KkP" firstAttribute="leading" secondItem="ESZ-q9-CkZ" secondAttribute="leading" id="AQo-Qy-A1C"/>
                                                             <constraint firstAttribute="trailing" secondItem="Qp9-0f-itv" secondAttribute="trailing" id="Beg-jQ-Zq3"/>
-                                                            <constraint firstItem="12e-H4-svz" firstAttribute="top" secondItem="Qp9-0f-itv" secondAttribute="bottom" constant="8" id="PuC-nG-mdw"/>
+                                                            <constraint firstItem="12e-H4-svz" firstAttribute="top" secondItem="Qp9-0f-itv" secondAttribute="bottom" id="PuC-nG-mdw"/>
                                                             <constraint firstItem="hbE-eP-KkP" firstAttribute="top" secondItem="12e-H4-svz" secondAttribute="bottom" id="QSB-oo-YL5"/>
                                                             <constraint firstAttribute="trailing" secondItem="hbE-eP-KkP" secondAttribute="trailing" id="eCd-ZY-fVq"/>
                                                             <constraint firstAttribute="bottom" secondItem="hbE-eP-KkP" secondAttribute="bottom" id="t1K-L0-mEy"/>
@@ -2313,7 +2438,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SlR-wN-wRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15.199999999999999" y="-952.17391304347836"/>
+            <point key="canvasLocation" x="-15.827338129496404" y="-952.2613065326633"/>
         </scene>
         <!--Get All View Controller-->
         <scene sceneID="FHc-mi-kBI">
@@ -2352,15 +2477,18 @@
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="getAllLabelText"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="100"/>
+                                                                </variation>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="getAllPreviewImage" translatesAutoresizingMaskIntoConstraints="NO" id="WYA-Xq-OVI">
-                                                                <rect key="frame" x="0.0" y="62" width="253" height="253"/>
+                                                                <rect key="frame" x="25" y="90" width="202.5" height="202.5"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="WYA-Xq-OVI" secondAttribute="height" multiplier="1:1" id="16H-2e-HgQ"/>
+                                                                    <constraint firstAttribute="width" secondItem="WYA-Xq-OVI" secondAttribute="height" multiplier="1:1" id="8jL-yy-1ZG"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtN-Xb-9D0" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
-                                                                <rect key="frame" x="63" y="156.5" width="127" height="63.5"/>
+                                                                <rect key="frame" x="86" y="171" width="81" height="40.5"/>
                                                                 <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="36"/>
                                                                 <state key="normal" title="GET ALL" backgroundImage="bigButtonImageNormal">
                                                                     <color key="titleColor" red="0.45571917299999998" green="0.24684450029999999" blue="0.22351035480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2369,6 +2497,9 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="getAllButtonText"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="90"/>
+                                                                </variation>
                                                                 <connections>
                                                                     <action selector="getAllAction:" destination="nSg-94-9vu" eventType="touchUpInside" id="Y3B-ht-d40"/>
                                                                 </connections>
@@ -2377,13 +2508,14 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="JtN-Xb-9D0" firstAttribute="width" secondItem="JtN-Xb-9D0" secondAttribute="height" multiplier="2:1" id="6Pv-2Q-0Qr"/>
-                                                            <constraint firstItem="WYA-Xq-OVI" firstAttribute="width" secondItem="fE8-zQ-nKw" secondAttribute="width" id="71T-3T-QZy"/>
+                                                            <constraint firstItem="WYA-Xq-OVI" firstAttribute="width" secondItem="fE8-zQ-nKw" secondAttribute="width" multiplier="0.8" id="Bcx-pL-Nbe"/>
                                                             <constraint firstItem="JtN-Xb-9D0" firstAttribute="centerX" secondItem="WYA-Xq-OVI" secondAttribute="centerX" id="MSC-sU-DkC"/>
                                                             <constraint firstAttribute="trailing" secondItem="M1C-DJ-bxr" secondAttribute="trailing" id="OhV-yz-9DF"/>
-                                                            <constraint firstItem="JtN-Xb-9D0" firstAttribute="width" secondItem="WYA-Xq-OVI" secondAttribute="width" multiplier="0.5" id="OoI-LX-6EJ"/>
+                                                            <constraint firstItem="JtN-Xb-9D0" firstAttribute="width" secondItem="WYA-Xq-OVI" secondAttribute="width" multiplier="0.4" id="OoI-LX-6EJ"/>
                                                             <constraint firstItem="M1C-DJ-bxr" firstAttribute="top" secondItem="fE8-zQ-nKw" secondAttribute="top" id="PUf-R9-YjV"/>
+                                                            <constraint firstItem="WYA-Xq-OVI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="M1C-DJ-bxr" secondAttribute="bottom" id="QtB-0D-3XY"/>
                                                             <constraint firstItem="JtN-Xb-9D0" firstAttribute="centerY" secondItem="WYA-Xq-OVI" secondAttribute="centerY" id="Ved-XU-OSv"/>
-                                                            <constraint firstItem="WYA-Xq-OVI" firstAttribute="top" secondItem="M1C-DJ-bxr" secondAttribute="bottom" constant="8" id="kDT-e9-pab"/>
+                                                            <constraint firstAttribute="bottom" secondItem="WYA-Xq-OVI" secondAttribute="bottom" id="cK1-s9-UAZ"/>
                                                             <constraint firstItem="WYA-Xq-OVI" firstAttribute="centerX" secondItem="fE8-zQ-nKw" secondAttribute="centerX" id="uMd-b3-tQg"/>
                                                             <constraint firstItem="M1C-DJ-bxr" firstAttribute="leading" secondItem="fE8-zQ-nKw" secondAttribute="leading" id="wKW-tB-0uP"/>
                                                         </constraints>
@@ -2440,7 +2572,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDT-MP-jZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2013.5999999999999" y="373.76311844077964"/>
+            <point key="canvasLocation" x="2012.9496402877699" y="373.36683417085425"/>
         </scene>
     </scenes>
     <resources>

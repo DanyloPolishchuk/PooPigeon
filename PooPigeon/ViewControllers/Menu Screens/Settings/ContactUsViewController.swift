@@ -31,19 +31,14 @@ class ContactUsViewController: BaseBannerAdViewController {
     }
     
     func setupContent(){
-        // replace with localized strings
-        contactUsLabel.text = "Contact Us"
-        descriptionLabel.text = "Found a bug ? Send us an email at"
         emailLabel.text = emailString
         copyButton.setImage(UIImage(named: "copyButtonPressed"), for: .highlighted)
-        // setup localized button label text
         emailButton.setBackgroundImage(UIImage(named: "bigButtonImagePressed"), for: .highlighted)
         
         if !MFMailComposeViewController.canSendMail() {
             emailButton.isHidden = true
         }
         
-        emailCopiedLabel.text = "EMAIL COPIED"
         emailCopiedContainerViewConstraint.constant = -emailCopiedContainerView.frame.width
         self.view.layoutIfNeeded()
     }
