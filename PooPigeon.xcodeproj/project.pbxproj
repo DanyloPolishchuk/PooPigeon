@@ -152,6 +152,8 @@
 		9EC8193223DE44CD00682DE8 /* POL-chamber-of-secrets-short.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC8193023DE44CD00682DE8 /* POL-chamber-of-secrets-short.wav */; };
 		9ED36D8E23E22F7200288D35 /* Level7Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9ED36D8D23E22F7200288D35 /* Level7Scene.sks */; };
 		9ED36D8F23E22F7200288D35 /* Level7Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9ED36D8D23E22F7200288D35 /* Level7Scene.sks */; };
+		9ED4AB9E23EB63D300D61051 /* CreditsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED4AB9D23EB63D300D61051 /* CreditsTableViewController.swift */; };
+		9ED4AB9F23EB63D300D61051 /* CreditsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED4AB9D23EB63D300D61051 /* CreditsTableViewController.swift */; };
 		9EDDA7B523ABEF720006FB3C /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDDA7B423ABEF720006FB3C /* ContactUsViewController.swift */; };
 		9EDDA7B823AC1A140006FB3C /* RainEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9EDDA7B623AC1A140006FB3C /* RainEmitter.sks */; };
 		9EDDA7B923AC1A140006FB3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EDDA7B723AC1A140006FB3C /* Assets.xcassets */; };
@@ -249,6 +251,7 @@
 		9EC8192D23DE43F700682DE8 /* POL-waving-grass-short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "POL-waving-grass-short.wav"; sourceTree = "<group>"; };
 		9EC8193023DE44CD00682DE8 /* POL-chamber-of-secrets-short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "POL-chamber-of-secrets-short.wav"; sourceTree = "<group>"; };
 		9ED36D8D23E22F7200288D35 /* Level7Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level7Scene.sks; sourceTree = "<group>"; };
+		9ED4AB9D23EB63D300D61051 /* CreditsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsTableViewController.swift; sourceTree = "<group>"; };
 		9EDDA7B423ABEF720006FB3C /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		9EDDA7B623AC1A140006FB3C /* RainEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainEmitter.sks; sourceTree = "<group>"; };
 		9EDDA7B723AC1A140006FB3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -504,6 +507,7 @@
 				9E8FC8572399817500A576C0 /* SettingsCollectionViewCell.swift */,
 				9EDDA7B423ABEF720006FB3C /* ContactUsViewController.swift */,
 				9E1EF6EB23D6481800B00D7A /* CreditsViewController.swift */,
+				9ED4AB9D23EB63D300D61051 /* CreditsTableViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -926,6 +930,7 @@
 			files = (
 				9E82FFF023BE3A5C0026A1EC /* AchievementsViewController.swift in Sources */,
 				9E82FFF123BE3A5C0026A1EC /* UInt+secondsToString.swift in Sources */,
+				9ED4AB9F23EB63D300D61051 /* CreditsTableViewController.swift in Sources */,
 				9E82FFF223BE3A5C0026A1EC /* PauseViewController.swift in Sources */,
 				9EEA2A9923C9064F00105B4E /* UnlockAllCollectionViewCell.swift in Sources */,
 				9E82FFF323BE3A5C0026A1EC /* ShopCollectionViewCell.swift in Sources */,
@@ -973,6 +978,7 @@
 			files = (
 				9E5468FB239D43A600857D44 /* AchievementsViewController.swift in Sources */,
 				9EEE96A823A84A0100C1954F /* UInt+secondsToString.swift in Sources */,
+				9ED4AB9E23EB63D300D61051 /* CreditsTableViewController.swift in Sources */,
 				9E6C9A1123916C6300B7AC37 /* PauseViewController.swift in Sources */,
 				9EEA2A9823C9064F00105B4E /* UnlockAllCollectionViewCell.swift in Sources */,
 				9E16740A23A3C34E00322AFF /* ShopCollectionViewCell.swift in Sources */,
