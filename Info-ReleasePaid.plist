@@ -6,6 +6,8 @@
 	<string>poopigeonfeedback@gmail.com</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>PooPigeon Pro</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIconName</key>
@@ -21,13 +23,14 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>1</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3940256099942544~1458002511</string>
 	<key>GADBannerViewAdUnitID</key>
-	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<string>ca-app-pub-3987841949353092/7045625979
+ca-app-pub-3987841949353092/7045625979</string>
 	<key>GADRewardedAdUnitID</key>
-	<string>ca-app-pub-3940256099942544/1712485313</string>
+	<string>ca-app-pub-3987841949353092/2182798649</string>
 	<key>IAP Product Identifiers</key>
 	<dict>
 		<key>RemoveAds</key>
@@ -50,7 +53,7 @@
 		<string>haxrcorp_4089_cyrillic_altgr.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreenDebug</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

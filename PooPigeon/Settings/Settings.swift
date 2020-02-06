@@ -124,7 +124,16 @@ class Settings: Codable {
             
             self.levels = settings.levels
             self.heroes = settings.heroes
+            
+            #if RELEASEPAID
+            self.wallpapers = settings.wallpapers.map{
+                var tmpWallpaper = $0
+                tmpWallpaper.isWallpaperUnlocked = true
+                return tmpWallpaper
+            }
+            #else
             self.wallpapers = settings.wallpapers
+            #endif
             
             self.language = settings.language
             LocalizationHelper.defaultLocalizer.setSelectedLanguage(lang: language.rawValue)
@@ -141,7 +150,12 @@ class Settings: Codable {
             self.isApplicaitonShared = settings.isApplicaitonShared
             self.isApplicationReviewed = settings.isApplicationReviewed
             
+            #if RELEASEPAID
+            self.isAddsRemovalPurchased = true
+            #else
             self.isAddsRemovalPurchased = settings.isAddsRemovalPurchased
+            #endif
+            
             self.isUnlockAllPurchased = settings.isUnlockAllPurchased
             self.isUnlockAllHeroesPurchased = settings.isUnlockAllHeroesPurchased
             self.isUnlockAllLevelsPurchased = settings.isUnlockAllLevelsPurchased

@@ -36,7 +36,6 @@ class BaseBannerAdViewController: UIViewController {
     }
     
     func unhideBannerView(){
-        // if !isPaidVersionOfTheApp &&
         if !Settings.shared.isAddsRemovalPurchased {
             self.bannerView.isHidden = false
         }

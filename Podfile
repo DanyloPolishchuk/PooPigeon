@@ -17,3 +17,8 @@ target 'PooPigeon - Release' do
 	# Pods for PooPigeon - Release
 	shared_pods
 end
+
+target 'PooPigeon - Release Paid' do
+    # Pods for PooPigeon - Release Paid
+    shared_pods
+end
