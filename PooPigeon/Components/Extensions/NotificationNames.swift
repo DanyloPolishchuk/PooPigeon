@@ -33,6 +33,7 @@ extension Notification.Name {
     static let setupHero = Notification.Name("setupHeroNotificationKey")
     
     static let pauseOnResignActive = Notification.Name("pauseOnResignActiveNotificationKey")
+    static let unpauseOnDidBecomeActive = Notification.Name("unpauseOnDidBecomeActiveNotificationKey")
     
     static let rewardedAdDidLoadSuccessfully = Notification.Name("rewardedAdDidLoadSuccessfullyNotificationKey")
 
