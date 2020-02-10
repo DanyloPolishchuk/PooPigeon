@@ -89,6 +89,8 @@ class SettingsViewController: BaseBannerAdViewController {
     }
     func setupCellsArray(){
         
+        temporaryCellsArr = [SettingButtonType]()
+        
         let temporarySettings = Settings.shared.getTemporarySettings()
         if temporarySettings[0] == false{
             temporaryCellsArr.append(.Like)
