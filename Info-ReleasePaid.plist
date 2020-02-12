@@ -38,11 +38,11 @@ ca-app-pub-3987841949353092/7045625979</string>
 		<key>RemoveAds</key>
 		<string>com.DanyloPolishchuk.PooPigeon.RemoveAds</string>
 		<key>UnlockAll</key>
-		<string>com.DanyloPolishchuk.PooPigeon.UnlockAll</string>
+		<string>com.DanyloPolishchuk.PooPigeonPro.UnlockAll</string>
 		<key>UnlockAllBirds</key>
-		<string>com.DanyloPolishchuk.PooPigeon.UnlockAllBirds</string>
+		<string>com.DanyloPolishchuk.PooPigeonPro.UnlockAllHeroes</string>
 		<key>UnlockAllLevels</key>
-		<string>com.DanyloPolishchuk.PooPigeon.UnlockAllLevels</string>
+		<string>com.DanyloPolishchuk.PooPigeonPro.UnlockAllLevels</string>
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
