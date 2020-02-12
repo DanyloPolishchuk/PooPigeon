@@ -353,6 +353,9 @@ class BaseSKScene: SKScene {
         Settings.shared.totalScore += 1 * UInt(currentStreak)
         if currentScore > Settings.shared.bestScore{
             Settings.shared.bestScore = UInt(currentScore)
+            if currentScore > 1000{
+                NotificationCenter.default.post(name: .requestReview, object: nil)
+            }
         }
         Settings.shared.save()
     }

@@ -43,4 +43,6 @@ extension Notification.Name {
     static let unlockAllLevelsPurchasedSuccessfully = Notification.Name("unlockAllLevelsPurchasedSuccessfullyNotificationKey")
     static let unlockAllPurchasedSuccessfully = Notification.Name("unlockAllPurchasedSuccessfullyNotificationKey")
     
+    static let requestReview = Notification.Name("requestReviewNotificationKey")
+    
 }

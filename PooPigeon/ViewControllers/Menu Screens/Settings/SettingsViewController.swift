@@ -220,39 +220,16 @@ extension SettingsViewController: UICollectionViewDelegateFlowLayout {
 
 extension SettingsViewController: SettingsScreensPresentationProtocol{
     
-    //TODO: add Like implementation once needed URL is avaliable
     func likeApplication() {
-        
-//        import StoreKit
-//
-//        func rateApp() {
-//            if #available(iOS 10.3, *) {
-//                SKStoreReviewController.requestReview()
-//
-//            } else if let url = URL(string: "itms-apps://itunes.apple.com/app/" + "appId") {
-//                if #available(iOS 10, *) {
-//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//
-//                } else {
-//                    UIApplication.shared.openURL(url)
-//                }
-//            }
-//        }
-        
+        guard let appID = Bundle.main.object(forInfoDictionaryKey: "AppID") as? String, let reviewURL = URL(string: "https://itunes.apple.com/app/id\(appID)?action=write-review") else{return}
+        UIApplication.shared.open(reviewURL, options: [:], completionHandler: nil)
     }
     
-    //TODO: add Share implementation once needed URL is avaliable
     func shareApplication() {
-        
-//        if let name = URL(string: "https://itunes.apple.com/us/app/myapp/idxxxxxxxx?ls=1&mt=8"), !name.absoluteString.isEmpty {
-//            let objectsToShare = [name]
-//            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-//
-//            self.present(activityVC, animated: true, completion: nil)
-//        }else  {
-//            // show alert for not available
-//        }
-        
+        guard let appID = Bundle.main.object(forInfoDictionaryKey: "AppID") as? String, let shareURL = URL(string: "http://itunes.apple.com/app/id\(appID)") else {return}
+        let objectsToShare = [shareURL]
+        let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        self.present(activityViewController, animated: true)
     }
     
     func showCredits() {

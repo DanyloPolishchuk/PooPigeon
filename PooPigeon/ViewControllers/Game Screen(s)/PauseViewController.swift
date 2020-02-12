@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import StoreKit
+
+//TODO: implement requestReview()
 
 class PauseViewController: BaseBannerAdViewController {
     
@@ -18,6 +21,7 @@ class PauseViewController: BaseBannerAdViewController {
     //
     weak var gameViewController: GameViewController!
     var isTopButtonAPauseButton = true
+    var shouldRequestReviewBePresented = false
     
     //MARK: - Outlets
     //
@@ -87,6 +91,7 @@ class PauseViewController: BaseBannerAdViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(showGameOverView(notification:)), name: .showGameOverKey, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(pauseOnResignActive), name: .pauseOnResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(unpauseOnDidBecomeActive), name: .unpauseOnDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showRequestReview), name: .requestReview, object: nil)
     }
     func setupDefaultConstraints(){
         self.leftPauseButtonConstraint.constant = -self.leftPauseButton.frame.width - 8
@@ -194,6 +199,15 @@ class PauseViewController: BaseBannerAdViewController {
         gameViewController.continueGame()
         hidePauseView()
     }
+    @objc func showRequestReview(){
+        self.shouldRequestReviewBePresented = true
+    }
+    
+    func requestReview(){
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        }
+    }
     
     //MARK: - Animation methods
     //
@@ -285,7 +299,12 @@ class PauseViewController: BaseBannerAdViewController {
                 self.backgroundView.alpha = 0.33
                 self.viewUI.layoutIfNeeded()
             }
-            self.unhideTopButton {}
+            self.unhideTopButton {
+                if self.shouldRequestReviewBePresented{
+                    self.shouldRequestReviewBePresented = false
+                    self.requestReview()
+                }
+            }
         }
     }
     func hideGameOverView(){
