@@ -156,10 +156,10 @@
         },
         {
             "levelPreviewImageName" : "level5BG",
-            "levelChallengeType" : "Best Score",
+            "levelChallengeType" : "Lose Score",
             "levelIsUnlocked" : false,
             "levelChallengeScoreType" : "NumberValue",
-            "neededChallengeNumberValue" : 400,
+            "neededChallengeNumberValue" : 40,
             "currentChallengeNumberValueProgress" : 0,
             "levelNumber" : 5,
             "levelMusicSoundFileName" : "POL-chamber-of-secrets-short",
@@ -210,10 +210,10 @@
         },
         {
             "levelPreviewImageName" : "level7BGWallpaper",
-            "levelChallengeType" : "Best Score",
+            "levelChallengeType" : "Time Spent In Game",
             "levelIsUnlocked" : false,
             "levelChallengeScoreType" : "NumberValue",
-            "neededChallengeNumberValue" : 600,
+            "neededChallengeNumberValue" : 1800,
             "currentChallengeNumberValueProgress" : 0,
             "levelNumber" : 7,
             "levelMusicSoundFileName" : "POL-course-of-nature-short",
@@ -237,10 +237,10 @@
         },
         {
             "levelPreviewImageName" : "level8BGWallpaper",
-            "levelChallengeType" : "Best Score",
+            "levelChallengeType" : "Launch Days",
             "levelIsUnlocked" : false,
             "levelChallengeScoreType" : "NumberValue",
-            "neededChallengeNumberValue" : 700,
+            "neededChallengeNumberValue" : 8,
             "currentChallengeNumberValueProgress" : 0,
             "levelNumber" : 8,
             "levelMusicSoundFileName" : "POL-cactus-land-short",
@@ -264,10 +264,10 @@
         },
         {
             "levelPreviewImageName" : "level9BGWallpaper",
-            "levelChallengeType" : "Best Score",
+            "levelChallengeType" : "Launch Game",
             "levelIsUnlocked" : false,
             "levelChallengeScoreType" : "NumberValue",
-            "neededChallengeNumberValue" : 800,
+            "neededChallengeNumberValue" : 30,
             "currentChallengeNumberValueProgress" : 0,
             "levelNumber" : 9,
             "levelMusicSoundFileName" : "POL-stable-boy-short",
@@ -394,8 +394,8 @@
                 "hero5IdleFrame2"
             ],
             "texture" : "hero5IdleFrame1",
-            "neededChallengeNumberValue" : 3500,
-            "challengeType" : "Total Score",
+            "neededChallengeNumberValue" : 50,
+            "challengeType" : "Lose Score",
             "isUnlocked" : false,
             "number" : 5,
             "hitTextureNames" : [
@@ -440,8 +440,8 @@
                 "hero7IdleFrame2"
             ],
             "texture" : "hero7IdleFrame1",
-            "neededChallengeNumberValue" : 6500,
-            "challengeType" : "Total Score",
+            "neededChallengeNumberValue" : 1800,
+            "challengeType" : "Time Spent In Game",
             "isUnlocked" : false,
             "number" : 7,
             "hitTextureNames" : [
@@ -463,8 +463,8 @@
                 "hero8IdleFrame2"
             ],
             "texture" : "hero8IdleFrame1",
-            "neededChallengeNumberValue" : 8000,
-            "challengeType" : "Total Score",
+            "neededChallengeNumberValue" : 10,
+            "challengeType" : "Launch Days",
             "isUnlocked" : false,
             "number" : 8,
             "hitTextureNames" : [
@@ -486,8 +486,8 @@
                 "hero9IdleFrame2"
             ],
             "texture" : "hero9IdleFrame1",
-            "neededChallengeNumberValue" : 9000,
-            "challengeType" : "Total Score",
+            "neededChallengeNumberValue" : 20,
+            "challengeType" : "Launch Game",
             "isUnlocked" : false,
             "number" : 9,
             "hitTextureNames" : [

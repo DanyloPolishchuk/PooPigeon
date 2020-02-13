@@ -53,7 +53,6 @@ class ShopViewController: BaseBannerAdViewController {
         
         setupIAP()
         setupTopButtons()
-//        setupGetAllButton()
         setupDefaultConstraints()
         updateDataSources()
         setupDataSources()
@@ -172,6 +171,7 @@ class ShopViewController: BaseBannerAdViewController {
     }
     
     @objc func allBirdsUnlockedHandler(){
+        setupGetAllButton()
         birdsCollectionView.reloadData()
         setupDefaultSelectedCells()
     }
@@ -186,6 +186,7 @@ class ShopViewController: BaseBannerAdViewController {
     }
     
     @objc func allLevelsUnlockedHandler(){
+        setupGetAllButton()
         levelsCollectionView.reloadData()
         setupDefaultSelectedCells()
     }

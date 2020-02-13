@@ -623,7 +623,7 @@
                                             <constraint firstAttribute="height" constant="50" id="vRS-m1-G2Q"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yal-Ih-PQv">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yal-Ih-PQv">
                                         <rect key="frame" x="272" y="230.5" width="56" height="56.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Yal-Ih-PQv" secondAttribute="height" multiplier="1:1" id="aGG-YS-FmO"/>
@@ -1386,7 +1386,7 @@
                                                     <action selector="backAction:" destination="oiI-oJ-IA8" eventType="touchUpInside" id="9dw-ka-SIO"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0d8-Q3-ook" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0d8-Q3-ook" customClass="LocalizedButton" customModule="PooPigeon___Debug" customModuleProvider="target">
                                                 <rect key="frame" x="103" y="8" width="169" height="56.5"/>
                                                 <fontDescription key="fontDescription" name="HaxrCorp-4089-Cyrillic-AltGr" family="HaxrCorp 4089 Cyrillic AltGr" pointSize="32"/>
                                                 <state key="normal" title="ALL 50% OFF" backgroundImage="bigButtonRedImageNormal">
