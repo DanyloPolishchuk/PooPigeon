@@ -33,6 +33,8 @@
 ca-app-pub-3987841949353092/7045625979</string>
 	<key>GADRewardedAdUnitID</key>
 	<string>ca-app-pub-3987841949353092/2182798649</string>
+	<key>GADInterstitialAdUnitID</key>
+	<string>ca-app-pub-3987841949353092/2231757308</string>
 	<key>IAP Product Identifiers</key>
 	<dict>
 		<key>RemoveAds</key>

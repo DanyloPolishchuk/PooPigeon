@@ -8,8 +8,7 @@
 
 import UIKit
 import StoreKit
-
-//TODO: implement requestReview()
+import GoogleMobileAds
 
 class PauseViewController: BaseBannerAdViewController {
     
@@ -19,6 +18,7 @@ class PauseViewController: BaseBannerAdViewController {
     
     //MARK: - Properties
     //
+    var interstitialAd: GADInterstitial!
     weak var gameViewController: GameViewController!
     var isTopButtonAPauseButton = true
     var shouldRequestReviewBePresented = false
@@ -58,6 +58,7 @@ class PauseViewController: BaseBannerAdViewController {
         streakLabel.isHidden = true
         streakLabel.text = "x1"
         
+        setupInterstitialAd()
         setupNotifications()
         setupDefaultConstraints()
         setupPauseView()
@@ -152,6 +153,11 @@ class PauseViewController: BaseBannerAdViewController {
         streakLabel.layer.shadowRadius = 10
         streakLabel.layer.shadowOpacity = 1.0
         streakLabel.layer.masksToBounds = false
+    }
+    func setupInterstitialAd(){
+        if !Settings.shared.isAddsRemovalPurchased{
+            interstitialAd = createAndLoadInterstitial()
+        }
     }
     
     //MARK: - Notification methods
@@ -304,6 +310,9 @@ class PauseViewController: BaseBannerAdViewController {
                     self.shouldRequestReviewBePresented = false
                     self.requestReview()
                 }
+                else if !self.shouldRequestReviewBePresented && Settings.shared.amountOfLoses % 10 == 0{
+                    self.showInterstitialAd()
+                }
             }
         }
     }
@@ -316,6 +325,34 @@ class PauseViewController: BaseBannerAdViewController {
                 self.viewUI.layoutIfNeeded()
             }
             self.unhideTopButton {}
+        }
+    }
+    
+    //MARK: - Google Interstitial Ad methods
+    //
+    func showInterstitialAd(){
+        if interstitialAd.isReady && !Settings.shared.isAddsRemovalPurchased {
+            manageMusicBeforeShowingAd()
+            interstitialAd.present(fromRootViewController: self)
+        }
+    }
+    
+    func createAndLoadInterstitial() -> GADInterstitial? {
+        guard let interstitialAdUnitID = Bundle.main.object(forInfoDictionaryKey: "GADInterstitialAdUnitID") as? String else {return nil}
+        let interstitial = GADInterstitial(adUnitID: interstitialAdUnitID)
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+    
+    func manageMusicBeforeShowingAd(){
+        if Settings.shared.isMusicEnabled {
+            NotificationCenter.default.post(name: .turnMusicOff, object: nil)
+        }
+    }
+    func manageMusicAfterShowingAd(){
+        if Settings.shared.isMusicEnabled {
+            NotificationCenter.default.post(name: .turnMusicOn, object: nil)
         }
     }
     
@@ -380,6 +417,16 @@ class PauseViewController: BaseBannerAdViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         gameViewController.currentGameScene.touchesBegan(touches, with: event)
+    }
+    
+}
+
+extension PauseViewController: GADInterstitialDelegate{
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        print("interstitialDidDismissScreen")
+        manageMusicAfterShowingAd()
+        interstitialAd = createAndLoadInterstitial()
     }
     
 }

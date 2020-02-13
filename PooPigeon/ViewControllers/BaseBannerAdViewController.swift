@@ -15,7 +15,7 @@ class BaseBannerAdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if !Settings.shared.isAddsRemovalPurchased { // || !isPaidVersionOfTheApp
+        if !Settings.shared.isAddsRemovalPurchased { 
             setupGADBannerView()
         }
     }
