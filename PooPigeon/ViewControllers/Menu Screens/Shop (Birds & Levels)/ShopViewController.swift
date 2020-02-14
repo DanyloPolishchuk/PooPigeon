@@ -97,6 +97,12 @@ class ShopViewController: BaseBannerAdViewController {
         self.heroes = Settings.shared.getHeroes()
         self.levels = Settings.shared.getLevels()
     }
+    func setupHeroesDataSource(){
+        self.heroes = Settings.shared.getHeroes()
+    }
+    func setupLevelsDataSource(){
+        self.levels = Settings.shared.getLevels()
+    }
     func setupCollectionViews(){
         birdsCollectionView.delegate        = self
         levelsCollectionView.delegate       = self
@@ -171,6 +177,7 @@ class ShopViewController: BaseBannerAdViewController {
     }
     
     @objc func allBirdsUnlockedHandler(){
+        setupHeroesDataSource()
         setupGetAllButton()
         birdsCollectionView.reloadData()
         setupDefaultSelectedCells()
@@ -186,6 +193,7 @@ class ShopViewController: BaseBannerAdViewController {
     }
     
     @objc func allLevelsUnlockedHandler(){
+        setupLevelsDataSource()
         setupGetAllButton()
         levelsCollectionView.reloadData()
         setupDefaultSelectedCells()
@@ -201,6 +209,7 @@ class ShopViewController: BaseBannerAdViewController {
     }
     
     @objc func allUnlockedHandler(){
+        setupDataSources()
         setupGetAllButton()
         birdsCollectionView.reloadData()
         levelsCollectionView.reloadData()

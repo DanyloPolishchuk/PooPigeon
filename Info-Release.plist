@@ -25,16 +25,16 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.2</string>
 	<key>CFBundleVersion</key>
-	<string>0</string>
+	<string>1</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3940256099942544~1458002511</string>
 	<key>GADBannerViewAdUnitID</key>
 	<string>ca-app-pub-3987841949353092/7045625979
 ca-app-pub-3987841949353092/7045625979</string>
-	<key>GADRewardedAdUnitID</key>
-	<string>ca-app-pub-3987841949353092/2182798649</string>
 	<key>GADInterstitialAdUnitID</key>
 	<string>ca-app-pub-3987841949353092/2231757308</string>
+	<key>GADRewardedAdUnitID</key>
+	<string>ca-app-pub-3987841949353092/2182798649</string>
 	<key>IAP Product Identifiers</key>
 	<dict>
 		<key>RemoveAds</key>
