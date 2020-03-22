@@ -7,7 +7,7 @@
 		<key>PooPigeon - Debug.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>9</integer>
 		</dict>
 		<key>PooPigeon - Release Paid.xcscheme_^#shared#^_</key>
 		<dict>
@@ -17,12 +17,17 @@
 		<key>PooPigeon - Release.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>8</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>9E4EC2FC23EC20C300B392E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9E82FFED23BE3A5C0026A1EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

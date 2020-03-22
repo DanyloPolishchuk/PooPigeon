@@ -256,4 +256,12 @@ extension SettingsViewController: SettingsScreensPresentationProtocol{
         buyRemoveAds()
     }
     
+    func showLanguageSelection() {
+        if let languageSelectionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "languageSelectionScreenIdentifier") as? LanguageSelectionViewController {
+            languageSelectionVC.settingsViewController = self
+            hideBannerView()
+            self.present(languageSelectionVC, animated: true)
+        }
+    }
+    
 }

@@ -56,6 +56,12 @@
 		9E3821902386E79F00244205 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E38218F2386E79F00244205 /* Bird.swift */; };
 		9E3821952387134300244205 /* BaseSKScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3821942387134300244205 /* BaseSKScene.swift */; };
 		9E382198238714EA00244205 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E382197238714EA00244205 /* Protocols.swift */; };
+		9E4185C22427C55600100043 /* LanguageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4185C12427C55600100043 /* LanguageSelectionViewController.swift */; };
+		9E4185C32427C55600100043 /* LanguageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4185C12427C55600100043 /* LanguageSelectionViewController.swift */; };
+		9E4185C42427C55600100043 /* LanguageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4185C12427C55600100043 /* LanguageSelectionViewController.swift */; };
+		9E4185C62427C9E900100043 /* LanguageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4185C52427C9E900100043 /* LanguageCollectionViewCell.swift */; };
+		9E4185C72427C9E900100043 /* LanguageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4185C52427C9E900100043 /* LanguageCollectionViewCell.swift */; };
+		9E4185C82427C9E900100043 /* LanguageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4185C52427C9E900100043 /* LanguageCollectionViewCell.swift */; };
 		9E48D3BF23C3D066005EAD41 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E48D3BE23C3D066005EAD41 /* StoreKit.framework */; };
 		9E48D3C023C3D06F005EAD41 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E48D3BE23C3D066005EAD41 /* StoreKit.framework */; };
 		9E4EC2FF23EC20C300B392E8 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5468FA239D43A600857D44 /* AchievementsViewController.swift */; };
@@ -294,6 +300,8 @@
 		9E38218F2386E79F00244205 /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		9E3821942387134300244205 /* BaseSKScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSKScene.swift; sourceTree = "<group>"; };
 		9E382197238714EA00244205 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		9E4185C12427C55600100043 /* LanguageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionViewController.swift; sourceTree = "<group>"; };
+		9E4185C52427C9E900100043 /* LanguageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E43707D238C43D000B7D42D /* VCR_OSD_MONO_1.001.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VCR_OSD_MONO_1.001.ttf; sourceTree = "<group>"; };
 		9E48D3BE23C3D066005EAD41 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9E4EC35823EC20C300B392E8 /* PooPigeon - Release Paid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PooPigeon - Release Paid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -522,6 +530,32 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		9E4185C92427EE4F00100043 /* Language Selection */ = {
+			isa = PBXGroup;
+			children = (
+				9E4185C12427C55600100043 /* LanguageSelectionViewController.swift */,
+				9E4185C52427C9E900100043 /* LanguageCollectionViewCell.swift */,
+			);
+			path = "Language Selection";
+			sourceTree = "<group>";
+		};
+		9E4185CA2427EE5B00100043 /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				9E1EF6EB23D6481800B00D7A /* CreditsViewController.swift */,
+				9ED4AB9D23EB63D300D61051 /* CreditsTableViewController.swift */,
+			);
+			path = Credits;
+			sourceTree = "<group>";
+		};
+		9E4185CB2427EE6900100043 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				9EDDA7B423ABEF720006FB3C /* ContactUsViewController.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 		9E43707B238C436900B7D42D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,9 +643,9 @@
 			children = (
 				9E8FC85423997A8200A576C0 /* SettingsViewController.swift */,
 				9E8FC8572399817500A576C0 /* SettingsCollectionViewCell.swift */,
-				9EDDA7B423ABEF720006FB3C /* ContactUsViewController.swift */,
-				9E1EF6EB23D6481800B00D7A /* CreditsViewController.swift */,
-				9ED4AB9D23EB63D300D61051 /* CreditsTableViewController.swift */,
+				9E4185CB2427EE6900100043 /* Contacts */,
+				9E4185CA2427EE5B00100043 /* Credits */,
+				9E4185C92427EE4F00100043 /* Language Selection */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1163,6 +1197,7 @@
 				9E4EC30923EC20C300B392E8 /* Wallpaper.swift in Sources */,
 				9E4EC30A23EC20C300B392E8 /* TutorialViewController.swift in Sources */,
 				9E4EC30B23EC20C300B392E8 /* Level1Scene.swift in Sources */,
+				9E4185C82427C9E900100043 /* LanguageCollectionViewCell.swift in Sources */,
 				9E4EC30C23EC20C300B392E8 /* GameViewController.swift in Sources */,
 				9E4EC30D23EC20C300B392E8 /* SettingsCollectionViewCell.swift in Sources */,
 				9E4EC30E23EC20C300B392E8 /* WallpaperTableViewCell.swift in Sources */,
@@ -1191,6 +1226,7 @@
 				9E4EC32523EC20C300B392E8 /* AdsCantLoadAlertViewController.swift in Sources */,
 				9E4EC32623EC20C300B392E8 /* Settings.swift in Sources */,
 				9E4EC32723EC20C300B392E8 /* ContactUsViewController.swift in Sources */,
+				9E4185C42427C55600100043 /* LanguageSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1211,6 +1247,7 @@
 				9E82FFF923BE3A5C0026A1EC /* Wallpaper.swift in Sources */,
 				9EA5CED023D737A600B7E290 /* TutorialViewController.swift in Sources */,
 				9E82FFFA23BE3A5C0026A1EC /* Level1Scene.swift in Sources */,
+				9E4185C72427C9E900100043 /* LanguageCollectionViewCell.swift in Sources */,
 				9E82FFFB23BE3A5C0026A1EC /* GameViewController.swift in Sources */,
 				9E82FFFC23BE3A5C0026A1EC /* SettingsCollectionViewCell.swift in Sources */,
 				9E82FFFD23BE3A5C0026A1EC /* WallpaperTableViewCell.swift in Sources */,
@@ -1239,6 +1276,7 @@
 				9E0D4A3B23C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift in Sources */,
 				9E82000A23BE3A5C0026A1EC /* Settings.swift in Sources */,
 				9E82000B23BE3A5C0026A1EC /* ContactUsViewController.swift in Sources */,
+				9E4185C32427C55600100043 /* LanguageSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1259,6 +1297,7 @@
 				9E643F78239D9C3200BB5FC0 /* Wallpaper.swift in Sources */,
 				9EA5CECF23D737A600B7E290 /* TutorialViewController.swift in Sources */,
 				9EDDE3D0237A1C2C00A06863 /* Level1Scene.swift in Sources */,
+				9E4185C62427C9E900100043 /* LanguageCollectionViewCell.swift in Sources */,
 				9E6C9A1423916D7A00B7AC37 /* GameViewController.swift in Sources */,
 				9E8FC8582399817500A576C0 /* SettingsCollectionViewCell.swift in Sources */,
 				9E5468FF239D552400857D44 /* WallpaperTableViewCell.swift in Sources */,
@@ -1287,6 +1326,7 @@
 				9E0D4A3A23C1190900C4A7E5 /* AdsCantLoadAlertViewController.swift in Sources */,
 				9E38218C2386E07900244205 /* Settings.swift in Sources */,
 				9EDDA7B523ABEF720006FB3C /* ContactUsViewController.swift in Sources */,
+				9E4185C22427C55600100043 /* LanguageSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

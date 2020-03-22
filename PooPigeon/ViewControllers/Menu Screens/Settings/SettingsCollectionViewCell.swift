@@ -149,15 +149,7 @@ class SettingsCollectionViewCell: UICollectionViewCell {
             NotificationCenter.default.post(name: isMusicEnabled ? .turnMusicOff : .turnMusicOn, object: nil)
             
         case .Language:
-            let currentLanguage = Settings.shared.getLanguage()
-            switch currentLanguage{
-            case .English:
-                Settings.shared.changeLanguageTo(language: .Ukrainian)
-            case .Ukrainian:
-                Settings.shared.changeLanguageTo(language: .Russian)
-            case .Russian:
-                Settings.shared.changeLanguageTo(language: .English)
-            }
+            settingsScreenPresentationDelegate?.showLanguageSelection()
             
         case .Like:
             settingsScreenPresentationDelegate?.likeApplication()

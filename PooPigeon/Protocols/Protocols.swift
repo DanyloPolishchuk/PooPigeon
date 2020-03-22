@@ -28,6 +28,11 @@ protocol SettingsScreensPresentationProtocol: class {
     func showContactInfo()
     func restorePurchases()
     func removeAds()
+    func showLanguageSelection()
+}
+
+protocol LanguageSelectionProtocol: class {
+    func languageSelected()
 }
 
 protocol ShopPurchasesProtocol: class {
